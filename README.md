@@ -1,5 +1,7 @@
 # Pure Spoiler Shield
 
+[![external requests in code](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/qwemort/pure-spoiler-shield/main/badges/network.json)](PRIVACY-REPORT.md) [![telemetry](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/qwemort/pure-spoiler-shield/main/badges/telemetry.json)](PRIVACY-REPORT.md)
+
 A browser extension that blurs or hides spoilers for the games, shows, films and anime you choose, on YouTube, Reddit and X. Everything runs inside your browser: no account, no analytics, no tracking.
 
 - Chrome: https://chromewebstore.google.com/detail/aloilpojkoblacapdlknacjiljgjibng
@@ -8,7 +10,7 @@ A browser extension that blurs or hides spoilers for the games, shows, films and
 
 ## Why the source is here
 
-So you can check the claims instead of trusting them. The extension checks the visible text of titles, descriptions and comments locally and covers the items that match. The only network request in the whole extension is the optional Pro license check to `api.gumroad.com` when you enter a key (and a re-check at most every 7 days). You can verify this in `src/background.js`.
+So you can check the claims instead of trusting them. The extension checks the visible text of titles, descriptions and comments locally and covers the items that match. The only network request in the whole extension is the optional Pro license check to `api.gumroad.com` when you enter a key (and a re-check at most every 7 days). You can verify this in `src/background.js`, or read the auto-generated [privacy report](PRIVACY-REPORT.md), which lists every request to an external server found in the code.
 
 Permissions (see `manifests/`): `storage`, `scripting`, `contextMenus`; content scripts only on YouTube, Reddit and X (plus the Gumroad license endpoint). Access to all websites is an **optional** permission, requested only when you turn on Pro "everywhere".
 

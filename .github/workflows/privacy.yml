@@ -1,0 +1,25 @@
+name: privacy-report
+# При каждом изменении кода: пересобрать PRIVACY-REPORT.md и значки (badges/*.json для shields.io).
+on:
+  push:
+    branches: [main]
+    paths: ['src/**', 'manifests/**', 'tools/privacy-report.py']
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: { python-version: '3.12' }
+      - run: python3 tools/privacy-report.py . --md PRIVACY-REPORT.md --badges badges
+      - run: |
+          git config user.name "privacy-report bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add PRIVACY-REPORT.md badges
+          git diff --cached --quiet && exit 0
+          git commit -m "privacy report: $(date -u +%F)"
+          git push
