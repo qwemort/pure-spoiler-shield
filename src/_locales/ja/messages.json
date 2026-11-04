@@ -1,0 +1,359 @@
+{
+ "extDesc": {
+  "message": "YouTube、Reddit、X で GTA VI やあらゆるゲーム、ドラマ、映画、アニメのネタバレをぼかします。データはブラウザの外に出ません。"
+ },
+ "tagline": {
+  "message": "GTA VI や新シーズンを待っている？ネタバレを避けよう。"
+ },
+ "main_switch": {
+  "message": "保護のオン/オフ"
+ },
+ "veil_label": {
+  "message": "🛡 非表示 · {0}\nクリックで表示"
+ },
+ "veil_confirm": {
+  "message": "もう一度クリックで表示。\nストーリーのネタバレかもしれません。"
+ },
+ "player_label": {
+  "message": "🛡 この動画は {0} のネタバレかもしれません\nクリックで表示"
+ },
+ "fold_comments": {
+  "message": "🛡 コメントを非表示：{0} のネタバレがあるかもしれません · クリックで表示"
+ },
+ "fold_confirm": {
+  "message": "もう一度クリックでコメントを表示。ネタバレを含むかもしれません。"
+ },
+ "perm_title": {
+  "message": "YouTube・Reddit・X で Spoiler Shield を許可してください"
+ },
+ "perm_hint": {
+  "message": "ブラウザがまだこれらのサイトへのアクセスを許可していないため、何も非表示になりません。"
+ },
+ "perm_btn": {
+  "message": "許可する"
+ },
+ "level": {
+  "message": "どこまで慎重に？"
+ },
+ "mode_spoilers": {
+  "message": "ネタバレだけ"
+ },
+ "mode_spoilers_hint": {
+  "message": "エンディング、死亡、どんでん返し、リーク。ニュースやトレーラーは表示。"
+ },
+ "mode_everything": {
+  "message": "GTA VI に関するすべて"
+ },
+ "mode_everything_hint": {
+  "message": "ゲーム、その場所や人物への言及すべて。"
+ },
+ "comments_toggle": {
+  "message": "守っている作品の動画や投稿のコメントを折りたたむ"
+ },
+ "btn_pause": {
+  "message": "10 分停止"
+ },
+ "btn_resume": {
+  "message": "今すぐ再開"
+ },
+ "btn_site_off": {
+  "message": "このサイトでオフ"
+ },
+ "btn_site_on": {
+  "message": "このサイトでオン"
+ },
+ "st_off": {
+  "message": "保護はオフです。"
+ },
+ "st_paused": {
+  "message": "{0} まで停止中。"
+ },
+ "st_site_off": {
+  "message": "このサイトではオフです。"
+ },
+ "st_page_clean": {
+  "message": "このページではまだ何も非表示にしていません。"
+ },
+ "st_not_here": {
+  "message": "このページは保護されていません。"
+ },
+ "st_not_here_free": {
+  "message": "YouTube・Reddit・X で保護中。Pro ならすべてのサイトを保護。"
+ },
+ "hidden_total_other": {
+  "message": "件のネタバレを非表示"
+ },
+ "hidden_page_other": {
+  "message": "このページで {0} 件を非表示"
+ },
+ "pro_title": {
+  "message": "どこでも、もっと賢く"
+ },
+ "pro_text": {
+  "message": "すべてのサイト：Google、TikTok、Twitch、Discord、ニュース。「第N話まで視聴済み」、作品ごとの公開日と終了日、AI 要約の非表示、信頼するチャンネル、バックアップ、自分のタイトル無制限。支払いは一度だけ。"
+ },
+ "pro_buy": {
+  "message": "Pro を入手"
+ },
+ "pro_have_key": {
+  "message": "キーを持っている"
+ },
+ "pro_key_placeholder": {
+  "message": "ライセンスキーを貼り付け"
+ },
+ "pro_activate": {
+  "message": "有効にする"
+ },
+ "pro_active": {
+  "message": "Pro 有効 · {0}"
+ },
+ "pro_everywhere": {
+  "message": "すべてのサイトを保護"
+ },
+ "pro_grant": {
+  "message": "すべてのサイトで許可"
+ },
+ "pro_until": {
+  "message": "保護する期限"
+ },
+ "pro_until_passed": {
+  "message": "この日付は過ぎたため、保護はオフです。新しい日付を選ぶか、空にしてください。"
+ },
+ "pro_remove": {
+  "message": "このブラウザからライセンスを削除"
+ },
+ "pro_remove_sure": {
+  "message": "もう一度クリックで削除"
+ },
+ "lic_paste_first": {
+  "message": "先にキーを貼り付けてください。"
+ },
+ "lic_not_valid": {
+  "message": "このキーは無効です。"
+ },
+ "lic_not_setup": {
+  "message": "オンラインキーはまだ準備中です。ご連絡いただければオフラインキーをお送りします。"
+ },
+ "lic_no_connection": {
+  "message": "ライセンスサーバーに接続できません。インターネットを確認して再度お試しください。"
+ },
+ "lic_not_found": {
+  "message": "このキーは見つかりませんでした。"
+ },
+ "lic_busy": {
+  "message": "ライセンスサーバーが混み合っています。1 分後にお試しください。"
+ },
+ "lic_refunded": {
+  "message": "この購入は返金されています。"
+ },
+ "lic_max_activations": {
+  "message": "このキーはすでに {0} 台のブラウザで使われています。ご連絡いただければリセットします。"
+ },
+ "lic_checkout_unavailable": {
+  "message": "購入はまもなく開始します。キーをお持ちなら下に貼り付けてください。"
+ },
+ "review_title": {
+  "message": "役に立ちましたか？"
+ },
+ "review_text": {
+  "message": "短いレビューが、ネタバレされる前にほかの人がこれを見つける助けになります。"
+ },
+ "review_btn": {
+  "message": "レビューを書く"
+ },
+ "later_btn": {
+  "message": "閉じる"
+ },
+ "report_btn": {
+  "message": "問題がありますか？ご連絡ください"
+ },
+ "privacy_line": {
+  "message": "文字はブラウザの中で確認され、どこにも送信されません。"
+ },
+ "not_affiliated": {
+  "message": "Rockstar Games および Take-Two Interactive とは関係ありません。"
+ },
+ "w_title": {
+  "message": "保護されています。"
+ },
+ "w_sub": {
+  "message": "Spoiler Shield が YouTube、Reddit、X の GTA VI のネタバレをぼかすようになりました。ぼかしたブロックを2回クリックすると見られます。ほかのゲーム、ドラマ、映画、アニメはツールバーのボタンから追加できます。"
+ },
+ "w_s1_t": {
+  "message": "消さずにぼかす"
+ },
+ "w_s1": {
+  "message": "ゲームのネタバレになりそうな動画、投稿、コメント、検索候補をその場でぼかします。"
+ },
+ "w_s2_t": {
+  "message": "見るには 2 クリック"
+ },
+ "w_s2": {
+  "message": "1 回目で警告、2 回目で表示。マウスを乗せただけでネタバレされることはありません。"
+ },
+ "w_s3_t": {
+  "message": "自分のルール"
+ },
+ "w_s3": {
+  "message": "ドラマ、映画、アニメを追加。テキストを選んで右クリック「ネタバレとして隠す」。10分間の一時停止やサイトごとのオフも。"
+ },
+ "w_pin": {
+  "message": "ヒント：Spoiler Shield をツールバーに固定すると、カウンターを確認でき、守る作品をワンクリックで追加できます。"
+ },
+ "w_private_t": {
+  "message": "プライバシー重視"
+ },
+ "w_private": {
+  "message": "YouTube・Reddit・X のページの文字をブラウザ内で読むだけで、どこにも送信しません。アカウント、解析、広告はありません。"
+ },
+ "media_toggle": {
+  "message": "その作品のページでは画像と動画もぼかす"
+ },
+ "media_label": {
+  "message": "🛡 この画像は {0} のネタバレかもしれません\nクリックで表示"
+ },
+ "menu_hide": {
+  "message": "「%s」をネタバレとして隠す"
+ },
+ "my_words": {
+  "message": "自分のワード"
+ },
+ "shields_title": {
+  "message": "守る作品"
+ },
+ "shields_none": {
+  "message": "まだ何も守っていません。ゲーム、ドラマ、映画、アニメを追加してください。"
+ },
+ "add_shield": {
+  "message": "+ ゲーム、ドラマ、映画、アニメを追加"
+ },
+ "add_close": {
+  "message": "閉じる"
+ },
+ "search_presets": {
+  "message": "用意されたリストを検索"
+ },
+ "lib_added": {
+  "message": "追加済み"
+ },
+ "lib_nothing": {
+  "message": "リストにありません。下で自分で追加できます。"
+ },
+ "custom_title": {
+  "message": "または自分で追加"
+ },
+ "custom_name_ph": {
+  "message": "タイトル（例：セヴェランス）"
+ },
+ "custom_names_ph": {
+  "message": "登場人物や場所、1行に1つ（任意）"
+ },
+ "custom_names_hint": {
+  "message": "「結末」「死亡」「リーク」などのネタバレ語は13言語で組み込み済みです。"
+ },
+ "custom_words_ph": {
+  "message": "右クリックで隠したワード"
+ },
+ "custom_add": {
+  "message": "追加"
+ },
+ "custom_need_title": {
+  "message": "先にタイトルを入力してください。"
+ },
+ "custom_pro_only": {
+  "message": "無料版の自分のタイトルは 3 つまで。Pro なら無制限です。"
+ },
+ "shields_max": {
+  "message": "シールドの上限に達しました。"
+ },
+ "shield_switch": {
+  "message": "このシールドのオン/オフ"
+ },
+ "shield_edit": {
+  "message": "ワードを編集"
+ },
+ "shield_done": {
+  "message": "完了"
+ },
+ "shield_delete": {
+  "message": "削除"
+ },
+ "shield_delete_sure": {
+  "message": "本当に？"
+ },
+ "locked_custom": {
+  "message": "一時停止中：無料版で使える自分のタイトルは 3 つです。Pro ならすべて使えます。"
+ },
+ "opt_spoilers": {
+  "message": "ネタバレだけ"
+ },
+ "opt_everything": {
+  "message": "その作品のすべて"
+ },
+ "opt_blur": {
+  "message": "ぼかす"
+ },
+ "opt_remove": {
+  "message": "完全に隠す"
+ },
+ "opt_action": {
+  "message": "処理"
+ },
+ "kind_game": {
+  "message": "ゲーム"
+ },
+ "kind_movie": {
+  "message": "映画"
+ },
+ "kind_show": {
+  "message": "ドラマ"
+ },
+ "kind_anime": {
+  "message": "アニメ"
+ },
+ "kind_custom": {
+  "message": "自分で追加"
+ },
+ "shield_more": {
+  "message": "その他"
+ },
+ "more_hint": {
+  "message": "不要な項目は空欄のままで大丈夫です。"
+ },
+ "more_locked": {
+  "message": "これらの設定は Pro に含まれます。"
+ },
+ "more_upto": {
+  "message": "視聴済みの話数 / 章"
+ },
+ "more_release": {
+  "message": "公開日（その日まですべて隠す）"
+ },
+ "more_until": {
+  "message": "保護する期限（その後オフ）"
+ },
+ "pro_hide_ai": {
+  "message": "守っている作品の AI 要約（Google、YouTube）を隠す"
+ },
+ "pro_trusted": {
+  "message": "信頼するチャンネルとコミュニティ"
+ },
+ "pro_trusted_ph": {
+  "message": "@チャンネル\nr/サブレディット"
+ },
+ "pro_trusted_hint": {
+  "message": "これらの動画や投稿は隠されません。1 行に 1 つ。"
+ },
+ "backup_export": {
+  "message": "シールドをファイルに保存"
+ },
+ "backup_import": {
+  "message": "ファイルから読み込む"
+ },
+ "backup_done": {
+  "message": "読み込みました。"
+ },
+ "backup_bad": {
+  "message": "Spoiler Shield のバックアップファイルではありません。"
+ }
+}

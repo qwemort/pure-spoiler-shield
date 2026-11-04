@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><title>YouTube</title>
+<style>body{font:14px Roboto,Arial,sans-serif;background:#0f0f0f;color:#fff;margin:0} #contents{display:grid;grid-template-columns:repeat(3,300px);gap:16px;padding:24px}
+ytd-rich-item-renderer{display:block;height:250px;background:#222;border-radius:12px;overflow:hidden} .thumb{height:170px;background:linear-gradient(135deg,#456,#789)} #video-title{display:block;padding:10px;font-weight:600}
+#sugg{position:absolute;top:0;left:400px;background:#222;width:400px} [role=option]{display:block;padding:6px 12px}</style></head><body>
+<ytd-masthead id="mast"><a id="logo" href="/"><img id="logoimg" width="200" height="90" alt="GTA 6 YouTube" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="></a></ytd-masthead>
+<div id="sugg" role="listbox"><div role="option" id="s1">gta 6 ending explained</div><div role="option" id="s2">gta 6 release date pc</div><div role="option" id="s3">pasta recipe</div></div>
+<div id="contents">
+ <ytd-rich-item-renderer id="v1"><div class="thumb"></div><a id="video-title" href="/watch?v=1" title="GTA 6 ENDING EXPLAINED (full spoilers)">GTA 6 ENDING EXPLAINED (full spoilers)</a></ytd-rich-item-renderer>
+ <ytd-rich-item-renderer id="v2"><div class="thumb"></div><a id="video-title" href="/watch?v=2">GTA 6 Trailer 3 — my reaction</a></ytd-rich-item-renderer>
+ <ytd-rich-item-renderer id="v3"><div class="thumb"></div><a id="video-title" href="/watch?v=3">How to cook pasta in 10 minutes</a></ytd-rich-item-renderer>
+ <ytd-rich-item-renderer id="v4"><div class="thumb"></div><a id="video-title" href="/watch?v=4">Jason Momoa new movie ending</a></ytd-rich-item-renderer>
+ <ytd-rich-item-renderer id="v5"><div class="thumb"></div><a id="video-title" href="/watch?v=5"><span>gta6</span> <span>leaked cutscene!!</span></a></ytd-rich-item-renderer>
+ <ytd-rich-item-renderer id="v8"><div class="thumb"></div><a id="video-title" href="/watch?v=8">GTA 6 ending — my honest take</a><ytd-channel-name><a href="/@TrustedGuy">Trusted Guy</a></ytd-channel-name></ytd-rich-item-renderer>
+ <ytd-rich-item-renderer id="v7"><div class="thumb" aria-label="Lucia Caminos dies? Full story"></div><a id="video-title" href="/watch?v=7">You won't believe this 😱</a></ytd-rich-item-renderer>
+</div>
+<script>
+  // infinite scroll: a card arrives later; and YouTube-style recycling: an element gets new content
+  setTimeout(() => { const c = document.createElement('ytd-rich-item-renderer'); c.id = 'v6'; c.innerHTML = '<div class="thumb"></div><a id="video-title">Leonida final mission secret</a>'; document.getElementById('contents').append(c); }, 400);
+  window.recycle = () => { document.querySelector('#v1 #video-title').textContent = 'Cozy coffee shop music'; document.querySelector('#v1 #video-title').removeAttribute('title'); };
+</script></body></html>

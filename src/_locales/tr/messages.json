@@ -1,0 +1,365 @@
+{
+ "extDesc": {
+  "message": "YouTube, Reddit ve X’te GTA VI ile her oyun, dizi, film ve animenin spoilerlarını bulanıklaştırır. Hiçbir şey dışarı çıkmaz."
+ },
+ "tagline": {
+  "message": "GTA VI’yı ya da yeni sezonu mu bekliyorsun? Spoiler yeme."
+ },
+ "main_switch": {
+  "message": "Koruma açık/kapalı"
+ },
+ "veil_label": {
+  "message": "🛡 Gizlendi · {0}\nGöstermek için tıkla"
+ },
+ "veil_confirm": {
+  "message": "Göstermek için tekrar tıkla.\nHikâyeyi bozabilir."
+ },
+ "player_label": {
+  "message": "🛡 Bu video {0} spoilerı içerebilir\nGöstermek için tıkla"
+ },
+ "fold_comments": {
+  "message": "🛡 Yorumlar gizlendi: {0} spoilerı içerebilir · göstermek için tıkla"
+ },
+ "fold_confirm": {
+  "message": "Yorumları göstermek için tekrar tıkla. Spoiler içerebilirler."
+ },
+ "perm_title": {
+  "message": "Spoiler Shield’a YouTube, Reddit ve X’te izin ver"
+ },
+ "perm_hint": {
+  "message": "Tarayıcın bu sitelere henüz erişim vermedi, bu yüzden orada hiçbir şey gizlenmiyor."
+ },
+ "perm_btn": {
+  "message": "İzin ver"
+ },
+ "level": {
+  "message": "Ne kadar dikkatli?"
+ },
+ "mode_spoilers": {
+  "message": "Sadece spoilerlar"
+ },
+ "mode_spoilers_hint": {
+  "message": "Sonlar, ölümler, sürprizler, sızıntılar. Haberler ve fragmanlar kalır."
+ },
+ "mode_everything": {
+  "message": "GTA VI ile ilgili her şey"
+ },
+ "mode_everything_hint": {
+  "message": "Oyunun, mekânlarının ve karakterlerinin her anılışı."
+ },
+ "comments_toggle": {
+  "message": "Koruduğun şeyle ilgili video ve gönderilerin altındaki yorumları katla"
+ },
+ "btn_pause": {
+  "message": "10 dk duraklat"
+ },
+ "btn_resume": {
+  "message": "Şimdi devam et"
+ },
+ "btn_site_off": {
+  "message": "Bu sitede kapat"
+ },
+ "btn_site_on": {
+  "message": "Bu sitede aç"
+ },
+ "st_off": {
+  "message": "Koruma kapalı."
+ },
+ "st_paused": {
+  "message": "{0} saatine kadar duraklatıldı."
+ },
+ "st_site_off": {
+  "message": "Bu sitede kapalı."
+ },
+ "st_page_clean": {
+  "message": "Bu sayfada henüz hiçbir şey gizlenmedi."
+ },
+ "st_not_here": {
+  "message": "Bu sayfa korunmuyor."
+ },
+ "st_not_here_free": {
+  "message": "YouTube, Reddit ve X’te koruma var. Pro her siteyi korur."
+ },
+ "hidden_total_one": {
+  "message": "spoiler gizlendi"
+ },
+ "hidden_total_other": {
+  "message": "spoiler gizlendi"
+ },
+ "hidden_page_one": {
+  "message": "bu sayfada {0} gizlendi"
+ },
+ "hidden_page_other": {
+  "message": "bu sayfada {0} gizlendi"
+ },
+ "pro_title": {
+  "message": "Her yerde ve daha akıllı"
+ },
+ "pro_text": {
+  "message": "Tüm siteler: Google, TikTok, Twitch, Discord, haberler. “N. bölüme kadar izledim”, her başlık için çıkış günü ve bitiş tarihi, gizli yapay zeka özetleri, güvenilir kanallar, yedek, sınırsız kendi başlığın. Tek ödeme."
+ },
+ "pro_buy": {
+  "message": "Pro al"
+ },
+ "pro_have_key": {
+  "message": "Anahtarım var"
+ },
+ "pro_key_placeholder": {
+  "message": "Lisans anahtarını yapıştır"
+ },
+ "pro_activate": {
+  "message": "Etkinleştir"
+ },
+ "pro_active": {
+  "message": "Pro etkin · {0}"
+ },
+ "pro_everywhere": {
+  "message": "Tüm siteleri koru"
+ },
+ "pro_grant": {
+  "message": "Tüm sitelerde izin ver"
+ },
+ "pro_until": {
+  "message": "Şu tarihe kadar koru"
+ },
+ "pro_until_passed": {
+  "message": "Bu tarih geçti, bu yüzden koruma kapalı. Yeni bir tarih seç ya da alanı temizle."
+ },
+ "pro_remove": {
+  "message": "Lisansı bu tarayıcıdan kaldır"
+ },
+ "pro_remove_sure": {
+  "message": "Kaldırmak için tekrar tıkla"
+ },
+ "lic_paste_first": {
+  "message": "Önce anahtarını yapıştır."
+ },
+ "lic_not_valid": {
+  "message": "Bu anahtar geçerli değil."
+ },
+ "lic_not_setup": {
+  "message": "Çevrimiçi anahtarlar henüz hazır değil. Bana yaz, çevrimdışı bir anahtar göndereyim."
+ },
+ "lic_no_connection": {
+  "message": "Lisans sunucusuna bağlantı yok. İnterneti kontrol edip tekrar dene."
+ },
+ "lic_not_found": {
+  "message": "Bu anahtar bulunamadı."
+ },
+ "lic_busy": {
+  "message": "Lisans sunucusu meşgul. Bir dakika sonra tekrar dene."
+ },
+ "lic_refunded": {
+  "message": "Bu satın alma iade edildi."
+ },
+ "lic_max_activations": {
+  "message": "Bu anahtar zaten {0} tarayıcıda kullanılıyor. Bana yaz, sıfırlayayım."
+ },
+ "lic_checkout_unavailable": {
+  "message": "Satın alma yakında açılıyor. Anahtarın varsa aşağıya yapıştır."
+ },
+ "review_title": {
+  "message": "Seni kurtardı mı?"
+ },
+ "review_text": {
+  "message": "Kısa bir yorum, başkalarının spoiler yemeden onu bulmasına yardım eder."
+ },
+ "review_btn": {
+  "message": "Değerlendirme yaz"
+ },
+ "later_btn": {
+  "message": "Gizle"
+ },
+ "report_btn": {
+  "message": "Bir sorun mu var? Bana yaz"
+ },
+ "privacy_line": {
+  "message": "Metin tarayıcının içinde kontrol edilir. Hiçbir şey gönderilmez."
+ },
+ "not_affiliated": {
+  "message": "Rockstar Games veya Take-Two Interactive ile bağlantılı değildir."
+ },
+ "w_title": {
+  "message": "Korunuyorsun."
+ },
+ "w_sub": {
+  "message": "Spoiler Shield artık YouTube, Reddit ve X’te GTA VI spoilerlarını bulanıklaştırıyor. Görmek için bulanık bloğa iki kez tıkla. Başka bir oyun, dizi, film ya da anime araç çubuğundaki düğmeden eklenir."
+ },
+ "w_s1_t": {
+  "message": "Silmez, bulanıklaştırır"
+ },
+ "w_s1": {
+  "message": "Oyunu bozabilecek videolar, gönderiler, yorumlar ve arama önerileri bulundukları yerde bulanıklaşır."
+ },
+ "w_s2_t": {
+  "message": "Görmek için iki tık"
+ },
+ "w_s2": {
+  "message": "İlk tık uyarır, ikincisi gösterir. Fareyle üzerine gelince yanlışlıkla spoiler yok."
+ },
+ "w_s3_t": {
+  "message": "Senin kuralların"
+ },
+ "w_s3": {
+  "message": "Bir dizi, film ya da anime ekle. Herhangi bir metni seç ve sağ tıkla “Spoiler olarak gizlensin”. 10 dakika duraklat ya da bir sitede kapat."
+ },
+ "w_pin": {
+  "message": "İpucu: sayacı görmek ve neyi koruyacağını tek tıkla eklemek için Spoiler Shield’ı araç çubuğuna sabitle."
+ },
+ "w_private_t": {
+  "message": "Gizlilik öncelikli"
+ },
+ "w_private": {
+  "message": "YouTube, Reddit ve X sayfalarındaki metni tarayıcında okur ve hiçbir yere göndermez. Hesap, analiz ve reklam yok."
+ },
+ "media_toggle": {
+  "message": "Onunla ilgili sayfalardaki resim ve videoları da bulanıklaştır"
+ },
+ "media_label": {
+  "message": "🛡 Bu resim {0} için spoiler olabilir\nGöstermek için tıkla"
+ },
+ "menu_hide": {
+  "message": "“%s” spoiler olarak gizlensin"
+ },
+ "my_words": {
+  "message": "Kelimelerim"
+ },
+ "shields_title": {
+  "message": "Neyi koruyalım"
+ },
+ "shields_none": {
+  "message": "Henüz hiçbir şey korunmuyor. Bir oyun, dizi, film ya da anime ekle."
+ },
+ "add_shield": {
+  "message": "+ Oyun, dizi, film ya da anime ekle"
+ },
+ "add_close": {
+  "message": "Kapat"
+ },
+ "search_presets": {
+  "message": "Hazır listelerde ara"
+ },
+ "lib_added": {
+  "message": "eklendi"
+ },
+ "lib_nothing": {
+  "message": "Hazır listelerde yok. Aşağıdan kendin ekle."
+ },
+ "custom_title": {
+  "message": "Ya da kendininkini ekle"
+ },
+ "custom_name_ph": {
+  "message": "Başlık, ör. Severance"
+ },
+ "custom_names_ph": {
+  "message": "Karakterler ve yerler, her satıra bir tane (isteğe bağlı)"
+ },
+ "custom_names_hint": {
+  "message": "Final, ölüyor, sızıntı gibi spoiler kelimeleri 13 dilde zaten içinde."
+ },
+ "custom_words_ph": {
+  "message": "Sağ tıkla gizlediğin kelimeler"
+ },
+ "custom_add": {
+  "message": "Ekle"
+ },
+ "custom_need_title": {
+  "message": "Önce başlığı yaz."
+ },
+ "custom_pro_only": {
+  "message": "Ücretsiz sürümde 3 kendi başlığın var. Pro’da istediğin kadar."
+ },
+ "shields_max": {
+  "message": "Bu en fazla kalkan sayısı."
+ },
+ "shield_switch": {
+  "message": "Bu kalkanı aç veya kapat"
+ },
+ "shield_edit": {
+  "message": "Kelimeleri düzenle"
+ },
+ "shield_done": {
+  "message": "Tamam"
+ },
+ "shield_delete": {
+  "message": "Sil"
+ },
+ "shield_delete_sure": {
+  "message": "Emin misin?"
+ },
+ "locked_custom": {
+  "message": "Duraklatıldı: ücretsiz sürüm 3 kendi başlığını tutar. Pro hepsini tutar."
+ },
+ "opt_spoilers": {
+  "message": "Sadece spoilerlar"
+ },
+ "opt_everything": {
+  "message": "Onunla ilgili her şey"
+ },
+ "opt_blur": {
+  "message": "Bulanıklaştır"
+ },
+ "opt_remove": {
+  "message": "Tamamen gizle"
+ },
+ "opt_action": {
+  "message": "Ne yapılsın"
+ },
+ "kind_game": {
+  "message": "Oyun"
+ },
+ "kind_movie": {
+  "message": "Film"
+ },
+ "kind_show": {
+  "message": "Dizi"
+ },
+ "kind_anime": {
+  "message": "Anime"
+ },
+ "kind_custom": {
+  "message": "Kendi"
+ },
+ "shield_more": {
+  "message": "Daha fazla"
+ },
+ "more_hint": {
+  "message": "Gerekmeyeni boş bırak."
+ },
+ "more_locked": {
+  "message": "Bu seçenekler Pro’ya dahil."
+ },
+ "more_upto": {
+  "message": "Şu bölüme / kısma kadar izledim"
+ },
+ "more_release": {
+  "message": "Çıkış günü (o güne kadar her şeyi gizle)"
+ },
+ "more_until": {
+  "message": "Şu tarihe kadar koru (sonra kapat)"
+ },
+ "pro_hide_ai": {
+  "message": "Koruduğun şeyle ilgili yapay zeka özetlerini (Google, YouTube) gizle"
+ },
+ "pro_trusted": {
+  "message": "Güvenilir kanallar ve topluluklar"
+ },
+ "pro_trusted_ph": {
+  "message": "@kanal\nr/subreddit"
+ },
+ "pro_trusted_hint": {
+  "message": "Onların videoları ve gönderileri asla gizlenmez. Her satıra bir tane."
+ },
+ "backup_export": {
+  "message": "Kalkanları dosyaya kaydet"
+ },
+ "backup_import": {
+  "message": "Dosyadan yükle"
+ },
+ "backup_done": {
+  "message": "Yüklendi."
+ },
+ "backup_bad": {
+  "message": "Bu dosya bir Spoiler Shield yedeği değil."
+ }
+}

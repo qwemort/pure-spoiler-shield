@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spoiler Shield</title>
+<link rel="stylesheet" href="popup.css">
+<link rel="stylesheet" href="welcome.css">
+</head>
+<body class="ss-welcome">
+<div class="ss-bg" aria-hidden="true"><div class="ss-sun"></div></div>
+<main class="w-wrap">
+  <header class="w-hero">
+    <img src="icons/icon128.png" width="96" height="96" alt="">
+    <h1 data-i18n="w_title"></h1>
+    <p data-i18n="w_sub"></p>
+  </header>
+  <section class="w-grid">
+    <div class="ss-card"><div class="w-num">1</div><b data-i18n="w_s1_t"></b><span class="ss-hint" data-i18n="w_s1"></span></div>
+    <div class="ss-card"><div class="w-num">2</div><b data-i18n="w_s2_t"></b><span class="ss-hint" data-i18n="w_s2"></span></div>
+    <div class="ss-card"><div class="w-num">3</div><b data-i18n="w_s3_t"></b><span class="ss-hint" data-i18n="w_s3"></span></div>
+  </section>
+  <section class="ss-card w-level">
+    <div class="ss-label" data-i18n="level"></div>
+    <div class="ss-seg" role="radiogroup">
+      <button role="radio" data-mode="spoilers" id="modeSpoilers"><b data-i18n="mode_spoilers"></b><span data-i18n="mode_spoilers_hint"></span></button>
+      <button role="radio" data-mode="everything" id="modeEverything"><b data-i18n="mode_everything"></b><span data-i18n="mode_everything_hint"></span></button>
+    </div>
+    <div class="ss-hint" data-i18n="w_pin"></div>
+  </section>
+  <section class="ss-card w-private">
+    <b data-i18n="w_private_t"></b>
+    <span class="ss-hint" data-i18n="w_private"></span>
+  </section>
+  <p class="ss-legal" data-i18n="not_affiliated"></p>
+</main>
+<script src="lib/i18n.js"></script>
+<script src="welcome.js"></script>
+</body>
+</html>

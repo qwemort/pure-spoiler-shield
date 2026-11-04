@@ -1,0 +1,365 @@
+{
+ "extDesc": {
+  "message": "Desfoca spoilers de GTA VI e de qualquer jogo, série, filme ou anime no YouTube, Reddit e X. Nada sai do seu navegador."
+ },
+ "tagline": {
+  "message": "Esperando GTA VI ou uma nova temporada? Fique sem spoilers."
+ },
+ "main_switch": {
+  "message": "Proteção ligada ou desligada"
+ },
+ "veil_label": {
+  "message": "🛡 Oculto · {0}\nClique para mostrar"
+ },
+ "veil_confirm": {
+  "message": "Clique de novo para mostrar.\nPode estragar a história."
+ },
+ "player_label": {
+  "message": "🛡 Este vídeo pode dar spoiler de {0}\nClique para ver"
+ },
+ "fold_comments": {
+  "message": "🛡 Comentários ocultos: podem dar spoiler de {0} · clique para ver"
+ },
+ "fold_confirm": {
+  "message": "Clique de novo para mostrar os comentários. Eles podem ter spoilers."
+ },
+ "perm_title": {
+  "message": "Permita o Spoiler Shield no YouTube, Reddit e X"
+ },
+ "perm_hint": {
+  "message": "Seu navegador ainda não deu acesso a esses sites, então nada é ocultado lá."
+ },
+ "perm_btn": {
+  "message": "Permitir"
+ },
+ "level": {
+  "message": "Com quanto cuidado?"
+ },
+ "mode_spoilers": {
+  "message": "Só spoilers"
+ },
+ "mode_spoilers_hint": {
+  "message": "Finais, mortes, reviravoltas, vazamentos. Notícias e trailers ficam."
+ },
+ "mode_everything": {
+  "message": "Tudo sobre GTA VI"
+ },
+ "mode_everything_hint": {
+  "message": "Qualquer menção ao jogo, seus lugares e personagens."
+ },
+ "comments_toggle": {
+  "message": "Recolher comentários em vídeos e posts sobre o que você protege"
+ },
+ "btn_pause": {
+  "message": "Pausar 10 min"
+ },
+ "btn_resume": {
+  "message": "Retomar agora"
+ },
+ "btn_site_off": {
+  "message": "Desligar neste site"
+ },
+ "btn_site_on": {
+  "message": "Ligar neste site"
+ },
+ "st_off": {
+  "message": "A proteção está desligada."
+ },
+ "st_paused": {
+  "message": "Pausado até {0}."
+ },
+ "st_site_off": {
+  "message": "Desligado neste site."
+ },
+ "st_page_clean": {
+  "message": "Nada foi ocultado nesta página ainda."
+ },
+ "st_not_here": {
+  "message": "Esta página não está protegida."
+ },
+ "st_not_here_free": {
+  "message": "Protegido no YouTube, Reddit e X. O Pro protege todos os sites."
+ },
+ "hidden_total_one": {
+  "message": "spoiler oculto"
+ },
+ "hidden_total_other": {
+  "message": "spoilers ocultos"
+ },
+ "hidden_page_one": {
+  "message": "{0} oculto nesta página"
+ },
+ "hidden_page_other": {
+  "message": "{0} ocultos nesta página"
+ },
+ "pro_title": {
+  "message": "Em todo lugar, e mais esperto"
+ },
+ "pro_text": {
+  "message": "Todos os sites: Google, TikTok, Twitch, Discord, notícias. “Assisti até o episódio N”, dia de estreia e data final para cada título, resumos de IA ocultos, canais confiáveis, backup, títulos próprios sem limite. Um só pagamento."
+ },
+ "pro_buy": {
+  "message": "Quero o Pro"
+ },
+ "pro_have_key": {
+  "message": "Tenho uma chave"
+ },
+ "pro_key_placeholder": {
+  "message": "Cole sua chave de licença"
+ },
+ "pro_activate": {
+  "message": "Ativar"
+ },
+ "pro_active": {
+  "message": "Pro ativo · {0}"
+ },
+ "pro_everywhere": {
+  "message": "Proteger todos os sites"
+ },
+ "pro_grant": {
+  "message": "Permitir em todos os sites"
+ },
+ "pro_until": {
+  "message": "Proteger até"
+ },
+ "pro_until_passed": {
+  "message": "Essa data já passou, então a proteção está desligada. Escolha outra data ou limpe o campo."
+ },
+ "pro_remove": {
+  "message": "Remover a licença deste navegador"
+ },
+ "pro_remove_sure": {
+  "message": "Clique de novo para remover"
+ },
+ "lic_paste_first": {
+  "message": "Cole sua chave primeiro."
+ },
+ "lic_not_valid": {
+  "message": "Esta chave não é válida."
+ },
+ "lic_not_setup": {
+  "message": "As chaves online ainda não estão prontas. Me escreva e eu envio uma chave offline."
+ },
+ "lic_no_connection": {
+  "message": "Sem conexão com o servidor de licenças. Verifique a internet e tente de novo."
+ },
+ "lic_not_found": {
+  "message": "Essa chave não foi encontrada."
+ },
+ "lic_busy": {
+  "message": "O servidor de licenças está ocupado. Tente daqui a um minuto."
+ },
+ "lic_refunded": {
+  "message": "Esta compra foi reembolsada."
+ },
+ "lic_max_activations": {
+  "message": "Esta chave já está em uso em {0} navegadores. Me escreva e eu a redefino."
+ },
+ "lic_checkout_unavailable": {
+  "message": "A compra abre em breve. Se você já tem uma chave, cole abaixo."
+ },
+ "review_title": {
+  "message": "Te salvou?"
+ },
+ "review_text": {
+  "message": "Uma avaliação curta ajuda outras pessoas a encontrá-lo antes de levarem spoiler."
+ },
+ "review_btn": {
+  "message": "Deixar uma avaliação"
+ },
+ "later_btn": {
+  "message": "Ocultar"
+ },
+ "report_btn": {
+  "message": "Algo errado? Me escreva"
+ },
+ "privacy_line": {
+  "message": "O texto é verificado no seu navegador. Nada é enviado."
+ },
+ "not_affiliated": {
+  "message": "Sem vínculo com a Rockstar Games ou a Take-Two Interactive."
+ },
+ "w_title": {
+  "message": "Você está protegido."
+ },
+ "w_sub": {
+  "message": "O Spoiler Shield já desfoca spoilers de GTA VI no YouTube, Reddit e X. Clique duas vezes num bloco desfocado para ver. Qualquer outro jogo, série, filme ou anime pode ser adicionado pelo botão da barra."
+ },
+ "w_s1_t": {
+  "message": "Desfocar, não apagar"
+ },
+ "w_s1": {
+  "message": "Vídeos, posts, comentários e sugestões de pesquisa que podem dar spoiler do jogo são desfocados no lugar."
+ },
+ "w_s2_t": {
+  "message": "Dois cliques para ver"
+ },
+ "w_s2": {
+  "message": "O primeiro clique avisa, o segundo mostra. Nada de spoiler só por passar o mouse."
+ },
+ "w_s3_t": {
+  "message": "Suas regras"
+ },
+ "w_s3": {
+  "message": "Adicione uma série, filme ou anime. Selecione qualquer texto e use o clique direito “Ocultar como spoiler”. Pause por 10 minutos ou desligue num site."
+ },
+ "w_pin": {
+  "message": "Dica: fixe o Spoiler Shield na barra para ver o contador e adicionar o que proteger com um clique."
+ },
+ "w_private_t": {
+  "message": "Privado por padrão"
+ },
+ "w_private": {
+  "message": "Ele lê o texto das páginas do YouTube, Reddit e X no seu navegador e não envia para lugar nenhum. Sem conta, sem análises, sem anúncios."
+ },
+ "media_toggle": {
+  "message": "Desfocar também imagens e vídeos em páginas sobre isso"
+ },
+ "media_label": {
+  "message": "🛡 Esta imagem pode dar spoiler de {0}\nClique para mostrar"
+ },
+ "menu_hide": {
+  "message": "Ocultar “%s” como spoiler"
+ },
+ "my_words": {
+  "message": "Minhas palavras"
+ },
+ "shields_title": {
+  "message": "O que proteger"
+ },
+ "shields_none": {
+  "message": "Nada protegido ainda. Adicione um jogo, série, filme ou anime."
+ },
+ "add_shield": {
+  "message": "+ Adicionar jogo, série, filme ou anime"
+ },
+ "add_close": {
+  "message": "Fechar"
+ },
+ "search_presets": {
+  "message": "Buscar nas listas prontas"
+ },
+ "lib_added": {
+  "message": "adicionado"
+ },
+ "lib_nothing": {
+  "message": "Não está nas listas prontas. Adicione você mesmo abaixo."
+ },
+ "custom_title": {
+  "message": "Ou adicione o seu"
+ },
+ "custom_name_ph": {
+  "message": "Título, ex.: Ruptura"
+ },
+ "custom_names_ph": {
+  "message": "Personagens e lugares, um por linha (opcional)"
+ },
+ "custom_names_hint": {
+  "message": "Palavras de spoiler como final, morre, vazamento já estão incluídas, em 13 idiomas."
+ },
+ "custom_words_ph": {
+  "message": "Palavras ocultadas com o clique direito"
+ },
+ "custom_add": {
+  "message": "Adicionar"
+ },
+ "custom_need_title": {
+  "message": "Escreva o título primeiro."
+ },
+ "custom_pro_only": {
+  "message": "A versão grátis tem 3 títulos próprios. O Pro, quantos quiser."
+ },
+ "shields_max": {
+  "message": "Esse é o número máximo de escudos."
+ },
+ "shield_switch": {
+  "message": "Ligar ou desligar este escudo"
+ },
+ "shield_edit": {
+  "message": "Editar palavras"
+ },
+ "shield_done": {
+  "message": "Pronto"
+ },
+ "shield_delete": {
+  "message": "Excluir"
+ },
+ "shield_delete_sure": {
+  "message": "Certeza?"
+ },
+ "locked_custom": {
+  "message": "Pausado: a versão grátis mantém 3 títulos próprios. O Pro mantém todos."
+ },
+ "opt_spoilers": {
+  "message": "Só spoilers"
+ },
+ "opt_everything": {
+  "message": "Tudo sobre isso"
+ },
+ "opt_blur": {
+  "message": "Desfocar"
+ },
+ "opt_remove": {
+  "message": "Ocultar de vez"
+ },
+ "opt_action": {
+  "message": "O que fazer"
+ },
+ "kind_game": {
+  "message": "Jogo"
+ },
+ "kind_movie": {
+  "message": "Filme"
+ },
+ "kind_show": {
+  "message": "Série"
+ },
+ "kind_anime": {
+  "message": "Anime"
+ },
+ "kind_custom": {
+  "message": "Próprio"
+ },
+ "shield_more": {
+  "message": "Mais"
+ },
+ "more_hint": {
+  "message": "Deixe vazio o que não precisar."
+ },
+ "more_locked": {
+  "message": "Estas opções fazem parte do Pro."
+ },
+ "more_upto": {
+  "message": "Assisti até o episódio / capítulo"
+ },
+ "more_release": {
+  "message": "Dia de estreia (ocultar tudo até lá)"
+ },
+ "more_until": {
+  "message": "Proteger até (depois desligar)"
+ },
+ "pro_hide_ai": {
+  "message": "Ocultar resumos de IA (Google, YouTube) sobre o que você protege"
+ },
+ "pro_trusted": {
+  "message": "Canais e comunidades confiáveis"
+ },
+ "pro_trusted_ph": {
+  "message": "@canal\nr/subreddit"
+ },
+ "pro_trusted_hint": {
+  "message": "Os vídeos e posts deles nunca são ocultados. Um por linha."
+ },
+ "backup_export": {
+  "message": "Salvar escudos em arquivo"
+ },
+ "backup_import": {
+  "message": "Carregar de arquivo"
+ },
+ "backup_done": {
+  "message": "Carregado."
+ },
+ "backup_bad": {
+  "message": "Este arquivo não é um backup do Spoiler Shield."
+ }
+}

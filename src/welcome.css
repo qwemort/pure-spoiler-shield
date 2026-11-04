@@ -1,0 +1,12 @@
+body.ss-welcome { width: auto; min-height: 100vh; font-size: 15px; }
+.w-wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 48px 20px 40px; display: flex; flex-direction: column; gap: 18px; }
+.w-hero { text-align: center; }
+.w-hero h1 { font-size: 38px; line-height: 1.15; margin: 14px 0 8px; background: var(--sunset); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.w-hero p { color: var(--muted); font-size: 17px; margin: 0 auto; max-width: 620px; }
+.w-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (max-width: 720px) { .w-grid { grid-template-columns: 1fr; } }
+.w-num { width: 34px; height: 34px; border-radius: 10px; background: var(--sunset); color: #2a0b1e; display: grid; place-items: center; font-weight: 850; }
+.w-grid .ss-card b { font-size: 16px; }
+.w-level .ss-seg button { padding: 12px 14px; font-size: 14px; }
+.w-level .ss-seg button span { font-size: 12.5px; }
+.ss-legal { text-align: center; color: var(--muted); }

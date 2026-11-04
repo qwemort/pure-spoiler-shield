@@ -1,0 +1,47 @@
+/* Pure Spoiler Shield — what a hidden block looks like (Vice-City-sunset colours, no game artwork).
+   The veil is a ::after layer with backdrop-filter, so it blurs everything under it — also content inside
+   a site's shadow DOM — without changing the site's own elements. */
+.pss-veil { position: relative !important; }
+.pss-veil.pss-static { position: relative !important; }
+.pss-veil::after {
+  content: attr(data-pss-label);
+  position: absolute; inset: 0; z-index: 2147483000;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: 8px 14px; box-sizing: border-box; overflow: hidden;
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(18px) saturate(1.1); backdrop-filter: blur(18px) saturate(1.1);
+  background:
+    linear-gradient(135deg, rgba(255, 61, 139, .30), rgba(255, 138, 61, .26) 55%, rgba(45, 226, 230, .18)),
+    rgba(24, 10, 40, .62);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .16);
+  color: #fff; font: 600 14px/1.3 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; letter-spacing: .1px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .45);
+  cursor: pointer; pointer-events: auto; white-space: pre-line;
+}
+.pss-veil.pss-small::after { font-size: 12px; padding: 2px 8px; border-radius: 8px; }
+.pss-veil.pss-tiny::after { content: "🛡"; font-size: 12px; padding: 0; border-radius: 6px; }
+.pss-veil.pss-armed::after {
+  background:
+    linear-gradient(135deg, rgba(255, 61, 139, .55), rgba(255, 138, 61, .5)),
+    rgba(24, 10, 40, .55);
+}
+.pss-veil:hover::after { box-shadow: inset 0 0 0 2px rgba(255, 210, 63, .7); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .pss-veil::after { background: rgb(28, 12, 46); }
+}
+
+/* gone: search suggestions and trends — simply not shown */
+.pss-gone { display: none !important; }
+
+/* folded comments: the whole section collapses into one bar */
+.pss-fold { position: relative !important; min-height: 64px !important; display: block !important; }
+.pss-fold > * { display: none !important; }
+.pss-fold::before {
+  content: attr(data-pss-label);
+  display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 64px; padding: 10px 16px; box-sizing: border-box;
+  border-radius: 14px; margin: 8px 0;
+  background: linear-gradient(135deg, #2a1146, #3b1640 50%, #47201f);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .14);
+  color: #fff; font: 600 14px/1.3 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; cursor: pointer; text-align: center;
+}
+.pss-fold.pss-armed::before { background: linear-gradient(135deg, #ff3d8b, #ff8a3d); }

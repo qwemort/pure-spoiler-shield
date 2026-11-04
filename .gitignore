@@ -1,0 +1,5 @@
+release/
+node_modules/
+**/keys.json
+**/keygen.html
+**/__pycache__/

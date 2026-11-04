@@ -1,0 +1,359 @@
+{
+ "extDesc": {
+  "message": "YouTube, Reddit, X에서 GTA VI와 모든 게임, 드라마, 영화, 애니의 스포일러를 흐리게 합니다. 데이터는 브라우저 밖으로 나가지 않습니다."
+ },
+ "tagline": {
+  "message": "GTA VI나 새 시즌을 기다리나요? 스포일러를 피하세요."
+ },
+ "main_switch": {
+  "message": "보호 켜기/끄기"
+ },
+ "veil_label": {
+  "message": "🛡 숨김 · {0}\n클릭하면 보기"
+ },
+ "veil_confirm": {
+  "message": "한 번 더 클릭하면 보입니다.\n스토리 스포일러일 수 있어요."
+ },
+ "player_label": {
+  "message": "🛡 이 영상은 {0} 스포일러일 수 있음\n클릭해서 보기"
+ },
+ "fold_comments": {
+  "message": "🛡 댓글 숨김: {0} 스포일러가 있을 수 있음 · 클릭해서 보기"
+ },
+ "fold_confirm": {
+  "message": "한 번 더 클릭하면 댓글이 보입니다. 스포일러가 있을 수 있어요."
+ },
+ "perm_title": {
+  "message": "YouTube, Reddit, X에서 Spoiler Shield를 허용하세요"
+ },
+ "perm_hint": {
+  "message": "브라우저가 아직 이 사이트들에 대한 접근을 허용하지 않아서 아무것도 가려지지 않습니다."
+ },
+ "perm_btn": {
+  "message": "허용"
+ },
+ "level": {
+  "message": "얼마나 조심할까요?"
+ },
+ "mode_spoilers": {
+  "message": "스포일러만"
+ },
+ "mode_spoilers_hint": {
+  "message": "엔딩, 죽음, 반전, 유출. 뉴스와 트레일러는 그대로."
+ },
+ "mode_everything": {
+  "message": "GTA VI의 모든 것"
+ },
+ "mode_everything_hint": {
+  "message": "게임, 장소, 인물에 대한 모든 언급."
+ },
+ "comments_toggle": {
+  "message": "보호 중인 작품의 영상과 게시물 아래 댓글 접기"
+ },
+ "btn_pause": {
+  "message": "10분 일시 중지"
+ },
+ "btn_resume": {
+  "message": "지금 다시 켜기"
+ },
+ "btn_site_off": {
+  "message": "이 사이트에서 끄기"
+ },
+ "btn_site_on": {
+  "message": "이 사이트에서 켜기"
+ },
+ "st_off": {
+  "message": "보호가 꺼져 있습니다."
+ },
+ "st_paused": {
+  "message": "{0}까지 일시 중지됨."
+ },
+ "st_site_off": {
+  "message": "이 사이트에서 꺼짐."
+ },
+ "st_page_clean": {
+  "message": "이 페이지에서는 아직 가린 것이 없습니다."
+ },
+ "st_not_here": {
+  "message": "이 페이지는 보호되지 않습니다."
+ },
+ "st_not_here_free": {
+  "message": "YouTube, Reddit, X에서 보호 중. Pro는 모든 사이트를 보호합니다."
+ },
+ "hidden_total_other": {
+  "message": "개의 스포일러를 가림"
+ },
+ "hidden_page_other": {
+  "message": "이 페이지에서 {0}개를 가림"
+ },
+ "pro_title": {
+  "message": "어디서나, 더 똑똑하게"
+ },
+ "pro_text": {
+  "message": "모든 사이트: Google, TikTok, Twitch, Discord, 뉴스. “N화까지 봤어요”, 작품별 공개일과 종료일, AI 요약 숨기기, 신뢰하는 채널, 백업, 직접 추가한 제목 무제한. 한 번만 결제."
+ },
+ "pro_buy": {
+  "message": "Pro 받기"
+ },
+ "pro_have_key": {
+  "message": "키가 있어요"
+ },
+ "pro_key_placeholder": {
+  "message": "라이선스 키 붙여넣기"
+ },
+ "pro_activate": {
+  "message": "활성화"
+ },
+ "pro_active": {
+  "message": "Pro 활성 · {0}"
+ },
+ "pro_everywhere": {
+  "message": "모든 사이트 보호"
+ },
+ "pro_grant": {
+  "message": "모든 사이트에서 허용"
+ },
+ "pro_until": {
+  "message": "보호 기한"
+ },
+ "pro_until_passed": {
+  "message": "이 날짜가 지나서 보호가 꺼졌습니다. 새 날짜를 고르거나 칸을 비우세요."
+ },
+ "pro_remove": {
+  "message": "이 브라우저에서 라이선스 제거"
+ },
+ "pro_remove_sure": {
+  "message": "한 번 더 클릭하면 제거"
+ },
+ "lic_paste_first": {
+  "message": "먼저 키를 붙여넣으세요."
+ },
+ "lic_not_valid": {
+  "message": "유효하지 않은 키입니다."
+ },
+ "lic_not_setup": {
+  "message": "온라인 키가 아직 준비되지 않았습니다. 연락 주시면 오프라인 키를 보내 드립니다."
+ },
+ "lic_no_connection": {
+  "message": "라이선스 서버에 연결할 수 없습니다. 인터넷을 확인하고 다시 시도하세요."
+ },
+ "lic_not_found": {
+  "message": "이 키를 찾을 수 없습니다."
+ },
+ "lic_busy": {
+  "message": "라이선스 서버가 바쁩니다. 1분 후 다시 시도하세요."
+ },
+ "lic_refunded": {
+  "message": "이 구매는 환불되었습니다."
+ },
+ "lic_max_activations": {
+  "message": "이 키는 이미 {0}개의 브라우저에서 사용 중입니다. 연락 주시면 초기화해 드립니다."
+ },
+ "lic_checkout_unavailable": {
+  "message": "곧 구매할 수 있습니다. 키가 있다면 아래에 붙여넣으세요."
+ },
+ "review_title": {
+  "message": "스포일러를 피했나요?"
+ },
+ "review_text": {
+  "message": "짧은 리뷰가 다른 사람들이 스포일러를 당하기 전에 이걸 찾도록 도와줘요."
+ },
+ "review_btn": {
+  "message": "리뷰 남기기"
+ },
+ "later_btn": {
+  "message": "숨기기"
+ },
+ "report_btn": {
+  "message": "문제가 있나요? 알려 주세요"
+ },
+ "privacy_line": {
+  "message": "텍스트는 브라우저 안에서 확인됩니다. 아무것도 보내지 않습니다."
+ },
+ "not_affiliated": {
+  "message": "Rockstar Games 및 Take-Two Interactive와 관련이 없습니다."
+ },
+ "w_title": {
+  "message": "보호되고 있어요."
+ },
+ "w_sub": {
+  "message": "이제 Spoiler Shield가 YouTube, Reddit, X의 GTA VI 스포일러를 흐리게 합니다. 흐려진 블록을 두 번 클릭하면 볼 수 있어요. 다른 게임, 드라마, 영화, 애니는 도구 모음 버튼에서 추가할 수 있어요."
+ },
+ "w_s1_t": {
+  "message": "지우지 않고 흐리게"
+ },
+ "w_s1": {
+  "message": "게임을 스포일러할 수 있는 영상, 게시물, 댓글, 검색 추천을 그 자리에서 흐리게 가립니다."
+ },
+ "w_s2_t": {
+  "message": "보려면 두 번 클릭"
+ },
+ "w_s2": {
+  "message": "첫 클릭은 경고, 두 번째 클릭에 보여 줍니다. 마우스를 올리기만 해서 스포일러를 당하는 일은 없어요."
+ },
+ "w_s3_t": {
+  "message": "나만의 규칙"
+ },
+ "w_s3": {
+  "message": "드라마, 영화, 애니를 추가하세요. 아무 텍스트나 선택하고 오른쪽 클릭 “스포일러로 숨기기”. 10분 일시 중지나 사이트별 끄기도 돼요."
+ },
+ "w_pin": {
+  "message": "팁: Spoiler Shield를 도구 모음에 고정하면 카운터를 보고 보호할 작품을 한 번에 추가할 수 있어요."
+ },
+ "w_private_t": {
+  "message": "개인정보 보호"
+ },
+ "w_private": {
+  "message": "YouTube, Reddit, X 페이지의 텍스트를 브라우저 안에서 읽기만 하고 어디에도 보내지 않습니다. 계정, 분석, 광고가 없습니다."
+ },
+ "media_toggle": {
+  "message": "그 작품 관련 페이지의 이미지와 영상도 흐리게"
+ },
+ "media_label": {
+  "message": "🛡 이 이미지는 {0} 스포일러일 수 있어요\n클릭하면 보기"
+ },
+ "menu_hide": {
+  "message": "“%s” 스포일러로 숨기기"
+ },
+ "my_words": {
+  "message": "내 단어"
+ },
+ "shields_title": {
+  "message": "보호할 작품"
+ },
+ "shields_none": {
+  "message": "아직 보호 중인 것이 없어요. 게임, 드라마, 영화, 애니를 추가하세요."
+ },
+ "add_shield": {
+  "message": "+ 게임, 드라마, 영화, 애니 추가"
+ },
+ "add_close": {
+  "message": "닫기"
+ },
+ "search_presets": {
+  "message": "준비된 목록 검색"
+ },
+ "lib_added": {
+  "message": "추가됨"
+ },
+ "lib_nothing": {
+  "message": "준비된 목록에 없어요. 아래에서 직접 추가하세요."
+ },
+ "custom_title": {
+  "message": "또는 직접 추가"
+ },
+ "custom_name_ph": {
+  "message": "제목, 예: 세브란스"
+ },
+ "custom_names_ph": {
+  "message": "등장인물과 장소, 한 줄에 하나씩 (선택)"
+ },
+ "custom_names_hint": {
+  "message": "결말, 죽음, 유출 같은 스포일러 단어는 13개 언어로 이미 들어 있어요."
+ },
+ "custom_words_ph": {
+  "message": "오른쪽 클릭으로 숨긴 단어"
+ },
+ "custom_add": {
+  "message": "추가"
+ },
+ "custom_need_title": {
+  "message": "먼저 제목을 입력하세요."
+ },
+ "custom_pro_only": {
+  "message": "무료 버전은 직접 추가한 제목이 3개예요. Pro는 원하는 만큼."
+ },
+ "shields_max": {
+  "message": "보호막 최대 개수입니다."
+ },
+ "shield_switch": {
+  "message": "이 보호막 켜기/끄기"
+ },
+ "shield_edit": {
+  "message": "단어 편집"
+ },
+ "shield_done": {
+  "message": "완료"
+ },
+ "shield_delete": {
+  "message": "삭제"
+ },
+ "shield_delete_sure": {
+  "message": "정말요?"
+ },
+ "locked_custom": {
+  "message": "일시 중지: 무료 버전은 직접 추가한 제목 3개만 유지해요. Pro는 모두 유지합니다."
+ },
+ "opt_spoilers": {
+  "message": "스포일러만"
+ },
+ "opt_everything": {
+  "message": "그 작품의 모든 것"
+ },
+ "opt_blur": {
+  "message": "흐리게"
+ },
+ "opt_remove": {
+  "message": "완전히 숨기기"
+ },
+ "opt_action": {
+  "message": "처리 방식"
+ },
+ "kind_game": {
+  "message": "게임"
+ },
+ "kind_movie": {
+  "message": "영화"
+ },
+ "kind_show": {
+  "message": "드라마"
+ },
+ "kind_anime": {
+  "message": "애니"
+ },
+ "kind_custom": {
+  "message": "직접 추가"
+ },
+ "shield_more": {
+  "message": "더보기"
+ },
+ "more_hint": {
+  "message": "필요 없는 항목은 비워 두세요."
+ },
+ "more_locked": {
+  "message": "이 설정은 Pro에 포함됩니다."
+ },
+ "more_upto": {
+  "message": "여기까지 봤어요 (화 / 장)"
+ },
+ "more_release": {
+  "message": "공개일 (그때까지 모두 숨기기)"
+ },
+ "more_until": {
+  "message": "보호 종료일 (그 후 끄기)"
+ },
+ "pro_hide_ai": {
+  "message": "보호 중인 작품의 AI 요약(Google, YouTube) 숨기기"
+ },
+ "pro_trusted": {
+  "message": "신뢰하는 채널과 커뮤니티"
+ },
+ "pro_trusted_ph": {
+  "message": "@채널\nr/서브레딧"
+ },
+ "pro_trusted_hint": {
+  "message": "이들의 영상과 게시물은 숨기지 않아요. 한 줄에 하나씩."
+ },
+ "backup_export": {
+  "message": "보호막을 파일로 저장"
+ },
+ "backup_import": {
+  "message": "파일에서 불러오기"
+ },
+ "backup_done": {
+  "message": "불러왔어요."
+ },
+ "backup_bad": {
+  "message": "Spoiler Shield 백업 파일이 아니에요."
+ }
+}

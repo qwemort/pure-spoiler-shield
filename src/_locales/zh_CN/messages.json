@@ -1,0 +1,359 @@
+{
+ "extDesc": {
+  "message": "在 YouTube、Reddit 和 X 上模糊 GTA VI 以及任何游戏、剧集、电影或动漫的剧透。数据不会离开你的浏览器。"
+ },
+ "tagline": {
+  "message": "在等 GTA VI 或新一季？别被剧透。"
+ },
+ "main_switch": {
+  "message": "开启或关闭保护"
+ },
+ "veil_label": {
+  "message": "🛡 已隐藏 · {0}\n点击显示"
+ },
+ "veil_confirm": {
+  "message": "再点一次即可显示。\n可能会剧透剧情。"
+ },
+ "player_label": {
+  "message": "🛡 这个视频可能剧透 {0}\n点击显示"
+ },
+ "fold_comments": {
+  "message": "🛡 评论已隐藏：可能有 {0} 剧透 · 点击显示"
+ },
+ "fold_confirm": {
+  "message": "再点一次即可显示评论。评论里可能有剧透。"
+ },
+ "perm_title": {
+  "message": "允许 Spoiler Shield 在 YouTube、Reddit 和 X 上运行"
+ },
+ "perm_hint": {
+  "message": "浏览器还没有授予这些网站的访问权限，所以那里什么都不会隐藏。"
+ },
+ "perm_btn": {
+  "message": "允许"
+ },
+ "level": {
+  "message": "要多小心？"
+ },
+ "mode_spoilers": {
+  "message": "只挡剧透"
+ },
+ "mode_spoilers_hint": {
+  "message": "结局、死亡、反转、泄露。新闻和预告片照常显示。"
+ },
+ "mode_everything": {
+  "message": "GTA VI 相关的一切"
+ },
+ "mode_everything_hint": {
+  "message": "任何提到游戏、地点或人物的内容。"
+ },
+ "comments_toggle": {
+  "message": "折叠你所保护作品的相关视频和帖子下的评论"
+ },
+ "btn_pause": {
+  "message": "暂停 10 分钟"
+ },
+ "btn_resume": {
+  "message": "立即恢复"
+ },
+ "btn_site_off": {
+  "message": "在此网站关闭"
+ },
+ "btn_site_on": {
+  "message": "在此网站开启"
+ },
+ "st_off": {
+  "message": "保护已关闭。"
+ },
+ "st_paused": {
+  "message": "暂停至 {0}。"
+ },
+ "st_site_off": {
+  "message": "已在此网站关闭。"
+ },
+ "st_page_clean": {
+  "message": "此页面暂时没有隐藏任何内容。"
+ },
+ "st_not_here": {
+  "message": "此页面不受保护。"
+ },
+ "st_not_here_free": {
+  "message": "在 YouTube、Reddit 和 X 上受保护。Pro 保护所有网站。"
+ },
+ "hidden_total_other": {
+  "message": "条剧透已隐藏"
+ },
+ "hidden_page_other": {
+  "message": "此页面已隐藏 {0} 条"
+ },
+ "pro_title": {
+  "message": "处处保护，更聪明"
+ },
+ "pro_text": {
+  "message": "所有网站：Google、TikTok、Twitch、Discord、新闻。“我看到第 N 集”、每部作品的上映日和截止日期、隐藏 AI 摘要、信任的频道、备份、不限数量的自定义标题。一次付费。"
+ },
+ "pro_buy": {
+  "message": "获取 Pro"
+ },
+ "pro_have_key": {
+  "message": "我有密钥"
+ },
+ "pro_key_placeholder": {
+  "message": "粘贴你的许可证密钥"
+ },
+ "pro_activate": {
+  "message": "激活"
+ },
+ "pro_active": {
+  "message": "Pro 已激活 · {0}"
+ },
+ "pro_everywhere": {
+  "message": "保护所有网站"
+ },
+ "pro_grant": {
+  "message": "在所有网站上允许"
+ },
+ "pro_until": {
+  "message": "保护到"
+ },
+ "pro_until_passed": {
+  "message": "该日期已过，保护已关闭。请选择新日期或清空。"
+ },
+ "pro_remove": {
+  "message": "从此浏览器移除许可证"
+ },
+ "pro_remove_sure": {
+  "message": "再点一次即可移除"
+ },
+ "lic_paste_first": {
+  "message": "请先粘贴密钥。"
+ },
+ "lic_not_valid": {
+  "message": "此密钥无效。"
+ },
+ "lic_not_setup": {
+  "message": "在线密钥尚未准备好。联系我，我会发给你离线密钥。"
+ },
+ "lic_no_connection": {
+  "message": "无法连接许可证服务器。请检查网络后重试。"
+ },
+ "lic_not_found": {
+  "message": "未找到此密钥。"
+ },
+ "lic_busy": {
+  "message": "许可证服务器繁忙，请一分钟后再试。"
+ },
+ "lic_refunded": {
+  "message": "这笔购买已退款。"
+ },
+ "lic_max_activations": {
+  "message": "此密钥已在 {0} 个浏览器中使用。联系我，我会帮你重置。"
+ },
+ "lic_checkout_unavailable": {
+  "message": "即将开放购买。如果你已有密钥，请粘贴在下方。"
+ },
+ "review_title": {
+  "message": "帮你躲过剧透了吗？"
+ },
+ "review_text": {
+  "message": "一条简短的评价能帮其他人在被剧透之前找到它。"
+ },
+ "review_btn": {
+  "message": "写评价"
+ },
+ "later_btn": {
+  "message": "隐藏"
+ },
+ "report_btn": {
+  "message": "有问题？告诉我"
+ },
+ "privacy_line": {
+  "message": "文字只在你的浏览器中检查，不会发送到任何地方。"
+ },
+ "not_affiliated": {
+  "message": "与 Rockstar Games 和 Take-Two Interactive 无关。"
+ },
+ "w_title": {
+  "message": "你已受到保护。"
+ },
+ "w_sub": {
+  "message": "Spoiler Shield 现在会模糊 YouTube、Reddit 和 X 上的 GTA VI 剧透。点击模糊区块两次即可查看。其他游戏、剧集、电影或动漫可以通过工具栏按钮添加。"
+ },
+ "w_s1_t": {
+  "message": "模糊而非删除"
+ },
+ "w_s1": {
+  "message": "可能剧透游戏的视频、帖子、评论和搜索建议会在原位置被模糊。"
+ },
+ "w_s2_t": {
+  "message": "点两次才显示"
+ },
+ "w_s2": {
+  "message": "第一次点击提醒，第二次才显示。鼠标划过不会误看剧透。"
+ },
+ "w_s3_t": {
+  "message": "你的规则"
+ },
+ "w_s3": {
+  "message": "添加剧集、电影或动漫。选中任意文字，右键“将……作为剧透隐藏”。暂停 10 分钟，或在某个网站关闭。"
+ },
+ "w_pin": {
+  "message": "提示：把 Spoiler Shield 固定到工具栏，就能看到计数并一键添加要保护的内容。"
+ },
+ "w_private_t": {
+  "message": "注重隐私"
+ },
+ "w_private": {
+  "message": "它只在你的浏览器中读取 YouTube、Reddit 和 X 页面上的文字，从不发送到任何地方。无需账号，没有统计分析，没有广告。"
+ },
+ "media_toggle": {
+  "message": "在相关页面上也模糊图片和视频"
+ },
+ "media_label": {
+  "message": "🛡 这张图片可能剧透 {0}\n点击显示"
+ },
+ "menu_hide": {
+  "message": "将“%s”作为剧透隐藏"
+ },
+ "my_words": {
+  "message": "我的关键词"
+ },
+ "shields_title": {
+  "message": "要保护的内容"
+ },
+ "shields_none": {
+  "message": "还没有保护任何内容。添加一个游戏、剧集、电影或动漫吧。"
+ },
+ "add_shield": {
+  "message": "+ 添加游戏、剧集、电影或动漫"
+ },
+ "add_close": {
+  "message": "关闭"
+ },
+ "search_presets": {
+  "message": "搜索现成列表"
+ },
+ "lib_added": {
+  "message": "已添加"
+ },
+ "lib_nothing": {
+  "message": "现成列表里没有。在下面自己添加。"
+ },
+ "custom_title": {
+  "message": "或者自己添加"
+ },
+ "custom_name_ph": {
+  "message": "标题，例如：人生切割术"
+ },
+ "custom_names_ph": {
+  "message": "角色和地点，每行一个（可选）"
+ },
+ "custom_names_hint": {
+  "message": "“结局”“死了”“泄露”等剧透词已内置，支持 13 种语言。"
+ },
+ "custom_words_ph": {
+  "message": "通过右键隐藏的关键词"
+ },
+ "custom_add": {
+  "message": "添加"
+ },
+ "custom_need_title": {
+  "message": "请先写标题。"
+ },
+ "custom_pro_only": {
+  "message": "免费版有 3 个自定义标题。Pro 不限数量。"
+ },
+ "shields_max": {
+  "message": "护盾数量已达上限。"
+ },
+ "shield_switch": {
+  "message": "开启或关闭此护盾"
+ },
+ "shield_edit": {
+  "message": "编辑关键词"
+ },
+ "shield_done": {
+  "message": "完成"
+ },
+ "shield_delete": {
+  "message": "删除"
+ },
+ "shield_delete_sure": {
+  "message": "确定？"
+ },
+ "locked_custom": {
+  "message": "已暂停：免费版保留 3 个自定义标题。Pro 保留全部。"
+ },
+ "opt_spoilers": {
+  "message": "只挡剧透"
+ },
+ "opt_everything": {
+  "message": "相关的一切"
+ },
+ "opt_blur": {
+  "message": "模糊"
+ },
+ "opt_remove": {
+  "message": "完全隐藏"
+ },
+ "opt_action": {
+  "message": "处理方式"
+ },
+ "kind_game": {
+  "message": "游戏"
+ },
+ "kind_movie": {
+  "message": "电影"
+ },
+ "kind_show": {
+  "message": "剧集"
+ },
+ "kind_anime": {
+  "message": "动漫"
+ },
+ "kind_custom": {
+  "message": "自定义"
+ },
+ "shield_more": {
+  "message": "更多"
+ },
+ "more_hint": {
+  "message": "不需要的项目留空即可。"
+ },
+ "more_locked": {
+  "message": "这些选项属于 Pro。"
+ },
+ "more_upto": {
+  "message": "我看到第几集 / 第几章"
+ },
+ "more_release": {
+  "message": "上映日（在此之前全部隐藏）"
+ },
+ "more_until": {
+  "message": "保护到（之后关闭）"
+ },
+ "pro_hide_ai": {
+  "message": "隐藏你所保护作品的 AI 摘要（Google、YouTube）"
+ },
+ "pro_trusted": {
+  "message": "信任的频道和社区"
+ },
+ "pro_trusted_ph": {
+  "message": "@频道\nr/子版块"
+ },
+ "pro_trusted_hint": {
+  "message": "它们的视频和帖子永远不会被隐藏。每行一个。"
+ },
+ "backup_export": {
+  "message": "将护盾保存到文件"
+ },
+ "backup_import": {
+  "message": "从文件载入"
+ },
+ "backup_done": {
+  "message": "已载入。"
+ },
+ "backup_bad": {
+  "message": "这不是 Spoiler Shield 的备份文件。"
+ }
+}
