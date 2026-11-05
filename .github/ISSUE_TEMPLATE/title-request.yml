@@ -1,0 +1,34 @@
+name: "Add my game, show, film or anime"
+description: "Ask for a ready-made spoiler list. We add the most requested titles in the next updates."
+title: "Add: "
+labels: ["title-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell us what you want protected. **Please don't write any spoilers here** (no plot, no endings, no deaths). Only the public title.
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: "The official name, e.g. The Last of Us, Frieren, Ghost of Yōtei"
+      placeholder: "Title"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is it?
+      options: [Game, Series, Film, Anime or manga, Sports, Other]
+    validations:
+      required: true
+  - type: input
+    id: other_names
+    attributes:
+      label: Other names (optional)
+      description: "Short names, translations, hashtags people use, e.g. TLOU, Одні з нас, #OnePiece"
+  - type: input
+    id: when
+    attributes:
+      label: When does it come out or end? (optional)
+      description: "A date or 'weekly episodes'. Helps us prioritize."

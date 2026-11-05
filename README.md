@@ -18,6 +18,10 @@ Permissions (see `manifests/`): `storage`, `scripting`, `contextMenus`; content 
 
 This code is licensed under the [PolyForm Shield License 1.0.0](LICENSE). In plain words: you may read it, run it, modify it and share it, **except** that you may not use it to provide a product that competes with Pure Spoiler Shield. This is **source-available**, not open source as defined by the Open Source Initiative. If you are unsure whether a use is allowed, ask: papana44444@gmail.com.
 
+## Want a list for your show, game or anime?
+
+[Request a title](https://github.com/qwemort/pure-spoiler-shield/issues/new?template=title-request.yml) (no spoilers in the request, please). Titles with the most 👍 go first, and your request closes automatically when the list ships.
+
 ## Free and Pro
 
 Free: all ready-made lists and up to 3 custom titles on YouTube, Reddit and X. Pro (one-time, via Gumroad): all sites, "I watched up to episode N", release and end dates, hidden AI summaries, trusted channels, backup. The Pro check is in the code; the code being readable is the point, not a way around it. If you like the extension, buying Pro supports it.
