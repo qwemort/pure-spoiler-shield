@@ -1,6 +1,6 @@
 {
  "extDesc": {
-  "message": "Sfoca gli spoiler di GTA VI e di qualsiasi gioco, serie, film o anime su YouTube, Reddit e X. Nulla lascia il browser."
+  "message": "Sfoca gli spoiler di giochi, serie, film e anime su siti video, social e ricerche. Nulla lascia il browser."
  },
  "tagline": {
   "message": "Aspetti GTA VI o una nuova stagione? Niente spoiler."
@@ -35,17 +35,29 @@
  "level": {
   "message": "Quanta prudenza?"
  },
- "mode_spoilers": {
-  "message": "Solo spoiler"
+ "opt_light": {
+  "message": "Leggero"
  },
- "mode_spoilers_hint": {
-  "message": "Finali, morti, colpi di scena, leak. Notizie e trailer restano."
+ "opt_spoilers": {
+  "message": "Medio"
  },
- "mode_everything": {
-  "message": "Tutto su GTA VI"
+ "opt_everything": {
+  "message": "Rigido"
  },
- "mode_everything_hint": {
-  "message": "Qualsiasi menzione del gioco, dei suoi luoghi e personaggi."
+ "lv_light": {
+  "message": "Copre solo gli spoiler evidenti (finale, morte, leak…)."
+ },
+ "lv_spoilers": {
+  "message": "Copre spoiler e allusioni (trama, finale…). Consigliato."
+ },
+ "lv_everything": {
+  "message": "Copre tutto sul tema, anche trailer e notizie."
+ },
+ "adv_title": {
+  "message": "Avanzate"
+ },
+ "card_tune": {
+  "message": "Regola"
  },
  "comments_toggle": {
   "message": "Comprimi i commenti sotto video e post su ciò che proteggi"
@@ -78,7 +90,7 @@
   "message": "Questa pagina non è protetta."
  },
  "st_not_here_free": {
-  "message": "Protetto su YouTube, Reddit e X. Pro protegge ogni sito."
+  "message": "Protetto su YouTube, Reddit e X — e su Google, TikTok, Instagram se lo consenti. Pro protegge ogni sito."
  },
  "hidden_total_one": {
   "message": "spoiler nascosto"
@@ -96,7 +108,7 @@
   "message": "Ovunque, e più furbo"
  },
  "pro_text": {
-  "message": "Ogni sito: Google, TikTok, Twitch, Discord, notizie. «Ho visto fino all’episodio N», giorno di uscita e data di fine per ogni titolo, riepiloghi IA nascosti, canali fidati, backup, titoli tuoi senza limite. Un solo pagamento."
+  "message": "Tutti gli altri siti: Twitch, Discord, notizie, forum. «Ho visto fino all’episodio N», riassunti IA nascosti, canali fidati, autori sempre nascosti, backup, titoli propri senza limiti. Un solo pagamento."
  },
  "pro_buy": {
   "message": "Prendi Pro"
@@ -290,12 +302,6 @@
  "locked_custom": {
   "message": "In pausa: la versione gratuita tiene 3 titoli tuoi. Pro li tiene tutti."
  },
- "opt_spoilers": {
-  "message": "Solo spoiler"
- },
- "opt_everything": {
-  "message": "Tutto su questo"
- },
  "opt_blur": {
   "message": "Sfoca"
  },
@@ -325,9 +331,6 @@
  },
  "more_hint": {
   "message": "Lascia vuoto ciò che non ti serve."
- },
- "more_locked": {
-  "message": "Queste opzioni fanno parte di Pro."
  },
  "more_upto": {
   "message": "Ho visto fino all’episodio / capitolo"
@@ -361,5 +364,47 @@
  },
  "backup_bad": {
   "message": "Questo file non è un backup di Spoiler Shield."
+ },
+ "more_free": {
+  "message": "Le date funzionano per tutti. «Visto fino a» è parte di Pro."
+ },
+ "more_sites_title": {
+  "message": "Google, TikTok, Instagram"
+ },
+ "more_sites_hint": {
+  "message": "Gratis. Il browser chiede una volta l’accesso a questi siti."
+ },
+ "more_sites_btn": {
+  "message": "Attiva anche lì"
+ },
+ "more_sites_on": {
+  "message": "Attivo: {0}."
+ },
+ "site_changed": {
+  "message": "Sembra che questo sito abbia cambiato layout — alcuni spoiler potrebbero sfuggire."
+ },
+ "copy_report": {
+  "message": "Copia un rapporto"
+ },
+ "report_copied": {
+  "message": "Copiato — incollalo su GitHub. Nessun testo della pagina."
+ },
+ "share_btn": {
+  "message": "Condividi con un amico"
+ },
+ "share_text": {
+  "message": "Spoiler Shield nasconde gli spoiler di giochi, serie e anime su YouTube, Reddit, X, TikTok e Instagram. Gratis, niente esce dal browser."
+ },
+ "share_copied": {
+  "message": "Link copiato"
+ },
+ "menu_wrong": {
+  "message": "Non è uno spoiler? Segnala"
+ },
+ "veil_author": {
+  "message": "🛡 Nascosto: un autore della tua lista\nClicca per mostrare"
+ },
+ "pro_blocked": {
+  "message": "Nascondi sempre questi autori"
  }
 }

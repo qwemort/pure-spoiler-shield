@@ -19,16 +19,75 @@
   const SS = g.SS || (g.SS = {});
 
   /** Lower case, accents removed, every non-letter/digit becomes one space. CJK stays as it is. */
-  SS.normalize = function (s) {
+  function plainNorm(s) {
     return ' ' + String(s || '').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '')
-      .replace(/[’'`´]/g, '').replace(/[^\p{L}\p{N}]+/gu, ' ').replace(/\s+/g, ' ').trim() + ' ';
+      .replace(/([\p{L}\p{N}])[’'`´]s(?![\p{L}\p{N}])/gu, '$1 s').replace(/[’'`´]/g, '').replace(/[^\p{L}\p{N}]+/gu, ' ').replace(/\s+/g, ' ').trim() + ' ';
+  }
+  /**
+   * Lower case, accents removed, every non-letter/digit becomes one space. CJK stays as it is.
+   * 1.2: text to judge also gets the "decoded" forms of tricks people use to slip past filters, appended at the end
+   * (the original words stay where they were, so episode numbers and phrases still work):
+   *   "G T A 6", "G.T.A. 6" → gta6;  "3nding", "sp0iler" → ending, spoiler;  a Cyrillic letter inside a Latin word
+   *   ("gtа" with a Russian а) and the other way round;  one typo in a strong spoiler word ("endin", "spolier").
+   * plain = true: only the cleaning (word lists, own words, search box).
+   */
+  SS.normalize = function (s, plain) {
+    const n = plainNorm(s);
+    return plain ? n : n + decoded(n);
   };
   const CJK = /[぀-ヿ㐀-鿿가-힯ᄀ-ᇿ㄰-㆏]/;   // Hangul syllables become jamo after NFKD — those count as CJK too (Korean particles stick to words)
+
+  // Cyrillic letters that look like Latin ones (and back): "gtа 6" typed with a Russian а, "спойлeр" with a Latin e
+  const CYR2LAT = { 'а': 'a', 'в': 'b', 'е': 'e', 'к': 'k', 'м': 'm', 'н': 'h', 'о': 'o', 'р': 'p', 'с': 'c', 'т': 't', 'у': 'y', 'х': 'x', 'і': 'i', 'ј': 'j', 'ѕ': 's' };
+  const LAT2CYR = { a: 'а', e: 'е', o: 'о', p: 'р', c: 'с', y: 'у', x: 'х', k: 'к', m: 'м', t: 'т', h: 'н', b: 'в', i: 'і' };
+  const LEET = { 0: 'o', 1: 'i', 3: 'e', 4: 'a', 5: 's', 7: 't' };
+  // strong spoiler words that get one typo forgiven (≥5 letters, same first letter; "finale" is not here — "finals")
+  const TYPO = ['ending', 'endings', 'spoiler', 'spoilers', 'leaked', 'betrayal', 'cutscene', 'epilogue', 'walkthrough', 'explained',
+    'концовка', 'концовку', 'спойлер', 'спойлеры', 'кінцівка', 'спойлери', 'zakonczenie'];
+  const TYPO_SET = new Set(TYPO);
+  function oneEdit(a, b) {          // a ≠ b, true when one letter is changed, missing, extra or two neighbours are swapped
+    const la = a.length, lb = b.length;
+    if (Math.abs(la - lb) > 1 || a[0] !== b[0]) return false;
+    let i = 0; while (i < la && i < lb && a[i] === b[i]) i++;
+    if (la === lb) return a.slice(i + 1) === b.slice(i + 1) || (a[i] === b[i + 1] && a[i + 1] === b[i] && a.slice(i + 2) === b.slice(i + 2));
+    return la > lb ? a.slice(i + 1) === b.slice(i) : a.slice(i) === b.slice(i + 1);
+  }
+  const LAT = /[a-z]/, CYR = /[а-яёіїєґ]/;
+  function decoded(n) {
+    const toks = n.trim().split(' ');
+    if (toks.length > 400) return '';                    // long texts: only the plain words (speed)
+    const alt = []; let changed = false; let run = [];
+    const flush = () => {
+      if (run.length >= 3 && run.filter((x) => !/\d/.test(x)).length >= 2) { alt.push(run.join('')); changed = true; } else alt.push(...run);
+      run = [];
+    };
+    for (const t of toks) {
+      if (t.length === 1 && !CJK.test(t)) { run.push(t); continue; }
+      flush();
+      let x = t;
+      if (t.length >= 2 && t.length <= 24 && !CJK.test(t)) {
+        if (LAT.test(t) && CYR.test(t)) {                  // mixed alphabets inside one word → the alphabet most letters use
+          const lat = (t.match(/[a-z]/g) || []).length, cyr = (t.match(/[а-яёіїєґ]/g) || []).length;
+          x = lat >= cyr ? t.replace(/./g, (c) => CYR2LAT[c] || c) : t.replace(/./g, (c) => LAT2CYR[c] || c);
+        }
+        if (/[a-z]/.test(x) && /[013457]/.test(x) && !/^s\d|^e\d|^ep\d|^\d+[a-z]{1,2}$|^[a-z]{1,4}\d+$/.test(x)) {
+          const l = x.replace(/[013457]/g, (c) => LEET[c]); if (/^[a-z]+$/.test(l) && l.length >= 4) x = l;
+        }
+        if (x.length >= 5 && x.length <= 12 && !TYPO_SET.has(x)) {
+          for (const w of TYPO) if (oneEdit(x, w)) { x = w; break; }
+        }
+      }
+      if (x !== t) changed = true;
+      alt.push(x);
+    }
+    flush();
+    return changed ? alt.join(' ') + ' ' : '';
+  }
 
   function compile(list) {
     const words = []; const cjk = [];
     for (const raw of list) {
-      const w = SS.normalize(raw).trim();
+      const w = SS.normalize(raw, true).trim();
       if (!w) continue;
       if (CJK.test(w)) cjk.push(w); else words.push(w);
     }
@@ -117,7 +176,44 @@
     'risveglio', 'si risveglia', 'nuova forma', 'vera forma', 'trasformazione', 'nuovo potere', 'resuscita', 'sopravvive',
     'uyanis', 'uyanış', 'yeni form', 'gercek form', 'gerçek form', 'donusum', 'dönüşüm', 'yeni guc', 'yeni güç', 'diriliyor',
     '覚醒', '新形態', '真の姿', '復活', '觉醒', '新形态', '真身', '复活', '각성', '새로운 형태', '부활');
+  // 1.2: family reveals — "son of Roger", "Luffy's father", "ван пис сын роджера" (Антон 06.11)
+  SPOIL.push('son of', 'daughter of', 'father of', 'mother of', 'is the son', 'is the father', 'real father', 'true father', 'real mother',
+    'his father', 'her father', 'related to', 'сын', 'сына', 'сыном', 'дочь', 'дочери', 'настоящий отец', 'отец луффи', 'син', 'сина', 'донька',
+    'справжній батько', 'syn', 'syna', 'córka', 'corka', 'prawdziwy ojciec', 'sohn von', 'tochter von', 'hijo de', 'hija de', 'fils de', 'figlio di',
+    '息子', '父親', '儿子', '父亲', '아들', '아버지');
+  // 1.2: plot retold in a search snippet — "Санджи … чтобы раз и навсегда победить его … появляется Ника" (Антон 06.11)
+  SPOIL.push('defeats', 'defeated', 'finally defeats', 'is defeated', 'wins against', 'победить', 'победил', 'победила', 'побеждает', 'побеждён', 'побежден',
+    'одолел', 'одолела', 'раз и навсегда', 'перемагає', 'переміг', 'перемогла', 'pokonuje', 'pokonal', 'pokonał', 'besiegt', 'vence a', 'derrota a', 'vainc', 'sconfigge',
+    '倒す', '倒した', '打败', '击败', '이긴다', '쓰러뜨린다');
   const SPOIL_SET = compile(SPOIL);
+
+  /*
+   * 1.2: weak spoiler words. Alone they mean nothing ("The Final Big Preview", "Rockstar Just Revealed … gameplay",
+   * "final trailer", "story trailer"): they count only when the text is not about a trailer/preview/release/price/news.
+   * Strong words (ending, dies, leak, spoiler …) count always. Same rule for every list.
+   */
+  const WEAK = ['final', 'reveal', 'revealed', 'story', 'storyline', 'full story', 'plot', 'chapter', 'credits', 'the end', 'fin', 'la fin',
+    'son', 'ende', 'das ende', 'el final', 'finał', 'finał', 'trama', 'giro', 'enredo', 'hikaye', 'geschichte', 'handlung', 'intrigue',
+    'tue', 'mata', 'full game', 'сюжет', 'сюжета', 'сюжету', 'финал', 'финала', 'фінал', 'фіналу', 'fabula', 'fabuła', '剧情'];
+  const MARKETING = ['trailer', 'trailers', 'teaser', 'teasers', 'preview', 'previews', 'gameplay', 'release', 'release date', 'released',
+    'launch', 'launches', 'price', 'prices', 'pre order', 'preorder', 'pre orders', 'details', 'news', 'update', 'showcase', 'map', 'graphics',
+    'edition', 'reaction', 'reacts', 'review', 'reviews', 'screenshot', 'screenshots', 'announcement', 'announced', 'confirmed', 'rumor',
+    'rumors', 'rumour', 'rumours', 'everything we know', 'missed', 'tráiler', 'avance', 'precio', 'jugabilidad', 'vorschau', 'preis',
+    'трейлер', 'трейлера', 'тизер', 'геймплей', 'дата выхода', 'цена', 'обзор', 'новости', 'превью', 'анонс', 'реакция', 'графика', 'карта',
+    'дата виходу', 'ціна', 'огляд', 'новини', 'реакція', 'zwiastun', 'recenzja', 'cena', 'premiera', 'data premiery', 'zapowiedz', 'zapowiedź',
+    'rozgrywka', 'bande annonce', '予告', 'トレーラー', '発売日', '预告', '发售日', '예고편', '트레일러'];
+  const WEAK_N = new Set(WEAK.map((x) => SS.normalize(x, true).trim()));
+  const STRONG_SET = compile(SPOIL.filter((x) => !WEAK_N.has(SS.normalize(x, true).trim())));
+  const WEAK_SET = compile(WEAK);
+  const MARKETING_SET = compile(MARKETING);
+  /** Is there a spoiler word? Strong — always; weak — only when the text is not about trailers, release, price, news. */
+  SS.hasSpoiler = function (norm, strongOnly) {
+    if (find(STRONG_SET, norm)) return true;
+    if (strongOnly) return false;                    // 1.3 "light" level: only the strong words
+    return !!find(WEAK_SET, norm) && !find(MARKETING_SET, norm);
+  };
+  /** 1.3: three free levels. light = strong spoiler words only; spoilers (medium) = strong + weak; everything (hard) = any mention. */
+  SS.level = function (m) { return m === 'everything' ? 'everything' : m === 'light' ? 'light' : 'spoilers'; };
 
   /*
    * Phrases that say the opposite: "no spoilers", "spoiler-free review", "ending theme". They are cut out before the
@@ -128,7 +224,7 @@
     'без спойлеров', 'без спойлера', 'без спойлерів', 'без спойлеру', 'bez spoilerow', 'bez spoilerów', 'bez spojlerow',
     'ohne spoiler', 'spoilerfrei', 'sans spoiler', 'sans spoilers', 'sin spoilers', 'sin spoiler', 'sem spoilers', 'sem spoiler',
     'senza spoiler', 'spoilersiz', 'spoiler yok', 'ネタバレなし', 'ネタバレ無し', 'ネタバレ無', '无剧透', '無劇透', '不剧透', '스포 없음', '스포없음', '노스포'];
-  const SAFE_NORM = SAFE.map((x) => SS.normalize(x).trim()).filter(Boolean);
+  const SAFE_NORM = SAFE.map((x) => SS.normalize(x, true).trim()).filter(Boolean);
   SS.stripSafe = function (norm) {
     let s = norm;
     for (const p of SAFE_NORM) {
@@ -196,7 +292,7 @@
     { id: 'the-boys', label: 'The Boys', kind: 'show', game: ['the boys season 5', 'the boys s5', 'the boys final season', 'the boys finale', 'the boys amazon', 'пацаны 5 сезон', 'пацаны сериал', 'хлопаки 5 сезон', 'хлопаки серіал', 'ザ・ボーイズ', '黑袍纠察队'], unique: ['homelander', 'billy butcher', 'hughie campbell', 'soldier boy', 'хоумлендер', 'билли бучер', 'хьюи кэмпбелл'], common: ['butcher', 'солдатик', 'hughie', 'starlight', 'a train', 'the deep', 'vought', 'kimiko', 'бучер', 'хьюи', 'старлайт', 'воут'] },
     { id: 'severance', label: 'Severance', kind: 'show', game: ['severance season', 'severance s2', 'severance s3', 'severance finale', 'severance apple tv', 'разделение сериал', 'разделение 3 сезон', 'розділення серіал', 'セヴェランス', '人生切割术'], unique: ['lumon', 'helly r', 'mark scout', 'helena eagan', 'mark s', 'люмон', 'хелли'], common: ['mark', 'helly', 'irving', 'dylan', 'milchick', 'cobel', 'kier', 'марк', 'ирвинг', 'дилан'] },
     // ---------------------------------------------------------------- anime
-    { id: 'one-piece', label: 'One Piece', kind: 'anime', game: ['one piece', 'ван пис', 'ван піс', 'ванпис', 'ワンピース', '海贼王', '航海王', '원피스'], unique: ['monkey d luffy', 'luffy', 'roronoa zoro', 'zoro', 'sanji', 'usopp', 'tony tony chopper', 'nico robin', 'shanks', 'straw hats', 'straw hat pirates', 'joy boy', 'imu', 'imu sama', 'marshall d teach', 'gear 5', 'gear fifth', 'sun god nika', 'elbaph', 'vegapunk', 'gorosei', 'луффи', 'монки д луффи', 'зоро', 'ророноа зоро', 'санджи', 'усопп', 'нико робин', 'шанкс', 'соломенные шляпы', 'джой бой', 'имму', 'гир 5', 'вегапанк', 'эльбаф', 'ルフィ', 'ゾロ', 'サンジ', 'シャンクス', '路飞', '索隆', '香吉士', '루피', '조로'], common: ['nami', 'chopper', 'egghead', 'чоппер', 'franky', 'brook', 'jinbe', 'blackbeard', 'garp', 'kizaru', 'robin', 'нами', 'фрэнки', 'брук', 'джимбей', 'черная борода', 'гарп', 'кизару'] },
+    { id: 'one-piece', label: 'One Piece', kind: 'anime', game: ['one piece', 'onepiece', 'ван пис', 'ван піс', 'ванпис', 'ワンピース', '海贼王', '航海王', '원피스'], unique: ['monkey d luffy', 'luffy', 'roronoa zoro', 'zoro', 'sanji', 'usopp', 'tony tony chopper', 'nico robin', 'shanks', 'straw hats', 'straw hat pirates', 'joy boy', 'imu', 'imu sama', 'marshall d teach', 'gear 5', 'gear fifth', 'sun god nika', 'elbaph', 'vegapunk', 'gorosei', 'луффи', 'монки д луффи', 'зоро', 'ророноа зоро', 'санджи', 'усопп', 'нико робин', 'шанкс', 'соломенные шляпы', 'джой бой', 'имму', 'гир 5', 'вегапанк', 'эльбаф', 'ルフィ', 'ゾロ', 'サンジ', 'シャンクス', '路飞', '索隆', '香吉士', '루피', '조로'], common: ['nami', 'chopper', 'egghead', 'чоппер', 'franky', 'brook', 'jinbe', 'blackbeard', 'garp', 'kizaru', 'robin', 'нами', 'фрэнки', 'брук', 'джимбей', 'черная борода', 'гарп', 'кизару'] },
     { id: 'jjk', label: 'Jujutsu Kaisen', kind: 'anime', game: ['jujutsu kaisen', 'jjk', 'магическая битва', 'магічна битва', '呪術廻戦', '咒术回战', '주술회전'], unique: ['yuji itadori', 'itadori', 'satoru gojo', 'gojo satoru', 'gojo', 'ryomen sukuna', 'sukuna', 'megumi fushiguro', 'nobara kugisaki', 'nobara', 'kenjaku', 'yuta okkotsu', 'culling game', 'юдзи итадори', 'итадори', 'годзё', 'годзе', 'годжо', 'сатору годзё', 'сукуна', 'мэгуми фусигуро', 'нобара', 'кэндзяку', 'юта оккоцу', '虎杖', '五条悟', '宿儺', '宿傩'], common: ['megumi', 'yuta', 'toji', 'maki', 'мэгуми', 'юта', 'тодзи', 'маки'] },
     { id: 'chainsaw-man', label: 'Chainsaw Man', kind: 'anime', game: ['chainsaw man', 'человек бензопила', 'людина бензопила', 'チェンソーマン', '电锯人', '체인소 맨'], unique: ['denji', 'makima', 'aki hayakawa', 'asa mitaka', 'yoru', 'reze', 'pochita', 'дэндзи', 'денджи', 'макима', 'аки хаякава', 'аса митака', 'резе', 'почита'], common: ['power', 'aki', 'asa', 'kobeni', 'пауэр', 'аки', 'кобени'] },
     { id: 'frieren', label: 'Frieren', kind: 'anime', game: ['sousou no frieren', 'frieren anime', 'frieren season', 'frieren staffel', 'frieren episode', 'frieren beyond journeys end', 'фрирен', 'фрірен', 'провожающая в последний путь фрирен', '葬送のフリーレン', '葬送的芙莉莲', '장송의 프리렌'], unique: ['химмель', 'айзен', 'хайтер', 'махт', 'фрирен'], common: ['himmel', 'eisen', 'heiter', 'macht', 'serie', 'ubel', 'fern', 'stark', 'sein', 'frieren', 'ферн', 'штарк'] },
@@ -212,7 +308,25 @@
     { id: 'tokyo-revengers', label: 'Tokyo Revengers', kind: 'anime', game: ['tokyo revengers', 'токийские мстители', 'токійські месники', '東京リベンジャーズ', '东京复仇者', '도쿄 리벤저스'], unique: ['takemichi hanagaki', 'manjiro sano', 'mikey sano', 'draken', 'keisuke baji', 'hinata tachibana', 'tokyo manji', 'такемичи', 'дракен', 'тосва'], common: ['mikey', 'майки', 'takemichi', 'toman', 'baji', 'chifuyu', 'хината'] },
     { id: 'golden-kamuy', label: 'Golden Kamuy', kind: 'anime', game: ['golden kamuy', 'золотое божество', 'золотий камуй', 'ゴールデンカムイ', '黄金神威', '골든 카무이'], unique: ['saichi sugimoto', 'asirpa', 'tokushiro tsurumi', 'hijikata toshizo', 'асирпа', 'сугимото', 'цуруми'], common: ['sugimoto', 'shiraishi', 'ogata', 'tsurumi', 'огата', 'сираиси'] },
     { id: 'boruto', label: 'Boruto: Two Blue Vortex', kind: 'anime', game: ['boruto two blue vortex', 'boruto', 'боруто', 'ボルト', '博人传', '보루토'], unique: ['boruto uzumaki', 'kawaki', 'sarada uchiha', 'eida', 'каваки', 'сарада', 'эйда'], common: ['naruto', 'sasuke', 'himawari', 'code', 'kara', 'наруто', 'саске', 'химавари'] },
-    { id: 'kaiju-8', label: 'Kaiju No. 8', kind: 'anime', game: ['kaiju no 8', 'kaiju number 8', 'kaiju n8', 'кайдзю номер восемь', 'кайдзю 8', 'кайдзю номер 8', '怪獣8号', '怪兽8号', '괴수 8호'], unique: ['kafka hibino', 'mina ashiro', 'kikoru shinomiya', 'reno ichikawa', 'кафка хибино', 'мина асиро', 'кикору'], common: ['kafka', 'kikoru', 'narumi', 'reno', 'кафка', 'наруми'] }
+    { id: 'kaiju-8', label: 'Kaiju No. 8', kind: 'anime', game: ['kaiju no 8', 'kaiju number 8', 'kaiju n8', 'кайдзю номер восемь', 'кайдзю 8', 'кайдзю номер 8', '怪獣8号', '怪兽8号', '괴수 8호'], unique: ['kafka hibino', 'mina ashiro', 'kikoru shinomiya', 'reno ichikawa', 'кафка хибино', 'мина асиро', 'кикору'], common: ['kafka', 'kikoru', 'narumi', 'reno', 'кафка', 'наруми'] },
+    // 1.2 (06.11.2026): new ready lists
+    { id: 'harry-potter-hbo', label: 'Harry Potter (HBO series)', kind: 'show', game: ['harry potter hbo', 'hbo harry potter', 'harry potter series', 'harry potter tv series', 'harry potter and the philosophers stone series', 'harry potter 2026', 'harry potter max', 'гарри поттер сериал', 'гарри поттер hbo', 'гаррі поттер серіал', 'harry potter serial', 'ハリー・ポッター ドラマ', '哈利波特 剧集'], unique: ['dominic mclaughlin', 'alastair stout', 'arabella stanton', 'john lithgow dumbledore', 'paapa essiedu', 'janet mcteer', 'nick frost hagrid', 'доминик маклафлин', 'пааппа эссиеду', 'ник фрост хагрид'], common: ['harry potter', 'hermione', 'dumbledore', 'snape', 'hagrid', 'hogwarts', 'voldemort', 'mcgonagall', 'ron weasley', 'гарри поттер', 'гермиона', 'дамблдор', 'снейп', 'хагрид', 'хогвартс', 'волан-де-морт', 'воландеморт', 'гаррі поттер', 'герміона', 'дамблдор', 'снейп', 'гоґвортс'] },
+    { id: 'blade-runner-2099', label: 'Blade Runner 2099', kind: 'show', game: ['blade runner 2099', 'бегущий по лезвию 2099', 'той, хто біжить по лезу 2099', 'blade runner prime video', 'блейд раннер 2099'], unique: ['olwen blade runner', 'cora blade runner', 'michelle yeoh blade runner', 'hunter schafer blade runner', 'dimitri abold', 'lewis gribben'], common: ['olwen', 'cora', 'replicant', 'replicants', 'blade runner', 'репликант', 'репликанты', 'репліканти', 'michelle yeoh', 'hunter schafer'] },
+    { id: 'only-murders', label: 'Only Murders in the Building', kind: 'show', game: ['only murders in the building season 6', 'only murders season 6', 'only murders s6', 'omitb season 6', 'omitb s6', 'only murders in the building', 'убийства в одном здании 6 сезон', 'убийства в одном здании', 'вбивства в одній будівлі'], unique: ['charles haden savage', 'oliver putnam', 'mabel mora', 'loretta durkin', 'чарльз хейден сэвидж', 'оливер патнэм', 'мэйбл мора'], common: ['charles', 'oliver', 'mabel', 'steve martin', 'martin short', 'selena gomez', 'arconia', 'аркония', 'чарльз', 'оливер', 'мэйбл', 'мейбл', 'cinda canning', 'howard morris'] },
+    { id: 'bad-monkey', label: 'Bad Monkey', kind: 'show', game: ['bad monkey season 2', 'bad monkey s2', 'bad monkey apple tv', 'bad monkey series', 'плохая обезьяна сериал', 'погана мавпа серіал'], unique: ['andrew yancy', 'rosa campesino', 'evan shook', 'neville stafford', 'vince vaughn bad monkey', 'эндрю янси', 'роза кампесино'], common: ['yancy', 'rogelio', 'caitlin', 'spencer', 'delaney', 'dragon queen', 'john malkovich', 'yvonne strahovski', 'янси'] },
+    { id: 'hunting-wives', label: 'The Hunting Wives', kind: 'show', game: ['the hunting wives season 2', 'hunting wives season 2', 'hunting wives s2', 'the hunting wives', 'hunting wives netflix', 'жены охотников сериал', 'мисливські дружини'], unique: ['sophie oneil', 'margo banks', 'jed banks', 'deputy walter flynn', 'wanda salazar', 'софи онил', 'марго бэнкс'], common: ['sophie', 'margo', 'jed', 'graham', 'callie', 'starr', 'brad', 'brittany snow', 'malin akerman', 'софи', 'марго'] },
+    { id: 'dune-prophecy', label: 'Dune: Prophecy', kind: 'show', game: ['dune prophecy season 2', 'dune prophecy s2', 'dune prophecy', 'дюна пророчество 2 сезон', 'дюна пророчество', 'дюна пророцтво'], unique: ['valya harkonnen', 'tula harkonnen', 'desmond hart', 'emily watson dune', 'валя харконнен', 'тула харконнен'], common: ['valya', 'tula', 'desmond', 'harkonnen', 'sisterhood', 'сестринство', 'харконнен', 'валя'] },
+    { id: 'pride-prejudice-netflix', label: 'Pride and Prejudice (Netflix)', kind: 'show', game: ['pride and prejudice netflix', 'pride and prejudice series', 'pride and prejudice 2026', 'гордость и предубеждение сериал', 'гордість і упередження серіал'], unique: ['elizabeth bennet netflix', 'mr darcy netflix', 'netflix darcy', 'netflix elizabeth bennet'], common: ['darcy', 'elizabeth bennet', 'wickham', 'bingley', 'mr bennet', 'longbourn', 'pemberley', 'дарси', 'элизабет беннет', 'уикхем', 'бингли'] },
+    { id: 'the-chosen', label: 'The Chosen', kind: 'show', game: ['the chosen season 6', 'the chosen s6', 'the chosen series', 'избранные 6 сезон', 'вибрані 6 сезон'], unique: ['jonathan roumie', 'dallas jenkins', 'jonathan roumie jesus', 'джонатан руми'], common: ['the chosen', 'избранные', 'вибрані'] },
+    { id: 'attack-on-titan', label: 'Attack on Titan', kind: 'anime', game: ['attack on titan', 'attack on titan 3', 'attack on titan game', 'shingeki no kyojin', 'aot', 'вторжение титанов', 'атака титанов', 'атака титанів', 'вторгнення титанів', 'ataque a los titanes', 'l attaque des titans', 'attacco dei giganti', 'atak tytanow', 'attack on titan final season', '進撃の巨人', '进击的巨人', '진격의 거인'], unique: ['eren yeager', 'eren jaeger', 'mikasa ackerman', 'armin arlert', 'levi ackerman', 'reiner braun', 'zeke yeager', 'historia reiss', 'erwin smith', 'annie leonhart', 'jean kirstein', 'connie springer', 'sasha blouse', 'bertholdt hoover', 'эрен йегер', 'микаса аккерман', 'армин арлерт', 'леви аккерман', 'райнер браун', 'зик йегер', 'хистория райс', 'эрвин смит', 'ерен єгер', 'мікаса аккерман', 'арміну арлерт', 'леві аккерман', '艾伦', 'エレン・イェーガー', 'ミカサ・アッカーマン', 'リヴァイ'], common: ['eren', 'mikasa', 'armin', 'levi', 'reiner', 'zeke', 'historia', 'erwin', 'annie', 'jean', 'titan', 'titans', 'paradis', 'marley', 'эрен', 'микаса', 'армин', 'леви', 'райнер', 'зик', 'титан', 'титаны', 'титани', 'парадиз'] },
+    { id: 'shangri-la-frontier', label: 'Shangri-La Frontier', kind: 'anime', game: ['shangri la frontier', 'shangri-la frontier season 3', 'shangri la frontier s3', 'slf season 3', 'shangri la frontier 3', 'фронтир шангри-ла', 'шангри ла фронтир', 'シャングリラ・フロンティア', '香格里拉·开拓异境'], unique: ['sunraku', 'rakurou hizutome', 'oikatzo', 'sunraku arthur', 'arthur pencilgon', 'санраку', 'оикаццо'], common: ['sunraku', 'vorpal bunny', 'pencilgon'] },
+    { id: 'mashle', label: 'Mashle', kind: 'anime', game: ['mashle', 'mashle season 3', 'mashle final exam', 'mashle magic and muscles', 'мэшл', 'машл', 'мэшл магия и мускулы', 'マッシュル', '白魔法师'], unique: ['mash burnedead', 'lance crown', 'finn ames', 'dot barrett', 'lemon irvine', 'abel walker', 'mash burnedead', 'мэш бёрндэд', 'лэнс краун', 'финн эймс'], common: ['mash', 'finn', 'dot', 'lemon', 'lance', 'abel', 'мэш', 'финн', 'лемон', 'лэнс'] },
+    { id: 'sekiro-no-defeat', label: 'Sekiro: No Defeat', kind: 'anime', game: ['sekiro no defeat', 'sekiro anime', 'sekiro: no defeat', 'sekiro: shadows die twice anime', 'секиро аниме', 'секіро аніме', 'sekiro no defeat anime', 'sekiro shadows die twice', 'секиро тени умирают дважды', 'sekiro', 'секиро', 'sekiro 隻狼', '隻狼'], unique: ['genichiro ashina', 'isshin ashina', 'owl sekiro', 'divine child kuro', 'emma sekiro', 'lady butterfly', 'гэничиро', 'иссин асина', 'гэнитиро', 'исин'], common: ['wolf', 'owl', 'kuro', 'emma', 'ashina', 'genichiro', 'isshin', 'волк', 'сова', 'куро', 'эмма', 'асина'] },
+    { id: 'gundam-seed-freedom-zero', label: 'Gundam SEED Freedom Zero', kind: 'anime', game: ['gundam seed freedom zero', 'gundam seed freedom', 'seed freedom zero', 'mobile suit gundam seed freedom zero', 'гандам сид фридом зеро', '機動戦士ガンダムSEED FREEDOM ZERO', '機動戦士ガンダムSEED FREEDOM'], unique: ['kira yamato', 'lacus clyne', 'athrun zala', 'cagalli yula athha', 'киры ямато', 'лакус клайн', 'атрун зала', 'キラ・ヤマト', 'ラクス・クライン', 'アスラン・ザラ'], common: ['kira', 'lacus', 'athrun', 'cagalli', 'cosmic era', 'kira yamato', 'zaft', 'zaft', 'кира', 'лакус', 'атрун'] },
+    { id: 'professor-layton-nws', label: 'Professor Layton and the New World of Steam', kind: 'game', game: ['professor layton and the new world of steam', 'layton new world of steam', 'layton and the new world of steam', 'professor layton new world of steam', 'layton new world', 'профессор лейтон новый мир пара', 'професор лейтон новий світ пари', 'レイトン教授と蒸気の新世界', '雷顿教授与蒸汽新世界'], unique: [], common: ['layton', 'luke triton', 'emmy altava', 'hershel layton', 'professor layton', 'лейтон', 'лейтона', 'профессор лейтон', 'професор лейтон'] },
+    { id: 'metaphor-refantazio', label: 'Metaphor: ReFantazio', kind: 'game', game: ['metaphor refantazio', 'metaphor: refantazio', 'metaphor refantazio switch 2', 'metaphor refantazio ending', 'метафор рефантазио', 'метафора рефантазио', 'メタファー：リファンタジオ', 'メタファー リファンタジオ', '暗喻幻想', '메타포 리판타지오'], unique: ['hulkenberg', 'strohl', 'grius', 'eupha', 'junah', 'heismay', 'louis guiabern', 'basilio', 'forden', 'euchronia', 'hulkenberg metaphor', 'strohl metaphor', 'eupha metaphor', 'хулькенберг', 'ойфа', 'строл', 'гриус', 'евхрония', 'юхрония'], common: ['grius', 'junah', 'neuras', 'heismay', 'strohl', 'hulkenberg'] },
+    { id: 'xenoblade-3', label: 'Xenoblade Chronicles 3', kind: 'game', game: ['xenoblade chronicles 3', 'xenoblade 3', 'xenoblade chronicles 3 switch 2', 'xenoblade 3 switch 2 edition', 'xenoblade chronicles 3 ending', 'ксеноблэйд хроники 3', 'ксеноблейд 3', 'ゼノブレイド3', '异度神剑3', '제노블레이드3'], unique: ['noah and mio', 'noah mio eunie', 'mio xenoblade', 'eunie xenoblade', 'taion xenoblade', 'lanz xenoblade', 'sena xenoblade', 'cammuravi', 'xenoblade future redeemed', 'ноа и мио', 'эуни', 'тайон', 'ланц', 'сена', 'камурави', 'ノア', 'ミオ'], common: ['noah', 'mio', 'eunie', 'taion', 'lanz', 'sena', 'ethel', 'cammuravi', 'aionios', 'moebius', 'nopon', 'ноа', 'мио', 'эуни', 'тайон', 'ланц', 'аионис', 'мебиус'] },
+    { id: 'zelda-oot-remake', label: 'Zelda: Ocarina of Time (remake)', kind: 'game', game: ['zelda ocarina of time remake', 'ocarina of time remake', 'the legend of zelda ocarina of time remake', 'zelda oot remake', 'ocarina of time switch 2', 'зельда окарина времени ремейк', 'ocarina of time 2026', 'ゼルダの伝説 時のオカリナ リメイク', '塞尔达传说 时之笛 重制'], unique: ['ocarina of time remake', 'oot remake', 'ocarina remake', 'ocarina switch 2', 'окарина времени ремейк', 'окарина времени'], common: ['ganondorf', 'sheik', 'hyrule', 'navi', 'zelda', 'link', 'ocarina', 'ganon', 'ганондорф', 'хайрул', 'нави', 'зельда', 'линк', 'окарина', 'шейк'] }
   ];
   SS.LIBRARY = LIB.map((x) => ({ id: x.id, label: x.label, kind: x.kind, free: true }));
   const compiled = {};
@@ -220,7 +334,8 @@
     if (compiled[id]) return compiled[id];
     const x = LIB.find((p) => p.id === id);
     if (!x) return null;
-    return (compiled[id] = { id: x.id, label: x.label, kind: x.kind, game: compile(x.game), unique: compile(x.unique), common: compile(x.common), spoil: SPOIL_SET });
+    const joined = x.game.filter((w) => /^[a-z0-9 ]+$/.test(w) && w.includes(' ') && w.replace(/ /g, '').length >= 6).map((w) => w.replace(/ /g, ''));   // 1.2: "O N E P I E C E" → onepiece
+    return (compiled[id] = { id: x.id, label: x.label, kind: x.kind, game: compile(x.game.concat(joined)), unique: compile(x.unique), common: compile(x.common), spoil: SPOIL_SET });
   }
   SS.preset = preset;
   SS.PRESETS = { gta6: preset('gta6') };   // kept for older code and tests
@@ -237,22 +352,22 @@
     if (!sh) return null;
     if (sh.preset) {
       const p = preset(sh.preset);
-      return p ? Object.assign({}, p, { key: sh.id, mode: sh.mode === 'everything' ? 'everything' : 'spoilers', action: sh.action === 'remove' ? 'remove' : 'blur' }, proOptions(sh, pro)) : null;
+      return p ? Object.assign({}, p, { key: sh.id, mode: SS.level(sh.mode), action: sh.action === 'remove' ? 'remove' : 'blur' }, proOptions(sh, pro)) : null;
     }
     const titles = lines(sh.title);
     const words = lines(sh.words);      // words added with the right-click menu: hidden whenever they appear
     if (!titles.length && !words.length) return null;
     return { id: 'custom', key: sh.id, label: String(sh.label || titles[0] || words[0]).slice(0, 60), kind: 'custom', game: compile(titles), own: words.length ? compile(words) : null, unique: compile(lines(sh.names)), common: compile([]), spoil: SPOIL_SET,
-      mode: sh.mode === 'everything' ? 'everything' : 'spoilers', action: sh.action === 'remove' ? 'remove' : 'blur', ...proOptions(sh, pro) };
+      mode: SS.level(sh.mode), action: sh.action === 'remove' ? 'remove' : 'blur', ...proOptions(sh, pro) };
   };
   const dayEnd = (d) => (/^\d{4}-\d{2}-\d{2}$/.test(String(d || '')) ? Date.parse(d + 'T23:59:59') : 0);
   const dayStart = (d) => (/^\d{4}-\d{2}-\d{2}$/.test(String(d || '')) ? Date.parse(d + 'T00:00:00') : 0);
   /** Pro options of a shield (ignored without Pro): upTo — "I watched up to episode N"; release — until that day
    *  everything about it is hidden; until — after that day the shield is off. */
   function proOptions(sh, pro) {
-    if (!pro) return { upTo: 0, releaseAt: 0, untilAt: 0 };
+    // 1.2: the dates of a shield (release day, protect until) are free for every list (Антон 06.11); "watched up to N" stays Pro
     const n = parseInt(sh.upTo, 10);
-    return { upTo: n > 0 && n < 100000 ? n : 0, releaseAt: dayStart(sh.release), untilAt: dayEnd(sh.until) };
+    return { upTo: pro && n > 0 && n < 100000 ? n : 0, releaseAt: dayStart(sh.release), untilAt: dayEnd(sh.until) };
   }
   SS.FREE_OWN = 3;   // own titles in the free version (1.1)
 
@@ -284,7 +399,7 @@
 
   /**
    * Judge one block against one shield. Returns '' (fine) or a short reason ('game', 'name', 'own').
-   *   mode: 'spoilers' | 'everything';  context: the page is about it;  own: compiled own words or null (old API)
+   *   mode: 'light' | 'spoilers' | 'everything';  context: the page is about it;  own: compiled own words or null (old API)
    */
   SS.judge = function (norm, preset, mode, context, own) {
     if (own && (own.words.length || own.cjk.length) && find(own, norm)) return 'own';
@@ -298,8 +413,8 @@
     const eps = series || preset.upTo ? SS.episodes(norm, preset.game) : [];
     if (preset.upTo && eps.length) return Math.max.apply(null, eps) > preset.upTo ? 'episode' : '';
     if (mode === 'everything') return why;
-    if (find(preset.spoil, SS.stripSafe(norm))) return why;
-    if (series && eps.length) return 'episode';      // "Sanji … One Piece 1197": a fresh episode is a spoiler too
+    if (SS.hasSpoiler(SS.stripSafe(norm), mode === 'light')) return why;
+    if (series && eps.length && mode !== 'light') return 'episode';      // "Sanji … One Piece 1197": a fresh episode is a spoiler too
     return '';
   };
 

@@ -17,7 +17,8 @@
     const s = await get();
     const g = s.shields.find((x) => x.preset === 'gta6');
     const mode = (g && g.mode) || 'spoilers';
-    document.getElementById('modeSpoilers').setAttribute('aria-checked', String(mode !== 'everything'));
+    document.getElementById('modeLight').setAttribute('aria-checked', String(mode === 'light'));
+    document.getElementById('modeSpoilers').setAttribute('aria-checked', String(mode !== 'everything' && mode !== 'light'));
     document.getElementById('modeEverything').setAttribute('aria-checked', String(mode === 'everything'));
   }
   for (const b of document.querySelectorAll('.ss-seg button')) {

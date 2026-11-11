@@ -23,6 +23,8 @@ const server = http.createServer((req, res) => {
   else if (h.includes('reddit')) f = u.pathname.includes('/comments/') ? 'reddit-post.html' : 'reddit.html';
   else if (h.includes('x.test')) f = 'x.html';
   else if (h.includes('google')) f = 'google.html';
+  else if (h.includes('tiktok')) f = u.pathname.includes('/video/') ? 'tiktok-video.html' : 'tiktok-search.html';
+  else if (h.includes('instagram')) f = 'instagram.html';
   res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }); res.end(fs.readFileSync(path.join(SITE, f)));
 }).listen(0, '127.0.0.1');
 await new Promise((r) => server.once('listening', r));
@@ -41,7 +43,8 @@ ctx.on('page', (pg) => pg.on('pageerror', (e) => errors.push(pg.url().slice(0, 6
 let [sw] = ctx.serviceWorkers(); if (!sw) sw = await ctx.waitForEvent('serviceworker');
 const ID = sw.url().split('/')[2];
 await new Promise((r) => setTimeout(r, 800));
-const welcome = ctx.pages().find((p) => p.url().includes('welcome.html'));
+let welcome;
+for (let i = 0; i < 40 && !welcome; i++) { welcome = ctx.pages().find((p) => p.url().includes('welcome.html')); if (!welcome) await new Promise((r) => setTimeout(r, 200)); }
 ok(!!welcome, 'welcome page opens on install');
 const ext = await ctx.newPage(); await ext.goto(`chrome-extension://${ID}/popup.html`);
 const setSettings = (patch) => ext.evaluate(async (p) => { const { settings } = await chrome.storage.local.get('settings'); await chrome.storage.local.set({ settings: Object.assign({}, settings, p) }); }, patch);
@@ -64,7 +67,7 @@ ok(await veiled(yt, '#v7') === true, 'spoiler only in the thumbnail label (aria-
 ok(await veiled(yt, '#v6') === true, 'card added later (infinite scroll) is hidden');
 ok((await label(yt, '#v1')).includes('Hidden · GTA VI'), 'label names the shield', await label(yt, '#v1'));
 ok(await yt.$eval('#v1', (e) => e.getAttribute('aria-hidden')) === 'true', 'veiled card is hidden from screen readers too');
-ok(await gone(yt, '#s1') === true && await gone(yt, '#s2') === false && await gone(yt, '#s3') === false, 'search suggestion "gta 6 ending explained" hidden, others stay');
+ok(await gone(yt, '#s1') === true && await gone(yt, '#s2') === true && await gone(yt, '#s3') === false, '1.2: search suggestions naming the title hidden (any), "pasta recipe" stays');
 const blur = await yt.$eval('#v1', (e) => getComputedStyle(e, '::after').backdropFilter);
 ok(/blur/.test(blur), 'the veil really blurs (backdrop-filter)', blur);
 // link under the veil must not open; first click arms, second shows
@@ -168,8 +171,10 @@ ok(await veiled(x, '#t1') === true && await veiled(x, '#t2') === false, 'X: spoi
 ok(await gone(x, '#tr1') === true && await gone(x, '#tr2') === false, 'X: trend "GTA 6 ending" removed, other trend stays');
 
 await setSettings({ media: true }); await wait(300);
-await rp.evaluate(() => { const a = document.createElement('a'); a.id = 'pic'; a.href = '#'; const i = document.createElement('img'); i.width = 200; i.height = 120; i.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACw='; a.appendChild(i); document.body.appendChild(a); }); await wait(400);
-ok(await veiled(rp, '#pic') === true, 'pictures toggle: image on a page about the game is blurred');
+await rp.evaluate(() => { const p = document.createElement('shreddit-post'); p.setAttribute('post-title', 'Look at this screenshot'); const a = document.createElement('a'); a.id = 'pic'; a.href = '#'; const i = document.createElement('img'); i.width = 200; i.height = 120; i.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACw='; a.appendChild(i); p.appendChild(a); document.body.appendChild(p);
+  const b = document.createElement('a'); b.id = 'pic2'; b.href = '#'; const j = document.createElement('img'); j.width = 200; j.height = 120; j.src = i.src; b.appendChild(j); document.body.appendChild(b); }); await wait(400);
+ok(await veiled(rp, '#pic') === true, 'pictures toggle: a post picture on a page about the game is blurred');
+ok(await veiled(rp, '#pic2') === false, '1.2: a picture outside posts (menus, panels) stays');
 await setSettings({ media: false });
 
 console.log('6. Counter');
@@ -219,7 +224,7 @@ ok(await veiled(yt, '#v3') === true, 'Pro "watched up to 1190": 1197 hidden');
 await setTitle('#v3', 'How to cook pasta in 10 minutes'); await setShields([GTA()]); await wait(300);
 await ext.evaluate(() => chrome.runtime.sendMessage({ type: 'pss:sync' }));
 const reg = await ext.evaluate(() => chrome.scripting.getRegisteredContentScripts());
-ok(reg.length === 1 && reg[0].matches[0] === '<all_urls>', 'Pro + permission: page script registered for every site', reg.map((x) => x.id));
+ok(reg.some((x) => x.id === 'pss-everywhere' && x.matches[0] === '<all_urls>'), 'Pro + permission: page script registered for every site', reg.map((x) => x.id));
 await g.reload(); await wait(700);
 ok(await veiled(g, '#r1') === true && await veiled(g, '#r2') === false, 'Pro: Google result with spoiler hidden, price guide stays');
 ok(await veiled(g, '#r3') === false && await veiled(g, '#r3a') === true && await veiled(g, '#r3b') === false, 'a box of several results is not covered whole — only the spoiler inside');
@@ -228,7 +233,7 @@ ok(await veiled(g, '#ai1') === true, 'Pro: the AI Overview about the game is hid
 await setSettings({ hideAI: false }); await wait(500);
 ok(await veiled(g, '#ai1') === false, 'AI summaries switch off: shown');
 await setSettings({ hideAI: true });
-ok(await gone(g, '#gs1') === true && await gone(g, '#gs2') === false, 'Pro: Google suggestion "gta 6 ending explained" removed');
+ok(await gone(g, '#gs1') === true && await gone(g, '#gs2') === true, 'Pro: Google suggestions naming the title removed (1.2)');
 const news = await ctx.newPage(); await news.goto(url('news.test')); await wait(700);
 ok(await veiled(news, '#a1') === true && await veiled(news, '#a2') === false, 'Pro: any site — article about the ending hidden, football stays');
 ok(await veiled(news, '#cm1') === true && await veiled(news, '#cm2') === false, 'Pro: any site — spoiler comment hidden');
@@ -237,15 +242,23 @@ ok((await news.$$('.pss-veil')).length === 0, 'Pro "protect until" date passed: 
 await setSettings({ protectUntil: '' }); await wait(400);
 await ext.evaluate(() => chrome.runtime.sendMessage({ type: 'pss:deactivate' }));
 const reg2 = await ext.evaluate(() => chrome.scripting.getRegisteredContentScripts());
-ok(reg2.length === 0, 'license removed: every-site script removed');
+ok(!reg2.some((x) => x.id === 'pss-everywhere') && reg2.some((x) => x.id === 'pss-more'), 'license removed: every-site script removed (free Google/TikTok/Instagram stays)', reg2.map((x) => x.id));
 
 console.log('8. Popup');
 await ext.reload(); await wait(400);
 ok(Number((await ext.locator('#total').textContent()).replace(/\D/g, '')) >= 10, 'popup shows the total');
 ok((await ext.locator('#totalLabel').textContent()) === 'spoilers hidden', 'plural label');
 ok(await ext.locator('.ss-shield').count() === 1 && (await ext.locator('.ss-shield-name').first().textContent()) === 'GTA VI', 'popup lists the GTA VI shield');
+ok(await ext.locator('.ss-shield select').count() === 1 && await ext.locator('.ss-shield select').first().locator('option').count() === 3, 'popup: one level select with three levels, the rest is hidden');
+ok(!(await ext.locator('#adv').evaluate((d) => d.open)), 'popup: rarely needed settings sit under Advanced (closed)');
+await ext.locator('#adv > summary').click(); await wait(100);
+ok(await ext.locator('#pauseBtn').isVisible(), 'popup: Advanced opens and shows pause');
+await ext.locator('.ss-shield select').first().selectOption('light'); await wait(200);
+ok((await getSettings()).shields[0].mode === 'light', 'popup: light level saves');
+ok((await ext.locator('.ss-shield .ss-hint').first().textContent()).length > 10, 'popup: level has a plain-words caption');
 await ext.locator('.ss-shield select').first().selectOption('everything'); await wait(200);
 ok((await getSettings()).shields[0].mode === 'everything', 'popup: shield mode saves');
+await ext.locator('.ss-shield .ss-mini').first().click(); await wait(150);
 await ext.locator('.ss-shield select').nth(1).selectOption('remove'); await wait(200);
 ok((await getSettings()).shields[0].action === 'remove', 'popup: shield action saves');
 await setShields([GTA()]); await ext.reload(); await wait(400);
@@ -260,6 +273,7 @@ sh = (await getSettings()).shields;
 ok(sh.filter((x) => !x.preset).length === 3 && sh[2].title === 'Severance', 'popup: 3 own titles added from the form', sh);
 await ext.fill('#cTitle', 'Andor'); await ext.click('#cAdd'); await wait(200);
 ok((await getSettings()).shields.filter((x) => !x.preset).length === 3 && (await ext.locator('#addErr').textContent()).includes('3 own titles'), 'free: the 4th own title is refused with a note');
+await ext.locator('.ss-shield').nth(1).locator('.ss-mini', { hasText: 'Tune' }).click(); await wait(100);
 await ext.locator('.ss-shield').nth(1).locator('.ss-mini', { hasText: 'More' }).click(); await wait(100);
 ok(await ext.locator('.ss-more input[type="number"]').isDisabled() && (await ext.locator('.ss-more').textContent()).includes('part of Pro'), 'free: "More" shows the Pro options, locked');
 await ext.locator('.ss-shield').nth(1).locator('.ss-x').click();
@@ -267,18 +281,20 @@ ok((await ext.locator('.ss-shield').nth(1).locator('.ss-x').textContent()) === '
 await ext.locator('.ss-shield').nth(1).locator('.ss-x').click(); await wait(200);
 ok((await getSettings()).shields.length === 4, 'popup: delete asks once, then removes the shield');
 ok(await ext.locator('#media').count() === 1, 'popup: pictures toggle exists');
-await ext.click('#pauseBtn'); await wait(150);
+await ext.evaluate(() => { document.getElementById('adv').open = true; }); await ext.click('#pauseBtn'); await wait(150);
 ok((await ext.evaluate(() => chrome.storage.local.get('settings'))).settings.pausedUntil > Date.now(), 'pause button works');
 ok((await ext.locator('#pauseBtn').textContent()) === 'Resume now', 'pause button turns into "Resume now"');
 await ext.click('#pauseBtn');
 await ext.click('#haveKey'); await ext.fill('#key', 'PSPOIL-DEV9-2026-TEST'); await ext.click('#activate'); await wait(300);
 ok(await ext.locator('#proOn').isVisible(), 'popup: key activates, Pro section shows');
 await setShields([GTA(), { id: 'one-piece', preset: 'one-piece', mode: 'everything', action: 'blur', on: true }]); await wait(300);
+await ext.locator('.ss-shield').nth(1).locator('.ss-mini', { hasText: 'Tune' }).click(); await wait(100);
 await ext.locator('.ss-shield').nth(1).locator('.ss-mini', { hasText: 'More' }).click(); await wait(100);
 const upto = ext.locator('.ss-more input[type="number"]');
 ok(!(await upto.isDisabled()), 'Pro: "watched up to" can be filled');
 await upto.fill('1190'); await upto.dispatchEvent('change'); await wait(200);
 ok((await getSettings()).shields[1].upTo === 1190, 'Pro: "watched up to" saves');
+await ext.locator('.ss-shield').first().locator('.ss-mini', { hasText: 'Tune' }).click(); await wait(100);
 ok(await ext.locator('.ss-shield').first().locator('.ss-mini', { hasText: 'More' }).count() === 1, 'GTA VI has "More" too');
 await ext.locator('.ss-shield').first().locator('.ss-mini', { hasText: 'More' }).click(); await wait(100);
 ok(await ext.locator('.ss-shield').first().locator('input[type="number"]').count() === 0, 'a game has no "watched up to" field');
@@ -294,6 +310,60 @@ ok(!(await ext.locator('#permWarn').isVisible()), 'no permission warning when ac
 ok(await ext.locator('#review').isVisible(), 'review card after 25 hidden');
 await ext.click('#reviewHide');
 ok(fs.readdirSync(path.join(EXT, '_locales')).length === 13, '13 languages packed');
+
+console.log('9. 1.2: TikTok and Instagram (free after allowing), media only in previews, video muted, smooth reveal');
+{
+  const reg = await sw.evaluate(async () => (await chrome.scripting.getRegisteredContentScripts()).map((x) => x.id + ':' + x.matches.length));
+  ok(reg.some((x) => x.startsWith('pss-more:')), 'Google/TikTok/Instagram script registered once access is there', reg);
+  // the test build reaches *.test only: register the same files there (the real build uses tiktok.com / instagram.com)
+  await sw.evaluate(async () => { await chrome.scripting.registerContentScripts([{ id: 'pss-test-more', matches: ['*://*.tiktok.test/*', '*://*.instagram.test/*'], js: ['lib/words.js', 'content/sites.js', 'content/shield.js'], css: ['content/shield.css'], runAt: 'document_start' }]); });
+  await setSettings({ media: true, shields: [{ id: 'one-piece', preset: 'one-piece', mode: 'spoilers', action: 'blur', on: true }] });
+  const tt = await ctx.newPage(); await tt.goto(url('www.tiktok.test', '/search?q=one+piece')); await wait(900);
+  ok(await veiled(tt, '#t1') === true, 'TikTok: "One Piece 1198 ending explained" — the whole item (preview + caption) is covered');
+  ok(await tt.$eval('#t1u', (e) => e.classList.contains('pss-keep')), 'TikTok: the author stays visible above the veil');
+  ok(await veiled(tt, '#t3') === true, 'TikTok: "Luffy’s New Form: Gear 6" covered');
+  ok(await veiled(tt, '#t2') === false && await veiled(tt, '#t2a') === true, 'TikTok: a preview without spoiler words is covered only as a picture (page about the title)');
+  ok(await veiled(tt, '#t4') === false, 'TikTok: a block with an editor (draft) is never covered');
+  ok(await veiled(tt, '#c1') === true && await veiled(tt, '#c2') === false, 'TikTok: spoiler comment covered, harmless one stays');
+  ok(await gone(tt, '#sg1') === true && await gone(tt, '#sg2') === false, 'TikTok: suggestion "one piece son of roger" removed, "pasta recipe" stays');
+  const inbox = await tt.evaluate(() => ['#av1', '#nth', '#av2'].map((s) => !!document.querySelector(s).closest('.pss-veil')));
+  ok(inbox.every((x) => !x), 'TikTok: avatars and thumbnails in notifications are never covered', inbox);
+  const narrow = await tt.evaluate(() => Array.from(document.querySelectorAll('.pss-veil')).map((e) => Math.round(e.getBoundingClientRect().width)).filter((w) => w < 100));
+  ok(narrow.length === 0, 'TikTok: no thin veil strips', narrow);
+  await tt.$eval('#t1', (e) => { e.style.width = '120px'; }); await wait(250);
+  ok(await tt.$eval('#t1', (e) => e.classList.contains('pss-tiny')), 'a veil that becomes narrow switches to the small shield (resize)');
+  await tt.click('#t3'); await tt.click('#t3');
+  ok(await veiled(tt, '#t3') === false && await tt.$eval('#t3', (e) => e.classList.contains('pss-fading')), 'shown on purpose: shown at once, the veil fades out on top');
+  await wait(400);
+  ok(await tt.$eval('#t3', (e) => !e.classList.contains('pss-fading')), 'the fade ends by itself');
+  const tv = await ctx.newPage(); await tv.goto(url('www.tiktok.test', '/@logposeee/video/123')); await wait(900);
+  ok(await veiled(tv, '#pl') === true && await tv.$eval('#pl', (e) => e.classList.contains('pss-video')), 'TikTok video page: spoiler video covered with the thick veil');
+  ok(await tv.$eval('#vid', (v) => v.muted === true && v.paused === true), 'TikTok video page: video paused and muted');
+  const ig = await ctx.newPage(); await ig.goto(url('www.instagram.test')); await wait(900);
+  ok(await veiled(ig, '#p1') === true, 'Instagram: spoiler post covered', await ig.$eval('#p1', (e) => e.className));
+  ok(await ig.$eval('#p1u', (e) => !!e.closest('.pss-keep')), 'Instagram: author visible above the veil');
+  ok(await veiled(ig, '#p2') === false, 'Instagram: "Pasta night" stays');
+  const health = await ext.evaluate(async (u) => { const [t] = await chrome.tabs.query({ url: u }); return chrome.tabs.sendMessage(t.id, { type: 'pss:pageCount' }); }, url('www.tiktok.test', '/search?q=one+piece'));
+  ok(health && health.items > 0 && health.changed === false, 'self-check: items found, "site changed" not shown', health);
+  for (const pg of [tt, tv, ig]) await pg.close();
+  await setSettings({ media: false, shields: [GTA()] });
+}
+
+console.log('10. 1.2: speed — a feed of 500 cards');
+{
+  const yt2 = await ctx.newPage(); await yt2.goto(url('www.youtube.test')); await wait(500);
+  const ms = await yt2.evaluate(async () => {
+    const box = document.createElement('div'); document.body.appendChild(box);
+    const t0 = performance.now();
+    for (let i = 0; i < 500; i++) { const c = document.createElement('ytd-rich-item-renderer'); c.innerHTML = '<a id="video-title" title="' + (i % 10 === 0 ? 'GTA 6 ending explained ' + i : 'Cooking video number ' + i) + '">' + 'Video ' + i + '</a><img width="320" height="180">'; box.appendChild(c); }
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    return { ms: performance.now() - t0, hidden: box.querySelectorAll('.pss-veil').length };
+  });
+  console.log('     500 cards: ' + Math.round(ms.ms) + ' ms, hidden ' + ms.hidden);
+  ok(ms.hidden === 50, '500 cards: exactly the 50 spoiler cards hidden', ms);
+  ok(ms.ms < 600, '500 cards handled in under 0.6 s (headless, two frames included)', ms);
+  await yt2.close();
+}
 ok(errors.length === 0, 'no page errors', errors);
 await ctx.close(); server.close();
 console.log(`\n${pass} passed, ${fail} failed`); process.exit(fail ? 1 : 0);

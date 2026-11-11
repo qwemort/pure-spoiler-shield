@@ -1,6 +1,6 @@
 {
  "extDesc": {
-  "message": "在 YouTube、Reddit 和 X 上模糊 GTA VI 以及任何游戏、剧集、电影或动漫的剧透。数据不会离开你的浏览器。"
+  "message": "在视频网站、社交网络和搜索中模糊游戏、剧集、电影和动漫的剧透。数据不会离开你的浏览器。"
  },
  "tagline": {
   "message": "在等 GTA VI 或新一季？别被剧透。"
@@ -35,17 +35,29 @@
  "level": {
   "message": "要多小心？"
  },
- "mode_spoilers": {
-  "message": "只挡剧透"
+ "opt_light": {
+  "message": "轻度"
  },
- "mode_spoilers_hint": {
-  "message": "结局、死亡、反转、泄露。新闻和预告片照常显示。"
+ "opt_spoilers": {
+  "message": "中度"
  },
- "mode_everything": {
-  "message": "GTA VI 相关的一切"
+ "opt_everything": {
+  "message": "严格"
  },
- "mode_everything_hint": {
-  "message": "任何提到游戏、地点或人物的内容。"
+ "lv_light": {
+  "message": "只遮住明显的剧透（结局、死亡、泄露等）。"
+ },
+ "lv_spoilers": {
+  "message": "遮住剧透和暗示（剧情、大结局等）。推荐。"
+ },
+ "lv_everything": {
+  "message": "遮住与之相关的一切，包括预告片和新闻。"
+ },
+ "adv_title": {
+  "message": "高级"
+ },
+ "card_tune": {
+  "message": "设置"
  },
  "comments_toggle": {
   "message": "折叠你所保护作品的相关视频和帖子下的评论"
@@ -78,7 +90,7 @@
   "message": "此页面不受保护。"
  },
  "st_not_here_free": {
-  "message": "在 YouTube、Reddit 和 X 上受保护。Pro 保护所有网站。"
+  "message": "在 YouTube、Reddit 和 X 上受保护；允许后 Google、TikTok、Instagram 也受保护。Pro 保护所有网站。"
  },
  "hidden_total_other": {
   "message": "条剧透已隐藏"
@@ -90,7 +102,7 @@
   "message": "处处保护，更聪明"
  },
  "pro_text": {
-  "message": "所有网站：Google、TikTok、Twitch、Discord、新闻。“我看到第 N 集”、每部作品的上映日和截止日期、隐藏 AI 摘要、信任的频道、备份、不限数量的自定义标题。一次付费。"
+  "message": "其他所有网站：Twitch、Discord、新闻、论坛。“我看到第 N 集”、隐藏 AI 摘要、信任的频道、总是隐藏的作者、备份、自建标题不限数量。一次付费。"
  },
  "pro_buy": {
   "message": "获取 Pro"
@@ -284,12 +296,6 @@
  "locked_custom": {
   "message": "已暂停：免费版保留 3 个自定义标题。Pro 保留全部。"
  },
- "opt_spoilers": {
-  "message": "只挡剧透"
- },
- "opt_everything": {
-  "message": "相关的一切"
- },
  "opt_blur": {
   "message": "模糊"
  },
@@ -319,9 +325,6 @@
  },
  "more_hint": {
   "message": "不需要的项目留空即可。"
- },
- "more_locked": {
-  "message": "这些选项属于 Pro。"
  },
  "more_upto": {
   "message": "我看到第几集 / 第几章"
@@ -355,5 +358,47 @@
  },
  "backup_bad": {
   "message": "这不是 Spoiler Shield 的备份文件。"
+ },
+ "more_free": {
+  "message": "日期人人可用。“看到第几集”属于 Pro。"
+ },
+ "more_sites_title": {
+  "message": "Google、TikTok、Instagram"
+ },
+ "more_sites_hint": {
+  "message": "免费。浏览器会询问一次这些网站的访问权限。"
+ },
+ "more_sites_btn": {
+  "message": "在那里也开启"
+ },
+ "more_sites_on": {
+  "message": "已开启：{0}。"
+ },
+ "site_changed": {
+  "message": "这个网站好像改了版面，部分剧透可能漏掉。"
+ },
+ "copy_report": {
+  "message": "复制报告"
+ },
+ "report_copied": {
+  "message": "已复制，请粘贴到 GitHub。不含页面文字。"
+ },
+ "share_btn": {
+  "message": "分享给朋友"
+ },
+ "share_text": {
+  "message": "Spoiler Shield 隐藏 YouTube、Reddit、X、TikTok 和 Instagram 上的游戏、剧集和动漫剧透。免费，数据不离开浏览器。"
+ },
+ "share_copied": {
+  "message": "链接已复制"
+ },
+ "menu_wrong": {
+  "message": "不是剧透？反馈"
+ },
+ "veil_author": {
+  "message": "🛡 已隐藏：你列表中的作者\n点击显示"
+ },
+ "pro_blocked": {
+  "message": "总是隐藏这些作者"
  }
 }

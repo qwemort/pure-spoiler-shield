@@ -1,6 +1,6 @@
 {
  "extDesc": {
-  "message": "YouTube、Reddit、X で GTA VI やあらゆるゲーム、ドラマ、映画、アニメのネタバレをぼかします。データはブラウザの外に出ません。"
+  "message": "動画サイト・SNS・検索で、ゲーム・ドラマ・映画・アニメのネタバレをぼかします。データはブラウザの外に出ません。"
  },
  "tagline": {
   "message": "GTA VI や新シーズンを待っている？ネタバレを避けよう。"
@@ -35,17 +35,29 @@
  "level": {
   "message": "どこまで慎重に？"
  },
- "mode_spoilers": {
-  "message": "ネタバレだけ"
+ "opt_light": {
+  "message": "ゆるめ"
  },
- "mode_spoilers_hint": {
-  "message": "エンディング、死亡、どんでん返し、リーク。ニュースやトレーラーは表示。"
+ "opt_spoilers": {
+  "message": "ふつう"
  },
- "mode_everything": {
-  "message": "GTA VI に関するすべて"
+ "opt_everything": {
+  "message": "きびしめ"
  },
- "mode_everything_hint": {
-  "message": "ゲーム、その場所や人物への言及すべて。"
+ "lv_light": {
+  "message": "はっきりしたネタバレだけ隠します（結末・死亡・リークなど）。"
+ },
+ "lv_spoilers": {
+  "message": "ネタバレとほのめかしを隠します（ストーリー・最終回など）。おすすめ。"
+ },
+ "lv_everything": {
+  "message": "予告編やニュースも含め、関連するものすべてを隠します。"
+ },
+ "adv_title": {
+  "message": "詳細設定"
+ },
+ "card_tune": {
+  "message": "調整"
  },
  "comments_toggle": {
   "message": "守っている作品の動画や投稿のコメントを折りたたむ"
@@ -78,7 +90,7 @@
   "message": "このページは保護されていません。"
  },
  "st_not_here_free": {
-  "message": "YouTube・Reddit・X で保護中。Pro ならすべてのサイトを保護。"
+  "message": "YouTube・Reddit・X で保護中。許可すれば Google・TikTok・Instagram でも。Pro ならすべてのサイト。"
  },
  "hidden_total_other": {
   "message": "件のネタバレを非表示"
@@ -90,7 +102,7 @@
   "message": "どこでも、もっと賢く"
  },
  "pro_text": {
-  "message": "すべてのサイト：Google、TikTok、Twitch、Discord、ニュース。「第N話まで視聴済み」、作品ごとの公開日と終了日、AI 要約の非表示、信頼するチャンネル、バックアップ、自分のタイトル無制限。支払いは一度だけ。"
+  "message": "その他すべてのサイト：Twitch、Discord、ニュース、フォーラム。「第N話まで見た」、AI 要約の非表示、信頼できるチャンネル、常に隠す投稿者、バックアップ、自分のタイトル無制限。支払いは一度だけ。"
  },
  "pro_buy": {
   "message": "Pro を入手"
@@ -284,12 +296,6 @@
  "locked_custom": {
   "message": "一時停止中：無料版で使える自分のタイトルは 3 つです。Pro ならすべて使えます。"
  },
- "opt_spoilers": {
-  "message": "ネタバレだけ"
- },
- "opt_everything": {
-  "message": "その作品のすべて"
- },
  "opt_blur": {
   "message": "ぼかす"
  },
@@ -319,9 +325,6 @@
  },
  "more_hint": {
   "message": "不要な項目は空欄のままで大丈夫です。"
- },
- "more_locked": {
-  "message": "これらの設定は Pro に含まれます。"
  },
  "more_upto": {
   "message": "視聴済みの話数 / 章"
@@ -355,5 +358,47 @@
  },
  "backup_bad": {
   "message": "Spoiler Shield のバックアップファイルではありません。"
+ },
+ "more_free": {
+  "message": "日付は誰でも使えます。「ここまで見た」は Pro。"
+ },
+ "more_sites_title": {
+  "message": "Google、TikTok、Instagram"
+ },
+ "more_sites_hint": {
+  "message": "無料。ブラウザがこれらのサイトへのアクセスを一度だけ確認します。"
+ },
+ "more_sites_btn": {
+  "message": "そこでもオンにする"
+ },
+ "more_sites_on": {
+  "message": "オン：{0}。"
+ },
+ "site_changed": {
+  "message": "このサイトはレイアウトが変わったようです。一部のネタバレが漏れるかもしれません。"
+ },
+ "copy_report": {
+  "message": "レポートをコピー"
+ },
+ "report_copied": {
+  "message": "コピーしました。GitHub に貼り付けてください。ページの文章は含みません。"
+ },
+ "share_btn": {
+  "message": "友だちに教える"
+ },
+ "share_text": {
+  "message": "Spoiler Shield は YouTube・Reddit・X・TikTok・Instagram のゲーム、ドラマ、アニメのネタバレを隠します。無料、データはブラウザの外に出ません。"
+ },
+ "share_copied": {
+  "message": "リンクをコピーしました"
+ },
+ "menu_wrong": {
+  "message": "ネタバレじゃない？報告する"
+ },
+ "veil_author": {
+  "message": "🛡 非表示：リストの投稿者\nクリックで表示"
+ },
+ "pro_blocked": {
+  "message": "この投稿者は常に隠す"
  }
 }

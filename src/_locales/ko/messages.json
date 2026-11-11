@@ -1,6 +1,6 @@
 {
  "extDesc": {
-  "message": "YouTube, Reddit, X에서 GTA VI와 모든 게임, 드라마, 영화, 애니의 스포일러를 흐리게 합니다. 데이터는 브라우저 밖으로 나가지 않습니다."
+  "message": "동영상 사이트, SNS, 검색에서 게임, 드라마, 영화, 애니 스포일러를 흐리게 합니다. 데이터는 브라우저 밖으로 나가지 않습니다."
  },
  "tagline": {
   "message": "GTA VI나 새 시즌을 기다리나요? 스포일러를 피하세요."
@@ -35,17 +35,29 @@
  "level": {
   "message": "얼마나 조심할까요?"
  },
- "mode_spoilers": {
-  "message": "스포일러만"
+ "opt_light": {
+  "message": "약하게"
  },
- "mode_spoilers_hint": {
-  "message": "엔딩, 죽음, 반전, 유출. 뉴스와 트레일러는 그대로."
+ "opt_spoilers": {
+  "message": "보통"
  },
- "mode_everything": {
-  "message": "GTA VI의 모든 것"
+ "opt_everything": {
+  "message": "강하게"
  },
- "mode_everything_hint": {
-  "message": "게임, 장소, 인물에 대한 모든 언급."
+ "lv_light": {
+  "message": "확실한 스포일러만 가립니다(결말, 죽음, 유출 등)."
+ },
+ "lv_spoilers": {
+  "message": "스포일러와 암시를 가립니다(줄거리, 피날레 등). 추천."
+ },
+ "lv_everything": {
+  "message": "예고편과 뉴스까지 관련된 모든 것을 가립니다."
+ },
+ "adv_title": {
+  "message": "고급"
+ },
+ "card_tune": {
+  "message": "설정"
  },
  "comments_toggle": {
   "message": "보호 중인 작품의 영상과 게시물 아래 댓글 접기"
@@ -78,7 +90,7 @@
   "message": "이 페이지는 보호되지 않습니다."
  },
  "st_not_here_free": {
-  "message": "YouTube, Reddit, X에서 보호 중. Pro는 모든 사이트를 보호합니다."
+  "message": "YouTube, Reddit, X에서 보호 중. 허용하면 Google, TikTok, Instagram에서도. Pro는 모든 사이트."
  },
  "hidden_total_other": {
   "message": "개의 스포일러를 가림"
@@ -90,7 +102,7 @@
   "message": "어디서나, 더 똑똑하게"
  },
  "pro_text": {
-  "message": "모든 사이트: Google, TikTok, Twitch, Discord, 뉴스. “N화까지 봤어요”, 작품별 공개일과 종료일, AI 요약 숨기기, 신뢰하는 채널, 백업, 직접 추가한 제목 무제한. 한 번만 결제."
+  "message": "그 밖의 모든 사이트: Twitch, Discord, 뉴스, 포럼. “N화까지 봤어요”, AI 요약 숨기기, 신뢰하는 채널, 항상 숨길 작성자, 백업, 내 작품 무제한. 한 번만 결제."
  },
  "pro_buy": {
   "message": "Pro 받기"
@@ -284,12 +296,6 @@
  "locked_custom": {
   "message": "일시 중지: 무료 버전은 직접 추가한 제목 3개만 유지해요. Pro는 모두 유지합니다."
  },
- "opt_spoilers": {
-  "message": "스포일러만"
- },
- "opt_everything": {
-  "message": "그 작품의 모든 것"
- },
  "opt_blur": {
   "message": "흐리게"
  },
@@ -319,9 +325,6 @@
  },
  "more_hint": {
   "message": "필요 없는 항목은 비워 두세요."
- },
- "more_locked": {
-  "message": "이 설정은 Pro에 포함됩니다."
  },
  "more_upto": {
   "message": "여기까지 봤어요 (화 / 장)"
@@ -355,5 +358,47 @@
  },
  "backup_bad": {
   "message": "Spoiler Shield 백업 파일이 아니에요."
+ },
+ "more_free": {
+  "message": "날짜는 누구나 쓸 수 있습니다. “여기까지 봤어요”는 Pro."
+ },
+ "more_sites_title": {
+  "message": "Google, TikTok, Instagram"
+ },
+ "more_sites_hint": {
+  "message": "무료. 브라우저가 이 사이트들에 대한 접근을 한 번 묻습니다."
+ },
+ "more_sites_btn": {
+  "message": "거기서도 켜기"
+ },
+ "more_sites_on": {
+  "message": "켜짐: {0}."
+ },
+ "site_changed": {
+  "message": "이 사이트의 레이아웃이 바뀐 것 같습니다. 일부 스포일러가 새어 나올 수 있어요."
+ },
+ "copy_report": {
+  "message": "보고서 복사"
+ },
+ "report_copied": {
+  "message": "복사했습니다. GitHub에 붙여 넣으세요. 페이지 글은 없습니다."
+ },
+ "share_btn": {
+  "message": "친구에게 공유"
+ },
+ "share_text": {
+  "message": "Spoiler Shield는 YouTube, Reddit, X, TikTok, Instagram의 게임, 드라마, 애니 스포일러를 숨깁니다. 무료, 데이터는 브라우저 밖으로 나가지 않아요."
+ },
+ "share_copied": {
+  "message": "링크를 복사했습니다"
+ },
+ "menu_wrong": {
+  "message": "스포일러가 아닌가요? 신고"
+ },
+ "veil_author": {
+  "message": "🛡 숨김: 목록에 있는 작성자\n클릭하면 표시"
+ },
+ "pro_blocked": {
+  "message": "이 작성자는 항상 숨기기"
  }
 }

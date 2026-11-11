@@ -124,3 +124,13 @@ button, input, textarea { font: inherit; color: inherit; }
 .ss-mini.ss-on { color: var(--gold); }
 .ss-field.ss-col { display: flex; flex-direction: column; align-items: stretch; gap: 4px; }
 .ss-field.ss-col textarea { width: 100%; background: rgba(0, 0, 0, .3); border: 1px solid var(--border); border-radius: 9px; padding: 6px 8px; font-size: 12px; color: var(--text); resize: vertical; }
+/* 1.2: "this site may have changed" line in the hero */
+.ss-changed { margin-top: 8px; font-size: 12px; color: #ffd23f; line-height: 1.35; }
+.ss-changed .ss-link { color: #2de2e6; font-size: 12px; }
+.ss-links .ss-link { font: inherit; }
+
+/* 1.3: rarely needed settings live under "Advanced" */
+.ss-adv > summary { cursor: pointer; color: var(--muted); font-size: 13px; padding: 6px 2px; list-style: none; }
+.ss-adv > summary::-webkit-details-marker { display: none; }
+.ss-adv > summary::before { content: '▸ '; }
+.ss-adv[open] > summary::before { content: '▾ '; }

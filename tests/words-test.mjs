@@ -26,6 +26,17 @@ for (const t of ['GTA 6 trailer 3 reaction', 'gta vi price', 'Leonida map size',
 ok(j('Jason is so funny', 'everything', true) !== '', 'everything + GTA page: common name hidden');
 for (const t of ['Jason Momoa new movie', 'Vice City Stories review', 'GTA 5 heists guide', 'my friend Brian'])
   ok(j(t, 'everything') === '', 'everything mode keeps: ' + t, j(t, 'everything'));
+// 1.3 three levels: light hides only strong words, medium adds weak ones, hard hides any mention
+for (const t of ['GTA 6 ENDING EXPLAINED', 'GTA VI: who dies at the end?', 'Grand Theft Auto VI story leak', 'ГТА 6 концовка — разбор', 'GTA 6 spoilers'])
+  ok(j(t, 'light') !== '', 'light hides strong: ' + t, t);
+for (const t of ['GTA 6 final thoughts', 'GTA 6 story', 'GTA 6 plot', 'ГТА 6 сюжет', 'GTA 6 trailer 3 reaction', 'GTA 6 release date'])
+  ok(j(t, 'light') === '', 'light keeps: ' + t, j(t, 'light'));
+for (const t of ['GTA 6 final thoughts', 'ГТА 6 сюжет'])
+  ok(j(t, 'spoilers') !== '', 'medium hides weak: ' + t);
+ok(j('GTA 6 trailer 3 reaction', 'everything') !== '', 'hard hides trailers');
+ok(j('Jason dies in the end lol', 'light', true) !== '', 'light + GTA page: strong word with common name hidden');
+ok(SS.level('light') === 'light' && SS.level('everything') === 'everything' && SS.level('x') === 'spoilers' && SS.level() === 'spoilers', 'SS.level normalizes');
+
 // own words
 const own = SS.ownWords('Breaking Bad\n Walter White, Heisenberg');
 ok(j('Walter White ending', 'spoilers', false, own) === 'own', 'own words hidden in any mode');
@@ -101,7 +112,7 @@ const day = (d) => new Date(Date.now() + d * 86400000).toISOString().slice(0, 10
 ok(!!SS.judgeAll(N('GTA 6 trailer reaction'), SS.activeShields([Object.assign({}, gta, { release: day(10) })], true), new Set()), 'Pro release in 10 days: everything hidden before it');
 ok(!SS.judgeAll(N('GTA 6 trailer reaction'), SS.activeShields([Object.assign({}, gta, { release: day(-1) })], true), new Set()), 'after release: back to spoilers only');
 ok(SS.activeShields([Object.assign({}, gta, { until: day(-2) })], true).length === 0 && SS.activeShields([Object.assign({}, gta, { until: day(3) })], true).length === 1, 'Pro until: the shield switches off after that day');
-ok(SS.activeShields([Object.assign({}, gta, { until: day(-2) })], false).length === 1, 'until is ignored without Pro');
+ok(SS.activeShields([Object.assign({}, gta, { until: day(-2) })], false).length === 0, '1.2: until works without Pro too (dates are free)');
 // names that are also ordinary words do not hide alone
 const fr = S1({ id: 'frieren', preset: 'frieren', mode: 'everything' }, false);
 ok(!SS.judgeAll(N('Ich friere, es ist kalt. Der Himmel ist grau'), fr, new Set()), 'German "frieren/Himmel" alone is not the anime');
@@ -110,5 +121,30 @@ ok(!SS.judgeAll(N('Шершни атакуют пасеку'), S1({ id: 'yellowj
 ok(!SS.judgeAll(N('severance pay rules in Poland'), S1({ id: 'severance', preset: 'severance', mode: 'everything' }, false), new Set()), '"severance pay" is not the show');
 ok(!SS.judgeAll(N('the boys went to school'), S1({ id: 'the-boys', preset: 'the-boys', mode: 'everything' }, false), new Set()), '"the boys" phrase is not the show');
 // normalization
-ok(SS.normalize("GTA-6's ÉNDING!!!") === ' gta 6s ending ', 'normalize', SS.normalize("GTA-6's ÉNDING!!!"));
+ok(SS.normalize("GTA-6's ÉNDING!!!") === ' gta 6 s ending ', 'normalize (1.2: possessive “’s” splits off: Luffy’s → luffy s)', SS.normalize("GTA-6's ÉNDING!!!"));
+
+// 1.2: tricks people use to slip past filters, weak words, family reveals — for every list, not only GTA
+{
+  const L = (id) => SS.preset(id);
+  const jj = (id, t, mode = 'spoilers', ctx = false) => SS.judge(SS.normalize(t), L(id), mode, ctx, null);
+  for (const t of ['G T A 6 ending', 'G.T.A. 6 ending', 'gta 6 3nding', 'gta 6 endin', 'gta 6 sp0iler', 'gtа 6 ending', 'GTA 6 spolier', 'ГТA 6 концовка'])
+    ok(jj('gta6', t) !== '', '1.2 decoded hides: ' + t, t);
+  for (const t of ['The Final Big Preview of GTA 6', 'Rockstar Just Revealed GTA 6 gameplay', 'gta 6 final trailer', 'GTA 6 story trailer reaction',
+    'GTA 6 is a 10/10', 'ps5 pro gta6 bundle price', 'top 10 gta 6 details', 'GTA 6 trending', 'GTA 6 spending money', 'I m a gta 6 fan'])
+    ok(jj('gta6', t) === '', '1.2 keeps: ' + t, jj('gta6', t));
+  ok(jj('gta6', 'GTA 6 final mission leaked') !== '', '1.2 strong word beats marketing');
+  ok(jj('gta6', 'GTA 6 ending revealed in new trailer') !== '', '1.2 ending + trailer still hidden');
+  for (const [id, t] of [['one-piece', 'ван пис сын роджера'], ['one-piece', 'One Piece Luffy son of Dragon'], ['one-piece', 'O N E P I E C E ending'],
+    ['one-piece', 'one piece 3nding explained'], ['severance', 'Severance finale explained'], ['severance', 'severance s3 sp0ilers'],
+    ['attack-on-titan', 'Attack on Titan ending explained'], ['harry-potter-hbo', 'Harry Potter HBO series ending leak'], ['one-piece', 'Ван Пис | "One Piece" это таблетка от скуки. Санджи преследует Килингема, чтобы раз и навсегда победить его'], ['jjk', 'JJK chapter 271 leaks']])
+    ok(jj(id, t) !== '', '1.2 ' + id + ' hides: ' + t, t);
+  for (const [id, t] of [['one-piece', 'One Piece final season trailer'], ['severance', 'Severance season 3 final trailer'], ['attack-on-titan', 'Attack on Titan 3 release date revealed'],
+    ['harry-potter-hbo', 'Harry Potter HBO trailer reaction'], ['mashle', 'mashed potatoes ending'], ['gta6', 'GTA 6 beats every sales record']])
+    ok(jj(id, t) === '', '1.2 ' + id + ' keeps: ' + t, jj(id, t));
+  // plain normalize (lists, own words) gets nothing appended
+  ok(SS.normalize('3nding', true) === ' 3nding ', '1.2 plain normalize untouched');
+  // every list compiles and hides its own name in "everything"
+  for (const p of SS.LIBRARY) { const pr = L(p.id); ok(pr && pr.game.words.length + pr.game.cjk.length > 0, 'list compiles: ' + p.id); }
+  ok(SS.LIBRARY.length >= 52, '1.2 library has the new lists', SS.LIBRARY.length);
+}
 console.log(`${pass} passed, ${fail} failed`); process.exit(fail ? 1 : 0);

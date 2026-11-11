@@ -24,6 +24,7 @@
     <div class="ss-count" id="total">0</div>
     <div class="ss-count-label" id="totalLabel"></div>
     <div class="ss-page" id="pageLine"></div>
+    <div class="ss-changed" id="changedLine" hidden><span data-i18n="site_changed"></span> <button class="ss-link" id="copyReport" data-i18n="copy_report"></button></div>
   </section>
 
   <section class="ss-card ss-warn" id="permWarn" hidden>
@@ -48,6 +49,14 @@
     </div>
   </section>
 
+  <details class="ss-adv" id="adv">
+  <summary data-i18n="adv_title"></summary>
+  <section class="ss-card" id="moreBox">
+    <div class="ss-label" data-i18n="more_sites_title"></div>
+    <div class="ss-hint" id="moreLine"></div>
+    <button class="ss-btn ss-btn-main ss-btn-small" id="moreBtn" data-i18n="more_sites_btn"></button>
+  </section>
+
   <section class="ss-card">
     <label class="ss-switch ss-row"><input type="checkbox" id="comments"><span class="ss-track" aria-hidden="true"></span><span data-i18n="comments_toggle"></span></label>
     <label class="ss-switch ss-row"><input type="checkbox" id="media"><span class="ss-track" aria-hidden="true"></span><span data-i18n="media_toggle"></span></label>
@@ -56,6 +65,7 @@
       <button class="ss-btn ss-btn-small" id="siteBtn" hidden></button>
     </div>
   </section>
+  </details>
 
   <section class="ss-card ss-pro" id="proBox">
     <div class="ss-pro-head"><span class="ss-badge">PRO</span><b data-i18n="pro_title"></b></div>
@@ -80,6 +90,7 @@
       <label class="ss-switch ss-row"><input type="checkbox" id="hideAI"><span class="ss-track" aria-hidden="true"></span><span data-i18n="pro_hide_ai"></span></label>
       <label class="ss-field ss-col"><span data-i18n="pro_trusted"></span><textarea id="trusted" rows="2" spellcheck="false" data-i18n-placeholder="pro_trusted_ph"></textarea></label>
       <div class="ss-hint" data-i18n="pro_trusted_hint"></div>
+      <label class="ss-field ss-col"><span data-i18n="pro_blocked"></span><textarea id="blocked" rows="2" spellcheck="false" data-i18n-placeholder="pro_trusted_ph"></textarea></label>
       <div class="ss-row2"><button class="ss-btn ss-btn-small" id="exportBtn" data-i18n="backup_export"></button><button class="ss-btn ss-btn-small" id="importBtn" data-i18n="backup_import"></button><input type="file" id="importFile" accept="application/json,.json" hidden></div>
       <div class="ss-hint" id="backupNote" hidden></div>
       <button class="ss-link" id="removeLic" data-i18n="pro_remove"></button>
@@ -97,7 +108,7 @@
 
   <footer class="ss-foot">
     <div data-i18n="privacy_line"></div>
-    <div class="ss-links"><a id="reviewLink" target="_blank" rel="noopener" data-i18n="review_btn"></a><a id="mailLink" target="_blank" rel="noopener" data-i18n="report_btn"></a></div>
+    <div class="ss-links"><button class="ss-link" id="shareBtn" data-i18n="share_btn"></button><a id="reviewLink" target="_blank" rel="noopener" data-i18n="review_btn"></a><a id="mailLink" target="_blank" rel="noopener" data-i18n="report_btn"></a></div>
     <div class="ss-legal" data-i18n="not_affiliated"></div>
   </footer>
 </main>

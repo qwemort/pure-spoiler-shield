@@ -1,6 +1,6 @@
 {
  "extDesc": {
-  "message": "Difumina spoilers de GTA VI y de cualquier juego, serie, película o anime en YouTube, Reddit y X. Nada sale de tu navegador."
+  "message": "Difumina spoilers de juegos, series, películas y anime en sitios de video, redes sociales y búsquedas. Nada sale de tu navegador."
  },
  "tagline": {
   "message": "¿Esperas GTA VI o una nueva temporada? Sin spoilers."
@@ -35,17 +35,29 @@
  "level": {
   "message": "¿Con cuánto cuidado?"
  },
- "mode_spoilers": {
-  "message": "Solo spoilers"
+ "opt_light": {
+  "message": "Ligero"
  },
- "mode_spoilers_hint": {
-  "message": "Finales, muertes, giros, filtraciones. Noticias y tráilers se quedan."
+ "opt_spoilers": {
+  "message": "Medio"
  },
- "mode_everything": {
-  "message": "Todo sobre GTA VI"
+ "opt_everything": {
+  "message": "Estricto"
  },
- "mode_everything_hint": {
-  "message": "Cualquier mención del juego, sus lugares y personajes."
+ "lv_light": {
+  "message": "Tapa solo los spoilers claros (final, muerte, filtración…)."
+ },
+ "lv_spoilers": {
+  "message": "Tapa spoilers e indirectas (trama, final…). Recomendado."
+ },
+ "lv_everything": {
+  "message": "Tapa todo sobre el tema, incluso tráileres y noticias."
+ },
+ "adv_title": {
+  "message": "Avanzado"
+ },
+ "card_tune": {
+  "message": "Ajustar"
  },
  "comments_toggle": {
   "message": "Plegar comentarios bajo videos y posts sobre lo que proteges"
@@ -78,7 +90,7 @@
   "message": "Esta página no está protegida."
  },
  "st_not_here_free": {
-  "message": "Protegido en YouTube, Reddit y X. Pro protege todos los sitios."
+  "message": "Protegido en YouTube, Reddit y X — y en Google, TikTok, Instagram si lo permites. Pro protege todos los sitios."
  },
  "hidden_total_one": {
   "message": "spoiler oculto"
@@ -96,7 +108,7 @@
   "message": "En todas partes y más listo"
  },
  "pro_text": {
-  "message": "Todos los sitios: Google, TikTok, Twitch, Discord, noticias. «Vi hasta el episodio N», día de estreno y fecha final para cada título, resúmenes de IA ocultos, canales de confianza, copia de seguridad, títulos propios sin límite. Un solo pago."
+  "message": "Todos los demás sitios: Twitch, Discord, noticias, foros. «Vi hasta el episodio N», resúmenes de IA ocultos, canales de confianza, autores que siempre ocultas, copia de seguridad, títulos propios sin límite. Un solo pago."
  },
  "pro_buy": {
   "message": "Conseguir Pro"
@@ -290,12 +302,6 @@
  "locked_custom": {
   "message": "En pausa: la versión gratis mantiene 3 títulos propios. Pro los mantiene todos."
  },
- "opt_spoilers": {
-  "message": "Solo spoilers"
- },
- "opt_everything": {
-  "message": "Todo sobre eso"
- },
  "opt_blur": {
   "message": "Difuminar"
  },
@@ -325,9 +331,6 @@
  },
  "more_hint": {
   "message": "Deja vacío lo que no necesites."
- },
- "more_locked": {
-  "message": "Estas opciones son parte de Pro."
  },
  "more_upto": {
   "message": "Vi hasta el episodio / capítulo"
@@ -361,5 +364,47 @@
  },
  "backup_bad": {
   "message": "Este archivo no es una copia de Spoiler Shield."
+ },
+ "more_free": {
+  "message": "Las fechas funcionan para todos. «Visto hasta» es parte de Pro."
+ },
+ "more_sites_title": {
+  "message": "Google, TikTok, Instagram"
+ },
+ "more_sites_hint": {
+  "message": "Gratis. Tu navegador pide acceso a estos sitios una vez."
+ },
+ "more_sites_btn": {
+  "message": "Activar también ahí"
+ },
+ "more_sites_on": {
+  "message": "Activo: {0}."
+ },
+ "site_changed": {
+  "message": "Parece que este sitio cambió su diseño — algunos spoilers podrían colarse."
+ },
+ "copy_report": {
+  "message": "Copiar informe"
+ },
+ "report_copied": {
+  "message": "Copiado — pégalo en GitHub. Sin texto de la página."
+ },
+ "share_btn": {
+  "message": "Compartir con un amigo"
+ },
+ "share_text": {
+  "message": "Spoiler Shield oculta spoilers de juegos, series y anime en YouTube, Reddit, X, TikTok e Instagram. Gratis, nada sale del navegador."
+ },
+ "share_copied": {
+  "message": "Enlace copiado"
+ },
+ "menu_wrong": {
+  "message": "¿No es spoiler? Avisar"
+ },
+ "veil_author": {
+  "message": "🛡 Oculto: un autor de tu lista\nHaz clic para mostrar"
+ },
+ "pro_blocked": {
+  "message": "Ocultar siempre a estos autores"
  }
 }

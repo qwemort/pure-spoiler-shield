@@ -1,6 +1,6 @@
 {
  "extDesc": {
-  "message": "Verwischt Spoiler zu GTA VI und jedem Spiel, jeder Serie, jedem Film oder Anime auf YouTube, Reddit und X. Alles bleibt lokal."
+  "message": "Verwischt Spoiler zu Spielen, Serien, Filmen und Anime in Videoportalen, sozialen Netzwerken und der Suche. Alles bleibt lokal."
  },
  "tagline": {
   "message": "Wartest du auf GTA VI oder eine neue Staffel? Bleib spoilerfrei."
@@ -35,17 +35,29 @@
  "level": {
   "message": "Wie vorsichtig?"
  },
- "mode_spoilers": {
-  "message": "Nur Spoiler"
+ "opt_light": {
+  "message": "Leicht"
  },
- "mode_spoilers_hint": {
-  "message": "Enden, Tode, Wendungen, Leaks. News und Trailer bleiben."
+ "opt_spoilers": {
+  "message": "Mittel"
  },
- "mode_everything": {
-  "message": "Alles zu GTA VI"
+ "opt_everything": {
+  "message": "Streng"
  },
- "mode_everything_hint": {
-  "message": "Jede Erwähnung des Spiels, seiner Orte und Figuren."
+ "lv_light": {
+  "message": "Verdeckt nur eindeutige Spoiler (Ende, Tod, Leak …)."
+ },
+ "lv_spoilers": {
+  "message": "Verdeckt Spoiler und Andeutungen (Handlung, Finale …). Empfohlen."
+ },
+ "lv_everything": {
+  "message": "Verdeckt alles dazu, auch Trailer und News."
+ },
+ "adv_title": {
+  "message": "Erweitert"
+ },
+ "card_tune": {
+  "message": "Anpassen"
  },
  "comments_toggle": {
   "message": "Kommentare unter Videos und Posts zu dem, was du schützt, einklappen"
@@ -78,7 +90,7 @@
   "message": "Diese Seite ist nicht geschützt."
  },
  "st_not_here_free": {
-  "message": "Geschützt auf YouTube, Reddit und X. Pro schützt jede Seite."
+  "message": "Geschützt auf YouTube, Reddit und X — und auf Google, TikTok, Instagram, wenn du es erlaubst. Pro schützt jede Seite."
  },
  "hidden_total_one": {
   "message": "Spoiler versteckt"
@@ -96,7 +108,7 @@
   "message": "Überall und klüger"
  },
  "pro_text": {
-  "message": "Jede Seite: Google, TikTok, Twitch, Discord, News. „Ich habe bis Folge N geschaut“, Erscheinungstag und Enddatum für jeden Titel, ausgeblendete KI-Zusammenfassungen, vertrauenswürdige Kanäle, Backup, eigene Titel ohne Limit. Einmal zahlen."
+  "message": "Alle anderen Seiten: Twitch, Discord, News, Foren. „Bis Folge N gesehen“, ausgeblendete KI-Übersichten, vertrauenswürdige Kanäle, immer ausgeblendete Autoren, Backup, eigene Titel ohne Limit. Eine Zahlung."
  },
  "pro_buy": {
   "message": "Pro holen"
@@ -290,12 +302,6 @@
  "locked_custom": {
   "message": "Pausiert: Die Gratisversion behält 3 eigene Titel. Pro behält alle."
  },
- "opt_spoilers": {
-  "message": "Nur Spoiler"
- },
- "opt_everything": {
-  "message": "Alles darüber"
- },
  "opt_blur": {
   "message": "Verwischen"
  },
@@ -325,9 +331,6 @@
  },
  "more_hint": {
   "message": "Was du nicht brauchst, lass leer."
- },
- "more_locked": {
-  "message": "Diese Optionen gehören zu Pro."
  },
  "more_upto": {
   "message": "Ich habe geschaut bis Folge / Kapitel"
@@ -361,5 +364,47 @@
  },
  "backup_bad": {
   "message": "Das ist kein Spoiler-Shield-Backup."
+ },
+ "more_free": {
+  "message": "Daten funktionieren für alle. „Gesehen bis“ ist Teil von Pro."
+ },
+ "more_sites_title": {
+  "message": "Google, TikTok, Instagram"
+ },
+ "more_sites_hint": {
+  "message": "Kostenlos. Dein Browser fragt einmal nach Zugriff auf diese Seiten."
+ },
+ "more_sites_btn": {
+  "message": "Auch dort einschalten"
+ },
+ "more_sites_on": {
+  "message": "Aktiv: {0}."
+ },
+ "site_changed": {
+  "message": "Diese Seite hat wohl ihr Layout geändert — manche Spoiler könnten durchrutschen."
+ },
+ "copy_report": {
+  "message": "Bericht kopieren"
+ },
+ "report_copied": {
+  "message": "Kopiert — auf GitHub einfügen. Ohne Seitentext."
+ },
+ "share_btn": {
+  "message": "Mit Freunden teilen"
+ },
+ "share_text": {
+  "message": "Spoiler Shield blendet Spoiler zu Spielen, Serien und Anime auf YouTube, Reddit, X, TikTok und Instagram aus. Kostenlos, nichts verlässt den Browser."
+ },
+ "share_copied": {
+  "message": "Link kopiert"
+ },
+ "menu_wrong": {
+  "message": "Kein Spoiler? Melden"
+ },
+ "veil_author": {
+  "message": "🛡 Ausgeblendet: ein Autor auf deiner Liste\nKlicken zum Anzeigen"
+ },
+ "pro_blocked": {
+  "message": "Diese Autoren immer ausblenden"
  }
 }

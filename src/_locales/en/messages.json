@@ -1,6 +1,6 @@
 {
  "extDesc": {
-  "message": "Blurs spoilers for GTA VI and any game, show, film or anime on YouTube, Reddit and X. Nothing leaves your browser."
+  "message": "Blurs spoilers for games, shows, films and anime on video sites, social networks and search. Nothing leaves your browser."
  },
  "tagline": {
   "message": "Waiting for GTA VI or a new season? Stay unspoiled."
@@ -35,17 +35,29 @@
  "level": {
   "message": "How careful?"
  },
- "mode_spoilers": {
-  "message": "Spoilers only"
+ "opt_light": {
+  "message": "Light"
  },
- "mode_spoilers_hint": {
-  "message": "Endings, deaths, twists, leaks. News and trailers stay."
+ "opt_spoilers": {
+  "message": "Medium"
  },
- "mode_everything": {
-  "message": "Everything about GTA VI"
+ "opt_everything": {
+  "message": "Hard"
  },
- "mode_everything_hint": {
-  "message": "Any mention of the game, its places and people."
+ "lv_light": {
+  "message": "Covers only clear spoilers (ending, death, leak…)."
+ },
+ "lv_spoilers": {
+  "message": "Covers spoilers and hints (story, plot, finale…). Recommended."
+ },
+ "lv_everything": {
+  "message": "Covers everything about it, even trailers and news."
+ },
+ "adv_title": {
+  "message": "Advanced"
+ },
+ "card_tune": {
+  "message": "Tune"
  },
  "comments_toggle": {
   "message": "Fold comments under videos and posts about what you protect"
@@ -78,7 +90,7 @@
   "message": "This page is not protected."
  },
  "st_not_here_free": {
-  "message": "Protected on YouTube, Reddit and X. Pro protects every site."
+  "message": "Protected on YouTube, Reddit and X — and on Google, TikTok, Instagram once you allow them. Pro protects every site."
  },
  "hidden_total_one": {
   "message": "spoiler hidden"
@@ -96,7 +108,7 @@
   "message": "Everywhere, and smarter"
  },
  "pro_text": {
-  "message": "Every site: Google, TikTok, Twitch, Discord, news. “I watched up to episode N”, a release day and an end date for each title, hidden AI summaries, trusted channels, backup, unlimited own titles. One payment."
+  "message": "Every other site: Twitch, Discord, news, forums. “I watched up to episode N”, hidden AI summaries, trusted channels, authors you always hide, backup, unlimited own titles. One payment."
  },
  "pro_buy": {
   "message": "Get Pro"
@@ -290,12 +302,6 @@
  "locked_custom": {
   "message": "Paused: the free version keeps 3 own titles. Pro keeps all of them."
  },
- "opt_spoilers": {
-  "message": "Spoilers only"
- },
- "opt_everything": {
-  "message": "Everything about it"
- },
  "opt_blur": {
   "message": "Blur"
  },
@@ -325,9 +331,6 @@
  },
  "more_hint": {
   "message": "Leave empty what you do not need."
- },
- "more_locked": {
-  "message": "These options are part of Pro."
  },
  "more_upto": {
   "message": "I watched up to episode / chapter"
@@ -361,5 +364,47 @@
  },
  "backup_bad": {
   "message": "This file is not a Spoiler Shield backup."
+ },
+ "more_free": {
+  "message": "Dates work for everyone. “Watched up to” is part of Pro."
+ },
+ "more_sites_title": {
+  "message": "Google, TikTok, Instagram"
+ },
+ "more_sites_hint": {
+  "message": "Free. Your browser asks once for access to these sites."
+ },
+ "more_sites_btn": {
+  "message": "Turn on there too"
+ },
+ "more_sites_on": {
+  "message": "On: {0}."
+ },
+ "site_changed": {
+  "message": "This site seems to have changed its layout — some spoilers may slip through."
+ },
+ "copy_report": {
+  "message": "Copy a report"
+ },
+ "report_copied": {
+  "message": "Copied — paste it on GitHub. No page text inside."
+ },
+ "share_btn": {
+  "message": "Share with a friend"
+ },
+ "share_text": {
+  "message": "Spoiler Shield hides spoilers for games, shows and anime on YouTube, Reddit, X, TikTok and Instagram. Free, nothing leaves the browser."
+ },
+ "share_copied": {
+  "message": "Link copied"
+ },
+ "menu_wrong": {
+  "message": "Not a spoiler? Report this blur"
+ },
+ "veil_author": {
+  "message": "🛡 Hidden: an author you always hide\nClick to show"
+ },
+ "pro_blocked": {
+  "message": "Always hide these authors"
  }
 }

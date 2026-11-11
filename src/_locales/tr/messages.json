@@ -1,6 +1,6 @@
 {
  "extDesc": {
-  "message": "YouTube, Reddit ve X’te GTA VI ile her oyun, dizi, film ve animenin spoilerlarını bulanıklaştırır. Hiçbir şey dışarı çıkmaz."
+  "message": "Video sitelerinde, sosyal ağlarda ve aramada oyun, dizi, film ve anime spoilerlarını bulanıklaştırır. Her şey tarayıcıda."
  },
  "tagline": {
   "message": "GTA VI’yı ya da yeni sezonu mu bekliyorsun? Spoiler yeme."
@@ -35,17 +35,29 @@
  "level": {
   "message": "Ne kadar dikkatli?"
  },
- "mode_spoilers": {
-  "message": "Sadece spoilerlar"
+ "opt_light": {
+  "message": "Hafif"
  },
- "mode_spoilers_hint": {
-  "message": "Sonlar, ölümler, sürprizler, sızıntılar. Haberler ve fragmanlar kalır."
+ "opt_spoilers": {
+  "message": "Orta"
  },
- "mode_everything": {
-  "message": "GTA VI ile ilgili her şey"
+ "opt_everything": {
+  "message": "Sert"
  },
- "mode_everything_hint": {
-  "message": "Oyunun, mekânlarının ve karakterlerinin her anılışı."
+ "lv_light": {
+  "message": "Yalnızca açık spoiler’ları kapatır (final, ölüm, sızıntı…)."
+ },
+ "lv_spoilers": {
+  "message": "Spoiler ve ima edenleri kapatır (hikâye, final…). Önerilen."
+ },
+ "lv_everything": {
+  "message": "Konuyla ilgili her şeyi kapatır, fragman ve haberler dahil."
+ },
+ "adv_title": {
+  "message": "Gelişmiş"
+ },
+ "card_tune": {
+  "message": "Ayarla"
  },
  "comments_toggle": {
   "message": "Koruduğun şeyle ilgili video ve gönderilerin altındaki yorumları katla"
@@ -78,7 +90,7 @@
   "message": "Bu sayfa korunmuyor."
  },
  "st_not_here_free": {
-  "message": "YouTube, Reddit ve X’te koruma var. Pro her siteyi korur."
+  "message": "YouTube, Reddit ve X’te koruma var — izin verirsen Google, TikTok ve Instagram’da da. Pro her siteyi korur."
  },
  "hidden_total_one": {
   "message": "spoiler gizlendi"
@@ -96,7 +108,7 @@
   "message": "Her yerde ve daha akıllı"
  },
  "pro_text": {
-  "message": "Tüm siteler: Google, TikTok, Twitch, Discord, haberler. “N. bölüme kadar izledim”, her başlık için çıkış günü ve bitiş tarihi, gizli yapay zeka özetleri, güvenilir kanallar, yedek, sınırsız kendi başlığın. Tek ödeme."
+  "message": "Diğer tüm siteler: Twitch, Discord, haberler, forumlar. “N. bölüme kadar izledim”, gizli yapay zeka özetleri, güvenilir kanallar, her zaman gizlenen yazarlar, yedek, sınırsız kendi başlıkların. Tek ödeme."
  },
  "pro_buy": {
   "message": "Pro al"
@@ -290,12 +302,6 @@
  "locked_custom": {
   "message": "Duraklatıldı: ücretsiz sürüm 3 kendi başlığını tutar. Pro hepsini tutar."
  },
- "opt_spoilers": {
-  "message": "Sadece spoilerlar"
- },
- "opt_everything": {
-  "message": "Onunla ilgili her şey"
- },
  "opt_blur": {
   "message": "Bulanıklaştır"
  },
@@ -325,9 +331,6 @@
  },
  "more_hint": {
   "message": "Gerekmeyeni boş bırak."
- },
- "more_locked": {
-  "message": "Bu seçenekler Pro’ya dahil."
  },
  "more_upto": {
   "message": "Şu bölüme / kısma kadar izledim"
@@ -361,5 +364,47 @@
  },
  "backup_bad": {
   "message": "Bu dosya bir Spoiler Shield yedeği değil."
+ },
+ "more_free": {
+  "message": "Tarihler herkes için çalışır. “Şuraya kadar izledim” Pro’da."
+ },
+ "more_sites_title": {
+  "message": "Google, TikTok, Instagram"
+ },
+ "more_sites_hint": {
+  "message": "Ücretsiz. Tarayıcın bu sitelere erişim için bir kez sorar."
+ },
+ "more_sites_btn": {
+  "message": "Orada da aç"
+ },
+ "more_sites_on": {
+  "message": "Açık: {0}."
+ },
+ "site_changed": {
+  "message": "Bu site düzenini değiştirmiş gibi — bazı spoilerlar kaçabilir."
+ },
+ "copy_report": {
+  "message": "Rapor kopyala"
+ },
+ "report_copied": {
+  "message": "Kopyalandı — GitHub’a yapıştır. Sayfa metni yok."
+ },
+ "share_btn": {
+  "message": "Arkadaşınla paylaş"
+ },
+ "share_text": {
+  "message": "Spoiler Shield, YouTube, Reddit, X, TikTok ve Instagram’da oyun, dizi ve anime spoilerlarını gizler. Ücretsiz, hiçbir şey tarayıcıdan çıkmaz."
+ },
+ "share_copied": {
+  "message": "Bağlantı kopyalandı"
+ },
+ "menu_wrong": {
+  "message": "Spoiler değil mi? Bildir"
+ },
+ "veil_author": {
+  "message": "🛡 Gizlendi: listendeki bir yazar\nGöstermek için tıkla"
+ },
+ "pro_blocked": {
+  "message": "Bu yazarları hep gizle"
  }
 }

@@ -14,15 +14,31 @@
   const FIREFOX_SLUG = 'pure-spoiler-shield';
   const REVIEW_AFTER = 25;   // spoilers hidden before the one-time review card
   const DEFAULT_SHIELDS = [{ id: 'gta6', preset: 'gta6', mode: 'spoilers', action: 'blur', on: true }];
-  const DEFAULTS = { enabled: true, comments: true, media: false, offSites: [], pausedUntil: 0, protectUntil: '', everywhere: true, shields: DEFAULT_SHIELDS, hideAI: true, trusted: '' };
+  const DEFAULTS = { enabled: true, comments: true, media: false, offSites: [], pausedUntil: 0, protectUntil: '', everywhere: true, shields: DEFAULT_SHIELDS, hideAI: true, trusted: '', blocked: '' };
   const MAX_SHIELDS = 60;
   const KIND = { game: '🎮', movie: '🎬', show: '📺', anime: '✨', custom: '✏️' };
+  let openTune = '';   // id of the shield whose extra settings are open
   let openEdit = '';   // id of the own shield whose words are open for editing
   let openMore = '';   // id of the shield whose Pro options are open
   let S = Object.assign({}, DEFAULTS); let info = {}; let tab = null; let page = null;
   const send = (m) => api.runtime.sendMessage(m);
   const num = (n) => { try { return new Intl.NumberFormat(api.i18n.getUILanguage()).format(n); } catch (e) { return String(n); } };
 
+  function storeUrl() {
+    if (IS_FF) return 'https://addons.mozilla.org/firefox/addon/' + FIREFOX_SLUG + '/';
+    if (IS_EDGE) return 'https://microsoftedge.microsoft.com/addons/detail/' + api.runtime.id;
+    return 'https://chromewebstore.google.com/detail/' + api.runtime.id;
+  }
+  /* 1.2: Google, TikTok, Instagram — free; the browser asks for access once, when the person presses the button. */
+  let more = { sites: {}, origins: {} };
+  async function refreshMore() { more = await send({ type: 'pss:moreStatus' }).catch(() => more) || more; }
+  function renderMore() {
+    const names = { google: 'Google', tiktok: 'TikTok', instagram: 'Instagram' };
+    const on = Object.keys(names).filter((k) => more.sites && more.sites[k]);
+    const allOn = on.length === Object.keys(names).length;
+    $('moreLine').textContent = on.length ? t('more_sites_on', on.map((k) => names[k]).join(', ')) + (allOn ? '' : ' ' + t('more_sites_hint')) : t('more_sites_hint');
+    $('moreBtn').hidden = allOn;
+  }
   function reviewUrl() {
     if (IS_FF) return 'https://addons.mozilla.org/firefox/addon/' + FIREFOX_SLUG + '/reviews/';
     if (IS_EDGE) return 'https://microsoftedge.microsoft.com/addons/detail/' + api.runtime.id;
@@ -56,6 +72,8 @@
     else if (page) line = page.count ? plural('hidden_page', page.count) : t('st_page_clean');
     else line = info.pro ? t('st_not_here') : t('st_not_here_free');
     $('pageLine').textContent = line;
+    $('changedLine').hidden = !(page && page.changed && !off);
+    renderMore();
 
     renderShields();
     $('comments').checked = !!S.comments;
@@ -76,6 +94,7 @@
       $('until').value = S.protectUntil || '';
       $('hideAI').checked = S.hideAI !== false;
       if (document.activeElement !== $('trusted')) $('trusted').value = S.trusted || '';
+      if (document.activeElement !== $('blocked')) $('blocked').value = S.blocked || '';
       const passed = S.protectUntil && Date.now() > Date.parse(S.protectUntil + 'T23:59:59');
       $('untilNote').hidden = !passed;
       if (passed) $('untilNote').textContent = t('pro_until_passed');
@@ -155,6 +174,28 @@
     $('hideAI').addEventListener('change', () => save({ hideAI: $('hideAI').checked }));
     let trTimer = 0;
     $('trusted').addEventListener('input', () => { clearTimeout(trTimer); trTimer = setTimeout(() => save({ trusted: $('trusted').value.slice(0, 5000) }), 400); });
+    let blTimer = 0;
+    $('blocked').addEventListener('input', () => { clearTimeout(blTimer); blTimer = setTimeout(() => save({ blocked: $('blocked').value.slice(0, 5000) }), 400); });
+    $('moreBtn').addEventListener('click', async () => {
+      // the browser asks the person once; nothing is asked at install (optional permission)
+      const origins = [].concat(...Object.values(more.origins || {}));
+      let granted = false;
+      try { granted = origins.length ? await api.permissions.request({ origins }) : false; } catch (e) { granted = false; }
+      if (granted) { await send({ type: 'pss:syncMore' }).catch(() => {}); }
+      await refreshMore(); render();
+    });
+    $('copyReport').addEventListener('click', async () => {
+      const r = ['Pure Spoiler Shield ' + version, 'site: ' + (page && page.site), 'cards: ' + (page && page.cards), 'items: ' + (page && page.items),
+        'links: ' + (page && page.probe), 'hidden: ' + (page && page.count), 'lists on: ' + shields().filter((x) => x.on !== false).length,
+        'browser: ' + navigator.userAgent.replace(/^.*?(Chrome|Firefox|Edg)\/(\d+).*$/, '$1 $2')].join(' | ');
+      try { await navigator.clipboard.writeText(r); $('copyReport').textContent = t('report_copied'); } catch (e) { $('copyReport').textContent = r; }
+    });
+    $('shareBtn').addEventListener('click', async () => {
+      const url = storeUrl() + (storeUrl().includes('?') ? '&' : '?') + 'utm_source=share';
+      const text = t('share_text');
+      try { if (navigator.share) { await navigator.share({ title: 'Pure Spoiler Shield', text, url }); return; } } catch (e) { /* closed or not allowed */ }
+      try { await navigator.clipboard.writeText(text + ' ' + url); $('shareBtn').textContent = t('share_copied'); } catch (e) { /* ignore */ }
+    });
     $('exportBtn').addEventListener('click', exportShields);
     $('importBtn').addEventListener('click', () => $('importFile').click());
     $('importFile').addEventListener('change', importShields);
@@ -215,20 +256,30 @@
         card.appendChild(el('div', 'ss-hint', t('locked_custom')));
       } else {
         const row = el('div', 'ss-shield-row');
-        row.appendChild(select([['spoilers', 'opt_spoilers'], ['everything', 'opt_everything']], sh.mode === 'everything' ? 'everything' : 'spoilers', (v) => setShield(sh.id, { mode: v }), t('level')));
-        row.appendChild(select([['blur', 'opt_blur'], ['remove', 'opt_remove']], sh.action === 'remove' ? 'remove' : 'blur', (v) => setShield(sh.id, { action: v }), t('opt_action')));
-        if (!sh.preset) {
-          const ed = el('button', 'ss-mini', openEdit === sh.id ? t('shield_done') : t('shield_edit'));
-          ed.addEventListener('click', () => { openEdit = openEdit === sh.id ? '' : sh.id; render(); });
-          row.appendChild(ed);
-        }
-        const more = el('button', 'ss-mini', openMore === sh.id ? t('shield_done') : t('shield_more'));
-        if (sh.upTo || sh.release || sh.until) more.classList.add('ss-on');
-        more.addEventListener('click', () => { openMore = openMore === sh.id ? '' : sh.id; render(); });
-        row.appendChild(more);
+        const lv = SS.level(sh.mode);
+        row.appendChild(select([['light', 'opt_light'], ['spoilers', 'opt_spoilers'], ['everything', 'opt_everything']], lv, (v) => setShield(sh.id, { mode: v }), t('level')));
+        const tune = el('button', 'ss-mini', t('card_tune') + (openTune === sh.id ? ' ▴' : ' ▾'));
+        if (sh.upTo || sh.release || sh.until || sh.action === 'remove') tune.classList.add('ss-on');
+        tune.addEventListener('click', () => { openTune = openTune === sh.id ? '' : sh.id; if (openTune !== sh.id) { openEdit = ''; openMore = ''; } render(); });
+        row.appendChild(tune);
         card.appendChild(row);
-        if (!sh.preset && openEdit === sh.id) card.appendChild(editor(sh));
-        if (openMore === sh.id) card.appendChild(proOptions(sh));
+        card.appendChild(el('div', 'ss-hint', t('lv_' + lv)));
+        if (openTune === sh.id) {
+          const row2 = el('div', 'ss-shield-row');
+          row2.appendChild(select([['blur', 'opt_blur'], ['remove', 'opt_remove']], sh.action === 'remove' ? 'remove' : 'blur', (v) => setShield(sh.id, { action: v }), t('opt_action')));
+          if (!sh.preset) {
+            const ed = el('button', 'ss-mini', openEdit === sh.id ? t('shield_done') : t('shield_edit'));
+            ed.addEventListener('click', () => { openEdit = openEdit === sh.id ? '' : sh.id; render(); });
+            row2.appendChild(ed);
+          }
+          const more = el('button', 'ss-mini', openMore === sh.id ? t('shield_done') : t('shield_more'));
+          if (sh.upTo || sh.release || sh.until) more.classList.add('ss-on');
+          more.addEventListener('click', () => { openMore = openMore === sh.id ? '' : sh.id; render(); });
+          row2.appendChild(more);
+          card.appendChild(row2);
+        }
+        if (openTune === sh.id && !sh.preset && openEdit === sh.id) card.appendChild(editor(sh));
+        if (openTune === sh.id && openMore === sh.id) card.appendChild(proOptions(sh));
       }
       list.appendChild(card);
     });
@@ -239,13 +290,13 @@
   function proOptions(sh) {
     const box = el('div', 'ss-edit ss-more');
     const head = el('div', 'ss-shield-row');
-    head.appendChild(el('span', 'ss-badge ss-badge-small', 'PRO'));
-    head.appendChild(el('span', 'ss-hint', info.pro ? t('more_hint') : t('more_locked')));
+    head.appendChild(el('span', 'ss-hint', info.pro ? t('more_hint') : t('more_free')));
     box.appendChild(head);
     const field = (key, type, labelKey, attrs) => {
       const lab = el('label', 'ss-field');
       lab.appendChild(el('span', '', t(labelKey)));
-      const f = el('input'); f.type = type; f.value = sh[key] || ''; f.disabled = !info.pro;
+      const f = el('input'); f.type = type; f.value = sh[key] || ''; f.disabled = key === 'upTo' && !info.pro;   // 1.2: dates are free
+      if (key === 'upTo' && !info.pro) lab.appendChild(el('span', 'ss-badge ss-badge-small', 'PRO'));
       Object.assign(f, attrs || {});
       f.addEventListener('change', () => setShield(sh.id, { [key]: type === 'number' ? (parseInt(f.value, 10) > 0 ? parseInt(f.value, 10) : '') : f.value }));
       lab.appendChild(f); box.appendChild(lab);
@@ -253,7 +304,7 @@
     if (shieldKind(sh) !== 'game') field('upTo', 'number', 'more_upto', { min: 0, max: 99999, placeholder: '1190' });
     field('release', 'date', 'more_release');
     field('until', 'date', 'more_until');
-    if (!info.pro) { const b = el('button', 'ss-btn ss-btn-small', t('pro_buy')); b.addEventListener('click', toPro); box.appendChild(b); }
+    if (!info.pro && shieldKind(sh) !== 'game') { const b = el('button', 'ss-btn ss-btn-small', t('pro_buy')); b.addEventListener('click', toPro); box.appendChild(b); }
     return box;
   }
   function editor(sh) {
@@ -329,7 +380,7 @@
       const ok = (x) => x && typeof x === 'object' && typeof x.id === 'string' && (x.preset ? SS.LIBRARY.some((p) => p.id === x.preset) : typeof x.title === 'string' || typeof x.words === 'string');
       const list = Array.isArray(d && d.shields) ? d.shields.filter(ok).slice(0, MAX_SHIELDS) : [];
       if (!list.length) return note('backup_bad');
-      const clean = list.map((x) => ({ id: x.id.slice(0, 60), preset: x.preset || undefined, title: x.preset ? undefined : String(x.title || '').slice(0, 2000), names: x.preset ? undefined : String(x.names || '').slice(0, 5000), words: x.preset ? undefined : String(x.words || '').slice(0, 5000), label: x.label ? String(x.label).slice(0, 60) : undefined, mode: x.mode === 'everything' ? 'everything' : 'spoilers', action: x.action === 'remove' ? 'remove' : 'blur', on: x.on !== false, upTo: parseInt(x.upTo, 10) > 0 ? parseInt(x.upTo, 10) : undefined, release: /^\d{4}-\d{2}-\d{2}$/.test(x.release || '') ? x.release : undefined, until: /^\d{4}-\d{2}-\d{2}$/.test(x.until || '') ? x.until : undefined }));
+      const clean = list.map((x) => ({ id: x.id.slice(0, 60), preset: x.preset || undefined, title: x.preset ? undefined : String(x.title || '').slice(0, 2000), names: x.preset ? undefined : String(x.names || '').slice(0, 5000), words: x.preset ? undefined : String(x.words || '').slice(0, 5000), label: x.label ? String(x.label).slice(0, 60) : undefined, mode: SS.level(x.mode), action: x.action === 'remove' ? 'remove' : 'blur', on: x.on !== false, upTo: parseInt(x.upTo, 10) > 0 ? parseInt(x.upTo, 10) : undefined, release: /^\d{4}-\d{2}-\d{2}$/.test(x.release || '') ? x.release : undefined, until: /^\d{4}-\d{2}-\d{2}$/.test(x.until || '') ? x.until : undefined }));
       await save({ shields: clean, trusted: typeof d.trusted === 'string' ? d.trusted.slice(0, 5000) : (S.trusted || '') });
       note('backup_done');
     } catch (e) { note('backup_bad'); }
@@ -342,7 +393,7 @@
     const r = await api.storage.local.get({ settings: {} });
     S = Object.assign({}, DEFAULTS, r.settings || {});
     wire();
-    await Promise.all([refreshInfo(), refreshPage(), checkPermission()]);
+    await Promise.all([refreshInfo(), refreshPage(), checkPermission(), refreshMore()]);
     render();
     api.storage.onChanged.addListener(async (c, area) => {
       if (area !== 'local') return;
