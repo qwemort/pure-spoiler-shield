@@ -9,16 +9,16 @@
   "message": "Protection activée ou non"
  },
  "veil_label": {
-  "message": "🛡 Masqué · {0}\nCliquez pour afficher"
+  "message": "Hidden by list: {0}\nClick to show"
  },
  "veil_confirm": {
   "message": "Cliquez encore pour afficher.\nCela peut gâcher l’histoire."
  },
  "player_label": {
-  "message": "🛡 Cette vidéo peut spoiler {0}\nCliquez pour afficher"
+  "message": "Cette vidéo peut spoiler {0}\nCliquez pour afficher"
  },
  "fold_comments": {
-  "message": "🛡 Commentaires masqués : ils peuvent spoiler {0} · cliquez pour afficher"
+  "message": "Commentaires masqués : ils peuvent spoiler {0} · cliquez pour afficher"
  },
  "fold_confirm": {
   "message": "Cliquez encore pour afficher les commentaires. Ils peuvent contenir des spoilers."
@@ -63,7 +63,7 @@
   "message": "Replier les commentaires sous les vidéos et posts sur ce que vous protégez"
  },
  "btn_pause": {
-  "message": "Pause 10 min"
+  "message": "Pause 5 min"
  },
  "btn_resume": {
   "message": "Reprendre"
@@ -83,14 +83,8 @@
  "st_site_off": {
   "message": "Désactivé sur ce site."
  },
- "st_page_clean": {
-  "message": "Rien n’est encore masqué sur cette page."
- },
  "st_not_here": {
   "message": "Cette page n’est pas protégée."
- },
- "st_not_here_free": {
-  "message": "Protégé sur YouTube, Reddit et X — et sur Google, TikTok, Instagram si vous l’autorisez. Pro protège tous les sites."
  },
  "hidden_total_one": {
   "message": "spoiler masqué"
@@ -103,72 +97,6 @@
  },
  "hidden_page_other": {
   "message": "{0} masqués sur cette page"
- },
- "pro_title": {
-  "message": "Partout, et plus malin"
- },
- "pro_text": {
-  "message": "Tous les autres sites : Twitch, Discord, actus, forums. « J’ai vu jusqu’à l’épisode N », résumés IA masqués, chaînes de confiance, auteurs toujours masqués, sauvegarde, titres perso illimités. Un seul paiement."
- },
- "pro_buy": {
-  "message": "Obtenir Pro"
- },
- "pro_have_key": {
-  "message": "J’ai une clé"
- },
- "pro_key_placeholder": {
-  "message": "Collez votre clé de licence"
- },
- "pro_activate": {
-  "message": "Activer"
- },
- "pro_active": {
-  "message": "Pro est actif · {0}"
- },
- "pro_everywhere": {
-  "message": "Protéger tous les sites"
- },
- "pro_grant": {
-  "message": "Autoriser sur tous les sites"
- },
- "pro_until": {
-  "message": "Protéger jusqu’au"
- },
- "pro_until_passed": {
-  "message": "Cette date est passée, la protection est désactivée. Choisissez une nouvelle date ou videz le champ."
- },
- "pro_remove": {
-  "message": "Retirer la licence de ce navigateur"
- },
- "pro_remove_sure": {
-  "message": "Cliquez encore pour retirer"
- },
- "lic_paste_first": {
-  "message": "Collez d’abord votre clé."
- },
- "lic_not_valid": {
-  "message": "Cette clé n’est pas valide."
- },
- "lic_not_setup": {
-  "message": "Les clés en ligne ne sont pas encore prêtes. Écrivez-moi et je vous enverrai une clé hors ligne."
- },
- "lic_no_connection": {
-  "message": "Pas de connexion au serveur de licences. Vérifiez internet et réessayez."
- },
- "lic_not_found": {
-  "message": "Cette clé est introuvable."
- },
- "lic_busy": {
-  "message": "Le serveur de licences est occupé. Réessayez dans une minute."
- },
- "lic_refunded": {
-  "message": "Cet achat a été remboursé."
- },
- "lic_max_activations": {
-  "message": "Cette clé est déjà utilisée dans {0} navigateurs. Écrivez-moi et je la réinitialiserai."
- },
- "lic_checkout_unavailable": {
-  "message": "L’achat ouvre bientôt. Si vous avez déjà une clé, collez-la ci-dessous."
  },
  "review_title": {
   "message": "Ça vous a sauvé ?"
@@ -228,7 +156,7 @@
   "message": "Flouter aussi les images et vidéos sur les pages qui en parlent"
  },
  "media_label": {
-  "message": "🛡 Cette image peut spoiler {0}\nCliquez pour afficher"
+  "message": "Cette image peut spoiler {0}\nCliquez pour afficher"
  },
  "menu_hide": {
   "message": "Masquer « %s » comme spoiler"
@@ -278,9 +206,6 @@
  "custom_need_title": {
   "message": "Écrivez d’abord le titre."
  },
- "custom_pro_only": {
-  "message": "La version gratuite a 3 titres perso. Pro, autant que vous voulez."
- },
  "shields_max": {
   "message": "C’est le nombre maximum de boucliers."
  },
@@ -298,9 +223,6 @@
  },
  "shield_delete_sure": {
   "message": "Sûr ?"
- },
- "locked_custom": {
-  "message": "En pause : la version gratuite garde 3 titres perso. Pro les garde tous."
  },
  "opt_blur": {
   "message": "Flouter"
@@ -341,18 +263,6 @@
  "more_until": {
   "message": "Protéger jusqu’au (puis arrêt)"
  },
- "pro_hide_ai": {
-  "message": "Masquer les résumés IA (Google, YouTube) sur ce que vous protégez"
- },
- "pro_trusted": {
-  "message": "Chaînes et communautés de confiance"
- },
- "pro_trusted_ph": {
-  "message": "@chaine\nr/subreddit"
- },
- "pro_trusted_hint": {
-  "message": "Leurs vidéos et posts ne sont jamais masqués. Un par ligne."
- },
  "backup_export": {
   "message": "Enregistrer les boucliers"
  },
@@ -364,9 +274,6 @@
  },
  "backup_bad": {
   "message": "Ce fichier n’est pas une sauvegarde Spoiler Shield."
- },
- "more_free": {
-  "message": "Les dates marchent pour tous. « Vu jusqu’à » fait partie de Pro."
  },
  "more_sites_title": {
   "message": "Google, TikTok, Instagram"
@@ -402,9 +309,153 @@
   "message": "Pas un spoiler ? Signaler"
  },
  "veil_author": {
-  "message": "🛡 Masqué : un auteur de votre liste\nCliquez pour afficher"
+  "message": "Masqué : un auteur de votre liste\nCliquez pour afficher"
  },
- "pro_blocked": {
+ "everywhere": {
+  "message": "Protéger tous les sites"
+ },
+ "everywhere_grant": {
+  "message": "Autoriser sur tous les sites"
+ },
+ "until": {
+  "message": "Protéger jusqu’au"
+ },
+ "until_passed": {
+  "message": "Cette date est passée, la protection est désactivée. Choisissez une nouvelle date ou videz le champ."
+ },
+ "hide_ai": {
+  "message": "Masquer les résumés IA (Google, YouTube) sur ce que vous protégez"
+ },
+ "trusted": {
+  "message": "Chaînes et communautés de confiance"
+ },
+ "trusted_ph": {
+  "message": "@chaine\nr/subreddit"
+ },
+ "trusted_hint": {
+  "message": "Leurs vidéos et posts ne sont jamais masqués. Un par ligne."
+ },
+ "blocked": {
   "message": "Toujours masquer ces auteurs"
+ },
+ "st_empty_title": {
+  "message": "Nothing to dodge here."
+ },
+ "st_empty_sub": {
+  "message": "Safe to scroll."
+ },
+ "week_line": {
+  "message": "This week: {0} · all time: {1}"
+ },
+ "share_title": {
+  "message": "Share"
+ },
+ "card_btn": {
+  "message": "Copy my week as a picture"
+ },
+ "card_copied": {
+  "message": "Picture copied. Paste it into a post."
+ },
+ "card_saved": {
+  "message": "Picture saved as a file."
+ },
+ "card_title_release": {
+  "message": "{0} week: spoilers covered"
+ },
+ "card_title": {
+  "message": "spoilers covered this week"
+ },
+ "card_foot": {
+  "message": "free, 0 network requests"
+ },
+ "hero_armed": {
+  "message": "covered"
+ },
+ "hero_armed_label": {
+  "message": "One click arms it."
+ },
+ "hero_armed_line": {
+  "message": "Click again to see how it works."
+ },
+ "hero_open": {
+  "message": "open"
+ },
+ "all_time": {
+  "message": "all time"
+ },
+ "brand_name": {
+  "message": "Show the name “Shield” on the cover"
+ },
+ "yt_check": {
+  "message": "Check on YouTube"
+ },
+ "yt_added": {
+  "message": "Added: {0}."
+ },
+ "sl_title": {
+  "message": "Share a spoiler without spoiling anyone"
+ },
+ "sl_about_ph": {
+  "message": "What is it about? (shown openly)"
+ },
+ "sl_text_ph": {
+  "message": "The spoiler"
+ },
+ "sl_copy": {
+  "message": "Copy spoiler link"
+ },
+ "sl_copied": {
+  "message": "Link copied. People see a blur and choose to open it."
+ },
+ "sl_need": {
+  "message": "Write the spoiler first."
+ },
+ "sl_hint": {
+  "message": "The text sits inside the link, after the # sign. Nobody stores it; anyone with the link can read it."
+ },
+ "code_title": {
+  "message": "Share my lists as one line of text"
+ },
+ "code_copy": {
+  "message": "Copy my code"
+ },
+ "code_copied": {
+  "message": "Code copied."
+ },
+ "code_paste_ph": {
+  "message": "Paste a code from a friend"
+ },
+ "code_load": {
+  "message": "Add these lists"
+ },
+ "code_bad": {
+  "message": "This is not a Spoiler Shield code."
+ },
+ "code_done": {
+  "message": "Added: {0}."
+ },
+ "site_fail": {
+  "message": "This did not switch on. Reload the extension and try again."
+ },
+ "code_have": {
+  "message": "You already have these lists."
+ },
+ "review_title_end": {
+  "message": "Your protection ended. Did it save you?"
+ },
+ "zero_net": {
+  "message": "Network requests: 0"
+ },
+ "source_link": {
+  "message": "Source code"
+ },
+ "veil_label_own": {
+  "message": "Hidden by your title: {0}\nClick to show"
+ },
+ "dodged_one": {
+  "message": "spoiler dodged on this page"
+ },
+ "dodged_other": {
+  "message": "spoilers dodged on this page"
  }
 }

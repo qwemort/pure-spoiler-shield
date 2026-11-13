@@ -1,5 +1,5 @@
 /*!
- * Pure Spoiler Shield — page side. Runs on YouTube, Reddit and X (and, with Pro, on every site).
+ * Pure Spoiler Shield — page side. Runs on YouTube, Reddit and X (and, if the person allows it, on every site).
  * Reads only the text of the page in this browser, judges it with lib/words.js and hides blocks that may spoil
  * the game. Nothing is stored about pages and nothing is sent anywhere; the only message out is "N blocks hidden"
  * to the extension's own background (for the counter on the icon).
@@ -18,11 +18,11 @@
   const P = globalThis.SS_SITES;                     // content/sites.js — selectors of every site (1.2)
   const SITE = P.detect(host);
   const CARDS = P.CARDS, GONE = P.GONE, COMMENTS = P.COMMENTS;
-  // big blocks of a generic page that can hold a spoiler on their own (Pro, every site)
+  // big blocks of a generic page that can hold a spoiler on their own (every site)
   const GENERIC_BLOCK = 'article, [role="article"], li, [role="listitem"], tr, [class*="comment" i], [class*="post" i], [class*="card" i], [class*="message" i], [class*="tweet" i], [class*="story" i], [class*="result" i], blockquote, figure';
   // the site's own frame — logo, top bar, side menu, search form — is never covered (1.1: the YouTube logo was)
   const CHROME_ZONE = 'ytd-masthead, #masthead-container, #masthead, tp-yt-app-drawer, #guide, ytd-mini-guide-renderer, ytd-guide-renderer, [role="banner"], [role="navigation"], nav, [role="search"], body > header, body > footer, footer[role="contentinfo"], #searchform, #gb, reddit-header-large, faceplate-search-input, head, [role="searchbox"], [role="combobox"], [data-e2e="search-box"], [data-e2e="nav-search"]';
-  // AI summaries that retell the story (Pro "hide AI summaries"): their label, in the 13 languages
+  // AI summaries that retell the story ("hide AI summaries"): their label, in the 13 languages
   const AI_LABELS = ['ai overview', 'ai overviews', 'ai summary', 'ai generated summary', 'summary by ai', 'обзор от ии', 'ии обзор', 'краткий обзор от ии', 'конспект', 'огляд від ші', 'короткий огляд від ші',
     'przeglad od ai', 'przegląd od ai', 'podsumowanie ai', 'ubersicht mit ki', 'übersicht mit ki', 'ki übersicht', 'ki zusammenfassung', 'apercu ia', 'aperçu ia', 'aperçus ia', 'resumen de ia', 'vision general creada por ia', 'visión general creada por ia',
     'visao geral criada por ia', 'visão geral criada por ia', 'resumo de ia', 'panoramica ai', 'riepilogo ai', 'yapay zeka genel bakisi', 'yapay zeka genel bakışı', 'ai による概要', 'ai 概要', 'ai 개요', 'ai 요약', 'ai 概览', 'ai 摘要'];
@@ -43,13 +43,13 @@
 
   /* ---------------------------------------------------------------- settings */
   const DEFAULT_SHIELDS = [{ id: 'gta6', preset: 'gta6', mode: 'spoilers', action: 'blur', on: true }];
-  const DEFAULTS = { enabled: true, comments: true, media: false, offSites: [], pausedUntil: 0, protectUntil: '', everywhere: true, shields: DEFAULT_SHIELDS, hideAI: true, trusted: '', blocked: '' };
-  let S = Object.assign({}, DEFAULTS); let pro = false; let shields = [];
+  const DEFAULTS = { enabled: true, comments: true, media: false, offSites: [], pausedUntil: 0, protectUntil: '', everywhere: true, shields: DEFAULT_SHIELDS, hideAI: true, brand: true, trusted: '', blocked: '' };
+  let S = Object.assign({}, DEFAULTS); let shields = [];
   function active() {
     if (!S.enabled || !shields.length) return false;
     if (S.pausedUntil && Date.now() < S.pausedUntil) return false;
     if ((S.offSites || []).includes(siteKey())) return false;
-    if (pro && S.protectUntil && Date.now() > Date.parse(S.protectUntil + 'T23:59:59')) return false;
+    if (S.protectUntil && Date.now() > Date.parse(S.protectUntil + 'T23:59:59')) return false;
     return true;
   }
   function siteKey() { return SITE === 'generic' || SITE === 'google' ? host.replace(/^www\./, '') : SITE; }
@@ -115,12 +115,12 @@
   /** null, or { reason, label, action, key } of the first shield that matches. */
   const judgeText = (s, ctx, level) => {
     const norm = SS.normalize(s);
-    // Pro: an AI summary about a protected title is hidden whatever the level — it retells the story
-    const force = level || (pro && S.hideAI !== false && hasAI(norm) ? 'everything' : '');
+    // An AI summary about a protected title is hidden whatever the level — it retells the story
+    const force = level || (S.hideAI !== false && hasAI(norm) ? 'everything' : '');
     return SS.judgeAll(norm, shields, ctx ? contexts : NO_CTX, force);
   };
 
-  /* Pro "trusted": channels, subreddits and accounts whose posts are never hidden (the person trusts them). */
+  /* "Trusted": channels, subreddits and accounts whose posts are never hidden (the person trusts them). */
   let trustedSet = new Set();
   const handle = (x) => String(x || '').toLowerCase().trim().replace(/^https?:\/\/[^/]+/, '').replace(/^\/+/, '').replace(/^(@|r\/|u\/|user\/|c\/|channel\/)/, '').replace(/[/?#].*$/, '').replace(/\s+/g, ' ');
   function authorKeys(el) {
@@ -135,25 +135,25 @@
     for (const n of el.querySelectorAll('ytd-channel-name, #channel-name, .ytd-channel-name')) { const v = (n.textContent || '').trim(); if (v && v.length < 80) keys.push(handle(v)); }
     return keys.filter(Boolean);
   }
-  /* 1.2 Pro "always hide these authors": channels/accounts that keep posting spoilers — hidden whatever they write. */
+  /* 1.2 "always hide these authors": channels/accounts that keep posting spoilers — hidden whatever they write. */
   let blockedSet = new Set();
   function isBlocked(el) {
-    if (!pro || !blockedSet.size || !el || !el.querySelectorAll) return false;
+    if (!blockedSet.size || !el || !el.querySelectorAll) return false;
     return authorKeys(el).some((k) => blockedSet.has(k));
   }
   function isTrusted(el) {
-    if (!pro || !trustedSet.size || !el || !el.querySelectorAll) return false;
+    if (!trustedSet.size || !el || !el.querySelectorAll) return false;
     return authorKeys(el).some((k) => trustedSet.has(k));
   }
   function pageTrusted() {
-    if (!pro || !trustedSet.size) return false;
+    if (!trustedSet.size) return false;
     if (SITE === 'reddit') { const m = /^\/r\/([^/]+)/.exec(location.pathname); if (m && trustedSet.has(handle(m[1]))) return true; }
     const owner = document.querySelector('ytd-watch-metadata #owner, #owner, ytd-video-owner-renderer');
     return owner ? isTrusted(owner) : false;
   }
 
   /* ---------------------------------------------------------------- veil / fold / gone */
-  const labelFor = (res) => (res.reason === 'author' ? t('veil_author') : t('veil_label', res.label));
+  const labelFor = (res) => (res.reason === 'author' ? t('veil_author') : t(res.own ? 'veil_label_own' : 'veil_label', res.label));   // the caption names the list or the person's own title, never the word that matched
   function veil(el, res) {
     if (offLimits(el)) return false;
     if (COMPOSE_PATH && COMPOSE_PATH.test(location.pathname)) return false;            // writing a post: never
@@ -469,7 +469,7 @@
     try { v.muted = true; v.pause(); } catch (err) { /* ignore */ }
   }, true);
 
-  /* ---------------------------------------------------------------- text-based search (Pro sites + safety net) */
+  /* ---------------------------------------------------------------- text-based search (every site + safety net) */
   const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'INPUT', 'SELECT', 'CODE', 'PRE', 'SVG', 'TEMPLATE', 'IFRAME']);
   function genericBlock(node) {
     let el = node.parentElement;
@@ -505,7 +505,7 @@
     }
   }
   /*
-   * 1.2 speed budget: on a huge page (Pro "every site": long articles, forums) the blocks are judged at most
+   * 1.2 speed budget: on a huge page ("every site": long articles, forums) the blocks are judged at most
    * ~10 ms per frame, top of the page first; the rest continues next frame, so the site never freezes.
    * Known sites (safety net) are judged at once: there the text must be covered before it is drawn.
    */
@@ -637,10 +637,10 @@
     return done ? 1 : 0;
   }
 
-  /* Pro: AI summary boxes. The label ("AI Overview", "Конспект") sits in a heading; the box is the block around it. */
+  /* AI summary boxes. The label ("AI Overview", "Конспект") sits in a heading; the box is the block around it. */
   const AI_BOX = '[data-attrid], [data-hveid], [jscontroller][data-ved], ytd-expandable-metadata-renderer, ytd-video-summary-renderer, section, article, [role="region"]';
   function checkAI(root) {
-    if (!pro || S.hideAI === false || !shields.length) return 0;
+    if (S.hideAI === false || !shields.length) return 0;
     if (SITE !== 'google' && SITE !== 'generic' && SITE !== 'youtube') return 0;   // on YouTube the card text decides too
     let n = 0;
     for (const h of root.querySelectorAll ? root.querySelectorAll('h1, h2, h3, [role="heading"], div[aria-label], ytd-video-summary-renderer [id="title"]') : []) {
@@ -781,20 +781,20 @@
 
   /* ---------------------------------------------------------------- start */
   async function loadSettings() {
-    const r = await api.storage.local.get({ settings: {}, license: {} });
+    const r = await api.storage.local.get({ settings: {} });
     S = Object.assign({}, DEFAULTS, r.settings || {});
-    pro = !!(r.license && r.license.pro);
-    shields = SS.activeShields(Array.isArray(S.shields) ? S.shields : DEFAULT_SHIELDS, pro);
+    shields = SS.activeShields(Array.isArray(S.shields) ? S.shields : DEFAULT_SHIELDS);
     trustedSet = new Set(String(S.trusted || '').split(/[\n,;]+/).map(handle).filter((x) => x.length >= 2));
     blockedSet = new Set(String(S.blocked || '').split(/[\n,;]+/).map(handle).filter((x) => x.length >= 2));
     lastUrl = '';
+    document.documentElement.classList.toggle('pss-brand', S.brand !== false);   // 1.4: small "Shield" name in the corner of the plate (switch in the window)
   }
   function start() {
     observer.observe(document.documentElement, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['title', 'aria-label', 'href'] });
     rescanAll();
   }
   api.storage.onChanged.addListener((changes, area) => {
-    if (area !== 'local' || !(changes.settings || changes.license)) return;
+    if (area !== 'local' || !changes.settings) return;
     loadSettings().then(() => { if (active()) rescanAll(); else clearAll(); });
   });
   // pause ends on its own: check once a minute
@@ -825,6 +825,21 @@
     if (msg.type === 'pss:pageCount') {
       reply(Object.assign({ count: document.querySelectorAll('.pss-veil, .pss-fold, .pss-gone').length, site: siteKey(), active: active() }, health()));
       return false;
+    }
+    if (msg.type === 'pss:copy') {
+      const text = String(msg.text || '').slice(0, 2000);
+      let ok = false;
+      try {
+        const ta = document.createElement('textarea'); ta.value = text;
+        ta.style.cssText = 'position:fixed;left:-9999px;top:0;opacity:0'; (document.body || document.documentElement).appendChild(ta);
+        ta.select(); ok = document.execCommand('copy'); ta.remove();
+      } catch (e) { ok = false; }
+      if (ok) { reply({ ok: true }); return false; }
+      /* the second way is asynchronous: say "copied" only when the browser really accepted it */
+      let done = false; const fin = (v) => { if (!done) { done = true; reply({ ok: v }); } };
+      try { navigator.clipboard.writeText(text).then(() => fin(true), () => fin(false)); } catch (e) { fin(false); }
+      setTimeout(() => fin(false), 1500);
+      return true;
     }
     if (msg.type === 'pss:lastVeil') {
       const el = lastMenuEl && lastMenuEl.isConnected ? lastMenuEl : null;

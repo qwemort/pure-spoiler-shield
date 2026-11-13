@@ -25,8 +25,8 @@ if len(f['name']) > 45: fail('Firefox name > 45')
 if re.search(r'gta|grand theft|rockstar', c['name'], re.I): fail('trademark in the name (decided 31.10.2026: no game name in the title)')
 for m, label in ((c, 'Chrome'), (f, 'Firefox')):
     if sorted(m['permissions']) != ['contextMenus', 'scripting', 'storage']: fail(label + ': permissions must be storage + scripting + contextMenus')
-    if sorted(m['host_permissions']) != sorted(MAIN + ['https://api.gumroad.com/*']): fail(label + ': host_permissions changed')
-    if m.get('optional_host_permissions') != ['<all_urls>']: fail(label + ': all sites must stay optional (Pro)')
+    if sorted(m['host_permissions']) != sorted(MAIN): fail(label + ': host_permissions changed (1.4: only the 4 main sites, no network address)')
+    if m.get('optional_host_permissions') != ['<all_urls>']: fail(label + ': all sites must stay optional (asked only on the button)')
     if sorted(m['content_scripts'][0]['matches']) != sorted(MAIN): fail(label + ': content script must run only on the 4 main sites')
     paths = list(m['icons'].values()) + [m['background'].get('service_worker')] + (m['background'].get('scripts') or []) + [m['action']['default_popup'], 'welcome.html']
     for cs in m['content_scripts']: paths += cs['js'] + cs['css']
@@ -43,9 +43,12 @@ for rel in files():
             if re.search(r'<script[^>]+src=["\']https?:', t): fail(rel + ' loads remote code')
 for d in sorted(os.listdir(os.path.join(SRC, '_locales'))):
     if len(json.load(open(os.path.join(SRC, '_locales', d, 'messages.json'), encoding='utf-8'))['extDesc']['message']) > 132: fail(d + ' extDesc > 132')
-bg = open(os.path.join(SRC, 'background.js'), encoding='utf-8').read()
-if re.search(r"GUMROAD_PRODUCT_ID:\s*''", bg) or re.search(r"BUY_URL:\s*''", bg):
-    print('WARNING: Gumroad product ID or BUY_URL is empty in src/background.js (CONFIG): online keys and "Get Pro" will not work.')
+# 1.4: the extension makes no network requests at all — nothing in src/ may mention the old license server or open a connection
+for rel in files():
+    if rel.endswith(('.js', '.html')):
+        t = open(os.path.join(SRC, rel), encoding='utf-8').read()
+        if 'gumroad' in t.lower(): fail(rel + ' mentions Gumroad (Pro was removed in 1.4)')
+        if re.search(r'(?<![\w.$])fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon|EventSource|importScripts', t): fail(rel + ' opens a network connection (1.4: zero requests)')
 os.makedirs(OUT, exist_ok=True)
 for name, text in (('chrome', ct), ('firefox', ft)):
     with zipfile.ZipFile(os.path.join(OUT, f'release-{name}.zip'), 'w', zipfile.ZIP_DEFLATED) as zf:

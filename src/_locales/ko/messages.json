@@ -9,16 +9,16 @@
   "message": "보호 켜기/끄기"
  },
  "veil_label": {
-  "message": "🛡 숨김 · {0}\n클릭하면 보기"
+  "message": "Hidden by list: {0}\nClick to show"
  },
  "veil_confirm": {
   "message": "한 번 더 클릭하면 보입니다.\n스토리 스포일러일 수 있어요."
  },
  "player_label": {
-  "message": "🛡 이 영상은 {0} 스포일러일 수 있음\n클릭해서 보기"
+  "message": "이 영상은 {0} 스포일러일 수 있음\n클릭해서 보기"
  },
  "fold_comments": {
-  "message": "🛡 댓글 숨김: {0} 스포일러가 있을 수 있음 · 클릭해서 보기"
+  "message": "댓글 숨김: {0} 스포일러가 있을 수 있음 · 클릭해서 보기"
  },
  "fold_confirm": {
   "message": "한 번 더 클릭하면 댓글이 보입니다. 스포일러가 있을 수 있어요."
@@ -63,7 +63,7 @@
   "message": "보호 중인 작품의 영상과 게시물 아래 댓글 접기"
  },
  "btn_pause": {
-  "message": "10분 일시 중지"
+  "message": "5분 일시 중지"
  },
  "btn_resume": {
   "message": "지금 다시 켜기"
@@ -83,86 +83,14 @@
  "st_site_off": {
   "message": "이 사이트에서 꺼짐."
  },
- "st_page_clean": {
-  "message": "이 페이지에서는 아직 가린 것이 없습니다."
- },
  "st_not_here": {
   "message": "이 페이지는 보호되지 않습니다."
- },
- "st_not_here_free": {
-  "message": "YouTube, Reddit, X에서 보호 중. 허용하면 Google, TikTok, Instagram에서도. Pro는 모든 사이트."
  },
  "hidden_total_other": {
   "message": "개의 스포일러를 가림"
  },
  "hidden_page_other": {
   "message": "이 페이지에서 {0}개를 가림"
- },
- "pro_title": {
-  "message": "어디서나, 더 똑똑하게"
- },
- "pro_text": {
-  "message": "그 밖의 모든 사이트: Twitch, Discord, 뉴스, 포럼. “N화까지 봤어요”, AI 요약 숨기기, 신뢰하는 채널, 항상 숨길 작성자, 백업, 내 작품 무제한. 한 번만 결제."
- },
- "pro_buy": {
-  "message": "Pro 받기"
- },
- "pro_have_key": {
-  "message": "키가 있어요"
- },
- "pro_key_placeholder": {
-  "message": "라이선스 키 붙여넣기"
- },
- "pro_activate": {
-  "message": "활성화"
- },
- "pro_active": {
-  "message": "Pro 활성 · {0}"
- },
- "pro_everywhere": {
-  "message": "모든 사이트 보호"
- },
- "pro_grant": {
-  "message": "모든 사이트에서 허용"
- },
- "pro_until": {
-  "message": "보호 기한"
- },
- "pro_until_passed": {
-  "message": "이 날짜가 지나서 보호가 꺼졌습니다. 새 날짜를 고르거나 칸을 비우세요."
- },
- "pro_remove": {
-  "message": "이 브라우저에서 라이선스 제거"
- },
- "pro_remove_sure": {
-  "message": "한 번 더 클릭하면 제거"
- },
- "lic_paste_first": {
-  "message": "먼저 키를 붙여넣으세요."
- },
- "lic_not_valid": {
-  "message": "유효하지 않은 키입니다."
- },
- "lic_not_setup": {
-  "message": "온라인 키가 아직 준비되지 않았습니다. 연락 주시면 오프라인 키를 보내 드립니다."
- },
- "lic_no_connection": {
-  "message": "라이선스 서버에 연결할 수 없습니다. 인터넷을 확인하고 다시 시도하세요."
- },
- "lic_not_found": {
-  "message": "이 키를 찾을 수 없습니다."
- },
- "lic_busy": {
-  "message": "라이선스 서버가 바쁩니다. 1분 후 다시 시도하세요."
- },
- "lic_refunded": {
-  "message": "이 구매는 환불되었습니다."
- },
- "lic_max_activations": {
-  "message": "이 키는 이미 {0}개의 브라우저에서 사용 중입니다. 연락 주시면 초기화해 드립니다."
- },
- "lic_checkout_unavailable": {
-  "message": "곧 구매할 수 있습니다. 키가 있다면 아래에 붙여넣으세요."
  },
  "review_title": {
   "message": "스포일러를 피했나요?"
@@ -222,7 +150,7 @@
   "message": "그 작품 관련 페이지의 이미지와 영상도 흐리게"
  },
  "media_label": {
-  "message": "🛡 이 이미지는 {0} 스포일러일 수 있어요\n클릭하면 보기"
+  "message": "이 이미지는 {0} 스포일러일 수 있어요\n클릭하면 보기"
  },
  "menu_hide": {
   "message": "“%s” 스포일러로 숨기기"
@@ -272,9 +200,6 @@
  "custom_need_title": {
   "message": "먼저 제목을 입력하세요."
  },
- "custom_pro_only": {
-  "message": "무료 버전은 직접 추가한 제목이 3개예요. Pro는 원하는 만큼."
- },
  "shields_max": {
   "message": "보호막 최대 개수입니다."
  },
@@ -292,9 +217,6 @@
  },
  "shield_delete_sure": {
   "message": "정말요?"
- },
- "locked_custom": {
-  "message": "일시 중지: 무료 버전은 직접 추가한 제목 3개만 유지해요. Pro는 모두 유지합니다."
  },
  "opt_blur": {
   "message": "흐리게"
@@ -335,18 +257,6 @@
  "more_until": {
   "message": "보호 종료일 (그 후 끄기)"
  },
- "pro_hide_ai": {
-  "message": "보호 중인 작품의 AI 요약(Google, YouTube) 숨기기"
- },
- "pro_trusted": {
-  "message": "신뢰하는 채널과 커뮤니티"
- },
- "pro_trusted_ph": {
-  "message": "@채널\nr/서브레딧"
- },
- "pro_trusted_hint": {
-  "message": "이들의 영상과 게시물은 숨기지 않아요. 한 줄에 하나씩."
- },
  "backup_export": {
   "message": "보호막을 파일로 저장"
  },
@@ -358,9 +268,6 @@
  },
  "backup_bad": {
   "message": "Spoiler Shield 백업 파일이 아니에요."
- },
- "more_free": {
-  "message": "날짜는 누구나 쓸 수 있습니다. “여기까지 봤어요”는 Pro."
  },
  "more_sites_title": {
   "message": "Google, TikTok, Instagram"
@@ -396,9 +303,150 @@
   "message": "스포일러가 아닌가요? 신고"
  },
  "veil_author": {
-  "message": "🛡 숨김: 목록에 있는 작성자\n클릭하면 표시"
+  "message": "숨김: 목록에 있는 작성자\n클릭하면 표시"
  },
- "pro_blocked": {
+ "everywhere": {
+  "message": "모든 사이트 보호"
+ },
+ "everywhere_grant": {
+  "message": "모든 사이트에서 허용"
+ },
+ "until": {
+  "message": "보호 기한"
+ },
+ "until_passed": {
+  "message": "이 날짜가 지나서 보호가 꺼졌습니다. 새 날짜를 고르거나 칸을 비우세요."
+ },
+ "hide_ai": {
+  "message": "보호 중인 작품의 AI 요약(Google, YouTube) 숨기기"
+ },
+ "trusted": {
+  "message": "신뢰하는 채널과 커뮤니티"
+ },
+ "trusted_ph": {
+  "message": "@채널\nr/서브레딧"
+ },
+ "trusted_hint": {
+  "message": "이들의 영상과 게시물은 숨기지 않아요. 한 줄에 하나씩."
+ },
+ "blocked": {
   "message": "이 작성자는 항상 숨기기"
+ },
+ "st_empty_title": {
+  "message": "Nothing to dodge here."
+ },
+ "st_empty_sub": {
+  "message": "Safe to scroll."
+ },
+ "week_line": {
+  "message": "This week: {0} · all time: {1}"
+ },
+ "share_title": {
+  "message": "Share"
+ },
+ "card_btn": {
+  "message": "Copy my week as a picture"
+ },
+ "card_copied": {
+  "message": "Picture copied. Paste it into a post."
+ },
+ "card_saved": {
+  "message": "Picture saved as a file."
+ },
+ "card_title_release": {
+  "message": "{0} week: spoilers covered"
+ },
+ "card_title": {
+  "message": "spoilers covered this week"
+ },
+ "card_foot": {
+  "message": "free, 0 network requests"
+ },
+ "hero_armed": {
+  "message": "covered"
+ },
+ "hero_armed_label": {
+  "message": "One click arms it."
+ },
+ "hero_armed_line": {
+  "message": "Click again to see how it works."
+ },
+ "hero_open": {
+  "message": "open"
+ },
+ "all_time": {
+  "message": "all time"
+ },
+ "brand_name": {
+  "message": "Show the name “Shield” on the cover"
+ },
+ "yt_check": {
+  "message": "Check on YouTube"
+ },
+ "yt_added": {
+  "message": "Added: {0}."
+ },
+ "sl_title": {
+  "message": "Share a spoiler without spoiling anyone"
+ },
+ "sl_about_ph": {
+  "message": "What is it about? (shown openly)"
+ },
+ "sl_text_ph": {
+  "message": "The spoiler"
+ },
+ "sl_copy": {
+  "message": "Copy spoiler link"
+ },
+ "sl_copied": {
+  "message": "Link copied. People see a blur and choose to open it."
+ },
+ "sl_need": {
+  "message": "Write the spoiler first."
+ },
+ "sl_hint": {
+  "message": "The text sits inside the link, after the # sign. Nobody stores it; anyone with the link can read it."
+ },
+ "code_title": {
+  "message": "Share my lists as one line of text"
+ },
+ "code_copy": {
+  "message": "Copy my code"
+ },
+ "code_copied": {
+  "message": "Code copied."
+ },
+ "code_paste_ph": {
+  "message": "Paste a code from a friend"
+ },
+ "code_load": {
+  "message": "Add these lists"
+ },
+ "code_bad": {
+  "message": "This is not a Spoiler Shield code."
+ },
+ "code_done": {
+  "message": "Added: {0}."
+ },
+ "site_fail": {
+  "message": "This did not switch on. Reload the extension and try again."
+ },
+ "code_have": {
+  "message": "You already have these lists."
+ },
+ "review_title_end": {
+  "message": "Your protection ended. Did it save you?"
+ },
+ "zero_net": {
+  "message": "Network requests: 0"
+ },
+ "source_link": {
+  "message": "Source code"
+ },
+ "veil_label_own": {
+  "message": "Hidden by your title: {0}\nClick to show"
+ },
+ "dodged_other": {
+  "message": "spoilers dodged on this page"
  }
 }

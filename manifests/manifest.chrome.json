@@ -3,7 +3,7 @@
   "name": "Pure Spoiler Shield — Games, Shows & Anime",
   "short_name": "Spoiler Shield",
   "default_locale": "en",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "__MSG_extDesc__",
   "icons": {
     "16": "icons/icon16.png",
@@ -28,8 +28,7 @@
     "*://*.youtube.com/*",
     "*://*.reddit.com/*",
     "*://*.x.com/*",
-    "*://*.twitter.com/*",
-    "https://api.gumroad.com/*"
+    "*://*.twitter.com/*"
   ],
   "optional_host_permissions": [
     "<all_urls>"

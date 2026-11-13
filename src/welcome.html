@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>Spoiler Shield</title>
 <link rel="stylesheet" href="popup.css">
 <link rel="stylesheet" href="welcome.css">
 </head>
 <body class="ss-welcome">
-<div class="ss-bg" aria-hidden="true"><div class="ss-sun"></div></div>
 <main class="w-wrap">
   <header class="w-hero">
-    <img src="icons/icon128.png" width="96" height="96" alt="">
+    <img src="icons/icon128.png" width="72" height="72" alt="">
     <h1 data-i18n="w_title"></h1>
     <p data-i18n="w_sub"></p>
   </header>
@@ -22,7 +22,7 @@
   </section>
   <section class="ss-card w-level">
     <div class="ss-label" data-i18n="level"></div>
-    <div class="ss-seg" role="radiogroup">
+    <div class="ss-seg ss-seg-big" role="radiogroup" data-i18n-aria="level">
       <button role="radio" data-mode="light" id="modeLight"><b data-i18n="opt_light"></b><span data-i18n="lv_light"></span></button>
       <button role="radio" data-mode="spoilers" id="modeSpoilers"><b data-i18n="opt_spoilers"></b><span data-i18n="lv_spoilers"></span></button>
       <button role="radio" data-mode="everything" id="modeEverything"><b data-i18n="opt_everything"></b><span data-i18n="lv_everything"></span></button>

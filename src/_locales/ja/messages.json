@@ -9,16 +9,16 @@
   "message": "保護のオン/オフ"
  },
  "veil_label": {
-  "message": "🛡 非表示 · {0}\nクリックで表示"
+  "message": "Hidden by list: {0}\nClick to show"
  },
  "veil_confirm": {
   "message": "もう一度クリックで表示。\nストーリーのネタバレかもしれません。"
  },
  "player_label": {
-  "message": "🛡 この動画は {0} のネタバレかもしれません\nクリックで表示"
+  "message": "この動画は {0} のネタバレかもしれません\nクリックで表示"
  },
  "fold_comments": {
-  "message": "🛡 コメントを非表示：{0} のネタバレがあるかもしれません · クリックで表示"
+  "message": "コメントを非表示：{0} のネタバレがあるかもしれません · クリックで表示"
  },
  "fold_confirm": {
   "message": "もう一度クリックでコメントを表示。ネタバレを含むかもしれません。"
@@ -63,7 +63,7 @@
   "message": "守っている作品の動画や投稿のコメントを折りたたむ"
  },
  "btn_pause": {
-  "message": "10 分停止"
+  "message": "5 分停止"
  },
  "btn_resume": {
   "message": "今すぐ再開"
@@ -83,86 +83,14 @@
  "st_site_off": {
   "message": "このサイトではオフです。"
  },
- "st_page_clean": {
-  "message": "このページではまだ何も非表示にしていません。"
- },
  "st_not_here": {
   "message": "このページは保護されていません。"
- },
- "st_not_here_free": {
-  "message": "YouTube・Reddit・X で保護中。許可すれば Google・TikTok・Instagram でも。Pro ならすべてのサイト。"
  },
  "hidden_total_other": {
   "message": "件のネタバレを非表示"
  },
  "hidden_page_other": {
   "message": "このページで {0} 件を非表示"
- },
- "pro_title": {
-  "message": "どこでも、もっと賢く"
- },
- "pro_text": {
-  "message": "その他すべてのサイト：Twitch、Discord、ニュース、フォーラム。「第N話まで見た」、AI 要約の非表示、信頼できるチャンネル、常に隠す投稿者、バックアップ、自分のタイトル無制限。支払いは一度だけ。"
- },
- "pro_buy": {
-  "message": "Pro を入手"
- },
- "pro_have_key": {
-  "message": "キーを持っている"
- },
- "pro_key_placeholder": {
-  "message": "ライセンスキーを貼り付け"
- },
- "pro_activate": {
-  "message": "有効にする"
- },
- "pro_active": {
-  "message": "Pro 有効 · {0}"
- },
- "pro_everywhere": {
-  "message": "すべてのサイトを保護"
- },
- "pro_grant": {
-  "message": "すべてのサイトで許可"
- },
- "pro_until": {
-  "message": "保護する期限"
- },
- "pro_until_passed": {
-  "message": "この日付は過ぎたため、保護はオフです。新しい日付を選ぶか、空にしてください。"
- },
- "pro_remove": {
-  "message": "このブラウザからライセンスを削除"
- },
- "pro_remove_sure": {
-  "message": "もう一度クリックで削除"
- },
- "lic_paste_first": {
-  "message": "先にキーを貼り付けてください。"
- },
- "lic_not_valid": {
-  "message": "このキーは無効です。"
- },
- "lic_not_setup": {
-  "message": "オンラインキーはまだ準備中です。ご連絡いただければオフラインキーをお送りします。"
- },
- "lic_no_connection": {
-  "message": "ライセンスサーバーに接続できません。インターネットを確認して再度お試しください。"
- },
- "lic_not_found": {
-  "message": "このキーは見つかりませんでした。"
- },
- "lic_busy": {
-  "message": "ライセンスサーバーが混み合っています。1 分後にお試しください。"
- },
- "lic_refunded": {
-  "message": "この購入は返金されています。"
- },
- "lic_max_activations": {
-  "message": "このキーはすでに {0} 台のブラウザで使われています。ご連絡いただければリセットします。"
- },
- "lic_checkout_unavailable": {
-  "message": "購入はまもなく開始します。キーをお持ちなら下に貼り付けてください。"
  },
  "review_title": {
   "message": "役に立ちましたか？"
@@ -222,7 +150,7 @@
   "message": "その作品のページでは画像と動画もぼかす"
  },
  "media_label": {
-  "message": "🛡 この画像は {0} のネタバレかもしれません\nクリックで表示"
+  "message": "この画像は {0} のネタバレかもしれません\nクリックで表示"
  },
  "menu_hide": {
   "message": "「%s」をネタバレとして隠す"
@@ -272,9 +200,6 @@
  "custom_need_title": {
   "message": "先にタイトルを入力してください。"
  },
- "custom_pro_only": {
-  "message": "無料版の自分のタイトルは 3 つまで。Pro なら無制限です。"
- },
  "shields_max": {
   "message": "シールドの上限に達しました。"
  },
@@ -292,9 +217,6 @@
  },
  "shield_delete_sure": {
   "message": "本当に？"
- },
- "locked_custom": {
-  "message": "一時停止中：無料版で使える自分のタイトルは 3 つです。Pro ならすべて使えます。"
  },
  "opt_blur": {
   "message": "ぼかす"
@@ -335,18 +257,6 @@
  "more_until": {
   "message": "保護する期限（その後オフ）"
  },
- "pro_hide_ai": {
-  "message": "守っている作品の AI 要約（Google、YouTube）を隠す"
- },
- "pro_trusted": {
-  "message": "信頼するチャンネルとコミュニティ"
- },
- "pro_trusted_ph": {
-  "message": "@チャンネル\nr/サブレディット"
- },
- "pro_trusted_hint": {
-  "message": "これらの動画や投稿は隠されません。1 行に 1 つ。"
- },
  "backup_export": {
   "message": "シールドをファイルに保存"
  },
@@ -358,9 +268,6 @@
  },
  "backup_bad": {
   "message": "Spoiler Shield のバックアップファイルではありません。"
- },
- "more_free": {
-  "message": "日付は誰でも使えます。「ここまで見た」は Pro。"
  },
  "more_sites_title": {
   "message": "Google、TikTok、Instagram"
@@ -396,9 +303,150 @@
   "message": "ネタバレじゃない？報告する"
  },
  "veil_author": {
-  "message": "🛡 非表示：リストの投稿者\nクリックで表示"
+  "message": "非表示：リストの投稿者\nクリックで表示"
  },
- "pro_blocked": {
+ "everywhere": {
+  "message": "すべてのサイトを保護"
+ },
+ "everywhere_grant": {
+  "message": "すべてのサイトで許可"
+ },
+ "until": {
+  "message": "保護する期限"
+ },
+ "until_passed": {
+  "message": "この日付は過ぎたため、保護はオフです。新しい日付を選ぶか、空にしてください。"
+ },
+ "hide_ai": {
+  "message": "守っている作品の AI 要約（Google、YouTube）を隠す"
+ },
+ "trusted": {
+  "message": "信頼するチャンネルとコミュニティ"
+ },
+ "trusted_ph": {
+  "message": "@チャンネル\nr/サブレディット"
+ },
+ "trusted_hint": {
+  "message": "これらの動画や投稿は隠されません。1 行に 1 つ。"
+ },
+ "blocked": {
   "message": "この投稿者は常に隠す"
+ },
+ "st_empty_title": {
+  "message": "Nothing to dodge here."
+ },
+ "st_empty_sub": {
+  "message": "Safe to scroll."
+ },
+ "week_line": {
+  "message": "This week: {0} · all time: {1}"
+ },
+ "share_title": {
+  "message": "Share"
+ },
+ "card_btn": {
+  "message": "Copy my week as a picture"
+ },
+ "card_copied": {
+  "message": "Picture copied. Paste it into a post."
+ },
+ "card_saved": {
+  "message": "Picture saved as a file."
+ },
+ "card_title_release": {
+  "message": "{0} week: spoilers covered"
+ },
+ "card_title": {
+  "message": "spoilers covered this week"
+ },
+ "card_foot": {
+  "message": "free, 0 network requests"
+ },
+ "hero_armed": {
+  "message": "covered"
+ },
+ "hero_armed_label": {
+  "message": "One click arms it."
+ },
+ "hero_armed_line": {
+  "message": "Click again to see how it works."
+ },
+ "hero_open": {
+  "message": "open"
+ },
+ "all_time": {
+  "message": "all time"
+ },
+ "brand_name": {
+  "message": "Show the name “Shield” on the cover"
+ },
+ "yt_check": {
+  "message": "Check on YouTube"
+ },
+ "yt_added": {
+  "message": "Added: {0}."
+ },
+ "sl_title": {
+  "message": "Share a spoiler without spoiling anyone"
+ },
+ "sl_about_ph": {
+  "message": "What is it about? (shown openly)"
+ },
+ "sl_text_ph": {
+  "message": "The spoiler"
+ },
+ "sl_copy": {
+  "message": "Copy spoiler link"
+ },
+ "sl_copied": {
+  "message": "Link copied. People see a blur and choose to open it."
+ },
+ "sl_need": {
+  "message": "Write the spoiler first."
+ },
+ "sl_hint": {
+  "message": "The text sits inside the link, after the # sign. Nobody stores it; anyone with the link can read it."
+ },
+ "code_title": {
+  "message": "Share my lists as one line of text"
+ },
+ "code_copy": {
+  "message": "Copy my code"
+ },
+ "code_copied": {
+  "message": "Code copied."
+ },
+ "code_paste_ph": {
+  "message": "Paste a code from a friend"
+ },
+ "code_load": {
+  "message": "Add these lists"
+ },
+ "code_bad": {
+  "message": "This is not a Spoiler Shield code."
+ },
+ "code_done": {
+  "message": "Added: {0}."
+ },
+ "site_fail": {
+  "message": "This did not switch on. Reload the extension and try again."
+ },
+ "code_have": {
+  "message": "You already have these lists."
+ },
+ "review_title_end": {
+  "message": "Your protection ended. Did it save you?"
+ },
+ "zero_net": {
+  "message": "Network requests: 0"
+ },
+ "source_link": {
+  "message": "Source code"
+ },
+ "veil_label_own": {
+  "message": "Hidden by your title: {0}\nClick to show"
+ },
+ "dodged_other": {
+  "message": "spoilers dodged on this page"
  }
 }

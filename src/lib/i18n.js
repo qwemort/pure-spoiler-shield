@@ -16,6 +16,7 @@
   SS.applyI18n = function (root) {
     for (const el of root.querySelectorAll('[data-i18n]')) el.textContent = SS.t(el.getAttribute('data-i18n'));
     for (const el of root.querySelectorAll('[data-i18n-title]')) el.title = SS.t(el.getAttribute('data-i18n-title'));
+    for (const el of root.querySelectorAll('[data-i18n-aria]')) el.setAttribute('aria-label', SS.t(el.getAttribute('data-i18n-aria')));
     for (const el of root.querySelectorAll('[data-i18n-placeholder]')) el.placeholder = SS.t(el.getAttribute('data-i18n-placeholder'));
   };
 })(typeof globalThis !== 'undefined' ? globalThis : this);

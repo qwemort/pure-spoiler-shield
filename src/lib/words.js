@@ -326,7 +326,16 @@
     { id: 'professor-layton-nws', label: 'Professor Layton and the New World of Steam', kind: 'game', game: ['professor layton and the new world of steam', 'layton new world of steam', 'layton and the new world of steam', 'professor layton new world of steam', 'layton new world', 'профессор лейтон новый мир пара', 'професор лейтон новий світ пари', 'レイトン教授と蒸気の新世界', '雷顿教授与蒸汽新世界'], unique: [], common: ['layton', 'luke triton', 'emmy altava', 'hershel layton', 'professor layton', 'лейтон', 'лейтона', 'профессор лейтон', 'професор лейтон'] },
     { id: 'metaphor-refantazio', label: 'Metaphor: ReFantazio', kind: 'game', game: ['metaphor refantazio', 'metaphor: refantazio', 'metaphor refantazio switch 2', 'metaphor refantazio ending', 'метафор рефантазио', 'метафора рефантазио', 'メタファー：リファンタジオ', 'メタファー リファンタジオ', '暗喻幻想', '메타포 리판타지오'], unique: ['hulkenberg', 'strohl', 'grius', 'eupha', 'junah', 'heismay', 'louis guiabern', 'basilio', 'forden', 'euchronia', 'hulkenberg metaphor', 'strohl metaphor', 'eupha metaphor', 'хулькенберг', 'ойфа', 'строл', 'гриус', 'евхрония', 'юхрония'], common: ['grius', 'junah', 'neuras', 'heismay', 'strohl', 'hulkenberg'] },
     { id: 'xenoblade-3', label: 'Xenoblade Chronicles 3', kind: 'game', game: ['xenoblade chronicles 3', 'xenoblade 3', 'xenoblade chronicles 3 switch 2', 'xenoblade 3 switch 2 edition', 'xenoblade chronicles 3 ending', 'ксеноблэйд хроники 3', 'ксеноблейд 3', 'ゼノブレイド3', '异度神剑3', '제노블레이드3'], unique: ['noah and mio', 'noah mio eunie', 'mio xenoblade', 'eunie xenoblade', 'taion xenoblade', 'lanz xenoblade', 'sena xenoblade', 'cammuravi', 'xenoblade future redeemed', 'ноа и мио', 'эуни', 'тайон', 'ланц', 'сена', 'камурави', 'ノア', 'ミオ'], common: ['noah', 'mio', 'eunie', 'taion', 'lanz', 'sena', 'ethel', 'cammuravi', 'aionios', 'moebius', 'nopon', 'ноа', 'мио', 'эуни', 'тайон', 'ланц', 'аионис', 'мебиус'] },
-    { id: 'zelda-oot-remake', label: 'Zelda: Ocarina of Time (remake)', kind: 'game', game: ['zelda ocarina of time remake', 'ocarina of time remake', 'the legend of zelda ocarina of time remake', 'zelda oot remake', 'ocarina of time switch 2', 'зельда окарина времени ремейк', 'ocarina of time 2026', 'ゼルダの伝説 時のオカリナ リメイク', '塞尔达传说 时之笛 重制'], unique: ['ocarina of time remake', 'oot remake', 'ocarina remake', 'ocarina switch 2', 'окарина времени ремейк', 'окарина времени'], common: ['ganondorf', 'sheik', 'hyrule', 'navi', 'zelda', 'link', 'ocarina', 'ganon', 'ганондорф', 'хайрул', 'нави', 'зельда', 'линк', 'окарина', 'шейк'] }
+    { id: 'zelda-oot-remake', label: 'Zelda: Ocarina of Time (remake)', kind: 'game', game: ['zelda ocarina of time remake', 'ocarina of time remake', 'the legend of zelda ocarina of time remake', 'zelda oot remake', 'ocarina of time switch 2', 'зельда окарина времени ремейк', 'ocarina of time 2026', 'ゼルダの伝説 時のオカリナ リメイク', '塞尔达传说 时之笛 重制'], unique: ['ocarina of time remake', 'oot remake', 'ocarina remake', 'ocarina switch 2', 'окарина времени ремейк', 'окарина времени'], common: ['ganondorf', 'sheik', 'hyrule', 'navi', 'zelda', 'link', 'ocarina', 'ganon', 'ганондорф', 'хайрул', 'нави', 'зельда', 'линк', 'окарина', 'шейк'] },
+    // ---------------------------------------------------------------- 1.4.0: eight more (names from announcements / long-known source material only)
+    { id: 'detective-conan', label: 'Detective Conan', kind: 'anime', not: ['conan doyle', 'конан дойл', 'конан дойла', 'конан дойлу', 'конан дойлом', 'конан дойле', 'конан дойль', 'конан дойля', 'конан дойлю', 'конан дойлем', 'конан дойлі', 'конан дойла', 'conan the barbarian', 'conan obrien', 'conan o brien', 'конан варвар'], game: ['detective conan', 'case closed anime', 'meitantei conan', 'детектив конан', 'детектив конан аниме', 'детектив конан серия', 'детектив конан сезон', 'детектив конан эпизод', 'детектив конан фильм', '名探偵コナン', '名侦探柯南', '명탐정 코난'], unique: ['conan edogawa', 'shinichi kudo', 'ran mouri', 'kogoro mouri', 'ai haibara', 'heiji hattori', 'kaito kid', 'конан эдогава', 'синъити кудо', 'синити кудо', 'ран мори'], common: ['conan', 'haibara', 'heiji', 'kogoro', 'конан'] },
+    { id: 'the-institute', label: 'The Institute', kind: 'show', game: ['the institute stephen king', 'the institute series', 'the institute mgm', 'institute stephen king', 'институт стивена кинга', 'институт стивен кинг', 'інститут стівена кінга'], unique: ['luke ellis', 'mrs sigsby', 'ms sigsby', 'kalisha', 'тим джеймисон'], common: ['the institute', 'sigsby', 'avery', 'avery dixon', 'институт'] },
+    { id: 'exiled-heavy-knight', label: 'The Exiled Heavy Knight Knows How to Game the System', kind: 'anime', game: ['the exiled heavy knight knows how to game the system', 'exiled heavy knight knows how to game the system', 'exiled heavy knight', 'heavy knight game the system', 'tsuihou sareta tensei juu kishi', 'tsuihō sareta tensei jū kishi', '追放された転生重騎士はゲーム知識で無双する', '追放された転生重騎士'], unique: ['elma edvan', 'luce rubis', 'maris edvan'], common: ['elma', 'luce', 'maris'] },
+    { id: 'gilded-age', label: 'The Gilded Age', kind: 'show', game: ['the gilded age hbo', 'gilded age hbo', 'the gilded age season', 'gilded age season', 'the gilded age series', 'the gilded age tv', 'позолоченный век сериал', 'позолоченный век hbo', 'позолочений вік серіал'], unique: ['bertha russell', 'agnes van rhijn', 'marian brook', 'peggy scott', 'ada brook', 'берта рассел', 'агнес ван райн', 'мэриан брук'], common: ['bertha', 'agnes', 'marian', 'peggy', 'berta', 'george russell'] },
+    { id: 'overgeared', label: 'Overgeared', kind: 'anime', game: ['overgeared anime', 'overgeared season', 'overgeared manhwa', 'overgeared webtoon', 'overgeared web novel', 'overgeared novel', 'overgeared episode', 'оверджиред', '템빨'], unique: ['shin youngwoo', 'pagma', 'pagmas descendant'], common: ['grid', 'youngwoo'] },
+    { id: 'reincarnated-sword-2', label: 'Reincarnated as a Sword', kind: 'anime', game: ['reincarnated as a sword', 'tensei shitara ken deshita', 'tensei shitara ken', 'tenken anime', 'reincarnated as a sword season 2', 'перерождение в меч', 'переродился мечом', '転生したら剣でした'], unique: ['fran and teacher', 'black cat beastman fran'], common: ['fran', 'shishou'] },
+    { id: 'blue-box', label: 'Blue Box', kind: 'anime', game: ['blue box anime', 'blue box season', 'blue box manga', 'blue box s2', 'blue box 2nd season', 'ao no hako', 'アオのハコ', '블루 박스 애니'], unique: ['taiki inomata', 'chinatsu kano', 'hina chono', 'inomata taiki', 'kano chinatsu', 'chono hina'], common: ['taiki', 'chinatsu', 'hina', 'inomata'] },
+    { id: 'firefly-wedding', label: 'Firefly Wedding', kind: 'anime', game: ['firefly wedding anime', 'firefly wedding movie', 'firefly wedding film', 'hotaru no yomeiri', 'ホタルの嫁入り'], unique: ['satoko kirigaya', 'shinpei goto', 'kentaro ogawa'], common: ['satoko', 'shinpei', 'mitsueda'] },
   ];
   SS.LIBRARY = LIB.map((x) => ({ id: x.id, label: x.label, kind: x.kind, free: true }));
   const compiled = {};
@@ -335,7 +344,7 @@
     const x = LIB.find((p) => p.id === id);
     if (!x) return null;
     const joined = x.game.filter((w) => /^[a-z0-9 ]+$/.test(w) && w.includes(' ') && w.replace(/ /g, '').length >= 6).map((w) => w.replace(/ /g, ''));   // 1.2: "O N E P I E C E" → onepiece
-    return (compiled[id] = { id: x.id, label: x.label, kind: x.kind, game: compile(x.game.concat(joined)), unique: compile(x.unique), common: compile(x.common), spoil: SPOIL_SET });
+    return (compiled[id] = { id: x.id, label: x.label, kind: x.kind, game: compile(x.game.concat(joined)), not: compile(x.not || []), unique: compile(x.unique), common: compile(x.common), spoil: SPOIL_SET });
   }
   SS.preset = preset;
   SS.PRESETS = { gta6: preset('gta6') };   // kept for older code and tests
@@ -348,52 +357,50 @@
    * A shield from the settings -> matcher. Custom shield: the title (and its spellings, comma-separated) works like
    * a game name, every listed name like a name unique to it — the person chose them.
    */
-  SS.buildShield = function (sh, pro) {
+  SS.buildShield = function (sh) {
     if (!sh) return null;
     if (sh.preset) {
       const p = preset(sh.preset);
-      return p ? Object.assign({}, p, { key: sh.id, mode: SS.level(sh.mode), action: sh.action === 'remove' ? 'remove' : 'blur' }, proOptions(sh, pro)) : null;
+      return p ? Object.assign({}, p, { key: sh.id, mode: SS.level(sh.mode), action: sh.action === 'remove' ? 'remove' : 'blur' }, shieldOptions(sh)) : null;
     }
     const titles = lines(sh.title);
     const words = lines(sh.words);      // words added with the right-click menu: hidden whenever they appear
     if (!titles.length && !words.length) return null;
     return { id: 'custom', key: sh.id, label: String(sh.label || titles[0] || words[0]).slice(0, 60), kind: 'custom', game: compile(titles), own: words.length ? compile(words) : null, unique: compile(lines(sh.names)), common: compile([]), spoil: SPOIL_SET,
-      mode: SS.level(sh.mode), action: sh.action === 'remove' ? 'remove' : 'blur', ...proOptions(sh, pro) };
+      mode: SS.level(sh.mode), action: sh.action === 'remove' ? 'remove' : 'blur', ...shieldOptions(sh) };
   };
   const dayEnd = (d) => (/^\d{4}-\d{2}-\d{2}$/.test(String(d || '')) ? Date.parse(d + 'T23:59:59') : 0);
   const dayStart = (d) => (/^\d{4}-\d{2}-\d{2}$/.test(String(d || '')) ? Date.parse(d + 'T00:00:00') : 0);
-  /** Pro options of a shield (ignored without Pro): upTo — "I watched up to episode N"; release — until that day
+  /** Options of a shield (all free since 1.4): upTo — "I watched up to episode N"; release — until that day
    *  everything about it is hidden; until — after that day the shield is off. */
-  function proOptions(sh, pro) {
-    // 1.2: the dates of a shield (release day, protect until) are free for every list (Антон 06.11); "watched up to N" stays Pro
+  function shieldOptions(sh) {
     const n = parseInt(sh.upTo, 10);
-    return { upTo: pro && n > 0 && n < 100000 ? n : 0, releaseAt: dayStart(sh.release), untilAt: dayEnd(sh.until) };
+    return { upTo: n > 0 && n < 100000 ? n : 0, releaseAt: dayStart(sh.release), untilAt: dayEnd(sh.until) };
   }
-  SS.FREE_OWN = 3;   // own titles in the free version (1.1)
 
-  /** Which shields work: Pro — all switched on; free — every ready list and the first 3 own titles (1.1). */
-  SS.activeShields = function (shields, pro, now) {
-    const out = []; let own = 0; const t = now || Date.now();
+  /** Which shields work: every one that is switched on (all free since 1.4, own titles without a limit). */
+  SS.activeShields = function (shields, now) {
+    const out = []; const t = now || Date.now();
     for (const sh of shields || []) {
-      if (!sh.preset) { own++; if (!pro && own > SS.FREE_OWN) continue; }   // same rule as isLocked, on or off
       if (sh.on === false) continue;
-      const b = SS.buildShield(sh, pro);
+      const b = SS.buildShield(sh);
       if (!b) continue;
-      if (b.untilAt && t > b.untilAt) continue;                              // Pro "protect until": done
-      b.everything = b.mode === 'everything' || (b.releaseAt > 0 && t < b.releaseAt);   // Pro: until release, hide all
+      if (b.untilAt && t > b.untilAt) continue;                              // "protect until": done
+      b.everything = b.mode === 'everything' || (b.releaseAt > 0 && t < b.releaseAt);   // until release, hide all
       out.push(b);
     }
     return out;
   };
-  SS.isLocked = function (shields, index, pro) {
-    if (pro) return false;
-    const sh = shields[index];
-    if (!sh || sh.preset) return false;
-    return shields.slice(0, index).filter((x) => !x.preset).length >= SS.FREE_OWN;
-  };
 
   /** Does this text name the game (or a name unique to it)? Used to decide the page context. */
+  /* Phrases that only look like this title ("Conan Doyle") are cut out; the rest of the text is still judged,
+     so "Detective Conan movie ending: the Conan Doyle easter egg" stays hidden. */
+  function cutNot(norm, preset) {
+    if (preset.not) for (const w of preset.not.words) if (norm.includes(' ' + w + ' ')) norm = norm.split(' ' + w + ' ').join(' ');
+    return norm;
+  }
   SS.isAbout = function (norm, preset) {
+    norm = cutNot(norm, preset);
     return !!(find(preset.game, norm) || find(preset.unique, norm));
   };
 
@@ -403,12 +410,13 @@
    */
   SS.judge = function (norm, preset, mode, context, own) {
     if (own && (own.words.length || own.cjk.length) && find(own, norm)) return 'own';
+    norm = cutNot(norm, preset);
     const game = !!find(preset.game, norm);
     const unique = !!find(preset.unique, norm);
     const common = !!find(preset.common, norm);
     if (!(game || unique || (common && context))) return '';
     const why = game ? 'game' : 'name';
-    // Pro "I watched up to episode N": a text with episode numbers is judged by the numbers only
+    // "I watched up to episode N": a text with episode numbers is judged by the numbers only
     const series = preset.kind === 'anime' || preset.kind === 'show' || preset.kind === 'custom';
     const eps = series || preset.upTo ? SS.episodes(norm, preset.game) : [];
     if (preset.upTo && eps.length) return Math.max.apply(null, eps) > preset.upTo ? 'episode' : '';
@@ -422,7 +430,7 @@
   SS.judgeAll = function (norm, shields, contexts, force) {
     for (const sh of shields) {
       const r = SS.judge(norm, sh, force || (sh.everything ? 'everything' : sh.mode), contexts.has(sh.key), sh.own || null);   // right-click words: hidden in any mode
-      if (r) return { reason: r, label: sh.label, action: sh.action, key: sh.key };
+      if (r) return { reason: r, label: sh.label, action: sh.action, key: sh.key, own: sh.kind === 'custom' };
     }
     return null;
   };

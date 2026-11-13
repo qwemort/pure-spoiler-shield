@@ -52,24 +52,21 @@ const hotd = { id: 'house-dragon', preset: 'house-dragon', mode: 'spoilers', act
 ok(SS.LIBRARY.length >= 35 && SS.LIBRARY.every((x) => x.free), 'library: 35+ ready lists, all free (1.1)');
 ok(SS.LIBRARY.every((x) => SS.preset(x.id) && ['game', 'movie', 'show', 'anime'].includes(x.kind)), 'every preset builds and has a kind');
 ok(new Set(SS.LIBRARY.map((x) => x.id)).size === SS.LIBRARY.length, 'preset ids are unique');
-const free = SS.activeShields([gta, sev, sec, hotd], false), pro = SS.activeShields([gta, sev, sec, hotd], true);
-ok(free.map((x) => x.key).join() === 'gta6,own-1,own-2,house-dragon', 'free 1.1: ready lists and up to 3 own titles work', free.map((x) => x.key));
+const all4 = SS.activeShields([gta, sev, sec, hotd]);
+ok(all4.map((x) => x.key).join() === 'gta6,own-1,own-2,house-dragon', '1.4: every shield that is on works', all4.map((x) => x.key));
 const o = (i) => ({ id: 'own-' + i, title: 'Show ' + i, mode: 'everything', on: true });
 const four = [gta, o(1), o(2), o(3), o(4)];
-ok(SS.activeShields(four, false).map((x) => x.key).join() === 'gta6,own-1,own-2,own-3', 'free: the 4th own title is Pro', SS.activeShields(four, false).map((x) => x.key));
-ok(SS.activeShields(four, true).length === 5, 'Pro: own titles without limit');
-ok(pro.length === 4, 'Pro: all shields work');
-ok(SS.activeShields([gta, Object.assign({}, o(1), { on: false }), o(2), o(3), o(4)], false).map((x) => x.key).join() === 'gta6,own-2,own-3', 'free: switching an own title off does not unlock the 4th');
-ok(SS.isLocked(four, 4, false) && !SS.isLocked(four, 3, false) && !SS.isLocked([gta, hotd], 1, false), 'isLocked: only the 4th own title is locked in free; ready lists never');
-ok(!SS.isLocked([gta, sev, sec, hotd], 3, true), 'isLocked: nothing locked in Pro');
+ok(SS.activeShields(four).length === 5, '1.4: own titles without a limit');
+ok(SS.activeShields([gta, Object.assign({}, o(1), { on: false }), o(2), o(3), o(4)]).map((x) => x.key).join() === 'gta6,own-2,own-3,own-4', '1.4: a switched-off own title is skipped, the rest work');
+ok(SS.isLocked === undefined && SS.FREE_OWN === undefined, '1.4: no lock and no free limit left in the engine');
+const pro = all4;
 const r1 = SS.judgeAll(N('Severance season 2 finale explained'), pro, new Set());
 ok(r1 && r1.label === 'Severance' && r1.action === 'remove', 'own shield: title + spoiler word, with its label and action', r1);
 ok(SS.judgeAll(N('Разделение 2 сезон финал'), pro, new Set()), 'own shield: second spelling after a comma works');
 ok(!SS.judgeAll(N('Severance season 2 trailer'), pro, new Set()), 'own shield in spoilers mode keeps the trailer');
 ok(SS.judgeAll(N('Helly dies?!'), pro, new Set()), 'own shield: unique name + spoiler word');
 ok(SS.judgeAll(N('Pluribus trailer'), pro, new Set()), 'own shield in everything mode hides any mention');
-ok(SS.judgeAll(N('House of the Dragon season 3 finale: Rhaenyra'), pro, new Set()), 'Pro preset House of the Dragon works');
-ok(!!SS.judgeAll(N('House of the Dragon season 3 finale: Rhaenyra'), free, new Set()), 'the same ready list works in free too (1.1)');
+ok(SS.judgeAll(N('House of the Dragon season 3 finale: Rhaenyra'), pro, new Set()), 'preset House of the Dragon works');
 ok(!SS.judgeAll(N('How to cook pasta'), pro, new Set()) && !SS.judgeAll(N('Jason Momoa new movie ending'), pro, new Set()), 'normal text passes every shield');
 const w = SS.buildShield({ id: 'mine', label: 'My words', words: 'risotto', mode: 'everything' });
 ok(w && SS.judgeAll(N('Best risotto recipe'), [w], new Set()).label === 'My words', 'right-click words shield hides the word anywhere');
@@ -87,13 +84,13 @@ ok(!SS.judgeAll(N('Luffy cosplay'), [SS.buildShield({ id: 'one-piece', preset: '
 ok(!SS.judgeAll(N('Night city ending explained'), [SS.buildShield({ id: 'e', preset: 'edgerunners-2' })], new Set()), 'common words alone need page context');
 
 // 1.1 — smarter
-const S1 = (sh, pro) => SS.activeShields([sh], pro);
-const opS = S1({ id: 'one-piece', preset: 'one-piece', mode: 'spoilers' }, false);
+const S1 = (sh) => SS.activeShields([sh]);
+const opS = S1({ id: 'one-piece', preset: 'one-piece', mode: 'spoilers' });
 ok(!!SS.judgeAll(N('САНДЖИ ПРОБУЖДАЕТ УЛЬТРА КОРОЛЕВСКУЮ ВОЛЮ! Ван Пис 1197'), opS, new Set()), 'the Sanji title from the screenshot is hidden in "spoilers only"');
 ok(!!SS.judgeAll(N('Luffy gets a new form'), opS, new Set()), 'power-up words are spoilers');
 ok(!!SS.judgeAll(N('One Piece episode 1150 reaction'), opS, new Set()), 'an episode number of a series is a spoiler signal');
 ok(!SS.judgeAll(N('One Piece ending theme full'), opS, new Set()), '"ending theme" is not an ending');
-const gtaS = S1(gta, false);
+const gtaS = S1(gta);
 ok(!SS.judgeAll(N('GTA 6 trailer 3 breakdown (no spoilers)'), gtaS, new Set()), '"no spoilers" does not trigger the spoiler word');
 ok(!SS.judgeAll(N('ГТА 6 обзор без спойлеров'), gtaS, new Set()), '"без спойлеров" does not trigger');
 ok(!!SS.judgeAll(N('GTA 6 ending explained (spoilers!)'), gtaS, new Set()), 'real spoilers still hidden');
@@ -101,25 +98,24 @@ ok(!SS.judgeAll(N('GTA 6 mission 3 gameplay 2026'), gtaS, new Set()) || true, 'g
 ok(SS.episodes(N('chapter 1197 / 12 серия / s2e5 / 第12話 / 12화 / odcinek 7 / 3 bölüm'), null).sort((a, b) => a - b).join() === '3,5,7,12,12,12,1197', 'episode numbers in 13 languages', SS.episodes(N('chapter 1197 / 12 серия / s2e5 / 第12話 / 12화 / odcinek 7 / 3 bölüm'), null));
 ok(SS.episodes(N('Ван Пис 1197'), SS.preset('one-piece').game).join() === '1197' && SS.episodes(N('One Piece 2026 recap'), SS.preset('one-piece').game).length === 0, '"<title> 1197" counts, a year does not');
 ok(SS.episodes(N('Dune 3 trailer'), SS.preset('dune-3').game).length === 0, '"Dune 3" is a title, not an episode');
-// Pro: watched up to episode N
-const opUp = S1({ id: 'one-piece', preset: 'one-piece', mode: 'everything', upTo: 1190 }, true);
-ok(!SS.judgeAll(N('One Piece episode 1150 review'), opUp, new Set()), 'Pro upTo 1190: episode 1150 is shown');
-ok(!!SS.judgeAll(N('Ван Пис 1197'), opUp, new Set()), 'Pro upTo 1190: 1197 is hidden');
-ok(!!SS.judgeAll(N('Luffy funny moments'), opUp, new Set()), 'Pro upTo: texts without a number follow the level');
-ok(!!SS.judgeAll(N('One Piece episode 1150 review'), S1({ id: 'one-piece', preset: 'one-piece', mode: 'everything', upTo: 1190 }, false), new Set()), 'upTo is ignored without Pro');
-// Pro: release date and protect-until
+// watched up to episode N (free since 1.4)
+const opUp = S1({ id: 'one-piece', preset: 'one-piece', mode: 'everything', upTo: 1190 });
+ok(!SS.judgeAll(N('One Piece episode 1150 review'), opUp, new Set()), 'upTo 1190: episode 1150 is shown');
+ok(!!SS.judgeAll(N('Ван Пис 1197'), opUp, new Set()), 'upTo 1190: 1197 is hidden');
+ok(!!SS.judgeAll(N('Luffy funny moments'), opUp, new Set()), 'upTo: texts without a number follow the level');
+// release date and protect-until (free)
 const day = (d) => new Date(Date.now() + d * 86400000).toISOString().slice(0, 10);
-ok(!!SS.judgeAll(N('GTA 6 trailer reaction'), SS.activeShields([Object.assign({}, gta, { release: day(10) })], true), new Set()), 'Pro release in 10 days: everything hidden before it');
-ok(!SS.judgeAll(N('GTA 6 trailer reaction'), SS.activeShields([Object.assign({}, gta, { release: day(-1) })], true), new Set()), 'after release: back to spoilers only');
-ok(SS.activeShields([Object.assign({}, gta, { until: day(-2) })], true).length === 0 && SS.activeShields([Object.assign({}, gta, { until: day(3) })], true).length === 1, 'Pro until: the shield switches off after that day');
-ok(SS.activeShields([Object.assign({}, gta, { until: day(-2) })], false).length === 0, '1.2: until works without Pro too (dates are free)');
+ok(!!SS.judgeAll(N('GTA 6 trailer reaction'), SS.activeShields([Object.assign({}, gta, { release: day(10) })]), new Set()), 'release in 10 days: everything hidden before it');
+ok(!SS.judgeAll(N('GTA 6 trailer reaction'), SS.activeShields([Object.assign({}, gta, { release: day(-1) })]), new Set()), 'after release: back to spoilers only');
+ok(SS.activeShields([Object.assign({}, gta, { until: day(-2) })]).length === 0 && SS.activeShields([Object.assign({}, gta, { until: day(3) })]).length === 1, 'until: the shield switches off after that day');
+ok(SS.activeShields([Object.assign({}, gta, { until: day(-2) })]).length === 0, 'until works for every list (dates are free)');
 // names that are also ordinary words do not hide alone
-const fr = S1({ id: 'frieren', preset: 'frieren', mode: 'everything' }, false);
+const fr = S1({ id: 'frieren', preset: 'frieren', mode: 'everything' });
 ok(!SS.judgeAll(N('Ich friere, es ist kalt. Der Himmel ist grau'), fr, new Set()), 'German "frieren/Himmel" alone is not the anime');
 ok(!!SS.judgeAll(N('Sousou no Frieren season 2 episode 5'), fr, new Set()), 'Frieren itself is caught');
-ok(!SS.judgeAll(N('Шершни атакуют пасеку'), S1({ id: 'yellowjackets', preset: 'yellowjackets', mode: 'everything' }, false), new Set()), 'hornets are not the show');
-ok(!SS.judgeAll(N('severance pay rules in Poland'), S1({ id: 'severance', preset: 'severance', mode: 'everything' }, false), new Set()), '"severance pay" is not the show');
-ok(!SS.judgeAll(N('the boys went to school'), S1({ id: 'the-boys', preset: 'the-boys', mode: 'everything' }, false), new Set()), '"the boys" phrase is not the show');
+ok(!SS.judgeAll(N('Шершни атакуют пасеку'), S1({ id: 'yellowjackets', preset: 'yellowjackets', mode: 'everything' }), new Set()), 'hornets are not the show');
+ok(!SS.judgeAll(N('severance pay rules in Poland'), S1({ id: 'severance', preset: 'severance', mode: 'everything' }), new Set()), '"severance pay" is not the show');
+ok(!SS.judgeAll(N('the boys went to school'), S1({ id: 'the-boys', preset: 'the-boys', mode: 'everything' }), new Set()), '"the boys" phrase is not the show');
 // normalization
 ok(SS.normalize("GTA-6's ÉNDING!!!") === ' gta 6 s ending ', 'normalize (1.2: possessive “’s” splits off: Luffy’s → luffy s)', SS.normalize("GTA-6's ÉNDING!!!"));
 
@@ -146,5 +142,25 @@ ok(SS.normalize("GTA-6's ÉNDING!!!") === ' gta 6 s ending ', 'normalize (1.2: p
   // every list compiles and hides its own name in "everything"
   for (const p of SS.LIBRARY) { const pr = L(p.id); ok(pr && pr.game.words.length + pr.game.cjk.length > 0, 'list compiles: ' + p.id); }
   ok(SS.LIBRARY.length >= 52, '1.2 library has the new lists', SS.LIBRARY.length);
+}
+
+// ---------------- 1.4.0: eight more lists (60 in total) ----------------
+{
+  const jj = (id, t, mode = 'spoilers') => SS.judge(SS.normalize(t), SS.preset(id), mode, false, null);
+  const NEW = ['detective-conan', 'the-institute', 'exiled-heavy-knight', 'gilded-age', 'overgeared', 'reincarnated-sword-2', 'blue-box', 'firefly-wedding'];
+  ok(SS.LIBRARY.length === 60, '1.4.0 library has 60 lists', SS.LIBRARY.length);
+  ok(NEW.every((id) => SS.LIBRARY.some((x) => x.id === id)), '1.4.0 all eight new lists exist');
+  const ordinary = ['the institute of technology opens a new campus', 'a gilded age of cheap flights', 'blue box of chocolates on the table', 'conan o brien interview tonight',
+    'my teacher gave a sword to fran at the museum', 'grid layout in css', 'heavy knight chess opening tutorial', 'the firefly flew into the wedding tent',
+    'gta 6 trailer', 'how to cook pasta with garlic', 'weather in warsaw tomorrow', 'new phone review battery life', 'marian is my neighbour', 'agnes bought bread',
+    'the institute for fiscal studies report', 'bertha the dog won a prize', 'peggy and sue went to the cinema', 'hina matsuri dolls festival', 'luke and elma are cousins', 'overgeared backpack for hiking trip'];
+  for (const id of NEW) {
+    const bad = ordinary.filter((t) => !t.includes('gta') && jj(id, t, 'everything') !== '');
+    ok(bad.length === 0 || (id === 'overgeared' && bad.length === 1 && bad[0].includes('overgeared backpack')), '1.4.0 ' + id + ' does not catch ordinary phrases', bad);
+  }
+  const hit = [['detective-conan', 'Detective Conan new episode'], ['the-institute', 'The Institute Stephen King series trailer'], ['exiled-heavy-knight', 'The Exiled Heavy Knight Knows How to Game the System episode 4'],
+    ['gilded-age', 'The Gilded Age HBO season 4'], ['overgeared', 'Overgeared anime episode 3'], ['reincarnated-sword-2', 'Reincarnated as a Sword season 2 episode 9'],
+    ['blue-box', 'Blue Box season 2 Taiki Inomata'], ['firefly-wedding', 'Firefly Wedding anime episode 5']];
+  for (const [id, t] of hit) ok(jj(id, t, 'everything') !== '', '1.4.0 ' + id + ' catches its own title: ' + t, jj(id, t, 'everything'));
 }
 console.log(`${pass} passed, ${fail} failed`); process.exit(fail ? 1 : 0);

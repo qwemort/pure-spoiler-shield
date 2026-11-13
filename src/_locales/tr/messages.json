@@ -9,16 +9,16 @@
   "message": "Koruma açık/kapalı"
  },
  "veil_label": {
-  "message": "🛡 Gizlendi · {0}\nGöstermek için tıkla"
+  "message": "Hidden by list: {0}\nClick to show"
  },
  "veil_confirm": {
   "message": "Göstermek için tekrar tıkla.\nHikâyeyi bozabilir."
  },
  "player_label": {
-  "message": "🛡 Bu video {0} spoilerı içerebilir\nGöstermek için tıkla"
+  "message": "Bu video {0} spoilerı içerebilir\nGöstermek için tıkla"
  },
  "fold_comments": {
-  "message": "🛡 Yorumlar gizlendi: {0} spoilerı içerebilir · göstermek için tıkla"
+  "message": "Yorumlar gizlendi: {0} spoilerı içerebilir · göstermek için tıkla"
  },
  "fold_confirm": {
   "message": "Yorumları göstermek için tekrar tıkla. Spoiler içerebilirler."
@@ -63,7 +63,7 @@
   "message": "Koruduğun şeyle ilgili video ve gönderilerin altındaki yorumları katla"
  },
  "btn_pause": {
-  "message": "10 dk duraklat"
+  "message": "5 dk duraklat"
  },
  "btn_resume": {
   "message": "Şimdi devam et"
@@ -83,14 +83,8 @@
  "st_site_off": {
   "message": "Bu sitede kapalı."
  },
- "st_page_clean": {
-  "message": "Bu sayfada henüz hiçbir şey gizlenmedi."
- },
  "st_not_here": {
   "message": "Bu sayfa korunmuyor."
- },
- "st_not_here_free": {
-  "message": "YouTube, Reddit ve X’te koruma var — izin verirsen Google, TikTok ve Instagram’da da. Pro her siteyi korur."
  },
  "hidden_total_one": {
   "message": "spoiler gizlendi"
@@ -103,72 +97,6 @@
  },
  "hidden_page_other": {
   "message": "bu sayfada {0} gizlendi"
- },
- "pro_title": {
-  "message": "Her yerde ve daha akıllı"
- },
- "pro_text": {
-  "message": "Diğer tüm siteler: Twitch, Discord, haberler, forumlar. “N. bölüme kadar izledim”, gizli yapay zeka özetleri, güvenilir kanallar, her zaman gizlenen yazarlar, yedek, sınırsız kendi başlıkların. Tek ödeme."
- },
- "pro_buy": {
-  "message": "Pro al"
- },
- "pro_have_key": {
-  "message": "Anahtarım var"
- },
- "pro_key_placeholder": {
-  "message": "Lisans anahtarını yapıştır"
- },
- "pro_activate": {
-  "message": "Etkinleştir"
- },
- "pro_active": {
-  "message": "Pro etkin · {0}"
- },
- "pro_everywhere": {
-  "message": "Tüm siteleri koru"
- },
- "pro_grant": {
-  "message": "Tüm sitelerde izin ver"
- },
- "pro_until": {
-  "message": "Şu tarihe kadar koru"
- },
- "pro_until_passed": {
-  "message": "Bu tarih geçti, bu yüzden koruma kapalı. Yeni bir tarih seç ya da alanı temizle."
- },
- "pro_remove": {
-  "message": "Lisansı bu tarayıcıdan kaldır"
- },
- "pro_remove_sure": {
-  "message": "Kaldırmak için tekrar tıkla"
- },
- "lic_paste_first": {
-  "message": "Önce anahtarını yapıştır."
- },
- "lic_not_valid": {
-  "message": "Bu anahtar geçerli değil."
- },
- "lic_not_setup": {
-  "message": "Çevrimiçi anahtarlar henüz hazır değil. Bana yaz, çevrimdışı bir anahtar göndereyim."
- },
- "lic_no_connection": {
-  "message": "Lisans sunucusuna bağlantı yok. İnterneti kontrol edip tekrar dene."
- },
- "lic_not_found": {
-  "message": "Bu anahtar bulunamadı."
- },
- "lic_busy": {
-  "message": "Lisans sunucusu meşgul. Bir dakika sonra tekrar dene."
- },
- "lic_refunded": {
-  "message": "Bu satın alma iade edildi."
- },
- "lic_max_activations": {
-  "message": "Bu anahtar zaten {0} tarayıcıda kullanılıyor. Bana yaz, sıfırlayayım."
- },
- "lic_checkout_unavailable": {
-  "message": "Satın alma yakında açılıyor. Anahtarın varsa aşağıya yapıştır."
  },
  "review_title": {
   "message": "Seni kurtardı mı?"
@@ -228,7 +156,7 @@
   "message": "Onunla ilgili sayfalardaki resim ve videoları da bulanıklaştır"
  },
  "media_label": {
-  "message": "🛡 Bu resim {0} için spoiler olabilir\nGöstermek için tıkla"
+  "message": "Bu resim {0} için spoiler olabilir\nGöstermek için tıkla"
  },
  "menu_hide": {
   "message": "“%s” spoiler olarak gizlensin"
@@ -278,9 +206,6 @@
  "custom_need_title": {
   "message": "Önce başlığı yaz."
  },
- "custom_pro_only": {
-  "message": "Ücretsiz sürümde 3 kendi başlığın var. Pro’da istediğin kadar."
- },
  "shields_max": {
   "message": "Bu en fazla kalkan sayısı."
  },
@@ -298,9 +223,6 @@
  },
  "shield_delete_sure": {
   "message": "Emin misin?"
- },
- "locked_custom": {
-  "message": "Duraklatıldı: ücretsiz sürüm 3 kendi başlığını tutar. Pro hepsini tutar."
  },
  "opt_blur": {
   "message": "Bulanıklaştır"
@@ -341,18 +263,6 @@
  "more_until": {
   "message": "Şu tarihe kadar koru (sonra kapat)"
  },
- "pro_hide_ai": {
-  "message": "Koruduğun şeyle ilgili yapay zeka özetlerini (Google, YouTube) gizle"
- },
- "pro_trusted": {
-  "message": "Güvenilir kanallar ve topluluklar"
- },
- "pro_trusted_ph": {
-  "message": "@kanal\nr/subreddit"
- },
- "pro_trusted_hint": {
-  "message": "Onların videoları ve gönderileri asla gizlenmez. Her satıra bir tane."
- },
  "backup_export": {
   "message": "Kalkanları dosyaya kaydet"
  },
@@ -364,9 +274,6 @@
  },
  "backup_bad": {
   "message": "Bu dosya bir Spoiler Shield yedeği değil."
- },
- "more_free": {
-  "message": "Tarihler herkes için çalışır. “Şuraya kadar izledim” Pro’da."
  },
  "more_sites_title": {
   "message": "Google, TikTok, Instagram"
@@ -402,9 +309,153 @@
   "message": "Spoiler değil mi? Bildir"
  },
  "veil_author": {
-  "message": "🛡 Gizlendi: listendeki bir yazar\nGöstermek için tıkla"
+  "message": "Gizlendi: listendeki bir yazar\nGöstermek için tıkla"
  },
- "pro_blocked": {
+ "everywhere": {
+  "message": "Tüm siteleri koru"
+ },
+ "everywhere_grant": {
+  "message": "Tüm sitelerde izin ver"
+ },
+ "until": {
+  "message": "Şu tarihe kadar koru"
+ },
+ "until_passed": {
+  "message": "Bu tarih geçti, bu yüzden koruma kapalı. Yeni bir tarih seç ya da alanı temizle."
+ },
+ "hide_ai": {
+  "message": "Koruduğun şeyle ilgili yapay zeka özetlerini (Google, YouTube) gizle"
+ },
+ "trusted": {
+  "message": "Güvenilir kanallar ve topluluklar"
+ },
+ "trusted_ph": {
+  "message": "@kanal\nr/subreddit"
+ },
+ "trusted_hint": {
+  "message": "Onların videoları ve gönderileri asla gizlenmez. Her satıra bir tane."
+ },
+ "blocked": {
   "message": "Bu yazarları hep gizle"
+ },
+ "st_empty_title": {
+  "message": "Nothing to dodge here."
+ },
+ "st_empty_sub": {
+  "message": "Safe to scroll."
+ },
+ "week_line": {
+  "message": "This week: {0} · all time: {1}"
+ },
+ "share_title": {
+  "message": "Share"
+ },
+ "card_btn": {
+  "message": "Copy my week as a picture"
+ },
+ "card_copied": {
+  "message": "Picture copied. Paste it into a post."
+ },
+ "card_saved": {
+  "message": "Picture saved as a file."
+ },
+ "card_title_release": {
+  "message": "{0} week: spoilers covered"
+ },
+ "card_title": {
+  "message": "spoilers covered this week"
+ },
+ "card_foot": {
+  "message": "free, 0 network requests"
+ },
+ "hero_armed": {
+  "message": "covered"
+ },
+ "hero_armed_label": {
+  "message": "One click arms it."
+ },
+ "hero_armed_line": {
+  "message": "Click again to see how it works."
+ },
+ "hero_open": {
+  "message": "open"
+ },
+ "all_time": {
+  "message": "all time"
+ },
+ "brand_name": {
+  "message": "Show the name “Shield” on the cover"
+ },
+ "yt_check": {
+  "message": "Check on YouTube"
+ },
+ "yt_added": {
+  "message": "Added: {0}."
+ },
+ "sl_title": {
+  "message": "Share a spoiler without spoiling anyone"
+ },
+ "sl_about_ph": {
+  "message": "What is it about? (shown openly)"
+ },
+ "sl_text_ph": {
+  "message": "The spoiler"
+ },
+ "sl_copy": {
+  "message": "Copy spoiler link"
+ },
+ "sl_copied": {
+  "message": "Link copied. People see a blur and choose to open it."
+ },
+ "sl_need": {
+  "message": "Write the spoiler first."
+ },
+ "sl_hint": {
+  "message": "The text sits inside the link, after the # sign. Nobody stores it; anyone with the link can read it."
+ },
+ "code_title": {
+  "message": "Share my lists as one line of text"
+ },
+ "code_copy": {
+  "message": "Copy my code"
+ },
+ "code_copied": {
+  "message": "Code copied."
+ },
+ "code_paste_ph": {
+  "message": "Paste a code from a friend"
+ },
+ "code_load": {
+  "message": "Add these lists"
+ },
+ "code_bad": {
+  "message": "This is not a Spoiler Shield code."
+ },
+ "code_done": {
+  "message": "Added: {0}."
+ },
+ "site_fail": {
+  "message": "This did not switch on. Reload the extension and try again."
+ },
+ "code_have": {
+  "message": "You already have these lists."
+ },
+ "review_title_end": {
+  "message": "Your protection ended. Did it save you?"
+ },
+ "zero_net": {
+  "message": "Network requests: 0"
+ },
+ "source_link": {
+  "message": "Source code"
+ },
+ "veil_label_own": {
+  "message": "Hidden by your title: {0}\nClick to show"
+ },
+ "dodged_one": {
+  "message": "spoiler dodged on this page"
+ },
+ "dodged_other": {
+  "message": "spoilers dodged on this page"
  }
 }

@@ -9,16 +9,16 @@
   "message": "开启或关闭保护"
  },
  "veil_label": {
-  "message": "🛡 已隐藏 · {0}\n点击显示"
+  "message": "Hidden by list: {0}\nClick to show"
  },
  "veil_confirm": {
   "message": "再点一次即可显示。\n可能会剧透剧情。"
  },
  "player_label": {
-  "message": "🛡 这个视频可能剧透 {0}\n点击显示"
+  "message": "这个视频可能剧透 {0}\n点击显示"
  },
  "fold_comments": {
-  "message": "🛡 评论已隐藏：可能有 {0} 剧透 · 点击显示"
+  "message": "评论已隐藏：可能有 {0} 剧透 · 点击显示"
  },
  "fold_confirm": {
   "message": "再点一次即可显示评论。评论里可能有剧透。"
@@ -63,7 +63,7 @@
   "message": "折叠你所保护作品的相关视频和帖子下的评论"
  },
  "btn_pause": {
-  "message": "暂停 10 分钟"
+  "message": "暂停 5 分钟"
  },
  "btn_resume": {
   "message": "立即恢复"
@@ -83,86 +83,14 @@
  "st_site_off": {
   "message": "已在此网站关闭。"
  },
- "st_page_clean": {
-  "message": "此页面暂时没有隐藏任何内容。"
- },
  "st_not_here": {
   "message": "此页面不受保护。"
- },
- "st_not_here_free": {
-  "message": "在 YouTube、Reddit 和 X 上受保护；允许后 Google、TikTok、Instagram 也受保护。Pro 保护所有网站。"
  },
  "hidden_total_other": {
   "message": "条剧透已隐藏"
  },
  "hidden_page_other": {
   "message": "此页面已隐藏 {0} 条"
- },
- "pro_title": {
-  "message": "处处保护，更聪明"
- },
- "pro_text": {
-  "message": "其他所有网站：Twitch、Discord、新闻、论坛。“我看到第 N 集”、隐藏 AI 摘要、信任的频道、总是隐藏的作者、备份、自建标题不限数量。一次付费。"
- },
- "pro_buy": {
-  "message": "获取 Pro"
- },
- "pro_have_key": {
-  "message": "我有密钥"
- },
- "pro_key_placeholder": {
-  "message": "粘贴你的许可证密钥"
- },
- "pro_activate": {
-  "message": "激活"
- },
- "pro_active": {
-  "message": "Pro 已激活 · {0}"
- },
- "pro_everywhere": {
-  "message": "保护所有网站"
- },
- "pro_grant": {
-  "message": "在所有网站上允许"
- },
- "pro_until": {
-  "message": "保护到"
- },
- "pro_until_passed": {
-  "message": "该日期已过，保护已关闭。请选择新日期或清空。"
- },
- "pro_remove": {
-  "message": "从此浏览器移除许可证"
- },
- "pro_remove_sure": {
-  "message": "再点一次即可移除"
- },
- "lic_paste_first": {
-  "message": "请先粘贴密钥。"
- },
- "lic_not_valid": {
-  "message": "此密钥无效。"
- },
- "lic_not_setup": {
-  "message": "在线密钥尚未准备好。联系我，我会发给你离线密钥。"
- },
- "lic_no_connection": {
-  "message": "无法连接许可证服务器。请检查网络后重试。"
- },
- "lic_not_found": {
-  "message": "未找到此密钥。"
- },
- "lic_busy": {
-  "message": "许可证服务器繁忙，请一分钟后再试。"
- },
- "lic_refunded": {
-  "message": "这笔购买已退款。"
- },
- "lic_max_activations": {
-  "message": "此密钥已在 {0} 个浏览器中使用。联系我，我会帮你重置。"
- },
- "lic_checkout_unavailable": {
-  "message": "即将开放购买。如果你已有密钥，请粘贴在下方。"
  },
  "review_title": {
   "message": "帮你躲过剧透了吗？"
@@ -222,7 +150,7 @@
   "message": "在相关页面上也模糊图片和视频"
  },
  "media_label": {
-  "message": "🛡 这张图片可能剧透 {0}\n点击显示"
+  "message": "这张图片可能剧透 {0}\n点击显示"
  },
  "menu_hide": {
   "message": "将“%s”作为剧透隐藏"
@@ -272,9 +200,6 @@
  "custom_need_title": {
   "message": "请先写标题。"
  },
- "custom_pro_only": {
-  "message": "免费版有 3 个自定义标题。Pro 不限数量。"
- },
  "shields_max": {
   "message": "护盾数量已达上限。"
  },
@@ -292,9 +217,6 @@
  },
  "shield_delete_sure": {
   "message": "确定？"
- },
- "locked_custom": {
-  "message": "已暂停：免费版保留 3 个自定义标题。Pro 保留全部。"
  },
  "opt_blur": {
   "message": "模糊"
@@ -335,18 +257,6 @@
  "more_until": {
   "message": "保护到（之后关闭）"
  },
- "pro_hide_ai": {
-  "message": "隐藏你所保护作品的 AI 摘要（Google、YouTube）"
- },
- "pro_trusted": {
-  "message": "信任的频道和社区"
- },
- "pro_trusted_ph": {
-  "message": "@频道\nr/子版块"
- },
- "pro_trusted_hint": {
-  "message": "它们的视频和帖子永远不会被隐藏。每行一个。"
- },
  "backup_export": {
   "message": "将护盾保存到文件"
  },
@@ -358,9 +268,6 @@
  },
  "backup_bad": {
   "message": "这不是 Spoiler Shield 的备份文件。"
- },
- "more_free": {
-  "message": "日期人人可用。“看到第几集”属于 Pro。"
  },
  "more_sites_title": {
   "message": "Google、TikTok、Instagram"
@@ -396,9 +303,150 @@
   "message": "不是剧透？反馈"
  },
  "veil_author": {
-  "message": "🛡 已隐藏：你列表中的作者\n点击显示"
+  "message": "已隐藏：你列表中的作者\n点击显示"
  },
- "pro_blocked": {
+ "everywhere": {
+  "message": "保护所有网站"
+ },
+ "everywhere_grant": {
+  "message": "在所有网站上允许"
+ },
+ "until": {
+  "message": "保护到"
+ },
+ "until_passed": {
+  "message": "该日期已过，保护已关闭。请选择新日期或清空。"
+ },
+ "hide_ai": {
+  "message": "隐藏你所保护作品的 AI 摘要（Google、YouTube）"
+ },
+ "trusted": {
+  "message": "信任的频道和社区"
+ },
+ "trusted_ph": {
+  "message": "@频道\nr/子版块"
+ },
+ "trusted_hint": {
+  "message": "它们的视频和帖子永远不会被隐藏。每行一个。"
+ },
+ "blocked": {
   "message": "总是隐藏这些作者"
+ },
+ "st_empty_title": {
+  "message": "Nothing to dodge here."
+ },
+ "st_empty_sub": {
+  "message": "Safe to scroll."
+ },
+ "week_line": {
+  "message": "This week: {0} · all time: {1}"
+ },
+ "share_title": {
+  "message": "Share"
+ },
+ "card_btn": {
+  "message": "Copy my week as a picture"
+ },
+ "card_copied": {
+  "message": "Picture copied. Paste it into a post."
+ },
+ "card_saved": {
+  "message": "Picture saved as a file."
+ },
+ "card_title_release": {
+  "message": "{0} week: spoilers covered"
+ },
+ "card_title": {
+  "message": "spoilers covered this week"
+ },
+ "card_foot": {
+  "message": "free, 0 network requests"
+ },
+ "hero_armed": {
+  "message": "covered"
+ },
+ "hero_armed_label": {
+  "message": "One click arms it."
+ },
+ "hero_armed_line": {
+  "message": "Click again to see how it works."
+ },
+ "hero_open": {
+  "message": "open"
+ },
+ "all_time": {
+  "message": "all time"
+ },
+ "brand_name": {
+  "message": "Show the name “Shield” on the cover"
+ },
+ "yt_check": {
+  "message": "Check on YouTube"
+ },
+ "yt_added": {
+  "message": "Added: {0}."
+ },
+ "sl_title": {
+  "message": "Share a spoiler without spoiling anyone"
+ },
+ "sl_about_ph": {
+  "message": "What is it about? (shown openly)"
+ },
+ "sl_text_ph": {
+  "message": "The spoiler"
+ },
+ "sl_copy": {
+  "message": "Copy spoiler link"
+ },
+ "sl_copied": {
+  "message": "Link copied. People see a blur and choose to open it."
+ },
+ "sl_need": {
+  "message": "Write the spoiler first."
+ },
+ "sl_hint": {
+  "message": "The text sits inside the link, after the # sign. Nobody stores it; anyone with the link can read it."
+ },
+ "code_title": {
+  "message": "Share my lists as one line of text"
+ },
+ "code_copy": {
+  "message": "Copy my code"
+ },
+ "code_copied": {
+  "message": "Code copied."
+ },
+ "code_paste_ph": {
+  "message": "Paste a code from a friend"
+ },
+ "code_load": {
+  "message": "Add these lists"
+ },
+ "code_bad": {
+  "message": "This is not a Spoiler Shield code."
+ },
+ "code_done": {
+  "message": "Added: {0}."
+ },
+ "site_fail": {
+  "message": "This did not switch on. Reload the extension and try again."
+ },
+ "code_have": {
+  "message": "You already have these lists."
+ },
+ "review_title_end": {
+  "message": "Your protection ended. Did it save you?"
+ },
+ "zero_net": {
+  "message": "Network requests: 0"
+ },
+ "source_link": {
+  "message": "Source code"
+ },
+ "veil_label_own": {
+  "message": "Hidden by your title: {0}\nClick to show"
+ },
+ "dodged_other": {
+  "message": "spoilers dodged on this page"
  }
 }

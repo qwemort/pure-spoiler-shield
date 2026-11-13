@@ -3,29 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+<meta name="color-scheme" content="light dark">
 <title>Spoiler Shield</title>
 <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-<div class="ss-bg" aria-hidden="true"><div class="ss-sun"></div></div>
 <main class="ss-app">
   <header class="ss-head">
-    <img class="ss-drop" src="icons/icon48.png" width="32" height="32" alt="">
     <div class="ss-grow">
-      <div class="ss-name">Spoiler Shield</div>
+      <div class="ss-name"><span class="ss-bar" aria-hidden="true"></span>Spoiler Shield</div>
       <div class="ss-tagline" data-i18n="tagline"></div>
     </div>
     <label class="ss-switch ss-main" data-i18n-title="main_switch">
-      <input type="checkbox" id="enabled"><span class="ss-track" aria-hidden="true"></span>
+      <input type="checkbox" id="enabled" data-i18n-aria="main_switch"><span class="ss-track" aria-hidden="true"></span>
     </label>
   </header>
 
   <section class="ss-hero" id="hero">
-    <div class="ss-count" id="total">0</div>
-    <div class="ss-count-label" id="totalLabel"></div>
-    <div class="ss-page" id="pageLine"></div>
-    <div class="ss-changed" id="changedLine" hidden><span data-i18n="site_changed"></span> <button class="ss-link" id="copyReport" data-i18n="copy_report"></button></div>
+    <button type="button" class="ss-count" id="total">0</button>
+    <div class="ss-hero-text">
+      <div class="ss-count-label" id="totalLabel"></div>
+      <div class="ss-page" id="pageLine"></div>
+      <div class="ss-changed" id="changedLine" hidden><span data-i18n="site_changed"></span> <button class="ss-link" id="copyReport" data-i18n="copy_report"></button></div>
+    </div>
   </section>
+  <div class="ss-weekline"><span id="weekLine"></span></div>
 
   <section class="ss-card ss-warn" id="permWarn" hidden>
     <div class="ss-title" data-i18n="perm_title"></div>
@@ -36,84 +38,102 @@
   <section class="ss-card" id="shieldsBox">
     <div class="ss-label" data-i18n="shields_title"></div>
     <div id="shieldList" class="ss-shields"></div>
-    <button class="ss-btn ss-btn-small ss-add" id="addBtn" data-i18n="add_shield"></button>
+    <div class="ss-hint ss-check" id="justAdded" hidden><span id="justAddedText"></span> <a id="ytCheck" target="_blank" rel="noopener noreferrer" data-i18n="yt_check"></a></div>
+    <button class="ss-btn ss-add" id="addBtn" data-i18n="add_shield"></button>
     <div id="addBox" class="ss-addbox" hidden>
-      <input id="libSearch" type="search" autocomplete="off" spellcheck="false" data-i18n-placeholder="search_presets">
+      <input id="libSearch" type="search" autocomplete="off" spellcheck="false" data-i18n-placeholder="search_presets" data-i18n-aria="search_presets">
       <div id="libList" class="ss-lib"></div>
       <div class="ss-label" data-i18n="custom_title"></div>
-      <input id="cTitle" type="text" autocomplete="off" data-i18n-placeholder="custom_name_ph">
-      <textarea id="cNames" rows="3" spellcheck="false" data-i18n-placeholder="custom_names_ph"></textarea>
+      <input id="cTitle" type="text" autocomplete="off" data-i18n-placeholder="custom_name_ph" data-i18n-aria="custom_name_ph">
+      <textarea id="cNames" rows="3" spellcheck="false" data-i18n-placeholder="custom_names_ph" data-i18n-aria="custom_names_ph"></textarea>
       <div class="ss-hint" data-i18n="custom_names_hint"></div>
       <button class="ss-btn ss-btn-main ss-btn-small" id="cAdd" data-i18n="custom_add"></button>
       <div class="ss-hint ss-err" id="addErr" hidden></div>
     </div>
   </section>
 
-  <details class="ss-adv" id="adv">
-  <summary data-i18n="adv_title"></summary>
-  <section class="ss-card" id="moreBox">
-    <div class="ss-label" data-i18n="more_sites_title"></div>
-    <div class="ss-hint" id="moreLine"></div>
+  <section class="ss-card ss-row-card" id="moreBox">
+    <div class="ss-grow">
+      <div class="ss-label" data-i18n="more_sites_title"></div>
+      <div class="ss-hint" id="moreLine"></div>
+      <div class="ss-hint" id="moreNote" hidden></div>
+    </div>
     <button class="ss-btn ss-btn-main ss-btn-small" id="moreBtn" data-i18n="more_sites_btn"></button>
   </section>
 
-  <section class="ss-card">
-    <label class="ss-switch ss-row"><input type="checkbox" id="comments"><span class="ss-track" aria-hidden="true"></span><span data-i18n="comments_toggle"></span></label>
-    <label class="ss-switch ss-row"><input type="checkbox" id="media"><span class="ss-track" aria-hidden="true"></span><span data-i18n="media_toggle"></span></label>
+  <section class="ss-card" id="shareBox">
+    <div class="ss-label" data-i18n="share_title"></div>
     <div class="ss-row2">
-      <button class="ss-btn ss-btn-small" id="pauseBtn"></button>
-      <button class="ss-btn ss-btn-small" id="siteBtn" hidden></button>
+      <button class="ss-btn ss-btn-small" id="shareBtn" data-i18n="share_btn"></button>
+      <button class="ss-btn ss-btn-small" id="cardBtn" data-i18n="card_btn"></button>
     </div>
+    <div class="ss-hint" id="shareNote" hidden></div>
   </section>
+
+  <details class="ss-adv" id="adv">
+    <summary data-i18n="adv_title"></summary>
+    <div class="ss-adv-body">
+      <section class="ss-card">
+        <label class="ss-switch"><input type="checkbox" id="comments"><span class="ss-track" aria-hidden="true"></span><span data-i18n="comments_toggle"></span></label>
+        <label class="ss-switch"><input type="checkbox" id="media"><span class="ss-track" aria-hidden="true"></span><span data-i18n="media_toggle"></span></label>
+        <label class="ss-switch"><input type="checkbox" id="hideAI"><span class="ss-track" aria-hidden="true"></span><span data-i18n="hide_ai"></span></label>
+        <label class="ss-switch"><input type="checkbox" id="brand"><span class="ss-track" aria-hidden="true"></span><span data-i18n="brand_name"></span></label>
+        <div class="ss-row2">
+          <button class="ss-btn ss-btn-small" id="pauseBtn"></button>
+          <button class="ss-btn ss-btn-small" id="siteBtn" hidden></button>
+        </div>
+      </section>
+
+      <section class="ss-card">
+        <label class="ss-switch"><input type="checkbox" id="everywhere"><span class="ss-track" aria-hidden="true"></span><span data-i18n="everywhere"></span></label>
+        <button class="ss-btn ss-btn-main ss-btn-small" id="grantBtn" hidden data-i18n="everywhere_grant"></button>
+        <label class="ss-field"><span data-i18n="until"></span><input type="date" id="until"></label>
+        <div class="ss-hint" id="everyNote" hidden></div>
+        <div class="ss-hint ss-until-note" id="untilNote" hidden></div>
+        <label class="ss-field ss-col"><span data-i18n="trusted"></span><textarea id="trusted" rows="2" spellcheck="false" data-i18n-placeholder="trusted_ph"></textarea></label>
+        <div class="ss-hint" data-i18n="trusted_hint"></div>
+        <label class="ss-field ss-col"><span data-i18n="blocked"></span><textarea id="blocked" rows="2" spellcheck="false" data-i18n-placeholder="trusted_ph"></textarea></label>
+      </section>
+
+      <section class="ss-card ss-share">
+        <div class="ss-label" data-i18n="sl_title"></div>
+        <input type="text" id="slAbout" maxlength="80" autocomplete="off" data-i18n-placeholder="sl_about_ph" data-i18n-aria="sl_about_ph">
+        <textarea id="slText" rows="2" maxlength="2000" spellcheck="false" data-i18n-placeholder="sl_text_ph" data-i18n-aria="sl_text_ph"></textarea>
+        <div class="ss-row2"><button class="ss-btn ss-btn-small" id="slCopy" data-i18n="sl_copy"></button></div>
+        <div class="ss-hint" id="slNote" data-i18n="sl_hint"></div>
+      </section>
+
+      <section class="ss-card ss-share">
+        <div class="ss-label" data-i18n="code_title"></div>
+        <div class="ss-row2"><button class="ss-btn ss-btn-small" id="codeCopy" data-i18n="code_copy"></button></div>
+        <input type="text" id="codeIn" maxlength="40000" autocomplete="off" spellcheck="false" data-i18n-placeholder="code_paste_ph" data-i18n-aria="code_paste_ph">
+        <div class="ss-row2"><button class="ss-btn ss-btn-small" id="codeLoad" data-i18n="code_load"></button></div>
+        <div class="ss-hint" id="codeNote" hidden></div>
+        <div class="ss-row2"><button class="ss-btn ss-btn-small" id="exportBtn" data-i18n="backup_export"></button><button class="ss-btn ss-btn-small" id="importBtn" data-i18n="backup_import"></button><input type="file" id="importFile" accept="application/json,.json" hidden></div>
+        <div class="ss-hint" id="backupNote" hidden></div>
+      </section>
+    </div>
   </details>
 
-  <section class="ss-card ss-pro" id="proBox">
-    <div class="ss-pro-head"><span class="ss-badge">PRO</span><b data-i18n="pro_title"></b></div>
-    <div id="proOff">
-      <div class="ss-hint" data-i18n="pro_text"></div>
-      <div class="ss-row2">
-        <button class="ss-btn ss-btn-main" id="buyBtn" data-i18n="pro_buy"></button>
-        <button class="ss-btn ss-btn-small ss-btn-ghost" id="haveKey" data-i18n="pro_have_key"></button>
-      </div>
-      <div class="ss-key" id="keyBox" hidden>
-        <input id="key" type="text" spellcheck="false" autocomplete="off" data-i18n-placeholder="pro_key_placeholder">
-        <button class="ss-btn ss-btn-small" id="activate" data-i18n="pro_activate"></button>
-        <div class="ss-hint ss-err" id="keyErr" hidden></div>
-      </div>
-    </div>
-    <div id="proOn" hidden>
-      <div class="ss-hint" id="proLabel"></div>
-      <label class="ss-switch ss-row"><input type="checkbox" id="everywhere"><span class="ss-track" aria-hidden="true"></span><span data-i18n="pro_everywhere"></span></label>
-      <button class="ss-btn ss-btn-main" id="grantBtn" hidden data-i18n="pro_grant"></button>
-      <label class="ss-field"><span data-i18n="pro_until"></span><input type="date" id="until"></label>
-      <div class="ss-hint ss-until-note" id="untilNote" hidden></div>
-      <label class="ss-switch ss-row"><input type="checkbox" id="hideAI"><span class="ss-track" aria-hidden="true"></span><span data-i18n="pro_hide_ai"></span></label>
-      <label class="ss-field ss-col"><span data-i18n="pro_trusted"></span><textarea id="trusted" rows="2" spellcheck="false" data-i18n-placeholder="pro_trusted_ph"></textarea></label>
-      <div class="ss-hint" data-i18n="pro_trusted_hint"></div>
-      <label class="ss-field ss-col"><span data-i18n="pro_blocked"></span><textarea id="blocked" rows="2" spellcheck="false" data-i18n-placeholder="pro_trusted_ph"></textarea></label>
-      <div class="ss-row2"><button class="ss-btn ss-btn-small" id="exportBtn" data-i18n="backup_export"></button><button class="ss-btn ss-btn-small" id="importBtn" data-i18n="backup_import"></button><input type="file" id="importFile" accept="application/json,.json" hidden></div>
-      <div class="ss-hint" id="backupNote" hidden></div>
-      <button class="ss-link" id="removeLic" data-i18n="pro_remove"></button>
-    </div>
-  </section>
-
   <section class="ss-card ss-review" id="review" hidden>
-    <div class="ss-title" data-i18n="review_title"></div>
+    <div class="ss-title" id="reviewTitle" data-i18n="review_title"></div>
     <div class="ss-hint" data-i18n="review_text"></div>
     <div class="ss-row2">
-      <a class="ss-btn ss-btn-small" id="reviewBtn" target="_blank" rel="noopener" data-i18n="review_btn"></a>
+      <a class="ss-btn ss-btn-small ss-btn-main" id="reviewBtn" target="_blank" rel="noopener noreferrer" data-i18n="review_btn"></a>
       <button class="ss-btn ss-btn-small ss-btn-ghost" id="reviewHide" data-i18n="later_btn"></button>
     </div>
   </section>
 
   <footer class="ss-foot">
     <div data-i18n="privacy_line"></div>
-    <div class="ss-links"><button class="ss-link" id="shareBtn" data-i18n="share_btn"></button><a id="reviewLink" target="_blank" rel="noopener" data-i18n="review_btn"></a><a id="mailLink" target="_blank" rel="noopener" data-i18n="report_btn"></a></div>
+    <div class="ss-zero"><span data-i18n="zero_net"></span> · <a id="srcLink" target="_blank" rel="noopener noreferrer" href="https://github.com/qwemort/pure-spoiler-shield" data-i18n="source_link"></a></div>
+    <div class="ss-links"><a id="reviewLink" target="_blank" rel="noopener noreferrer" data-i18n="review_btn"></a><a id="mailLink" target="_blank" rel="noopener noreferrer" data-i18n="report_btn"></a></div>
     <div class="ss-legal" data-i18n="not_affiliated"></div>
   </footer>
 </main>
 <script src="lib/i18n.js"></script>
 <script src="lib/words.js"></script>
+<script src="lib/releases.js"></script>
 <script src="popup.js"></script>
 </body>
 </html>
