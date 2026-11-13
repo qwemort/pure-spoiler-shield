@@ -2,8 +2,8 @@
 """src/ + manifests/ -> release/release-chrome.zip, release-firefox.zip (+ unpacked chrome/, firefox/).
 Run: python3 spoilershield/tools/build.py
 Checks: version sync, name lengths, every file the manifests point to exists, no remote code / eval / innerHTML,
-no private key in src/, permissions stay storage + scripting, host access only YouTube/Reddit/X/Twitter + Gumroad
-(all sites only as an OPTIONAL permission for Pro)."""
+no private key in src/, permissions stay storage + scripting, host access only YouTube/Reddit/X/Twitter
+(no network permissions, no Pro/Gumroad since 1.4)."""
 import json, os, re, shutil, sys, zipfile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC, MAN, OUT = (os.path.join(ROOT, d) for d in ('src', 'manifests', 'release'))

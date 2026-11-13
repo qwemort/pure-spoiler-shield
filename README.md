@@ -5,14 +5,14 @@
 A browser extension that blurs or hides spoilers for the games, shows, films and anime you choose, on YouTube, Reddit and X. Everything runs inside your browser: no account, no analytics, no tracking.
 
 - Chrome: https://chromewebstore.google.com/detail/aloilpojkoblacapdlknacjiljgjibng
-- Firefox: in review
+- Firefox: Pure Spoiler Shield on addons.mozilla.org (1.4.0)
 - Guide: [How to avoid GTA 6 spoilers on YouTube, Reddit and X](https://qwemort.github.io/pure-guides/avoid-gta-6-spoilers.html)
 
 ## Why the source is here
 
-So you can check the claims instead of trusting them. The extension checks the visible text of titles, descriptions and comments locally and covers the items that match. The only network request in the whole extension is the optional Pro license check to `api.gumroad.com` when you enter a key (and a re-check at most every 7 days). You can verify this in `src/background.js`, or read the auto-generated [privacy report](PRIVACY-REPORT.md), which lists every request to an external server found in the code.
+So you can check the claims instead of trusting them. The extension checks the visible text of titles, descriptions and comments locally and covers the items that match. The extension makes no network requests at all. You can verify this in `src/`, or read the auto-generated [privacy report](PRIVACY-REPORT.md), which lists every request to an external server found in the code.
 
-Permissions (see `manifests/`): `storage`, `scripting`, `contextMenus`; content scripts only on YouTube, Reddit and X (plus the Gumroad license endpoint). Access to all websites is an **optional** permission, requested only when you turn on Pro "everywhere".
+Permissions (see `manifests/`): `storage`, `scripting`, `contextMenus`; content scripts only on YouTube, Reddit and X. No other website access.
 
 ## License: source-available, not open source
 
@@ -22,9 +22,9 @@ This code is licensed under the [PolyForm Shield License 1.0.0](LICENSE). In pla
 
 [Request a title](https://github.com/qwemort/pure-spoiler-shield/issues/new?template=title-request.yml) (no spoilers in the request, please). Titles with the most 👍 go first, and your request closes automatically when the list ships.
 
-## Free and Pro
+## Free, all of it
 
-Free: all ready-made lists and up to 3 custom titles on YouTube, Reddit and X. Pro (one-time, via Gumroad): all sites, "I watched up to episode N", release and end dates, hidden AI summaries, trusted channels, backup. The Pro check is in the code; the code being readable is the point, not a way around it. If you like the extension, buying Pro supports it.
+Since 1.4 everything is free: all ready-made lists (60), your own titles, "I watched up to episode N", release and end dates, trusted channels and backup. No account, no license, no network requests. Versions up to 1.3 had a paid Pro tier; it was removed.
 
 ## Limits
 
@@ -34,7 +34,7 @@ It works on text, so a spoiler that exists only inside an image or a video frame
 
 ```
 python3 tools/build.py          # checks the manifests and writes release/ (zips + unpacked folders)
-node tests/words-test.mjs       # judge, shields, episodes, Pro rules
+node tests/words-test.mjs       # judge, shields, episodes
 ```
 
 Load the unpacked folder from `release/` in Chrome (`chrome://extensions`, Developer mode, Load unpacked) or in Firefox (`about:debugging`). `tests/ss-test.mjs` and `tests/ss-firefox.py` need Playwright or geckodriver and local paths adjusted to your machine.
