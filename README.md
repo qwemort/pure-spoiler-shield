@@ -1,11 +1,11 @@
-# Pure Spoiler Shield
+# Pure Spoiler Blocker
 
 [![external requests in code](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/qwemort/pure-spoiler-shield/main/badges/network.json)](PRIVACY-REPORT.md) [![telemetry](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/qwemort/pure-spoiler-shield/main/badges/telemetry.json)](PRIVACY-REPORT.md)
 
 A browser extension that blurs or hides spoilers for the games, shows, films and anime you choose, on YouTube, Reddit and X. Everything runs inside your browser: no account, no analytics, no tracking.
 
 - Chrome: https://chromewebstore.google.com/detail/aloilpojkoblacapdlknacjiljgjibng
-- Firefox: Pure Spoiler Shield on addons.mozilla.org (1.4.0)
+- Firefox: Pure Spoiler Blocker on addons.mozilla.org (1.4.0, new name comes with 1.4.1)
 - Guide: [How to avoid GTA 6 spoilers on YouTube, Reddit and X](https://qwemort.github.io/pure-guides/avoid-gta-6-spoilers.html)
 
 ## Why the source is here
@@ -16,7 +16,7 @@ Permissions (see `manifests/`): `storage`, `scripting`, `contextMenus`; content 
 
 ## License: source-available, not open source
 
-This code is licensed under the [PolyForm Shield License 1.0.0](LICENSE). In plain words: you may read it, run it, modify it and share it, **except** that you may not use it to provide a product that competes with Pure Spoiler Shield. This is **source-available**, not open source as defined by the Open Source Initiative. If you are unsure whether a use is allowed, ask: papana44444@gmail.com.
+This code is licensed under the [PolyForm Shield License 1.0.0](LICENSE). In plain words: you may read it, run it, modify it and share it, **except** that you may not use it to provide a product that competes with Pure Spoiler Blocker. This is **source-available**, not open source as defined by the Open Source Initiative. If you are unsure whether a use is allowed, ask: papana44444@gmail.com.
 
 ## Want a list for your show, game or anime?
 

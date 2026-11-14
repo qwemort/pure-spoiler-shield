@@ -4,9 +4,9 @@ Generated from the source code by `tools/privacy-report.py` (static check of wha
 
 | Extension | Version | Requests to external servers in code | Analytics / trackers | Remote code (eval, remote scripts) | Permissions | Site access at install | Optional site access |
 |---|---|---|---|---|---|---|---|
-| Spoiler Shield | 1.4.0 | 0 | none | none | `contextMenus`, `scripting`, `storage` | `*://*.reddit.com/*`, `*://*.twitter.com/*`, `*://*.x.com/*`, `*://*.youtube.com/*` | `<all_urls>` |
+| Spoiler Blocker | 1.4.1 | 0 | none | none | `contextMenus`, `scripting`, `storage` | `*://*.reddit.com/*`, `*://*.twitter.com/*`, `*://*.x.com/*`, `*://*.youtube.com/*` | `<all_urls>` |
 
-## Spoiler Shield 1.4.0
+## Spoiler Blocker 1.4.1
 
 **Requests to external servers (fixed URLs in the code):**
 
