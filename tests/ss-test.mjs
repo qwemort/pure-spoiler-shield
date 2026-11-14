@@ -297,7 +297,7 @@ await ext.locator('#importFile').setInputFiles({ name: 'b.json', mimeType: 'appl
 sh = (await getSettings()).shields;
 ok(sh.length === 2 && sh[1].preset === 'frieren' && (await getSettings()).trusted === '@a' && (await ext.locator('#backupNote').textContent()) === 'Loaded.', 'backup file loads (bad entries dropped)', sh);
 await ext.locator('#importFile').setInputFiles({ name: 'x.json', mimeType: 'application/json', buffer: Buffer.from('not json') }); await wait(300);
-ok((await ext.locator('#backupNote').textContent()).includes('not a Spoiler Shield backup') && (await getSettings()).shields.length === 2, 'a broken file changes nothing');
+ok((await ext.locator('#backupNote').textContent()).includes('not a Spoiler Blocker backup') && (await getSettings()).shields.length === 2, 'a broken file changes nothing');
 ok(!(await ext.locator('#permWarn').isVisible()), 'no permission warning when access is granted');
 ok(await ext.locator('#review').isVisible(), 'review card after 25 hidden');
 await ext.click('#reviewHide');

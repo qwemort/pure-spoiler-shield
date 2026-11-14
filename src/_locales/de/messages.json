@@ -24,7 +24,7 @@
   "message": "Noch einmal klicken, um die Kommentare zu zeigen. Sie können spoilern."
  },
  "perm_title": {
-  "message": "Erlaube Spoiler Shield auf YouTube, Reddit und X"
+  "message": "Erlaube Spoiler Blocker auf YouTube, Reddit und X"
  },
  "perm_hint": {
   "message": "Dein Browser hat den Zugriff auf diese Seiten noch nicht erlaubt, deshalb wird dort nichts versteckt."
@@ -123,7 +123,7 @@
   "message": "Du bist geschützt."
  },
  "w_sub": {
-  "message": "Spoiler Shield verwischt jetzt GTA-VI-Spoiler auf YouTube, Reddit und X. Klicke zweimal auf einen verwischten Block, um ihn zu sehen. Jedes andere Spiel, jede Serie, jeden Film oder Anime fügst du über das Symbol in der Leiste hinzu."
+  "message": "Spoiler Blocker verwischt jetzt GTA-VI-Spoiler auf YouTube, Reddit und X. Klicke zweimal auf einen verwischten Block, um ihn zu sehen. Jedes andere Spiel, jede Serie, jeden Film oder Anime fügst du über das Symbol in der Leiste hinzu."
  },
  "w_s1_t": {
   "message": "Verschwimmen statt löschen"
@@ -144,7 +144,7 @@
   "message": "Füge eine Serie, einen Film oder Anime hinzu. Markiere beliebigen Text und wähle per Rechtsklick „Als Spoiler verbergen“. Pausiere 10 Minuten oder schalte es auf einer Seite ab."
  },
  "w_pin": {
-  "message": "Tipp: Hefte Spoiler Shield an die Leiste, um den Zähler zu sehen und mit einem Klick hinzuzufügen, was geschützt wird."
+  "message": "Tipp: Hefte Spoiler Blocker an die Leiste, um den Zähler zu sehen und mit einem Klick hinzuzufügen, was geschützt wird."
  },
  "w_private_t": {
   "message": "Privat von Anfang an"
@@ -273,7 +273,7 @@
   "message": "Geladen."
  },
  "backup_bad": {
-  "message": "Das ist kein Spoiler-Shield-Backup."
+  "message": "Das ist kein Spoiler-Blocker-Backup."
  },
  "more_sites_title": {
   "message": "Google, TikTok, Instagram"
@@ -300,7 +300,7 @@
   "message": "Mit Freunden teilen"
  },
  "share_text": {
-  "message": "Spoiler Shield blendet Spoiler zu Spielen, Serien und Anime auf YouTube, Reddit, X, TikTok und Instagram aus. Kostenlos, nichts verlässt den Browser."
+  "message": "Spoiler Blocker blendet Spoiler zu Spielen, Serien und Anime auf YouTube, Reddit, X, TikTok und Instagram aus. Kostenlos, nichts verlässt den Browser."
  },
  "share_copied": {
   "message": "Link kopiert"
@@ -429,7 +429,7 @@
   "message": "Add these lists"
  },
  "code_bad": {
-  "message": "This is not a Spoiler Shield code."
+  "message": "This is not a Spoiler Blocker code."
  },
  "code_done": {
   "message": "Added: {0}."

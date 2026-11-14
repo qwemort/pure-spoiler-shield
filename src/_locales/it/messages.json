@@ -24,7 +24,7 @@
   "message": "Clicca di nuovo per mostrare i commenti. Potrebbero contenere spoiler."
  },
  "perm_title": {
-  "message": "Consenti Spoiler Shield su YouTube, Reddit e X"
+  "message": "Consenti Spoiler Blocker su YouTube, Reddit e X"
  },
  "perm_hint": {
   "message": "Il browser non ha ancora dato accesso a questi siti, quindi lì non viene nascosto nulla."
@@ -123,7 +123,7 @@
   "message": "Sei protetto."
  },
  "w_sub": {
-  "message": "Spoiler Shield ora sfoca gli spoiler di GTA VI su YouTube, Reddit e X. Clicca due volte su un blocco sfocato per vederlo. Qualsiasi altro gioco, serie, film o anime si aggiunge dal pulsante nella barra."
+  "message": "Spoiler Blocker ora sfoca gli spoiler di GTA VI su YouTube, Reddit e X. Clicca due volte su un blocco sfocato per vederlo. Qualsiasi altro gioco, serie, film o anime si aggiunge dal pulsante nella barra."
  },
  "w_s1_t": {
   "message": "Sfocare, non cancellare"
@@ -144,7 +144,7 @@
   "message": "Aggiungi una serie, un film o un anime. Seleziona un testo e usa il clic destro «Nascondi come spoiler». Pausa di 10 minuti o spegnilo su un sito."
  },
  "w_pin": {
-  "message": "Suggerimento: fissa Spoiler Shield alla barra per vedere il contatore e aggiungere cosa proteggere con un clic."
+  "message": "Suggerimento: fissa Spoiler Blocker alla barra per vedere il contatore e aggiungere cosa proteggere con un clic."
  },
  "w_private_t": {
   "message": "Privato per costruzione"
@@ -273,7 +273,7 @@
   "message": "Caricato."
  },
  "backup_bad": {
-  "message": "Questo file non è un backup di Spoiler Shield."
+  "message": "Questo file non è un backup di Spoiler Blocker."
  },
  "more_sites_title": {
   "message": "Google, TikTok, Instagram"
@@ -300,7 +300,7 @@
   "message": "Condividi con un amico"
  },
  "share_text": {
-  "message": "Spoiler Shield nasconde gli spoiler di giochi, serie e anime su YouTube, Reddit, X, TikTok e Instagram. Gratis, niente esce dal browser."
+  "message": "Spoiler Blocker nasconde gli spoiler di giochi, serie e anime su YouTube, Reddit, X, TikTok e Instagram. Gratis, niente esce dal browser."
  },
  "share_copied": {
   "message": "Link copiato"
@@ -429,7 +429,7 @@
   "message": "Add these lists"
  },
  "code_bad": {
-  "message": "This is not a Spoiler Shield code."
+  "message": "This is not a Spoiler Blocker code."
  },
  "code_done": {
   "message": "Added: {0}."

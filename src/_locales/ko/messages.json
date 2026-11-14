@@ -24,7 +24,7 @@
   "message": "한 번 더 클릭하면 댓글이 보입니다. 스포일러가 있을 수 있어요."
  },
  "perm_title": {
-  "message": "YouTube, Reddit, X에서 Spoiler Shield를 허용하세요"
+  "message": "YouTube, Reddit, X에서 Spoiler Blocker를 허용하세요"
  },
  "perm_hint": {
   "message": "브라우저가 아직 이 사이트들에 대한 접근을 허용하지 않아서 아무것도 가려지지 않습니다."
@@ -117,7 +117,7 @@
   "message": "보호되고 있어요."
  },
  "w_sub": {
-  "message": "이제 Spoiler Shield가 YouTube, Reddit, X의 GTA VI 스포일러를 흐리게 합니다. 흐려진 블록을 두 번 클릭하면 볼 수 있어요. 다른 게임, 드라마, 영화, 애니는 도구 모음 버튼에서 추가할 수 있어요."
+  "message": "이제 Spoiler Blocker가 YouTube, Reddit, X의 GTA VI 스포일러를 흐리게 합니다. 흐려진 블록을 두 번 클릭하면 볼 수 있어요. 다른 게임, 드라마, 영화, 애니는 도구 모음 버튼에서 추가할 수 있어요."
  },
  "w_s1_t": {
   "message": "지우지 않고 흐리게"
@@ -138,7 +138,7 @@
   "message": "드라마, 영화, 애니를 추가하세요. 아무 텍스트나 선택하고 오른쪽 클릭 “스포일러로 숨기기”. 10분 일시 중지나 사이트별 끄기도 돼요."
  },
  "w_pin": {
-  "message": "팁: Spoiler Shield를 도구 모음에 고정하면 카운터를 보고 보호할 작품을 한 번에 추가할 수 있어요."
+  "message": "팁: Spoiler Blocker를 도구 모음에 고정하면 카운터를 보고 보호할 작품을 한 번에 추가할 수 있어요."
  },
  "w_private_t": {
   "message": "개인정보 보호"
@@ -267,7 +267,7 @@
   "message": "불러왔어요."
  },
  "backup_bad": {
-  "message": "Spoiler Shield 백업 파일이 아니에요."
+  "message": "Spoiler Blocker 백업 파일이 아니에요."
  },
  "more_sites_title": {
   "message": "Google, TikTok, Instagram"
@@ -294,7 +294,7 @@
   "message": "친구에게 공유"
  },
  "share_text": {
-  "message": "Spoiler Shield는 YouTube, Reddit, X, TikTok, Instagram의 게임, 드라마, 애니 스포일러를 숨깁니다. 무료, 데이터는 브라우저 밖으로 나가지 않아요."
+  "message": "Spoiler Blocker는 YouTube, Reddit, X, TikTok, Instagram의 게임, 드라마, 애니 스포일러를 숨깁니다. 무료, 데이터는 브라우저 밖으로 나가지 않아요."
  },
  "share_copied": {
   "message": "링크를 복사했습니다"
@@ -423,7 +423,7 @@
   "message": "Add these lists"
  },
  "code_bad": {
-  "message": "This is not a Spoiler Shield code."
+  "message": "This is not a Spoiler Blocker code."
  },
  "code_done": {
   "message": "Added: {0}."

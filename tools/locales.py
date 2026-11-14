@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Interface texts of Pure Spoiler Shield in 13 languages -> src/_locales/<lang>/messages.json (with checks).
+"""Interface texts of Pure Spoiler Blocker in 13 languages -> src/_locales/<lang>/messages.json (with checks).
 Run: python3 spoilershield/tools/locales.py
 Checks: same keys as English (plural keys by language rules), same {n} placeholders, no "$", extDesc <= 132,
 every key used in src/ exists. Tone: Pure voice (calm, honest), "ты" in ru/uk/pl/de/es/pt_BR, no game artwork words."""
@@ -12,7 +12,7 @@ PLURAL_BASES = ['hidden_total', 'hidden_page']
 
 L = {}
 L['en'] = {
- 'extDesc': 'Blurs spoilers for games, shows, films and anime on video sites, social networks and search. Nothing leaves your browser.',
+ 'extDesc': 'Blocks GTA 6, game, series and anime spoilers on YouTube, Reddit and X. Free, nothing leaves your browser.',
  'tagline': 'Waiting for GTA VI? Stay unspoiled.',
  'main_switch': 'Protection on or off',
  'veil_label': 'Possible {0} spoiler\nClick to show',
@@ -21,7 +21,7 @@ L['en'] = {
  'player_label': 'This video may spoil {0}\nClick to show',
  'fold_comments': 'Comments hidden: they may spoil {0} · click to show',
  'fold_confirm': 'Click again to show the comments. They may spoil the game.',
- 'perm_title': 'Allow Spoiler Shield on YouTube, Reddit and X',
+ 'perm_title': 'Allow Spoiler Blocker on YouTube, Reddit and X',
  'perm_hint': 'Your browser has not given access to these sites yet, so nothing is hidden there.',
  'perm_btn': 'Allow',
  'level': 'How careful?',
@@ -47,7 +47,7 @@ L['en'] = {
  'hidden_total_one': 'spoiler hidden', 'hidden_total_other': 'spoilers hidden',
  'hidden_page_one': '{0} hidden on this page', 'hidden_page_other': '{0} hidden on this page',
  'own_title': 'Your own words',
- 'own_hint': 'Any game, show or match. One word or phrase per line. Hidden everywhere Spoiler Shield works.',
+ 'own_hint': 'Any game, show or match. One word or phrase per line. Hidden everywhere Spoiler Blocker works.',
  'own_placeholder': 'House of the Dragon\nRhaenyra',
  'saved': 'Saved',
  'pro_title': 'Protection everywhere',
@@ -80,16 +80,16 @@ L['en'] = {
  'privacy_line': 'Text is checked inside your browser. Nothing is sent anywhere.',
  'not_affiliated': 'Not affiliated with Rockstar Games or Take-Two Interactive.',
  'w_title': 'You are protected.',
- 'w_sub': 'Spoiler Shield now blurs GTA VI spoilers on YouTube, Reddit and X. Click a blurred block twice to see it.',
+ 'w_sub': 'Spoiler Blocker now blurs GTA VI spoilers on YouTube, Reddit and X. Click a blurred block twice to see it.',
  'w_s1_t': 'Blur, not delete', 'w_s1': 'Videos, posts, comments and search suggestions that may spoil the game are blurred where they are.',
  'w_s2_t': 'Two clicks to look', 'w_s2': 'One click arms it, the second shows it. No accidental spoilers from a hover.',
  'w_s3_t': 'Your rules', 'w_s3': 'Pause for 10 minutes, switch it off on a site, or add your own words for any game or show.',
- 'w_pin': 'Tip: pin Spoiler Shield to the toolbar to see the counter and switch levels in one click.',
+ 'w_pin': 'Tip: pin Spoiler Blocker to the toolbar to see the counter and switch levels in one click.',
  'w_private_t': 'Private by design',
  'w_private': 'It reads the text of YouTube, Reddit and X pages inside your browser and never sends it anywhere. No account, no analytics, no ads.',
 }
 L['ru'] = {
- 'extDesc': 'Размывает спойлеры игр, сериалов, фильмов и аниме на видеосайтах, в соцсетях и поиске. Всё остаётся в браузере.',
+ 'extDesc': 'Блокирует спойлеры GTA 6, игр, сериалов и аниме на YouTube, Reddit и X. Бесплатно, всё остаётся в браузере.',
  'tagline': 'Ждёшь GTA VI? Не дай себя заспойлерить.',
  'main_switch': 'Защита вкл/выкл',
  'veil_label': 'Возможный спойлер {0}\nНажми, чтобы показать',
@@ -98,7 +98,7 @@ L['ru'] = {
  'player_label': 'Это видео может заспойлерить {0}\nНажми, чтобы показать',
  'fold_comments': 'Комментарии скрыты: в них могут быть спойлеры {0} · нажми, чтобы показать',
  'fold_confirm': 'Нажми ещё раз, чтобы показать комментарии. В них могут быть спойлеры.',
- 'perm_title': 'Разреши Spoiler Shield работать на YouTube, Reddit и X',
+ 'perm_title': 'Разреши Spoiler Blocker работать на YouTube, Reddit и X',
  'perm_hint': 'Браузер ещё не дал доступ к этим сайтам, поэтому там ничего не скрывается.',
  'perm_btn': 'Разрешить',
  'level': 'Насколько осторожно?',
@@ -124,7 +124,7 @@ L['ru'] = {
  'hidden_total_one': 'спойлер скрыт', 'hidden_total_few': 'спойлера скрыто', 'hidden_total_many': 'спойлеров скрыто', 'hidden_total_other': 'спойлера скрыто',
  'hidden_page_one': 'на этой странице скрыт {0}', 'hidden_page_few': 'на этой странице скрыто {0}', 'hidden_page_many': 'на этой странице скрыто {0}', 'hidden_page_other': 'на этой странице скрыто {0}',
  'own_title': 'Свои слова',
- 'own_hint': 'Любая игра, сериал или матч. По одному слову или фразе в строке. Скрывается везде, где работает Spoiler Shield.',
+ 'own_hint': 'Любая игра, сериал или матч. По одному слову или фразе в строке. Скрывается везде, где работает Spoiler Blocker.',
  'own_placeholder': 'Дом Дракона\nРейнира',
  'saved': 'Сохранено',
  'pro_title': 'Защита везде',
@@ -157,16 +157,16 @@ L['ru'] = {
  'privacy_line': 'Текст проверяется прямо в браузере. Ничего никуда не отправляется.',
  'not_affiliated': 'Не связано с Rockstar Games и Take-Two Interactive.',
  'w_title': 'Ты под защитой.',
- 'w_sub': 'Spoiler Shield теперь размывает спойлеры GTA VI на YouTube, Reddit и X. Чтобы посмотреть размытый блок, нажми на него два раза.',
+ 'w_sub': 'Spoiler Blocker теперь размывает спойлеры GTA VI на YouTube, Reddit и X. Чтобы посмотреть размытый блок, нажми на него два раза.',
  'w_s1_t': 'Размытие, а не удаление', 'w_s1': 'Видео, посты, комментарии и подсказки поиска, которые могут заспойлерить игру, размываются прямо на месте.',
  'w_s2_t': 'Два клика, чтобы посмотреть', 'w_s2': 'Первый клик — предупреждение, второй — показать. Никаких случайных спойлеров от наведения мыши.',
  'w_s3_t': 'Твои правила', 'w_s3': 'Пауза на 10 минут, выключение на отдельном сайте или свои слова для любой игры и сериала.',
- 'w_pin': 'Совет: закрепи Spoiler Shield на панели браузера — так видно счётчик и уровень меняется в один клик.',
+ 'w_pin': 'Совет: закрепи Spoiler Blocker на панели браузера — так видно счётчик и уровень меняется в один клик.',
  'w_private_t': 'Приватность',
  'w_private': 'Расширение читает текст страниц YouTube, Reddit и X прямо в браузере и никуда его не отправляет. Без аккаунта, аналитики и рекламы.',
 }
 L['uk'] = {
- 'extDesc': 'Розмиває спойлери ігор, серіалів, фільмів і аніме на відеосайтах, у соцмережах і пошуку. Усе лишається в браузері.',
+ 'extDesc': 'Блокує спойлери GTA 6, ігор, серіалів і аніме на YouTube, Reddit і X. Безкоштовно, усе лишається в браузері.',
  'tagline': 'Чекаєш на GTA VI? Не дай себе заспойлерити.',
  'main_switch': 'Захист увімк./вимк.',
  'veil_label': 'Можливий спойлер {0}\nНатисни, щоб показати',
@@ -175,7 +175,7 @@ L['uk'] = {
  'player_label': 'Це відео може заспойлерити {0}\nНатисни, щоб показати',
  'fold_comments': 'Коментарі приховано: у них можуть бути спойлери {0} · натисни, щоб показати',
  'fold_confirm': 'Натисни ще раз, щоб показати коментарі. У них можуть бути спойлери.',
- 'perm_title': 'Дозволь Spoiler Shield працювати на YouTube, Reddit і X',
+ 'perm_title': 'Дозволь Spoiler Blocker працювати на YouTube, Reddit і X',
  'perm_hint': 'Браузер ще не дав доступу до цих сайтів, тому там нічого не приховується.',
  'perm_btn': 'Дозволити',
  'level': 'Наскільки обережно?',
@@ -201,7 +201,7 @@ L['uk'] = {
  'hidden_total_one': 'спойлер приховано', 'hidden_total_few': 'спойлери приховано', 'hidden_total_many': 'спойлерів приховано', 'hidden_total_other': 'спойлера приховано',
  'hidden_page_one': 'на цій сторінці приховано {0}', 'hidden_page_few': 'на цій сторінці приховано {0}', 'hidden_page_many': 'на цій сторінці приховано {0}', 'hidden_page_other': 'на цій сторінці приховано {0}',
  'own_title': 'Свої слова',
- 'own_hint': 'Будь-яка гра, серіал чи матч. По одному слову чи фразі в рядку. Приховується всюди, де працює Spoiler Shield.',
+ 'own_hint': 'Будь-яка гра, серіал чи матч. По одному слову чи фразі в рядку. Приховується всюди, де працює Spoiler Blocker.',
  'own_placeholder': 'Дім Дракона\nРейніра',
  'saved': 'Збережено',
  'pro_title': 'Захист усюди',
@@ -234,16 +234,16 @@ L['uk'] = {
  'privacy_line': 'Текст перевіряється просто в браузері. Нічого нікуди не надсилається.',
  'not_affiliated': 'Не пов’язано з Rockstar Games і Take-Two Interactive.',
  'w_title': 'Ти під захистом.',
- 'w_sub': 'Spoiler Shield тепер розмиває спойлери GTA VI на YouTube, Reddit і X. Щоб подивитися розмитий блок, натисни на нього двічі.',
+ 'w_sub': 'Spoiler Blocker тепер розмиває спойлери GTA VI на YouTube, Reddit і X. Щоб подивитися розмитий блок, натисни на нього двічі.',
  'w_s1_t': 'Розмиття, а не видалення', 'w_s1': 'Відео, пости, коментарі та підказки пошуку, які можуть заспойлерити гру, розмиваються просто на місці.',
  'w_s2_t': 'Два кліки, щоб подивитися', 'w_s2': 'Перший клік — попередження, другий — показати. Жодних випадкових спойлерів від наведення миші.',
  'w_s3_t': 'Твої правила', 'w_s3': 'Пауза на 10 хвилин, вимкнення на окремому сайті або свої слова для будь-якої гри чи серіалу.',
- 'w_pin': 'Порада: закріпи Spoiler Shield на панелі браузера — так видно лічильник і рівень змінюється одним кліком.',
+ 'w_pin': 'Порада: закріпи Spoiler Blocker на панелі браузера — так видно лічильник і рівень змінюється одним кліком.',
  'w_private_t': 'Приватність',
  'w_private': 'Розширення читає текст сторінок YouTube, Reddit і X просто в браузері й нікуди його не надсилає. Без акаунта, аналітики й реклами.',
 }
 L['pl'] = {
- 'extDesc': 'Rozmywa spoilery gier, seriali, filmów i anime w serwisach wideo, sieciach społecznościowych i wyszukiwarce. Wszystko u ciebie.',
+ 'extDesc': 'Blokuje spoilery z GTA 6, gier, seriali i anime na YouTube, Reddit i X. Za darmo, wszystko zostaje u ciebie.',
  'tagline': 'Czekasz na GTA VI? Nie daj się zaspoilerować.',
  'main_switch': 'Ochrona wł./wył.',
  'veil_label': 'Możliwy spoiler {0}\nKliknij, aby pokazać',
@@ -252,7 +252,7 @@ L['pl'] = {
  'player_label': 'Ten film może zaspoilerować {0}\nKliknij, aby pokazać',
  'fold_comments': 'Komentarze ukryte: mogą zawierać spoilery {0} · kliknij, aby pokazać',
  'fold_confirm': 'Kliknij jeszcze raz, aby pokazać komentarze. Mogą zawierać spoilery.',
- 'perm_title': 'Pozwól Spoiler Shield działać na YouTube, Reddicie i X',
+ 'perm_title': 'Pozwól Spoiler Blocker działać na YouTube, Reddicie i X',
  'perm_hint': 'Przeglądarka nie dała jeszcze dostępu do tych stron, więc nic tam nie jest ukrywane.',
  'perm_btn': 'Pozwól',
  'level': 'Jak ostrożnie?',
@@ -278,7 +278,7 @@ L['pl'] = {
  'hidden_total_one': 'spoiler ukryty', 'hidden_total_few': 'spoilery ukryte', 'hidden_total_many': 'spoilerów ukrytych', 'hidden_total_other': 'spoilera ukrytego',
  'hidden_page_one': 'na tej stronie ukryto {0}', 'hidden_page_few': 'na tej stronie ukryto {0}', 'hidden_page_many': 'na tej stronie ukryto {0}', 'hidden_page_other': 'na tej stronie ukryto {0}',
  'own_title': 'Twoje słowa',
- 'own_hint': 'Dowolna gra, serial albo mecz. Jedno słowo lub fraza w wierszu. Ukrywane wszędzie, gdzie działa Spoiler Shield.',
+ 'own_hint': 'Dowolna gra, serial albo mecz. Jedno słowo lub fraza w wierszu. Ukrywane wszędzie, gdzie działa Spoiler Blocker.',
  'own_placeholder': 'Ród smoka\nRhaenyra',
  'saved': 'Zapisano',
  'pro_title': 'Ochrona wszędzie',
@@ -311,16 +311,16 @@ L['pl'] = {
  'privacy_line': 'Tekst jest sprawdzany w przeglądarce. Nic nie jest nigdzie wysyłane.',
  'not_affiliated': 'Nie jest powiązane z Rockstar Games ani Take-Two Interactive.',
  'w_title': 'Jesteś chroniony.',
- 'w_sub': 'Spoiler Shield rozmywa teraz spoilery GTA VI na YouTube, Reddicie i X. Aby zobaczyć rozmyty blok, kliknij go dwa razy.',
+ 'w_sub': 'Spoiler Blocker rozmywa teraz spoilery GTA VI na YouTube, Reddicie i X. Aby zobaczyć rozmyty blok, kliknij go dwa razy.',
  'w_s1_t': 'Rozmycie, nie usuwanie', 'w_s1': 'Filmy, posty, komentarze i podpowiedzi wyszukiwania, które mogą zdradzić fabułę, są rozmywane na miejscu.',
  'w_s2_t': 'Dwa kliknięcia, by zobaczyć', 'w_s2': 'Pierwsze kliknięcie ostrzega, drugie pokazuje. Żadnych przypadkowych spoilerów po najechaniu myszą.',
  'w_s3_t': 'Twoje zasady', 'w_s3': 'Pauza na 10 minut, wyłączenie na wybranej stronie albo własne słowa dla dowolnej gry lub serialu.',
- 'w_pin': 'Wskazówka: przypnij Spoiler Shield do paska narzędzi, żeby widzieć licznik i zmieniać poziom jednym kliknięciem.',
+ 'w_pin': 'Wskazówka: przypnij Spoiler Blocker do paska narzędzi, żeby widzieć licznik i zmieniać poziom jednym kliknięciem.',
  'w_private_t': 'Prywatność',
  'w_private': 'Rozszerzenie czyta tekst stron YouTube, Reddita i X w przeglądarce i nigdzie go nie wysyła. Bez konta, analityki i reklam.',
 }
 L['de'] = {
- 'extDesc': 'Verwischt Spoiler zu Spielen, Serien, Filmen und Anime in Videoportalen, sozialen Netzwerken und der Suche. Alles bleibt lokal.',
+ 'extDesc': 'Blockt Spoiler zu GTA 6, Spielen, Serien und Anime auf YouTube, Reddit und X. Kostenlos, alles bleibt lokal.',
  'tagline': 'Wartest du auf GTA VI? Bleib spoilerfrei.',
  'main_switch': 'Schutz an/aus',
  'veil_label': 'Möglicher {0}-Spoiler\nKlicken zum Anzeigen',
@@ -329,7 +329,7 @@ L['de'] = {
  'player_label': 'Dieses Video kann {0} spoilern\nKlicken zum Anzeigen',
  'fold_comments': 'Kommentare versteckt: sie können {0} spoilern · klicken zum Anzeigen',
  'fold_confirm': 'Noch einmal klicken, um die Kommentare zu zeigen. Sie können spoilern.',
- 'perm_title': 'Erlaube Spoiler Shield auf YouTube, Reddit und X',
+ 'perm_title': 'Erlaube Spoiler Blocker auf YouTube, Reddit und X',
  'perm_hint': 'Dein Browser hat den Zugriff auf diese Seiten noch nicht erlaubt, deshalb wird dort nichts versteckt.',
  'perm_btn': 'Erlauben',
  'level': 'Wie vorsichtig?',
@@ -355,7 +355,7 @@ L['de'] = {
  'hidden_total_one': 'Spoiler versteckt', 'hidden_total_other': 'Spoiler versteckt',
  'hidden_page_one': '{0} auf dieser Seite versteckt', 'hidden_page_other': '{0} auf dieser Seite versteckt',
  'own_title': 'Eigene Wörter',
- 'own_hint': 'Jedes Spiel, jede Serie, jedes Match. Ein Wort oder Satz pro Zeile. Wird überall versteckt, wo Spoiler Shield läuft.',
+ 'own_hint': 'Jedes Spiel, jede Serie, jedes Match. Ein Wort oder Satz pro Zeile. Wird überall versteckt, wo Spoiler Blocker läuft.',
  'own_placeholder': 'House of the Dragon\nRhaenyra',
  'saved': 'Gespeichert',
  'pro_title': 'Schutz überall',
@@ -388,16 +388,16 @@ L['de'] = {
  'privacy_line': 'Der Text wird in deinem Browser geprüft. Nichts wird gesendet.',
  'not_affiliated': 'Nicht mit Rockstar Games oder Take-Two Interactive verbunden.',
  'w_title': 'Du bist geschützt.',
- 'w_sub': 'Spoiler Shield verschwimmt jetzt GTA-VI-Spoiler auf YouTube, Reddit und X. Klicke einen verschwommenen Block zweimal an, um ihn zu sehen.',
+ 'w_sub': 'Spoiler Blocker verschwimmt jetzt GTA-VI-Spoiler auf YouTube, Reddit und X. Klicke einen verschwommenen Block zweimal an, um ihn zu sehen.',
  'w_s1_t': 'Verschwimmen statt löschen', 'w_s1': 'Videos, Posts, Kommentare und Suchvorschläge, die das Spiel spoilern könnten, werden an Ort und Stelle verschwommen.',
  'w_s2_t': 'Zwei Klicks zum Ansehen', 'w_s2': 'Der erste Klick warnt, der zweite zeigt. Keine Spoiler aus Versehen beim Überfahren mit der Maus.',
  'w_s3_t': 'Deine Regeln', 'w_s3': '10 Minuten Pause, auf einer Seite ausschalten oder eigene Wörter für jedes Spiel und jede Serie.',
- 'w_pin': 'Tipp: Hefte Spoiler Shield an die Symbolleiste, dann siehst du den Zähler und wechselst die Stufe mit einem Klick.',
+ 'w_pin': 'Tipp: Hefte Spoiler Blocker an die Symbolleiste, dann siehst du den Zähler und wechselst die Stufe mit einem Klick.',
  'w_private_t': 'Privat von Anfang an',
  'w_private': 'Es liest den Text von YouTube-, Reddit- und X-Seiten in deinem Browser und sendet ihn nirgendwohin. Kein Konto, keine Analyse, keine Werbung.',
 }
 L['fr'] = {
- 'extDesc': 'Floute les spoilers de jeux, séries, films et anime sur les sites vidéo, réseaux sociaux et la recherche. Tout reste local.',
+ 'extDesc': 'Bloque les spoilers de GTA 6, jeux, séries et anime sur YouTube, Reddit et X. Gratuit, tout reste local.',
  'tagline': 'Vous attendez GTA VI ? Restez sans spoiler.',
  'main_switch': 'Protection activée ou non',
  'veil_label': 'Spoiler possible de {0}\nCliquez pour afficher',
@@ -406,7 +406,7 @@ L['fr'] = {
  'player_label': 'Cette vidéo peut spoiler {0}\nCliquez pour afficher',
  'fold_comments': 'Commentaires masqués : ils peuvent spoiler {0} · cliquez pour afficher',
  'fold_confirm': 'Cliquez encore pour afficher les commentaires. Ils peuvent contenir des spoilers.',
- 'perm_title': 'Autorisez Spoiler Shield sur YouTube, Reddit et X',
+ 'perm_title': 'Autorisez Spoiler Blocker sur YouTube, Reddit et X',
  'perm_hint': 'Votre navigateur n’a pas encore donné accès à ces sites, donc rien n’y est masqué.',
  'perm_btn': 'Autoriser',
  'level': 'Quel niveau de prudence ?',
@@ -432,7 +432,7 @@ L['fr'] = {
  'hidden_total_one': 'spoiler masqué', 'hidden_total_other': 'spoilers masqués',
  'hidden_page_one': '{0} masqué sur cette page', 'hidden_page_other': '{0} masqués sur cette page',
  'own_title': 'Vos propres mots',
- 'own_hint': 'N’importe quel jeu, série ou match. Un mot ou une expression par ligne. Masqué partout où Spoiler Shield fonctionne.',
+ 'own_hint': 'N’importe quel jeu, série ou match. Un mot ou une expression par ligne. Masqué partout où Spoiler Blocker fonctionne.',
  'own_placeholder': 'House of the Dragon\nRhaenyra',
  'saved': 'Enregistré',
  'pro_title': 'Protection partout',
@@ -465,16 +465,16 @@ L['fr'] = {
  'privacy_line': 'Le texte est vérifié dans votre navigateur. Rien n’est envoyé.',
  'not_affiliated': 'Sans lien avec Rockstar Games ni Take-Two Interactive.',
  'w_title': 'Vous êtes protégé.',
- 'w_sub': 'Spoiler Shield floute désormais les spoilers de GTA VI sur YouTube, Reddit et X. Cliquez deux fois sur un bloc flouté pour le voir.',
+ 'w_sub': 'Spoiler Blocker floute désormais les spoilers de GTA VI sur YouTube, Reddit et X. Cliquez deux fois sur un bloc flouté pour le voir.',
  'w_s1_t': 'Flouter, pas supprimer', 'w_s1': 'Les vidéos, posts, commentaires et suggestions de recherche qui peuvent spoiler le jeu sont floutés sur place.',
  'w_s2_t': 'Deux clics pour voir', 'w_s2': 'Le premier clic prévient, le second affiche. Pas de spoiler par un simple survol.',
  'w_s3_t': 'Vos règles', 'w_s3': 'Pause de 10 minutes, désactivation sur un site, ou vos propres mots pour n’importe quel jeu ou série.',
- 'w_pin': 'Astuce : épinglez Spoiler Shield dans la barre d’outils pour voir le compteur et changer de niveau en un clic.',
+ 'w_pin': 'Astuce : épinglez Spoiler Blocker dans la barre d’outils pour voir le compteur et changer de niveau en un clic.',
  'w_private_t': 'Privé par conception',
  'w_private': 'Il lit le texte des pages YouTube, Reddit et X dans votre navigateur et ne l’envoie nulle part. Pas de compte, pas de statistiques, pas de publicité.',
 }
 L['es'] = {
- 'extDesc': 'Difumina spoilers de juegos, series, películas y anime en sitios de video, redes sociales y búsquedas. Nada sale de tu navegador.',
+ 'extDesc': 'Bloquea spoilers de GTA 6, juegos, series y anime en YouTube, Reddit y X. Gratis, nada sale de tu navegador.',
  'tagline': '¿Esperas GTA VI? Que no te hagan spoiler.',
  'main_switch': 'Protección sí o no',
  'veil_label': 'Posible spoiler de {0}\nHaz clic para ver',
@@ -483,7 +483,7 @@ L['es'] = {
  'player_label': 'Este vídeo puede hacer spoiler de {0}\nHaz clic para ver',
  'fold_comments': 'Comentarios ocultos: pueden hacer spoiler de {0} · haz clic para ver',
  'fold_confirm': 'Haz clic otra vez para ver los comentarios. Pueden tener spoilers.',
- 'perm_title': 'Permite Spoiler Shield en YouTube, Reddit y X',
+ 'perm_title': 'Permite Spoiler Blocker en YouTube, Reddit y X',
  'perm_hint': 'Tu navegador aún no ha dado acceso a estos sitios, así que ahí no se oculta nada.',
  'perm_btn': 'Permitir',
  'level': '¿Con cuánto cuidado?',
@@ -509,7 +509,7 @@ L['es'] = {
  'hidden_total_one': 'spoiler oculto', 'hidden_total_other': 'spoilers ocultos',
  'hidden_page_one': '{0} oculto en esta página', 'hidden_page_other': '{0} ocultos en esta página',
  'own_title': 'Tus propias palabras',
- 'own_hint': 'Cualquier juego, serie o partido. Una palabra o frase por línea. Se oculta en todas partes donde funciona Spoiler Shield.',
+ 'own_hint': 'Cualquier juego, serie o partido. Una palabra o frase por línea. Se oculta en todas partes donde funciona Spoiler Blocker.',
  'own_placeholder': 'La casa del dragón\nRhaenyra',
  'saved': 'Guardado',
  'pro_title': 'Protección en todas partes',
@@ -542,16 +542,16 @@ L['es'] = {
  'privacy_line': 'El texto se revisa en tu navegador. No se envía nada.',
  'not_affiliated': 'Sin relación con Rockstar Games ni Take-Two Interactive.',
  'w_title': 'Estás protegido.',
- 'w_sub': 'Spoiler Shield ya difumina los spoilers de GTA VI en YouTube, Reddit y X. Haz clic dos veces en un bloque difuminado para verlo.',
+ 'w_sub': 'Spoiler Blocker ya difumina los spoilers de GTA VI en YouTube, Reddit y X. Haz clic dos veces en un bloque difuminado para verlo.',
  'w_s1_t': 'Difuminar, no borrar', 'w_s1': 'Vídeos, publicaciones, comentarios y sugerencias de búsqueda que pueden destripar el juego se difuminan en su sitio.',
  'w_s2_t': 'Dos clics para mirar', 'w_s2': 'El primer clic avisa, el segundo muestra. Nada de spoilers por pasar el ratón.',
  'w_s3_t': 'Tus reglas', 'w_s3': 'Pausa de 10 minutos, desactivar en un sitio o tus propias palabras para cualquier juego o serie.',
- 'w_pin': 'Consejo: fija Spoiler Shield en la barra para ver el contador y cambiar el nivel con un clic.',
+ 'w_pin': 'Consejo: fija Spoiler Blocker en la barra para ver el contador y cambiar el nivel con un clic.',
  'w_private_t': 'Privado desde el diseño',
  'w_private': 'Lee el texto de las páginas de YouTube, Reddit y X en tu navegador y no lo envía a ningún sitio. Sin cuenta, sin analíticas, sin anuncios.',
 }
 L['pt_BR'] = {
- 'extDesc': 'Desfoca spoilers de jogos, séries, filmes e anime em sites de vídeo, redes sociais e buscas. Nada sai do seu navegador.',
+ 'extDesc': 'Bloqueia spoilers de GTA 6, jogos, séries e anime no YouTube, Reddit e X. Grátis, nada sai do seu navegador.',
  'tagline': 'Esperando GTA VI? Fique livre de spoilers.',
  'main_switch': 'Proteção ligada ou desligada',
  'veil_label': 'Possível spoiler de {0}\nClique para ver',
@@ -560,7 +560,7 @@ L['pt_BR'] = {
  'player_label': 'Este vídeo pode dar spoiler de {0}\nClique para ver',
  'fold_comments': 'Comentários ocultos: podem dar spoiler de {0} · clique para ver',
  'fold_confirm': 'Clique de novo para ver os comentários. Eles podem ter spoilers.',
- 'perm_title': 'Permita o Spoiler Shield no YouTube, Reddit e X',
+ 'perm_title': 'Permita o Spoiler Blocker no YouTube, Reddit e X',
  'perm_hint': 'Seu navegador ainda não deu acesso a esses sites, então nada é ocultado lá.',
  'perm_btn': 'Permitir',
  'level': 'Com quanto cuidado?',
@@ -586,7 +586,7 @@ L['pt_BR'] = {
  'hidden_total_one': 'spoiler oculto', 'hidden_total_other': 'spoilers ocultos',
  'hidden_page_one': '{0} oculto nesta página', 'hidden_page_other': '{0} ocultos nesta página',
  'own_title': 'Suas palavras',
- 'own_hint': 'Qualquer jogo, série ou partida. Uma palavra ou frase por linha. Oculto em todo lugar onde o Spoiler Shield funciona.',
+ 'own_hint': 'Qualquer jogo, série ou partida. Uma palavra ou frase por linha. Oculto em todo lugar onde o Spoiler Blocker funciona.',
  'own_placeholder': 'A Casa do Dragão\nRhaenyra',
  'saved': 'Salvo',
  'pro_title': 'Proteção em todo lugar',
@@ -619,16 +619,16 @@ L['pt_BR'] = {
  'privacy_line': 'O texto é verificado no seu navegador. Nada é enviado.',
  'not_affiliated': 'Sem vínculo com a Rockstar Games ou a Take-Two Interactive.',
  'w_title': 'Você está protegido.',
- 'w_sub': 'O Spoiler Shield agora desfoca spoilers de GTA VI no YouTube, Reddit e X. Clique duas vezes num bloco desfocado para ver.',
+ 'w_sub': 'O Spoiler Blocker agora desfoca spoilers de GTA VI no YouTube, Reddit e X. Clique duas vezes num bloco desfocado para ver.',
  'w_s1_t': 'Desfocar, não apagar', 'w_s1': 'Vídeos, posts, comentários e sugestões de pesquisa que podem dar spoiler do jogo são desfocados no lugar.',
  'w_s2_t': 'Dois cliques para ver', 'w_s2': 'O primeiro clique avisa, o segundo mostra. Nada de spoiler só por passar o mouse.',
  'w_s3_t': 'Suas regras', 'w_s3': 'Pausa de 10 minutos, desligar num site ou suas próprias palavras para qualquer jogo ou série.',
- 'w_pin': 'Dica: fixe o Spoiler Shield na barra para ver o contador e trocar o nível com um clique.',
+ 'w_pin': 'Dica: fixe o Spoiler Blocker na barra para ver o contador e trocar o nível com um clique.',
  'w_private_t': 'Privado por padrão',
  'w_private': 'Ele lê o texto das páginas do YouTube, Reddit e X no seu navegador e não envia para lugar nenhum. Sem conta, sem análises, sem anúncios.',
 }
 L['it'] = {
- 'extDesc': 'Sfoca gli spoiler di giochi, serie, film e anime su siti video, social e ricerche. Nulla lascia il browser.',
+ 'extDesc': 'Blocca gli spoiler di GTA 6, giochi, serie e anime su YouTube, Reddit e X. Gratis, nulla lascia il browser.',
  'tagline': 'Aspetti GTA VI? Resta senza spoiler.',
  'main_switch': 'Protezione attiva o no',
  'veil_label': 'Possibile spoiler di {0}\nFai clic per vedere',
@@ -637,7 +637,7 @@ L['it'] = {
  'player_label': 'Questo video può fare spoiler di {0}\nFai clic per vedere',
  'fold_comments': 'Commenti nascosti: possono fare spoiler di {0} · fai clic per vedere',
  'fold_confirm': 'Fai clic di nuovo per vedere i commenti. Possono contenere spoiler.',
- 'perm_title': 'Consenti Spoiler Shield su YouTube, Reddit e X',
+ 'perm_title': 'Consenti Spoiler Blocker su YouTube, Reddit e X',
  'perm_hint': 'Il browser non ha ancora dato accesso a questi siti, quindi lì non viene nascosto nulla.',
  'perm_btn': 'Consenti',
  'level': 'Quanta prudenza?',
@@ -663,7 +663,7 @@ L['it'] = {
  'hidden_total_one': 'spoiler nascosto', 'hidden_total_other': 'spoiler nascosti',
  'hidden_page_one': '{0} nascosto in questa pagina', 'hidden_page_other': '{0} nascosti in questa pagina',
  'own_title': 'Le tue parole',
- 'own_hint': 'Qualsiasi gioco, serie o partita. Una parola o frase per riga. Nascosto ovunque funzioni Spoiler Shield.',
+ 'own_hint': 'Qualsiasi gioco, serie o partita. Una parola o frase per riga. Nascosto ovunque funzioni Spoiler Blocker.',
  'own_placeholder': 'House of the Dragon\nRhaenyra',
  'saved': 'Salvato',
  'pro_title': 'Protezione ovunque',
@@ -696,16 +696,16 @@ L['it'] = {
  'privacy_line': 'Il testo viene controllato nel browser. Non viene inviato nulla.',
  'not_affiliated': 'Non affiliato a Rockstar Games né a Take-Two Interactive.',
  'w_title': 'Sei protetto.',
- 'w_sub': 'Spoiler Shield ora sfoca gli spoiler di GTA VI su YouTube, Reddit e X. Fai clic due volte su un blocco sfocato per vederlo.',
+ 'w_sub': 'Spoiler Blocker ora sfoca gli spoiler di GTA VI su YouTube, Reddit e X. Fai clic due volte su un blocco sfocato per vederlo.',
  'w_s1_t': 'Sfocare, non cancellare', 'w_s1': 'Video, post, commenti e suggerimenti di ricerca che possono rovinare il gioco vengono sfocati dove sono.',
  'w_s2_t': 'Due clic per guardare', 'w_s2': 'Il primo clic avvisa, il secondo mostra. Niente spoiler per un passaggio del mouse.',
  'w_s3_t': 'Le tue regole', 'w_s3': 'Pausa di 10 minuti, disattivazione su un sito o parole tue per qualsiasi gioco o serie.',
- 'w_pin': 'Suggerimento: fissa Spoiler Shield nella barra per vedere il contatore e cambiare livello con un clic.',
+ 'w_pin': 'Suggerimento: fissa Spoiler Blocker nella barra per vedere il contatore e cambiare livello con un clic.',
  'w_private_t': 'Privato per costruzione',
  'w_private': 'Legge il testo delle pagine di YouTube, Reddit e X nel tuo browser e non lo invia da nessuna parte. Niente account, statistiche o pubblicità.',
 }
 L['tr'] = {
- 'extDesc': 'Video sitelerinde, sosyal ağlarda ve aramada oyun, dizi, film ve anime spoilerlarını bulanıklaştırır. Her şey tarayıcıda.',
+ 'extDesc': "YouTube, Reddit ve X'te GTA 6, oyun, dizi ve anime spoilerlarını engeller. Ücretsiz, her şey tarayıcıda.",
  'tagline': 'GTA VI’yı mı bekliyorsun? Spoiler yeme.',
  'main_switch': 'Koruma açık/kapalı',
  'veil_label': 'Olası {0} spoilerı\nGöstermek için tıkla',
@@ -714,7 +714,7 @@ L['tr'] = {
  'player_label': 'Bu video {0} spoilerı içerebilir\nGöstermek için tıkla',
  'fold_comments': 'Yorumlar gizlendi: {0} spoilerı içerebilir · göstermek için tıkla',
  'fold_confirm': 'Yorumları göstermek için tekrar tıkla. Spoiler içerebilirler.',
- 'perm_title': 'Spoiler Shield’a YouTube, Reddit ve X’te izin ver',
+ 'perm_title': 'Spoiler Blocker’a YouTube, Reddit ve X’te izin ver',
  'perm_hint': 'Tarayıcın bu sitelere henüz erişim vermedi, bu yüzden orada hiçbir şey gizlenmiyor.',
  'perm_btn': 'İzin ver',
  'level': 'Ne kadar dikkatli?',
@@ -740,7 +740,7 @@ L['tr'] = {
  'hidden_total_one': 'spoiler gizlendi', 'hidden_total_other': 'spoiler gizlendi',
  'hidden_page_one': 'bu sayfada {0} gizlendi', 'hidden_page_other': 'bu sayfada {0} gizlendi',
  'own_title': 'Kendi kelimelerin',
- 'own_hint': 'Herhangi bir oyun, dizi veya maç. Her satıra bir kelime ya da ifade. Spoiler Shield’ın çalıştığı her yerde gizlenir.',
+ 'own_hint': 'Herhangi bir oyun, dizi veya maç. Her satıra bir kelime ya da ifade. Spoiler Blocker’ın çalıştığı her yerde gizlenir.',
  'own_placeholder': 'House of the Dragon\nRhaenyra',
  'saved': 'Kaydedildi',
  'pro_title': 'Her yerde koruma',
@@ -773,16 +773,16 @@ L['tr'] = {
  'privacy_line': 'Metin tarayıcının içinde kontrol edilir. Hiçbir şey gönderilmez.',
  'not_affiliated': 'Rockstar Games veya Take-Two Interactive ile bağlantılı değildir.',
  'w_title': 'Korunuyorsun.',
- 'w_sub': 'Spoiler Shield artık YouTube, Reddit ve X’teki GTA VI spoilerlarını bulanıklaştırıyor. Bulanık bir bloğu görmek için iki kez tıkla.',
+ 'w_sub': 'Spoiler Blocker artık YouTube, Reddit ve X’teki GTA VI spoilerlarını bulanıklaştırıyor. Bulanık bir bloğu görmek için iki kez tıkla.',
  'w_s1_t': 'Silmez, bulanıklaştırır', 'w_s1': 'Oyunu bozabilecek videolar, gönderiler, yorumlar ve arama önerileri bulundukları yerde bulanıklaşır.',
  'w_s2_t': 'Görmek için iki tık', 'w_s2': 'İlk tık uyarır, ikincisi gösterir. Fareyle üzerine gelince yanlışlıkla spoiler yok.',
  'w_s3_t': 'Senin kuralların', 'w_s3': '10 dakika duraklat, bir sitede kapat ya da herhangi bir oyun veya dizi için kendi kelimelerini ekle.',
- 'w_pin': 'İpucu: Spoiler Shield’ı araç çubuğuna sabitle; sayacı görürsün ve seviyeyi tek tıkla değiştirirsin.',
+ 'w_pin': 'İpucu: Spoiler Blocker’ı araç çubuğuna sabitle; sayacı görürsün ve seviyeyi tek tıkla değiştirirsin.',
  'w_private_t': 'Gizlilik öncelikli',
  'w_private': 'YouTube, Reddit ve X sayfalarındaki metni tarayıcında okur ve hiçbir yere göndermez. Hesap, analiz ve reklam yok.',
 }
 L['ja'] = {
- 'extDesc': '動画サイト・SNS・検索で、ゲーム・ドラマ・映画・アニメのネタバレをぼかします。データはブラウザの外に出ません。',
+ 'extDesc': 'YouTube・Reddit・XでGTA 6、ゲーム、ドラマ、アニメのネタバレをブロック。無料で、データはブラウザの外に出ません。',
  'tagline': 'GTA VI を待っている？ネタバレから守ろう。',
  'main_switch': '保護のオン/オフ',
  'veil_label': '{0} のネタバレの可能性\nクリックで表示',
@@ -791,7 +791,7 @@ L['ja'] = {
  'player_label': 'この動画は {0} のネタバレかもしれません\nクリックで表示',
  'fold_comments': 'コメントを非表示：{0} のネタバレがあるかもしれません · クリックで表示',
  'fold_confirm': 'もう一度クリックでコメントを表示。ネタバレがあるかもしれません。',
- 'perm_title': 'YouTube・Reddit・X で Spoiler Shield を許可してください',
+ 'perm_title': 'YouTube・Reddit・X で Spoiler Blocker を許可してください',
  'perm_hint': 'ブラウザがまだこれらのサイトへのアクセスを許可していないため、何も非表示になりません。',
  'perm_btn': '許可する',
  'level': 'どこまで慎重に？',
@@ -817,7 +817,7 @@ L['ja'] = {
  'hidden_total_other': '件のネタバレを非表示',
  'hidden_page_other': 'このページで {0} 件を非表示',
  'own_title': '自分のワード',
- 'own_hint': 'どんなゲーム、ドラマ、試合でも。1 行に 1 つの単語かフレーズ。Spoiler Shield が動くすべての場所で非表示。',
+ 'own_hint': 'どんなゲーム、ドラマ、試合でも。1 行に 1 つの単語かフレーズ。Spoiler Blocker が動くすべての場所で非表示。',
  'own_placeholder': 'ハウス・オブ・ザ・ドラゴン\nレイニラ',
  'saved': '保存しました',
  'pro_title': 'どこでも保護',
@@ -850,16 +850,16 @@ L['ja'] = {
  'privacy_line': '文字はブラウザの中で確認され、どこにも送信されません。',
  'not_affiliated': 'Rockstar Games および Take-Two Interactive とは関係ありません。',
  'w_title': '保護されています。',
- 'w_sub': 'Spoiler Shield が YouTube・Reddit・X の GTA VI のネタバレをぼかします。ぼかしたブロックは 2 回クリックすると見られます。',
+ 'w_sub': 'Spoiler Blocker が YouTube・Reddit・X の GTA VI のネタバレをぼかします。ぼかしたブロックは 2 回クリックすると見られます。',
  'w_s1_t': '消さずにぼかす', 'w_s1': 'ゲームのネタバレになりそうな動画、投稿、コメント、検索候補をその場でぼかします。',
  'w_s2_t': '見るには 2 クリック', 'w_s2': '1 回目で警告、2 回目で表示。マウスを乗せただけでネタバレされることはありません。',
  'w_s3_t': '自分のルール', 'w_s3': '10 分の停止、サイトごとのオフ、どんなゲームやドラマにも使える自分のワード。',
- 'w_pin': 'ヒント：Spoiler Shield をツールバーに固定すると、カウンターが見え、レベルもワンクリックで変えられます。',
+ 'w_pin': 'ヒント：Spoiler Blocker をツールバーに固定すると、カウンターが見え、レベルもワンクリックで変えられます。',
  'w_private_t': 'プライバシー重視',
  'w_private': 'YouTube・Reddit・X のページの文字をブラウザ内で読むだけで、どこにも送信しません。アカウント、解析、広告はありません。',
 }
 L['ko'] = {
- 'extDesc': '동영상 사이트, SNS, 검색에서 게임, 드라마, 영화, 애니 스포일러를 흐리게 합니다. 데이터는 브라우저 밖으로 나가지 않습니다.',
+ 'extDesc': 'YouTube, Reddit, X에서 GTA 6, 게임, 드라마, 애니 스포일러를 차단합니다. 무료이며 데이터는 브라우저 밖으로 나가지 않습니다.',
  'tagline': 'GTA VI를 기다리나요? 스포일러 없이 기다리세요.',
  'main_switch': '보호 켜기/끄기',
  'veil_label': '{0} 스포일러일 수 있음\n클릭해서 보기',
@@ -868,7 +868,7 @@ L['ko'] = {
  'player_label': '이 영상은 {0} 스포일러일 수 있음\n클릭해서 보기',
  'fold_comments': '댓글 숨김: {0} 스포일러가 있을 수 있음 · 클릭해서 보기',
  'fold_confirm': '한 번 더 클릭하면 댓글이 보입니다. 스포일러가 있을 수 있어요.',
- 'perm_title': 'YouTube, Reddit, X에서 Spoiler Shield를 허용하세요',
+ 'perm_title': 'YouTube, Reddit, X에서 Spoiler Blocker를 허용하세요',
  'perm_hint': '브라우저가 아직 이 사이트들에 대한 접근을 허용하지 않아서 아무것도 가려지지 않습니다.',
  'perm_btn': '허용',
  'level': '얼마나 조심할까요?',
@@ -894,7 +894,7 @@ L['ko'] = {
  'hidden_total_other': '개의 스포일러를 가림',
  'hidden_page_other': '이 페이지에서 {0}개를 가림',
  'own_title': '내 단어',
- 'own_hint': '어떤 게임, 드라마, 경기든. 한 줄에 단어나 문구 하나. Spoiler Shield가 작동하는 모든 곳에서 가립니다.',
+ 'own_hint': '어떤 게임, 드라마, 경기든. 한 줄에 단어나 문구 하나. Spoiler Blocker가 작동하는 모든 곳에서 가립니다.',
  'own_placeholder': '하우스 오브 드래곤\n라에니라',
  'saved': '저장됨',
  'pro_title': '어디서나 보호',
@@ -927,16 +927,16 @@ L['ko'] = {
  'privacy_line': '텍스트는 브라우저 안에서 확인됩니다. 아무것도 보내지 않습니다.',
  'not_affiliated': 'Rockstar Games 및 Take-Two Interactive와 관련이 없습니다.',
  'w_title': '보호되고 있어요.',
- 'w_sub': '이제 Spoiler Shield가 YouTube, Reddit, X의 GTA VI 스포일러를 흐리게 가립니다. 가려진 블록은 두 번 클릭하면 볼 수 있어요.',
+ 'w_sub': '이제 Spoiler Blocker가 YouTube, Reddit, X의 GTA VI 스포일러를 흐리게 가립니다. 가려진 블록은 두 번 클릭하면 볼 수 있어요.',
  'w_s1_t': '지우지 않고 흐리게', 'w_s1': '게임을 스포일러할 수 있는 영상, 게시물, 댓글, 검색 추천을 그 자리에서 흐리게 가립니다.',
  'w_s2_t': '보려면 두 번 클릭', 'w_s2': '첫 클릭은 경고, 두 번째 클릭에 보여 줍니다. 마우스를 올리기만 해서 스포일러를 당하는 일은 없어요.',
  'w_s3_t': '나만의 규칙', 'w_s3': '10분 일시 중지, 사이트별 끄기, 어떤 게임이나 드라마에도 쓸 수 있는 내 단어.',
- 'w_pin': '팁: Spoiler Shield를 툴바에 고정하면 카운터가 보이고 한 번에 단계를 바꿀 수 있어요.',
+ 'w_pin': '팁: Spoiler Blocker를 툴바에 고정하면 카운터가 보이고 한 번에 단계를 바꿀 수 있어요.',
  'w_private_t': '개인정보 보호',
  'w_private': 'YouTube, Reddit, X 페이지의 텍스트를 브라우저 안에서 읽기만 하고 어디에도 보내지 않습니다. 계정, 분석, 광고가 없습니다.',
 }
 L['zh_CN'] = {
- 'extDesc': '在视频网站、社交网络和搜索中模糊游戏、剧集、电影和动漫的剧透。数据不会离开你的浏览器。',
+ 'extDesc': '在 YouTube、Reddit 和 X 上屏蔽 GTA 6、游戏、剧集和动漫的剧透。免费，数据不会离开你的浏览器。',
  'tagline': '在等 GTA VI？别被剧透。',
  'main_switch': '开启或关闭保护',
  'veil_label': '可能有 {0} 剧透\n点击显示',
@@ -945,7 +945,7 @@ L['zh_CN'] = {
  'player_label': '这个视频可能剧透 {0}\n点击显示',
  'fold_comments': '评论已隐藏：可能有 {0} 剧透 · 点击显示',
  'fold_confirm': '再点一次即可显示评论。里面可能有剧透。',
- 'perm_title': '允许 Spoiler Shield 在 YouTube、Reddit 和 X 上运行',
+ 'perm_title': '允许 Spoiler Blocker 在 YouTube、Reddit 和 X 上运行',
  'perm_hint': '浏览器还没有授予这些网站的访问权限，所以那里什么都不会隐藏。',
  'perm_btn': '允许',
  'level': '要多小心？',
@@ -971,7 +971,7 @@ L['zh_CN'] = {
  'hidden_total_other': '条剧透已隐藏',
  'hidden_page_other': '此页面已隐藏 {0} 条',
  'own_title': '自定义关键词',
- 'own_hint': '任何游戏、剧集或比赛。每行一个词或短语。在 Spoiler Shield 运行的所有地方隐藏。',
+ 'own_hint': '任何游戏、剧集或比赛。每行一个词或短语。在 Spoiler Blocker 运行的所有地方隐藏。',
  'own_placeholder': '龙之家族\n雷妮拉',
  'saved': '已保存',
  'pro_title': '处处保护',
@@ -1004,11 +1004,11 @@ L['zh_CN'] = {
  'privacy_line': '文字只在你的浏览器中检查，不会发送到任何地方。',
  'not_affiliated': '与 Rockstar Games 和 Take-Two Interactive 无关。',
  'w_title': '你已受到保护。',
- 'w_sub': 'Spoiler Shield 现在会模糊 YouTube、Reddit 和 X 上的 GTA VI 剧透。点击模糊区块两次即可查看。',
+ 'w_sub': 'Spoiler Blocker 现在会模糊 YouTube、Reddit 和 X 上的 GTA VI 剧透。点击模糊区块两次即可查看。',
  'w_s1_t': '模糊而非删除', 'w_s1': '可能剧透游戏的视频、帖子、评论和搜索建议会在原位置被模糊。',
  'w_s2_t': '点两次才显示', 'w_s2': '第一次点击提醒，第二次才显示。鼠标划过不会误看剧透。',
  'w_s3_t': '你的规则', 'w_s3': '暂停 10 分钟、在某个网站关闭，或为任何游戏和剧集添加自定义关键词。',
- 'w_pin': '提示：把 Spoiler Shield 固定到工具栏，就能看到计数并一键切换级别。',
+ 'w_pin': '提示：把 Spoiler Blocker 固定到工具栏，就能看到计数并一键切换级别。',
  'w_private_t': '注重隐私',
  'w_private': '它只在你的浏览器中读取 YouTube、Reddit 和 X 页面上的文字，从不发送到任何地方。无需账号，没有统计分析，没有广告。',
 }
@@ -1058,9 +1058,9 @@ SHIELDS['en'] = {
  'kind_game': 'Game', 'kind_movie': 'Film', 'kind_show': 'Series', 'kind_anime': 'Anime', 'kind_custom': 'Your own',
  'pro_text': 'Ready lists for new games, shows, films and anime, and as many own shields as you want. Every site: Google, TikTok, Twitch, Discord, news. Plus “protect until a date”. One payment.',
  'review_text': 'A short review helps others find it before they get spoiled.',
- 'w_sub': 'Spoiler Shield now blurs GTA VI spoilers on YouTube, Reddit and X. Click a blurred block twice to see it. Any other game, show, film or anime can be added from the toolbar button.',
+ 'w_sub': 'Spoiler Blocker now blurs GTA VI spoilers on YouTube, Reddit and X. Click a blurred block twice to see it. Any other game, show, film or anime can be added from the toolbar button.',
  'w_s3_t': 'Your rules', 'w_s3': 'Add a show, film or anime. Select any text and right-click “Hide as a spoiler”. Pause for 10 minutes or switch it off on a site.',
- 'w_pin': 'Tip: pin Spoiler Shield to the toolbar to see the counter and add what to protect in one click.',
+ 'w_pin': 'Tip: pin Spoiler Blocker to the toolbar to see the counter and add what to protect in one click.',
 }
 SHIELDS['ru'] = {
  'pro_title': 'Все списки, все сайты',
@@ -1104,9 +1104,9 @@ SHIELDS['ru'] = {
  'kind_game': 'Игра', 'kind_movie': 'Фильм', 'kind_show': 'Сериал', 'kind_anime': 'Аниме', 'kind_custom': 'Своё',
  'pro_text': 'Готовые списки новых игр, сериалов, фильмов и аниме и сколько угодно своих щитов. Все сайты: Google, TikTok, Twitch, Discord, новости. Плюс «защищать до даты». Один платёж.',
  'review_text': 'Короткий отзыв поможет другим найти его до того, как их заспойлерят.',
- 'w_sub': 'Spoiler Shield уже размывает спойлеры GTA VI на YouTube, Reddit и X. Нажми на размытый блок два раза, чтобы посмотреть. Любую другую игру, сериал, фильм или аниме можно добавить через кнопку на панели.',
+ 'w_sub': 'Spoiler Blocker уже размывает спойлеры GTA VI на YouTube, Reddit и X. Нажми на размытый блок два раза, чтобы посмотреть. Любую другую игру, сериал, фильм или аниме можно добавить через кнопку на панели.',
  'w_s3_t': 'Твои правила', 'w_s3': 'Добавь сериал, фильм или аниме. Выдели любой текст и нажми правой кнопкой «Скрывать как спойлер». Пауза на 10 минут или выключение на сайте.',
- 'w_pin': 'Совет: закрепи Spoiler Shield на панели, чтобы видеть счётчик и добавлять, что защищать, в один клик.',
+ 'w_pin': 'Совет: закрепи Spoiler Blocker на панели, чтобы видеть счётчик и добавлять, что защищать, в один клик.',
 }
 SHIELDS['uk'] = {
  'pro_title': 'Усі списки, усі сайти',
@@ -1150,9 +1150,9 @@ SHIELDS['uk'] = {
  'kind_game': 'Гра', 'kind_movie': 'Фільм', 'kind_show': 'Серіал', 'kind_anime': 'Аніме', 'kind_custom': 'Своє',
  'pro_text': 'Готові списки нових ігор, серіалів, фільмів і аніме та скільки завгодно своїх щитів. Усі сайти: Google, TikTok, Twitch, Discord, новини. Плюс «захищати до дати». Один платіж.',
  'review_text': 'Короткий відгук допоможе іншим знайти його до того, як їх заспойлерять.',
- 'w_sub': 'Spoiler Shield уже розмиває спойлери GTA VI на YouTube, Reddit і X. Натисни на розмитий блок двічі, щоб подивитися. Будь-яку іншу гру, серіал, фільм чи аніме можна додати через кнопку на панелі.',
+ 'w_sub': 'Spoiler Blocker уже розмиває спойлери GTA VI на YouTube, Reddit і X. Натисни на розмитий блок двічі, щоб подивитися. Будь-яку іншу гру, серіал, фільм чи аніме можна додати через кнопку на панелі.',
  'w_s3_t': 'Твої правила', 'w_s3': 'Додай серіал, фільм чи аніме. Виділи будь-який текст і натисни правою кнопкою «Приховувати як спойлер». Пауза на 10 хвилин або вимкнення на сайті.',
- 'w_pin': 'Порада: закріпи Spoiler Shield на панелі, щоб бачити лічильник і додавати, що захищати, в один клік.',
+ 'w_pin': 'Порада: закріпи Spoiler Blocker на панелі, щоб бачити лічильник і додавати, що захищати, в один клік.',
 }
 SHIELDS['pl'] = {
  'pro_title': 'Wszystkie listy, wszystkie strony',
@@ -1196,9 +1196,9 @@ SHIELDS['pl'] = {
  'kind_game': 'Gra', 'kind_movie': 'Film', 'kind_show': 'Serial', 'kind_anime': 'Anime', 'kind_custom': 'Własne',
  'pro_text': 'Gotowe listy nowych gier, seriali, filmów i anime oraz dowolnie wiele własnych tarcz. Każda strona: Google, TikTok, Twitch, Discord, newsy. Plus „chroń do daty”. Jedna płatność.',
  'review_text': 'Krótka opinia pomoże innym znaleźć go, zanim ktoś im zaspoileruje.',
- 'w_sub': 'Spoiler Shield rozmywa teraz spoilery GTA VI na YouTube, Reddit i X. Kliknij rozmyty blok dwa razy, aby go zobaczyć. Każdą inną grę, serial, film czy anime dodasz przyciskiem na pasku.',
+ 'w_sub': 'Spoiler Blocker rozmywa teraz spoilery GTA VI na YouTube, Reddit i X. Kliknij rozmyty blok dwa razy, aby go zobaczyć. Każdą inną grę, serial, film czy anime dodasz przyciskiem na pasku.',
  'w_s3_t': 'Twoje zasady', 'w_s3': 'Dodaj serial, film lub anime. Zaznacz dowolny tekst i kliknij prawym „Ukrywaj jako spoiler”. Pauza na 10 minut albo wyłączenie na stronie.',
- 'w_pin': 'Wskazówka: przypnij Spoiler Shield do paska, aby widzieć licznik i jednym kliknięciem dodawać, co chronić.',
+ 'w_pin': 'Wskazówka: przypnij Spoiler Blocker do paska, aby widzieć licznik i jednym kliknięciem dodawać, co chronić.',
 }
 SHIELDS['de'] = {
  'pro_title': 'Alle Listen, alle Seiten',
@@ -1242,9 +1242,9 @@ SHIELDS['de'] = {
  'kind_game': 'Spiel', 'kind_movie': 'Film', 'kind_show': 'Serie', 'kind_anime': 'Anime', 'kind_custom': 'Eigenes',
  'pro_text': 'Fertige Listen für neue Spiele, Serien, Filme und Anime und beliebig viele eigene Schilde. Jede Seite: Google, TikTok, Twitch, Discord, News. Plus „schützen bis Datum“. Einmal zahlen.',
  'review_text': 'Eine kurze Bewertung hilft anderen, es zu finden, bevor sie gespoilert werden.',
- 'w_sub': 'Spoiler Shield verwischt jetzt GTA-VI-Spoiler auf YouTube, Reddit und X. Klicke zweimal auf einen verwischten Block, um ihn zu sehen. Jedes andere Spiel, jede Serie, jeden Film oder Anime fügst du über das Symbol in der Leiste hinzu.',
+ 'w_sub': 'Spoiler Blocker verwischt jetzt GTA-VI-Spoiler auf YouTube, Reddit und X. Klicke zweimal auf einen verwischten Block, um ihn zu sehen. Jedes andere Spiel, jede Serie, jeden Film oder Anime fügst du über das Symbol in der Leiste hinzu.',
  'w_s3_t': 'Deine Regeln', 'w_s3': 'Füge eine Serie, einen Film oder Anime hinzu. Markiere beliebigen Text und wähle per Rechtsklick „Als Spoiler verbergen“. Pausiere 10 Minuten oder schalte es auf einer Seite ab.',
- 'w_pin': 'Tipp: Hefte Spoiler Shield an die Leiste, um den Zähler zu sehen und mit einem Klick hinzuzufügen, was geschützt wird.',
+ 'w_pin': 'Tipp: Hefte Spoiler Blocker an die Leiste, um den Zähler zu sehen und mit einem Klick hinzuzufügen, was geschützt wird.',
 }
 SHIELDS['fr'] = {
  'pro_title': 'Toutes les listes, tous les sites',
@@ -1288,9 +1288,9 @@ SHIELDS['fr'] = {
  'kind_game': 'Jeu', 'kind_movie': 'Film', 'kind_show': 'Série', 'kind_anime': 'Anime', 'kind_custom': 'Perso',
  'pro_text': 'Listes prêtes pour les nouveaux jeux, séries, films et anime, et autant de boucliers perso que vous voulez. Tous les sites : Google, TikTok, Twitch, Discord, actus. Plus « protéger jusqu’à une date ». Un seul paiement.',
  'review_text': 'Un court avis aide d’autres personnes à le trouver avant d’être spoilées.',
- 'w_sub': 'Spoiler Shield floute maintenant les spoilers de GTA VI sur YouTube, Reddit et X. Cliquez deux fois sur un bloc flouté pour le voir. Tout autre jeu, série, film ou anime s’ajoute depuis le bouton de la barre d’outils.',
+ 'w_sub': 'Spoiler Blocker floute maintenant les spoilers de GTA VI sur YouTube, Reddit et X. Cliquez deux fois sur un bloc flouté pour le voir. Tout autre jeu, série, film ou anime s’ajoute depuis le bouton de la barre d’outils.',
  'w_s3_t': 'Vos règles', 'w_s3': 'Ajoutez une série, un film ou un anime. Sélectionnez un texte et faites clic droit « Masquer comme spoiler ». Pause de 10 minutes ou arrêt sur un site.',
- 'w_pin': 'Astuce : épinglez Spoiler Shield à la barre d’outils pour voir le compteur et ajouter ce qu’il faut protéger en un clic.',
+ 'w_pin': 'Astuce : épinglez Spoiler Blocker à la barre d’outils pour voir le compteur et ajouter ce qu’il faut protéger en un clic.',
 }
 SHIELDS['es'] = {
  'pro_title': 'Todas las listas, todos los sitios',
@@ -1334,9 +1334,9 @@ SHIELDS['es'] = {
  'kind_game': 'Juego', 'kind_movie': 'Película', 'kind_show': 'Serie', 'kind_anime': 'Anime', 'kind_custom': 'Propio',
  'pro_text': 'Listas listas de nuevos juegos, series, películas y anime, y tantos escudos propios como quieras. Todos los sitios: Google, TikTok, Twitch, Discord, noticias. Más «proteger hasta una fecha». Un solo pago.',
  'review_text': 'Una reseña corta ayuda a otros a encontrarlo antes de que les hagan spoiler.',
- 'w_sub': 'Spoiler Shield ya difumina los spoilers de GTA VI en YouTube, Reddit y X. Haz clic dos veces en un bloque difuminado para verlo. Cualquier otro juego, serie, película o anime se añade desde el botón de la barra.',
+ 'w_sub': 'Spoiler Blocker ya difumina los spoilers de GTA VI en YouTube, Reddit y X. Haz clic dos veces en un bloque difuminado para verlo. Cualquier otro juego, serie, película o anime se añade desde el botón de la barra.',
  'w_s3_t': 'Tus reglas', 'w_s3': 'Añade una serie, película o anime. Selecciona cualquier texto y usa clic derecho «Ocultar como spoiler». Pausa 10 minutos o apágalo en un sitio.',
- 'w_pin': 'Consejo: fija Spoiler Shield en la barra para ver el contador y añadir qué proteger en un clic.',
+ 'w_pin': 'Consejo: fija Spoiler Blocker en la barra para ver el contador y añadir qué proteger en un clic.',
 }
 SHIELDS['pt_BR'] = {
  'pro_title': 'Todas as listas, todos os sites',
@@ -1380,9 +1380,9 @@ SHIELDS['pt_BR'] = {
  'kind_game': 'Jogo', 'kind_movie': 'Filme', 'kind_show': 'Série', 'kind_anime': 'Anime', 'kind_custom': 'Próprio',
  'pro_text': 'Listas prontas de novos jogos, séries, filmes e anime, e quantos escudos próprios quiser. Todos os sites: Google, TikTok, Twitch, Discord, notícias. Mais “proteger até uma data”. Um só pagamento.',
  'review_text': 'Uma avaliação curta ajuda outras pessoas a encontrá-lo antes de levarem spoiler.',
- 'w_sub': 'O Spoiler Shield já desfoca spoilers de GTA VI no YouTube, Reddit e X. Clique duas vezes num bloco desfocado para ver. Qualquer outro jogo, série, filme ou anime pode ser adicionado pelo botão da barra.',
+ 'w_sub': 'O Spoiler Blocker já desfoca spoilers de GTA VI no YouTube, Reddit e X. Clique duas vezes num bloco desfocado para ver. Qualquer outro jogo, série, filme ou anime pode ser adicionado pelo botão da barra.',
  'w_s3_t': 'Suas regras', 'w_s3': 'Adicione uma série, filme ou anime. Selecione qualquer texto e use o clique direito “Ocultar como spoiler”. Pause por 10 minutos ou desligue num site.',
- 'w_pin': 'Dica: fixe o Spoiler Shield na barra para ver o contador e adicionar o que proteger com um clique.',
+ 'w_pin': 'Dica: fixe o Spoiler Blocker na barra para ver o contador e adicionar o que proteger com um clique.',
 }
 SHIELDS['it'] = {
  'pro_title': 'Tutti gli elenchi, tutti i siti',
@@ -1426,9 +1426,9 @@ SHIELDS['it'] = {
  'kind_game': 'Gioco', 'kind_movie': 'Film', 'kind_show': 'Serie', 'kind_anime': 'Anime', 'kind_custom': 'Tuo',
  'pro_text': 'Elenchi pronti per nuovi giochi, serie, film e anime, e tutti gli scudi tuoi che vuoi. Ogni sito: Google, TikTok, Twitch, Discord, notizie. In più «proteggi fino a una data». Un solo pagamento.',
  'review_text': 'Una breve recensione aiuta altri a trovarlo prima di prendersi uno spoiler.',
- 'w_sub': 'Spoiler Shield ora sfoca gli spoiler di GTA VI su YouTube, Reddit e X. Clicca due volte su un blocco sfocato per vederlo. Qualsiasi altro gioco, serie, film o anime si aggiunge dal pulsante nella barra.',
+ 'w_sub': 'Spoiler Blocker ora sfoca gli spoiler di GTA VI su YouTube, Reddit e X. Clicca due volte su un blocco sfocato per vederlo. Qualsiasi altro gioco, serie, film o anime si aggiunge dal pulsante nella barra.',
  'w_s3_t': 'Le tue regole', 'w_s3': 'Aggiungi una serie, un film o un anime. Seleziona un testo e usa il clic destro «Nascondi come spoiler». Pausa di 10 minuti o spegnilo su un sito.',
- 'w_pin': 'Suggerimento: fissa Spoiler Shield alla barra per vedere il contatore e aggiungere cosa proteggere con un clic.',
+ 'w_pin': 'Suggerimento: fissa Spoiler Blocker alla barra per vedere il contatore e aggiungere cosa proteggere con un clic.',
 }
 SHIELDS['tr'] = {
  'pro_title': 'Tüm listeler, tüm siteler',
@@ -1472,9 +1472,9 @@ SHIELDS['tr'] = {
  'kind_game': 'Oyun', 'kind_movie': 'Film', 'kind_show': 'Dizi', 'kind_anime': 'Anime', 'kind_custom': 'Kendi',
  'pro_text': 'Yeni oyunlar, diziler, filmler ve animeler için hazır listeler ve istediğin kadar kendi kalkanın. Tüm siteler: Google, TikTok, Twitch, Discord, haberler. Artı “bir tarihe kadar koru”. Tek ödeme.',
  'review_text': 'Kısa bir yorum, başkalarının spoiler yemeden onu bulmasına yardım eder.',
- 'w_sub': 'Spoiler Shield artık YouTube, Reddit ve X’te GTA VI spoilerlarını bulanıklaştırıyor. Görmek için bulanık bloğa iki kez tıkla. Başka bir oyun, dizi, film ya da anime araç çubuğundaki düğmeden eklenir.',
+ 'w_sub': 'Spoiler Blocker artık YouTube, Reddit ve X’te GTA VI spoilerlarını bulanıklaştırıyor. Görmek için bulanık bloğa iki kez tıkla. Başka bir oyun, dizi, film ya da anime araç çubuğundaki düğmeden eklenir.',
  'w_s3_t': 'Senin kuralların', 'w_s3': 'Bir dizi, film ya da anime ekle. Herhangi bir metni seç ve sağ tıkla “Spoiler olarak gizlensin”. 10 dakika duraklat ya da bir sitede kapat.',
- 'w_pin': 'İpucu: sayacı görmek ve neyi koruyacağını tek tıkla eklemek için Spoiler Shield’ı araç çubuğuna sabitle.',
+ 'w_pin': 'İpucu: sayacı görmek ve neyi koruyacağını tek tıkla eklemek için Spoiler Blocker’ı araç çubuğuna sabitle.',
 }
 SHIELDS['ja'] = {
  'pro_title': 'すべてのリスト、すべてのサイト',
@@ -1518,9 +1518,9 @@ SHIELDS['ja'] = {
  'kind_game': 'ゲーム', 'kind_movie': '映画', 'kind_show': 'ドラマ', 'kind_anime': 'アニメ', 'kind_custom': '自分で追加',
  'pro_text': '新作ゲーム、ドラマ、映画、アニメの用意されたリストと、無制限の自分のシールド。すべてのサイト：Google、TikTok、Twitch、Discord、ニュース。さらに「日付まで守る」。支払いは一度だけ。',
  'review_text': '短いレビューが、ネタバレされる前にほかの人がこれを見つける助けになります。',
- 'w_sub': 'Spoiler Shield が YouTube、Reddit、X の GTA VI のネタバレをぼかすようになりました。ぼかしたブロックを2回クリックすると見られます。ほかのゲーム、ドラマ、映画、アニメはツールバーのボタンから追加できます。',
+ 'w_sub': 'Spoiler Blocker が YouTube、Reddit、X の GTA VI のネタバレをぼかすようになりました。ぼかしたブロックを2回クリックすると見られます。ほかのゲーム、ドラマ、映画、アニメはツールバーのボタンから追加できます。',
  'w_s3_t': '自分のルール', 'w_s3': 'ドラマ、映画、アニメを追加。テキストを選んで右クリック「ネタバレとして隠す」。10分間の一時停止やサイトごとのオフも。',
- 'w_pin': 'ヒント：Spoiler Shield をツールバーに固定すると、カウンターを確認でき、守る作品をワンクリックで追加できます。',
+ 'w_pin': 'ヒント：Spoiler Blocker をツールバーに固定すると、カウンターを確認でき、守る作品をワンクリックで追加できます。',
 }
 SHIELDS['ko'] = {
  'pro_title': '모든 목록, 모든 사이트',
@@ -1564,9 +1564,9 @@ SHIELDS['ko'] = {
  'kind_game': '게임', 'kind_movie': '영화', 'kind_show': '드라마', 'kind_anime': '애니', 'kind_custom': '직접 추가',
  'pro_text': '새 게임, 드라마, 영화, 애니의 준비된 목록과 원하는 만큼의 보호막. 모든 사이트: Google, TikTok, Twitch, Discord, 뉴스. 그리고 “날짜까지 보호”. 한 번만 결제.',
  'review_text': '짧은 리뷰가 다른 사람들이 스포일러를 당하기 전에 이걸 찾도록 도와줘요.',
- 'w_sub': '이제 Spoiler Shield가 YouTube, Reddit, X의 GTA VI 스포일러를 흐리게 합니다. 흐려진 블록을 두 번 클릭하면 볼 수 있어요. 다른 게임, 드라마, 영화, 애니는 도구 모음 버튼에서 추가할 수 있어요.',
+ 'w_sub': '이제 Spoiler Blocker가 YouTube, Reddit, X의 GTA VI 스포일러를 흐리게 합니다. 흐려진 블록을 두 번 클릭하면 볼 수 있어요. 다른 게임, 드라마, 영화, 애니는 도구 모음 버튼에서 추가할 수 있어요.',
  'w_s3_t': '나만의 규칙', 'w_s3': '드라마, 영화, 애니를 추가하세요. 아무 텍스트나 선택하고 오른쪽 클릭 “스포일러로 숨기기”. 10분 일시 중지나 사이트별 끄기도 돼요.',
- 'w_pin': '팁: Spoiler Shield를 도구 모음에 고정하면 카운터를 보고 보호할 작품을 한 번에 추가할 수 있어요.',
+ 'w_pin': '팁: Spoiler Blocker를 도구 모음에 고정하면 카운터를 보고 보호할 작품을 한 번에 추가할 수 있어요.',
 }
 SHIELDS['zh_CN'] = {
  'pro_title': '所有列表，所有网站',
@@ -1610,9 +1610,9 @@ SHIELDS['zh_CN'] = {
  'kind_game': '游戏', 'kind_movie': '电影', 'kind_show': '剧集', 'kind_anime': '动漫', 'kind_custom': '自定义',
  'pro_text': '新游戏、剧集、电影和动漫的现成列表，以及不限数量的自定义护盾。所有网站：Google、TikTok、Twitch、Discord、新闻。还有“保护到某个日期”。一次付费。',
  'review_text': '一条简短的评价能帮其他人在被剧透之前找到它。',
- 'w_sub': 'Spoiler Shield 现在会模糊 YouTube、Reddit 和 X 上的 GTA VI 剧透。点击模糊区块两次即可查看。其他游戏、剧集、电影或动漫可以通过工具栏按钮添加。',
+ 'w_sub': 'Spoiler Blocker 现在会模糊 YouTube、Reddit 和 X 上的 GTA VI 剧透。点击模糊区块两次即可查看。其他游戏、剧集、电影或动漫可以通过工具栏按钮添加。',
  'w_s3_t': '你的规则', 'w_s3': '添加剧集、电影或动漫。选中任意文字，右键“将……作为剧透隐藏”。暂停 10 分钟，或在某个网站关闭。',
- 'w_pin': '提示：把 Spoiler Shield 固定到工具栏，就能看到计数并一键添加要保护的内容。',
+ 'w_pin': '提示：把 Spoiler Blocker 固定到工具栏，就能看到计数并一键添加要保护的内容。',
 }
 for _lang, _upd in SHIELDS.items():
     L[_lang].update(_upd)
@@ -1630,7 +1630,7 @@ V11['en'] = {
  'more_upto': 'I watched up to episode / chapter', 'more_release': 'Release day (hide everything until then)', 'more_until': 'Protect until (then off)',
  'pro_hide_ai': 'Hide AI summaries (Google, YouTube) about what you protect',
  'pro_trusted': 'Trusted channels and communities', 'pro_trusted_ph': '@channel\nr/subreddit', 'pro_trusted_hint': 'Their videos and posts are never hidden. One per line.',
- 'backup_export': 'Save shields to a file', 'backup_import': 'Load from a file', 'backup_done': 'Loaded.', 'backup_bad': 'This file is not a Spoiler Shield backup.',
+ 'backup_export': 'Save shields to a file', 'backup_import': 'Load from a file', 'backup_done': 'Loaded.', 'backup_bad': 'This file is not a Spoiler Blocker backup.',
 }
 V11['ru'] = {
  'pro_title': 'Везде и умнее',
@@ -1641,7 +1641,7 @@ V11['ru'] = {
  'more_upto': 'Я досмотрел до серии / главы', 'more_release': 'День выхода (до него скрывать всё)', 'more_until': 'Защищать до (потом выключить)',
  'pro_hide_ai': 'Скрывать ИИ-сводки (Google, YouTube) о том, что ты защищаешь',
  'pro_trusted': 'Доверенные каналы и сообщества', 'pro_trusted_ph': '@канал\nr/сабреддит', 'pro_trusted_hint': 'Их видео и посты никогда не скрываются. По одному в строке.',
- 'backup_export': 'Сохранить щиты в файл', 'backup_import': 'Загрузить из файла', 'backup_done': 'Загружено.', 'backup_bad': 'Это не файл бэкапа Spoiler Shield.',
+ 'backup_export': 'Сохранить щиты в файл', 'backup_import': 'Загрузить из файла', 'backup_done': 'Загружено.', 'backup_bad': 'Это не файл бэкапа Spoiler Blocker.',
 }
 V11['uk'] = {
  'pro_title': 'Скрізь і розумніше',
@@ -1652,7 +1652,7 @@ V11['uk'] = {
  'more_upto': 'Я додивився до серії / розділу', 'more_release': 'День виходу (до нього приховувати все)', 'more_until': 'Захищати до (потім вимкнути)',
  'pro_hide_ai': 'Приховувати ШІ-зведення (Google, YouTube) про те, що ти захищаєш',
  'pro_trusted': 'Довірені канали та спільноти', 'pro_trusted_ph': '@канал\nr/сабреддит', 'pro_trusted_hint': 'Їхні відео й пости ніколи не приховуються. По одному в рядку.',
- 'backup_export': 'Зберегти щити у файл', 'backup_import': 'Завантажити з файлу', 'backup_done': 'Завантажено.', 'backup_bad': 'Це не файл бекапу Spoiler Shield.',
+ 'backup_export': 'Зберегти щити у файл', 'backup_import': 'Завантажити з файлу', 'backup_done': 'Завантажено.', 'backup_bad': 'Це не файл бекапу Spoiler Blocker.',
 }
 V11['pl'] = {
  'pro_title': 'Wszędzie i mądrzej',
@@ -1663,7 +1663,7 @@ V11['pl'] = {
  'more_upto': 'Obejrzałem do odcinka / rozdziału', 'more_release': 'Dzień premiery (do niego ukrywaj wszystko)', 'more_until': 'Chroń do (potem wyłącz)',
  'pro_hide_ai': 'Ukrywaj podsumowania AI (Google, YouTube) o tym, co chronisz',
  'pro_trusted': 'Zaufane kanały i społeczności', 'pro_trusted_ph': '@kanał\nr/subreddit', 'pro_trusted_hint': 'Ich filmy i posty nigdy nie są ukrywane. Jeden w wierszu.',
- 'backup_export': 'Zapisz tarcze do pliku', 'backup_import': 'Wczytaj z pliku', 'backup_done': 'Wczytano.', 'backup_bad': 'To nie jest kopia zapasowa Spoiler Shield.',
+ 'backup_export': 'Zapisz tarcze do pliku', 'backup_import': 'Wczytaj z pliku', 'backup_done': 'Wczytano.', 'backup_bad': 'To nie jest kopia zapasowa Spoiler Blocker.',
 }
 V11['de'] = {
  'pro_title': 'Überall und klüger',
@@ -1674,7 +1674,7 @@ V11['de'] = {
  'more_upto': 'Ich habe geschaut bis Folge / Kapitel', 'more_release': 'Erscheinungstag (bis dahin alles verbergen)', 'more_until': 'Schützen bis (dann aus)',
  'pro_hide_ai': 'KI-Zusammenfassungen (Google, YouTube) zu dem, was du schützt, ausblenden',
  'pro_trusted': 'Vertrauenswürdige Kanäle und Communitys', 'pro_trusted_ph': '@kanal\nr/subreddit', 'pro_trusted_hint': 'Ihre Videos und Posts werden nie verborgen. Einer pro Zeile.',
- 'backup_export': 'Schilde in Datei speichern', 'backup_import': 'Aus Datei laden', 'backup_done': 'Geladen.', 'backup_bad': 'Das ist kein Spoiler-Shield-Backup.',
+ 'backup_export': 'Schilde in Datei speichern', 'backup_import': 'Aus Datei laden', 'backup_done': 'Geladen.', 'backup_bad': 'Das ist kein Spoiler-Blocker-Backup.',
 }
 V11['fr'] = {
  'pro_title': 'Partout, et plus malin',
@@ -1685,7 +1685,7 @@ V11['fr'] = {
  'more_upto': 'J’ai vu jusqu’à l’épisode / chapitre', 'more_release': 'Jour de sortie (tout masquer avant)', 'more_until': 'Protéger jusqu’au (puis arrêt)',
  'pro_hide_ai': 'Masquer les résumés IA (Google, YouTube) sur ce que vous protégez',
  'pro_trusted': 'Chaînes et communautés de confiance', 'pro_trusted_ph': '@chaine\nr/subreddit', 'pro_trusted_hint': 'Leurs vidéos et posts ne sont jamais masqués. Un par ligne.',
- 'backup_export': 'Enregistrer les boucliers', 'backup_import': 'Charger un fichier', 'backup_done': 'Chargé.', 'backup_bad': 'Ce fichier n’est pas une sauvegarde Spoiler Shield.',
+ 'backup_export': 'Enregistrer les boucliers', 'backup_import': 'Charger un fichier', 'backup_done': 'Chargé.', 'backup_bad': 'Ce fichier n’est pas une sauvegarde Spoiler Blocker.',
 }
 V11['es'] = {
  'pro_title': 'En todas partes y más listo',
@@ -1696,7 +1696,7 @@ V11['es'] = {
  'more_upto': 'Vi hasta el episodio / capítulo', 'more_release': 'Día de estreno (ocultar todo hasta entonces)', 'more_until': 'Proteger hasta (luego apagar)',
  'pro_hide_ai': 'Ocultar resúmenes de IA (Google, YouTube) sobre lo que proteges',
  'pro_trusted': 'Canales y comunidades de confianza', 'pro_trusted_ph': '@canal\nr/subreddit', 'pro_trusted_hint': 'Sus videos y posts nunca se ocultan. Uno por línea.',
- 'backup_export': 'Guardar escudos en un archivo', 'backup_import': 'Cargar de un archivo', 'backup_done': 'Cargado.', 'backup_bad': 'Este archivo no es una copia de Spoiler Shield.',
+ 'backup_export': 'Guardar escudos en un archivo', 'backup_import': 'Cargar de un archivo', 'backup_done': 'Cargado.', 'backup_bad': 'Este archivo no es una copia de Spoiler Blocker.',
 }
 V11['pt_BR'] = {
  'pro_title': 'Em todo lugar, e mais esperto',
@@ -1707,7 +1707,7 @@ V11['pt_BR'] = {
  'more_upto': 'Assisti até o episódio / capítulo', 'more_release': 'Dia de estreia (ocultar tudo até lá)', 'more_until': 'Proteger até (depois desligar)',
  'pro_hide_ai': 'Ocultar resumos de IA (Google, YouTube) sobre o que você protege',
  'pro_trusted': 'Canais e comunidades confiáveis', 'pro_trusted_ph': '@canal\nr/subreddit', 'pro_trusted_hint': 'Os vídeos e posts deles nunca são ocultados. Um por linha.',
- 'backup_export': 'Salvar escudos em arquivo', 'backup_import': 'Carregar de arquivo', 'backup_done': 'Carregado.', 'backup_bad': 'Este arquivo não é um backup do Spoiler Shield.',
+ 'backup_export': 'Salvar escudos em arquivo', 'backup_import': 'Carregar de arquivo', 'backup_done': 'Carregado.', 'backup_bad': 'Este arquivo não é um backup do Spoiler Blocker.',
 }
 V11['it'] = {
  'pro_title': 'Ovunque, e più furbo',
@@ -1718,7 +1718,7 @@ V11['it'] = {
  'more_upto': 'Ho visto fino all’episodio / capitolo', 'more_release': 'Giorno di uscita (fino ad allora nascondi tutto)', 'more_until': 'Proteggi fino al (poi spegni)',
  'pro_hide_ai': 'Nascondi i riepiloghi IA (Google, YouTube) su ciò che proteggi',
  'pro_trusted': 'Canali e community fidati', 'pro_trusted_ph': '@canale\nr/subreddit', 'pro_trusted_hint': 'I loro video e post non vengono mai nascosti. Uno per riga.',
- 'backup_export': 'Salva gli scudi su file', 'backup_import': 'Carica da file', 'backup_done': 'Caricato.', 'backup_bad': 'Questo file non è un backup di Spoiler Shield.',
+ 'backup_export': 'Salva gli scudi su file', 'backup_import': 'Carica da file', 'backup_done': 'Caricato.', 'backup_bad': 'Questo file non è un backup di Spoiler Blocker.',
 }
 V11['tr'] = {
  'pro_title': 'Her yerde ve daha akıllı',
@@ -1729,7 +1729,7 @@ V11['tr'] = {
  'more_upto': 'Şu bölüme / kısma kadar izledim', 'more_release': 'Çıkış günü (o güne kadar her şeyi gizle)', 'more_until': 'Şu tarihe kadar koru (sonra kapat)',
  'pro_hide_ai': 'Koruduğun şeyle ilgili yapay zeka özetlerini (Google, YouTube) gizle',
  'pro_trusted': 'Güvenilir kanallar ve topluluklar', 'pro_trusted_ph': '@kanal\nr/subreddit', 'pro_trusted_hint': 'Onların videoları ve gönderileri asla gizlenmez. Her satıra bir tane.',
- 'backup_export': 'Kalkanları dosyaya kaydet', 'backup_import': 'Dosyadan yükle', 'backup_done': 'Yüklendi.', 'backup_bad': 'Bu dosya bir Spoiler Shield yedeği değil.',
+ 'backup_export': 'Kalkanları dosyaya kaydet', 'backup_import': 'Dosyadan yükle', 'backup_done': 'Yüklendi.', 'backup_bad': 'Bu dosya bir Spoiler Blocker yedeği değil.',
 }
 V11['ja'] = {
  'pro_title': 'どこでも、もっと賢く',
@@ -1740,7 +1740,7 @@ V11['ja'] = {
  'more_upto': '視聴済みの話数 / 章', 'more_release': '公開日（その日まですべて隠す）', 'more_until': '保護する期限（その後オフ）',
  'pro_hide_ai': '守っている作品の AI 要約（Google、YouTube）を隠す',
  'pro_trusted': '信頼するチャンネルとコミュニティ', 'pro_trusted_ph': '@チャンネル\nr/サブレディット', 'pro_trusted_hint': 'これらの動画や投稿は隠されません。1 行に 1 つ。',
- 'backup_export': 'シールドをファイルに保存', 'backup_import': 'ファイルから読み込む', 'backup_done': '読み込みました。', 'backup_bad': 'Spoiler Shield のバックアップファイルではありません。',
+ 'backup_export': 'シールドをファイルに保存', 'backup_import': 'ファイルから読み込む', 'backup_done': '読み込みました。', 'backup_bad': 'Spoiler Blocker のバックアップファイルではありません。',
 }
 V11['ko'] = {
  'pro_title': '어디서나, 더 똑똑하게',
@@ -1751,7 +1751,7 @@ V11['ko'] = {
  'more_upto': '여기까지 봤어요 (화 / 장)', 'more_release': '공개일 (그때까지 모두 숨기기)', 'more_until': '보호 종료일 (그 후 끄기)',
  'pro_hide_ai': '보호 중인 작품의 AI 요약(Google, YouTube) 숨기기',
  'pro_trusted': '신뢰하는 채널과 커뮤니티', 'pro_trusted_ph': '@채널\nr/서브레딧', 'pro_trusted_hint': '이들의 영상과 게시물은 숨기지 않아요. 한 줄에 하나씩.',
- 'backup_export': '보호막을 파일로 저장', 'backup_import': '파일에서 불러오기', 'backup_done': '불러왔어요.', 'backup_bad': 'Spoiler Shield 백업 파일이 아니에요.',
+ 'backup_export': '보호막을 파일로 저장', 'backup_import': '파일에서 불러오기', 'backup_done': '불러왔어요.', 'backup_bad': 'Spoiler Blocker 백업 파일이 아니에요.',
 }
 V11['zh_CN'] = {
  'pro_title': '处处保护，更聪明',
@@ -1762,7 +1762,7 @@ V11['zh_CN'] = {
  'more_upto': '我看到第几集 / 第几章', 'more_release': '上映日（在此之前全部隐藏）', 'more_until': '保护到（之后关闭）',
  'pro_hide_ai': '隐藏你所保护作品的 AI 摘要（Google、YouTube）',
  'pro_trusted': '信任的频道和社区', 'pro_trusted_ph': '@频道\nr/子版块', 'pro_trusted_hint': '它们的视频和帖子永远不会被隐藏。每行一个。',
- 'backup_export': '将护盾保存到文件', 'backup_import': '从文件载入', 'backup_done': '已载入。', 'backup_bad': '这不是 Spoiler Shield 的备份文件。',
+ 'backup_export': '将护盾保存到文件', 'backup_import': '从文件载入', 'backup_done': '已载入。', 'backup_bad': '这不是 Spoiler Blocker 的备份文件。',
 }
 for _lang, _upd in V11.items():
     L[_lang].update(_upd)
@@ -1778,7 +1778,7 @@ V12['en'] = {
  'more_free': 'Dates work for everyone. “Watched up to” is part of Pro.',
  'more_sites_title': 'Google, TikTok, Instagram', 'more_sites_hint': 'Free. Your browser asks once for access to these sites.', 'more_sites_btn': 'Turn on there too', 'more_sites_on': 'On: {0}.',
  'site_changed': 'This site seems to have changed its layout — some spoilers may slip through.', 'copy_report': 'Copy a report', 'report_copied': 'Copied — paste it on GitHub. No page text inside.',
- 'share_btn': 'Share with a friend', 'share_text': 'Spoiler Shield hides spoilers for games, shows and anime on YouTube, Reddit, X, TikTok and Instagram. Free, nothing leaves the browser.', 'share_copied': 'Link copied',
+ 'share_btn': 'Share with a friend', 'share_text': 'Spoiler Blocker hides spoilers for games, shows and anime on YouTube, Reddit, X, TikTok and Instagram. Free, nothing leaves the browser.', 'share_copied': 'Link copied',
  'menu_wrong': 'Not a spoiler? Report this blur', 'veil_author': 'Hidden: an author you always hide\nClick to show', 'pro_blocked': 'Always hide these authors',
 }
 V12['ru'] = {
@@ -1788,7 +1788,7 @@ V12['ru'] = {
  'more_free': 'Даты работают у всех. «Досмотрел до» — в Pro.',
  'more_sites_title': 'Google, TikTok, Instagram', 'more_sites_hint': 'Бесплатно. Браузер один раз спросит доступ к этим сайтам.', 'more_sites_btn': 'Включить и там', 'more_sites_on': 'Включено: {0}.',
  'site_changed': 'Похоже, сайт поменял вёрстку — часть спойлеров может проскочить.', 'copy_report': 'Скопировать отчёт', 'report_copied': 'Скопировано — вставь на GitHub. Текста страницы внутри нет.',
- 'share_btn': 'Поделиться с другом', 'share_text': 'Spoiler Shield скрывает спойлеры игр, сериалов и аниме на YouTube, Reddit, X, TikTok и Instagram. Бесплатно, ничего не уходит из браузера.', 'share_copied': 'Ссылка скопирована',
+ 'share_btn': 'Поделиться с другом', 'share_text': 'Spoiler Blocker скрывает спойлеры игр, сериалов и аниме на YouTube, Reddit, X, TikTok и Instagram. Бесплатно, ничего не уходит из браузера.', 'share_copied': 'Ссылка скопирована',
  'menu_wrong': 'Это не спойлер? Сообщить', 'veil_author': 'Скрыто: автор из твоего списка\nНажми, чтобы показать', 'pro_blocked': 'Всегда скрывать этих авторов',
 }
 V12['uk'] = {
@@ -1798,7 +1798,7 @@ V12['uk'] = {
  'more_free': 'Дати працюють у всіх. «Додивився до» — у Pro.',
  'more_sites_title': 'Google, TikTok, Instagram', 'more_sites_hint': 'Безкоштовно. Браузер один раз попросить доступ до цих сайтів.', 'more_sites_btn': 'Увімкнути й там', 'more_sites_on': 'Увімкнено: {0}.',
  'site_changed': 'Схоже, сайт змінив верстку — частина спойлерів може проскочити.', 'copy_report': 'Скопіювати звіт', 'report_copied': 'Скопійовано — встав на GitHub. Тексту сторінки всередині немає.',
- 'share_btn': 'Поділитися з другом', 'share_text': 'Spoiler Shield ховає спойлери ігор, серіалів і аніме на YouTube, Reddit, X, TikTok та Instagram. Безкоштовно, нічого не виходить з браузера.', 'share_copied': 'Посилання скопійовано',
+ 'share_btn': 'Поділитися з другом', 'share_text': 'Spoiler Blocker ховає спойлери ігор, серіалів і аніме на YouTube, Reddit, X, TikTok та Instagram. Безкоштовно, нічого не виходить з браузера.', 'share_copied': 'Посилання скопійовано',
  'menu_wrong': 'Це не спойлер? Повідомити', 'veil_author': 'Приховано: автор із твого списку\nНатисни, щоб показати', 'pro_blocked': 'Завжди ховати цих авторів',
 }
 V12['pl'] = {
@@ -1808,7 +1808,7 @@ V12['pl'] = {
  'more_free': 'Daty działają u wszystkich. „Obejrzałem do” jest w Pro.',
  'more_sites_title': 'Google, TikTok, Instagram', 'more_sites_hint': 'Za darmo. Przeglądarka raz zapyta o dostęp do tych stron.', 'more_sites_btn': 'Włącz też tam', 'more_sites_on': 'Włączone: {0}.',
  'site_changed': 'Wygląda na to, że strona zmieniła układ — część spoilerów może się prześlizgnąć.', 'copy_report': 'Skopiuj raport', 'report_copied': 'Skopiowane — wklej na GitHubie. Bez tekstu strony.',
- 'share_btn': 'Poleć znajomemu', 'share_text': 'Spoiler Shield ukrywa spoilery gier, seriali i anime na YouTube, Reddicie, X, TikToku i Instagramie. Za darmo, nic nie wychodzi z przeglądarki.', 'share_copied': 'Link skopiowany',
+ 'share_btn': 'Poleć znajomemu', 'share_text': 'Spoiler Blocker ukrywa spoilery gier, seriali i anime na YouTube, Reddicie, X, TikToku i Instagramie. Za darmo, nic nie wychodzi z przeglądarki.', 'share_copied': 'Link skopiowany',
  'menu_wrong': 'To nie spoiler? Zgłoś', 'veil_author': 'Ukryte: autor z twojej listy\nKliknij, aby pokazać', 'pro_blocked': 'Zawsze ukrywaj tych autorów',
 }
 V12['de'] = {
@@ -1818,7 +1818,7 @@ V12['de'] = {
  'more_free': 'Daten funktionieren für alle. „Gesehen bis“ ist Teil von Pro.',
  'more_sites_title': 'Google, TikTok, Instagram', 'more_sites_hint': 'Kostenlos. Dein Browser fragt einmal nach Zugriff auf diese Seiten.', 'more_sites_btn': 'Auch dort einschalten', 'more_sites_on': 'Aktiv: {0}.',
  'site_changed': 'Diese Seite hat wohl ihr Layout geändert — manche Spoiler könnten durchrutschen.', 'copy_report': 'Bericht kopieren', 'report_copied': 'Kopiert — auf GitHub einfügen. Ohne Seitentext.',
- 'share_btn': 'Mit Freunden teilen', 'share_text': 'Spoiler Shield blendet Spoiler zu Spielen, Serien und Anime auf YouTube, Reddit, X, TikTok und Instagram aus. Kostenlos, nichts verlässt den Browser.', 'share_copied': 'Link kopiert',
+ 'share_btn': 'Mit Freunden teilen', 'share_text': 'Spoiler Blocker blendet Spoiler zu Spielen, Serien und Anime auf YouTube, Reddit, X, TikTok und Instagram aus. Kostenlos, nichts verlässt den Browser.', 'share_copied': 'Link kopiert',
  'menu_wrong': 'Kein Spoiler? Melden', 'veil_author': 'Ausgeblendet: ein Autor auf deiner Liste\nKlicken zum Anzeigen', 'pro_blocked': 'Diese Autoren immer ausblenden',
 }
 V12['fr'] = {
@@ -1828,7 +1828,7 @@ V12['fr'] = {
  'more_free': 'Les dates marchent pour tous. « Vu jusqu’à » fait partie de Pro.',
  'more_sites_title': 'Google, TikTok, Instagram', 'more_sites_hint': 'Gratuit. Le navigateur demande une fois l’accès à ces sites.', 'more_sites_btn': 'Activer là aussi', 'more_sites_on': 'Actif : {0}.',
  'site_changed': 'Ce site semble avoir changé sa mise en page — certains spoilers peuvent passer.', 'copy_report': 'Copier un rapport', 'report_copied': 'Copié — collez-le sur GitHub. Aucun texte de la page.',
- 'share_btn': 'Partager avec un ami', 'share_text': 'Spoiler Shield masque les spoilers de jeux, séries et anime sur YouTube, Reddit, X, TikTok et Instagram. Gratuit, rien ne sort du navigateur.', 'share_copied': 'Lien copié',
+ 'share_btn': 'Partager avec un ami', 'share_text': 'Spoiler Blocker masque les spoilers de jeux, séries et anime sur YouTube, Reddit, X, TikTok et Instagram. Gratuit, rien ne sort du navigateur.', 'share_copied': 'Lien copié',
  'menu_wrong': 'Pas un spoiler ? Signaler', 'veil_author': 'Masqué : un auteur de votre liste\nCliquez pour afficher', 'pro_blocked': 'Toujours masquer ces auteurs',
 }
 V12['es'] = {
@@ -1838,7 +1838,7 @@ V12['es'] = {
  'more_free': 'Las fechas funcionan para todos. «Visto hasta» es parte de Pro.',
  'more_sites_title': 'Google, TikTok, Instagram', 'more_sites_hint': 'Gratis. Tu navegador pide acceso a estos sitios una vez.', 'more_sites_btn': 'Activar también ahí', 'more_sites_on': 'Activo: {0}.',
  'site_changed': 'Parece que este sitio cambió su diseño — algunos spoilers podrían colarse.', 'copy_report': 'Copiar informe', 'report_copied': 'Copiado — pégalo en GitHub. Sin texto de la página.',
- 'share_btn': 'Compartir con un amigo', 'share_text': 'Spoiler Shield oculta spoilers de juegos, series y anime en YouTube, Reddit, X, TikTok e Instagram. Gratis, nada sale del navegador.', 'share_copied': 'Enlace copiado',
+ 'share_btn': 'Compartir con un amigo', 'share_text': 'Spoiler Blocker oculta spoilers de juegos, series y anime en YouTube, Reddit, X, TikTok e Instagram. Gratis, nada sale del navegador.', 'share_copied': 'Enlace copiado',
  'menu_wrong': '¿No es spoiler? Avisar', 'veil_author': 'Oculto: un autor de tu lista\nHaz clic para mostrar', 'pro_blocked': 'Ocultar siempre a estos autores',
 }
 V12['pt_BR'] = {
@@ -1848,7 +1848,7 @@ V12['pt_BR'] = {
  'more_free': 'As datas funcionam para todos. “Assisti até” faz parte do Pro.',
  'more_sites_title': 'Google, TikTok, Instagram', 'more_sites_hint': 'Grátis. O navegador pede acesso a esses sites uma vez.', 'more_sites_btn': 'Ativar lá também', 'more_sites_on': 'Ativo: {0}.',
  'site_changed': 'Parece que este site mudou o layout — alguns spoilers podem passar.', 'copy_report': 'Copiar relatório', 'report_copied': 'Copiado — cole no GitHub. Sem texto da página.',
- 'share_btn': 'Compartilhar com um amigo', 'share_text': 'O Spoiler Shield esconde spoilers de jogos, séries e anime no YouTube, Reddit, X, TikTok e Instagram. Grátis, nada sai do navegador.', 'share_copied': 'Link copiado',
+ 'share_btn': 'Compartilhar com um amigo', 'share_text': 'O Spoiler Blocker esconde spoilers de jogos, séries e anime no YouTube, Reddit, X, TikTok e Instagram. Grátis, nada sai do navegador.', 'share_copied': 'Link copiado',
  'menu_wrong': 'Não é spoiler? Avisar', 'veil_author': 'Oculto: um autor da sua lista\nClique para mostrar', 'pro_blocked': 'Sempre ocultar estes autores',
 }
 V12['it'] = {
@@ -1858,7 +1858,7 @@ V12['it'] = {
  'more_free': 'Le date funzionano per tutti. «Visto fino a» è parte di Pro.',
  'more_sites_title': 'Google, TikTok, Instagram', 'more_sites_hint': 'Gratis. Il browser chiede una volta l’accesso a questi siti.', 'more_sites_btn': 'Attiva anche lì', 'more_sites_on': 'Attivo: {0}.',
  'site_changed': 'Sembra che questo sito abbia cambiato layout — alcuni spoiler potrebbero sfuggire.', 'copy_report': 'Copia un rapporto', 'report_copied': 'Copiato — incollalo su GitHub. Nessun testo della pagina.',
- 'share_btn': 'Condividi con un amico', 'share_text': 'Spoiler Shield nasconde gli spoiler di giochi, serie e anime su YouTube, Reddit, X, TikTok e Instagram. Gratis, niente esce dal browser.', 'share_copied': 'Link copiato',
+ 'share_btn': 'Condividi con un amico', 'share_text': 'Spoiler Blocker nasconde gli spoiler di giochi, serie e anime su YouTube, Reddit, X, TikTok e Instagram. Gratis, niente esce dal browser.', 'share_copied': 'Link copiato',
  'menu_wrong': 'Non è uno spoiler? Segnala', 'veil_author': 'Nascosto: un autore della tua lista\nClicca per mostrare', 'pro_blocked': 'Nascondi sempre questi autori',
 }
 V12['tr'] = {
@@ -1868,7 +1868,7 @@ V12['tr'] = {
  'more_free': 'Tarihler herkes için çalışır. “Şuraya kadar izledim” Pro’da.',
  'more_sites_title': 'Google, TikTok, Instagram', 'more_sites_hint': 'Ücretsiz. Tarayıcın bu sitelere erişim için bir kez sorar.', 'more_sites_btn': 'Orada da aç', 'more_sites_on': 'Açık: {0}.',
  'site_changed': 'Bu site düzenini değiştirmiş gibi — bazı spoilerlar kaçabilir.', 'copy_report': 'Rapor kopyala', 'report_copied': 'Kopyalandı — GitHub’a yapıştır. Sayfa metni yok.',
- 'share_btn': 'Arkadaşınla paylaş', 'share_text': 'Spoiler Shield, YouTube, Reddit, X, TikTok ve Instagram’da oyun, dizi ve anime spoilerlarını gizler. Ücretsiz, hiçbir şey tarayıcıdan çıkmaz.', 'share_copied': 'Bağlantı kopyalandı',
+ 'share_btn': 'Arkadaşınla paylaş', 'share_text': 'Spoiler Blocker, YouTube, Reddit, X, TikTok ve Instagram’da oyun, dizi ve anime spoilerlarını gizler. Ücretsiz, hiçbir şey tarayıcıdan çıkmaz.', 'share_copied': 'Bağlantı kopyalandı',
  'menu_wrong': 'Spoiler değil mi? Bildir', 'veil_author': 'Gizlendi: listendeki bir yazar\nGöstermek için tıkla', 'pro_blocked': 'Bu yazarları hep gizle',
 }
 V12['ja'] = {
@@ -1878,7 +1878,7 @@ V12['ja'] = {
  'more_free': '日付は誰でも使えます。「ここまで見た」は Pro。',
  'more_sites_title': 'Google、TikTok、Instagram', 'more_sites_hint': '無料。ブラウザがこれらのサイトへのアクセスを一度だけ確認します。', 'more_sites_btn': 'そこでもオンにする', 'more_sites_on': 'オン：{0}。',
  'site_changed': 'このサイトはレイアウトが変わったようです。一部のネタバレが漏れるかもしれません。', 'copy_report': 'レポートをコピー', 'report_copied': 'コピーしました。GitHub に貼り付けてください。ページの文章は含みません。',
- 'share_btn': '友だちに教える', 'share_text': 'Spoiler Shield は YouTube・Reddit・X・TikTok・Instagram のゲーム、ドラマ、アニメのネタバレを隠します。無料、データはブラウザの外に出ません。', 'share_copied': 'リンクをコピーしました',
+ 'share_btn': '友だちに教える', 'share_text': 'Spoiler Blocker は YouTube・Reddit・X・TikTok・Instagram のゲーム、ドラマ、アニメのネタバレを隠します。無料、データはブラウザの外に出ません。', 'share_copied': 'リンクをコピーしました',
  'menu_wrong': 'ネタバレじゃない？報告する', 'veil_author': '非表示：リストの投稿者\nクリックで表示', 'pro_blocked': 'この投稿者は常に隠す',
 }
 V12['ko'] = {
@@ -1888,7 +1888,7 @@ V12['ko'] = {
  'more_free': '날짜는 누구나 쓸 수 있습니다. “여기까지 봤어요”는 Pro.',
  'more_sites_title': 'Google, TikTok, Instagram', 'more_sites_hint': '무료. 브라우저가 이 사이트들에 대한 접근을 한 번 묻습니다.', 'more_sites_btn': '거기서도 켜기', 'more_sites_on': '켜짐: {0}.',
  'site_changed': '이 사이트의 레이아웃이 바뀐 것 같습니다. 일부 스포일러가 새어 나올 수 있어요.', 'copy_report': '보고서 복사', 'report_copied': '복사했습니다. GitHub에 붙여 넣으세요. 페이지 글은 없습니다.',
- 'share_btn': '친구에게 공유', 'share_text': 'Spoiler Shield는 YouTube, Reddit, X, TikTok, Instagram의 게임, 드라마, 애니 스포일러를 숨깁니다. 무료, 데이터는 브라우저 밖으로 나가지 않아요.', 'share_copied': '링크를 복사했습니다',
+ 'share_btn': '친구에게 공유', 'share_text': 'Spoiler Blocker는 YouTube, Reddit, X, TikTok, Instagram의 게임, 드라마, 애니 스포일러를 숨깁니다. 무료, 데이터는 브라우저 밖으로 나가지 않아요.', 'share_copied': '링크를 복사했습니다',
  'menu_wrong': '스포일러가 아닌가요? 신고', 'veil_author': '숨김: 목록에 있는 작성자\n클릭하면 표시', 'pro_blocked': '이 작성자는 항상 숨기기',
 }
 V12['zh_CN'] = {
@@ -1898,7 +1898,7 @@ V12['zh_CN'] = {
  'more_free': '日期人人可用。“看到第几集”属于 Pro。',
  'more_sites_title': 'Google、TikTok、Instagram', 'more_sites_hint': '免费。浏览器会询问一次这些网站的访问权限。', 'more_sites_btn': '在那里也开启', 'more_sites_on': '已开启：{0}。',
  'site_changed': '这个网站好像改了版面，部分剧透可能漏掉。', 'copy_report': '复制报告', 'report_copied': '已复制，请粘贴到 GitHub。不含页面文字。',
- 'share_btn': '分享给朋友', 'share_text': 'Spoiler Shield 隐藏 YouTube、Reddit、X、TikTok 和 Instagram 上的游戏、剧集和动漫剧透。免费，数据不离开浏览器。', 'share_copied': '链接已复制',
+ 'share_btn': '分享给朋友', 'share_text': 'Spoiler Blocker 隐藏 YouTube、Reddit、X、TikTok 和 Instagram 上的游戏、剧集和动漫剧透。免费，数据不离开浏览器。', 'share_copied': '链接已复制',
  'menu_wrong': '不是剧透？反馈', 'veil_author': '已隐藏：你列表中的作者\n点击显示', 'pro_blocked': '总是隐藏这些作者',
 }
 for _lang, _upd in V12.items():

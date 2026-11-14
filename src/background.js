@@ -180,7 +180,7 @@ async function reportWrong(tab) {
   let d = {};
   try { d = (tab && tab.id != null ? await api.tabs.sendMessage(tab.id, { type: 'pss:lastVeil' }) : {}) || {}; } catch (e) { d = {}; }
   const v = api.runtime.getManifest().version;
-  const body = ['**Not a spoiler — Spoiler Shield hid it by mistake**', '',
+  const body = ['**Not a spoiler — Spoiler Blocker hid it by mistake**', '',
     'List: ' + (d.list || '?'), 'Why (match): ' + (d.reason || '?'), 'Site: ' + (d.site || '?'), 'Version: ' + v, '',
     'Text Shield saw (edit or delete it before sending):', '> ' + (d.text || '(paste the title here)')].join('\n');
   /* The report goes to the clipboard of the page, never into the address. GitHub gets a fixed title and a fixed hint (no page text) so an empty form is never a puzzle. */

@@ -1,12 +1,12 @@
-# Pure Spoiler Shield — Privacy Policy
+# Pure Spoiler Blocker — Privacy Policy
 
 _Last updated: November 12, 2026_
 
-Pure Spoiler Shield is a browser extension that hides possible spoilers for games, shows, films and anime (by default for GTA VI) on web pages. It works entirely inside your browser.
+Pure Spoiler Blocker is a browser extension that hides possible spoilers for games, shows, films and anime (by default for GTA VI) on web pages. It works entirely inside your browser.
 
 ## What we collect
 
-**Nothing.** Pure Spoiler Shield does not collect, sell or share any personal data. We have no servers that receive your data, no analytics, no telemetry, no advertising and no third-party tracking code.
+**Nothing.** Pure Spoiler Blocker does not collect, sell or share any personal data. We have no servers that receive your data, no analytics, no telemetry, no advertising and no third-party tracking code.
 
 ## What the extension can access
 
@@ -40,7 +40,7 @@ The source code is open to read: https://github.com/qwemort/pure-spoiler-shield
 
 ## Not affiliated
 
-Pure Spoiler Shield is not affiliated with Rockstar Games, Take-Two Interactive or any other game, film or TV company. GTA and Grand Theft Auto are trademarks of Take-Two Interactive; other titles are trademarks of their owners.
+Pure Spoiler Blocker is not affiliated with Rockstar Games, Take-Two Interactive or any other game, film or TV company. GTA and Grand Theft Auto are trademarks of Take-Two Interactive; other titles are trademarks of their owners.
 
 ## Contact
 

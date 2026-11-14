@@ -24,7 +24,7 @@
   "message": "もう一度クリックでコメントを表示。ネタバレを含むかもしれません。"
  },
  "perm_title": {
-  "message": "YouTube・Reddit・X で Spoiler Shield を許可してください"
+  "message": "YouTube・Reddit・X で Spoiler Blocker を許可してください"
  },
  "perm_hint": {
   "message": "ブラウザがまだこれらのサイトへのアクセスを許可していないため、何も非表示になりません。"
@@ -117,7 +117,7 @@
   "message": "保護されています。"
  },
  "w_sub": {
-  "message": "Spoiler Shield が YouTube、Reddit、X の GTA VI のネタバレをぼかすようになりました。ぼかしたブロックを2回クリックすると見られます。ほかのゲーム、ドラマ、映画、アニメはツールバーのボタンから追加できます。"
+  "message": "Spoiler Blocker が YouTube、Reddit、X の GTA VI のネタバレをぼかすようになりました。ぼかしたブロックを2回クリックすると見られます。ほかのゲーム、ドラマ、映画、アニメはツールバーのボタンから追加できます。"
  },
  "w_s1_t": {
   "message": "消さずにぼかす"
@@ -138,7 +138,7 @@
   "message": "ドラマ、映画、アニメを追加。テキストを選んで右クリック「ネタバレとして隠す」。10分間の一時停止やサイトごとのオフも。"
  },
  "w_pin": {
-  "message": "ヒント：Spoiler Shield をツールバーに固定すると、カウンターを確認でき、守る作品をワンクリックで追加できます。"
+  "message": "ヒント：Spoiler Blocker をツールバーに固定すると、カウンターを確認でき、守る作品をワンクリックで追加できます。"
  },
  "w_private_t": {
   "message": "プライバシー重視"
@@ -267,7 +267,7 @@
   "message": "読み込みました。"
  },
  "backup_bad": {
-  "message": "Spoiler Shield のバックアップファイルではありません。"
+  "message": "Spoiler Blocker のバックアップファイルではありません。"
  },
  "more_sites_title": {
   "message": "Google、TikTok、Instagram"
@@ -294,7 +294,7 @@
   "message": "友だちに教える"
  },
  "share_text": {
-  "message": "Spoiler Shield は YouTube・Reddit・X・TikTok・Instagram のゲーム、ドラマ、アニメのネタバレを隠します。無料、データはブラウザの外に出ません。"
+  "message": "Spoiler Blocker は YouTube・Reddit・X・TikTok・Instagram のゲーム、ドラマ、アニメのネタバレを隠します。無料、データはブラウザの外に出ません。"
  },
  "share_copied": {
   "message": "リンクをコピーしました"
@@ -423,7 +423,7 @@
   "message": "Add these lists"
  },
  "code_bad": {
-  "message": "This is not a Spoiler Shield code."
+  "message": "This is not a Spoiler Blocker code."
  },
  "code_done": {
   "message": "Added: {0}."

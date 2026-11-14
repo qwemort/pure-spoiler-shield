@@ -209,7 +209,7 @@
       note('moreNote', r.ok === false ? t('site_fail') : '');
     });
     $('copyReport').addEventListener('click', async () => {
-      const r = ['Pure Spoiler Shield ' + version, 'site: ' + (page && page.site), 'cards: ' + (page && page.cards), 'items: ' + (page && page.items),
+      const r = ['Pure Spoiler Blocker ' + version, 'site: ' + (page && page.site), 'cards: ' + (page && page.cards), 'items: ' + (page && page.items),
         'links: ' + (page && page.probe), 'hidden: ' + (page && page.count), 'lists on: ' + shields().filter((x) => x.on !== false).length,
         'browser: ' + navigator.userAgent.replace(/^.*?(Chrome|Firefox|Edg)\/(\d+).*$/, '$1 $2')].join(' | ');
       $('copyReport').textContent = (await toClipboard(r)) ? t('report_copied') : r;
@@ -221,7 +221,7 @@
     const done = () => { api.storage.local.set({ reviewDone: true }); info.reviewDone = true; render(); };
     $('reviewBtn').href = reviewUrl(); $('reviewBtn').addEventListener('click', done); $('reviewHide').addEventListener('click', done);
     $('reviewLink').href = reviewUrl();
-    $('mailLink').href = 'mailto:papana44444@gmail.com?subject=' + encodeURIComponent('Pure Spoiler Shield ' + version + ' — problem');
+    $('mailLink').href = 'mailto:papana44444@gmail.com?subject=' + encodeURIComponent('Pure Spoiler Blocker ' + version + ' — problem');
   }
 
   /* ---------- sharing: a link to the store, a picture of the week, a spoiler link, a list code. Nothing is sent by us: the person copies or posts it ---------- */
@@ -231,7 +231,7 @@
       /* Copy first: on some systems the share sheet takes focus and closes this window, and then nothing after it would run. */
       const copied = await toClipboard(text + ' ' + shareUrl());
       note('shareNote', copied ? t('share_copied') : '');
-      try { if (navigator.share) await navigator.share({ title: 'Pure Spoiler Shield', text, url: shareUrl() }); } catch (e) { /* closed or not allowed: the text is already copied */ }
+      try { if (navigator.share) await navigator.share({ title: 'Pure Spoiler Blocker', text, url: shareUrl() }); } catch (e) { /* closed or not allowed: the text is already copied */ }
     });
     $('cardBtn').addEventListener('click', shareCard);
     $('slCopy').addEventListener('click', copySpoilerLink);
@@ -253,7 +253,7 @@
     g.fillStyle = col('--ink'); g.textAlign = 'left'; g.textBaseline = 'alphabetic';
     const rw = SS.releaseWeek(shields(), shieldLabel);
     g.font = '700 54px Archivo, system-ui, sans-serif'; g.fillText(rw ? t('card_title_release', rw.label) : t('card_title'), 72, 478);
-    g.font = '32px system-ui, sans-serif'; g.fillStyle = col('--muted'); g.fillText('Spoiler Shield · ' + t('card_foot'), 72, 560);
+    g.font = '32px system-ui, sans-serif'; g.fillStyle = col('--muted'); g.fillText('Spoiler Blocker · ' + t('card_foot'), 72, 560);
     return c;
   }
   async function shareCard() {

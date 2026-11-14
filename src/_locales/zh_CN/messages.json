@@ -24,7 +24,7 @@
   "message": "再点一次即可显示评论。评论里可能有剧透。"
  },
  "perm_title": {
-  "message": "允许 Spoiler Shield 在 YouTube、Reddit 和 X 上运行"
+  "message": "允许 Spoiler Blocker 在 YouTube、Reddit 和 X 上运行"
  },
  "perm_hint": {
   "message": "浏览器还没有授予这些网站的访问权限，所以那里什么都不会隐藏。"
@@ -117,7 +117,7 @@
   "message": "你已受到保护。"
  },
  "w_sub": {
-  "message": "Spoiler Shield 现在会模糊 YouTube、Reddit 和 X 上的 GTA VI 剧透。点击模糊区块两次即可查看。其他游戏、剧集、电影或动漫可以通过工具栏按钮添加。"
+  "message": "Spoiler Blocker 现在会模糊 YouTube、Reddit 和 X 上的 GTA VI 剧透。点击模糊区块两次即可查看。其他游戏、剧集、电影或动漫可以通过工具栏按钮添加。"
  },
  "w_s1_t": {
   "message": "模糊而非删除"
@@ -138,7 +138,7 @@
   "message": "添加剧集、电影或动漫。选中任意文字，右键“将……作为剧透隐藏”。暂停 10 分钟，或在某个网站关闭。"
  },
  "w_pin": {
-  "message": "提示：把 Spoiler Shield 固定到工具栏，就能看到计数并一键添加要保护的内容。"
+  "message": "提示：把 Spoiler Blocker 固定到工具栏，就能看到计数并一键添加要保护的内容。"
  },
  "w_private_t": {
   "message": "注重隐私"
@@ -267,7 +267,7 @@
   "message": "已载入。"
  },
  "backup_bad": {
-  "message": "这不是 Spoiler Shield 的备份文件。"
+  "message": "这不是 Spoiler Blocker 的备份文件。"
  },
  "more_sites_title": {
   "message": "Google、TikTok、Instagram"
@@ -294,7 +294,7 @@
   "message": "分享给朋友"
  },
  "share_text": {
-  "message": "Spoiler Shield 隐藏 YouTube、Reddit、X、TikTok 和 Instagram 上的游戏、剧集和动漫剧透。免费，数据不离开浏览器。"
+  "message": "Spoiler Blocker 隐藏 YouTube、Reddit、X、TikTok 和 Instagram 上的游戏、剧集和动漫剧透。免费，数据不离开浏览器。"
  },
  "share_copied": {
   "message": "链接已复制"
@@ -423,7 +423,7 @@
   "message": "Add these lists"
  },
  "code_bad": {
-  "message": "This is not a Spoiler Shield code."
+  "message": "This is not a Spoiler Blocker code."
  },
  "code_done": {
   "message": "Added: {0}."

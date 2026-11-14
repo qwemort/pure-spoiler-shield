@@ -24,7 +24,7 @@
   "message": "Kliknij jeszcze raz, aby pokazać komentarze. Mogą zawierać spoilery."
  },
  "perm_title": {
-  "message": "Pozwól Spoiler Shield działać na YouTube, Reddicie i X"
+  "message": "Pozwól Spoiler Blocker działać na YouTube, Reddicie i X"
  },
  "perm_hint": {
   "message": "Przeglądarka nie dała jeszcze dostępu do tych stron, więc nic tam nie jest ukrywane."
@@ -135,7 +135,7 @@
   "message": "Jesteś chroniony."
  },
  "w_sub": {
-  "message": "Spoiler Shield rozmywa teraz spoilery GTA VI na YouTube, Reddit i X. Kliknij rozmyty blok dwa razy, aby go zobaczyć. Każdą inną grę, serial, film czy anime dodasz przyciskiem na pasku."
+  "message": "Spoiler Blocker rozmywa teraz spoilery GTA VI na YouTube, Reddit i X. Kliknij rozmyty blok dwa razy, aby go zobaczyć. Każdą inną grę, serial, film czy anime dodasz przyciskiem na pasku."
  },
  "w_s1_t": {
   "message": "Rozmycie, nie usuwanie"
@@ -156,7 +156,7 @@
   "message": "Dodaj serial, film lub anime. Zaznacz dowolny tekst i kliknij prawym „Ukrywaj jako spoiler”. Pauza na 10 minut albo wyłączenie na stronie."
  },
  "w_pin": {
-  "message": "Wskazówka: przypnij Spoiler Shield do paska, aby widzieć licznik i jednym kliknięciem dodawać, co chronić."
+  "message": "Wskazówka: przypnij Spoiler Blocker do paska, aby widzieć licznik i jednym kliknięciem dodawać, co chronić."
  },
  "w_private_t": {
   "message": "Prywatność"
@@ -285,7 +285,7 @@
   "message": "Wczytano."
  },
  "backup_bad": {
-  "message": "To nie jest kopia zapasowa Spoiler Shield."
+  "message": "To nie jest kopia zapasowa Spoiler Blocker."
  },
  "more_sites_title": {
   "message": "Google, TikTok, Instagram"
@@ -312,7 +312,7 @@
   "message": "Poleć znajomemu"
  },
  "share_text": {
-  "message": "Spoiler Shield ukrywa spoilery gier, seriali i anime na YouTube, Reddicie, X, TikToku i Instagramie. Za darmo, nic nie wychodzi z przeglądarki."
+  "message": "Spoiler Blocker ukrywa spoilery gier, seriali i anime na YouTube, Reddicie, X, TikToku i Instagramie. Za darmo, nic nie wychodzi z przeglądarki."
  },
  "share_copied": {
   "message": "Link skopiowany"
@@ -441,7 +441,7 @@
   "message": "Dodaj te listy"
  },
  "code_bad": {
-  "message": "To nie jest kod Spoiler Shield."
+  "message": "To nie jest kod Spoiler Blocker."
  },
  "code_done": {
   "message": "Dodano: {0}."

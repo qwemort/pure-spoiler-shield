@@ -24,7 +24,7 @@
   "message": "Натисни ще раз, щоб показати коментарі. У них можуть бути спойлери."
  },
  "perm_title": {
-  "message": "Дозволь Spoiler Shield працювати на YouTube, Reddit і X"
+  "message": "Дозволь Spoiler Blocker працювати на YouTube, Reddit і X"
  },
  "perm_hint": {
   "message": "Браузер ще не дав доступу до цих сайтів, тому там нічого не приховується."
@@ -135,7 +135,7 @@
   "message": "Ти під захистом."
  },
  "w_sub": {
-  "message": "Spoiler Shield уже розмиває спойлери GTA VI на YouTube, Reddit і X. Натисни на розмитий блок двічі, щоб подивитися. Будь-яку іншу гру, серіал, фільм чи аніме можна додати через кнопку на панелі."
+  "message": "Spoiler Blocker уже розмиває спойлери GTA VI на YouTube, Reddit і X. Натисни на розмитий блок двічі, щоб подивитися. Будь-яку іншу гру, серіал, фільм чи аніме можна додати через кнопку на панелі."
  },
  "w_s1_t": {
   "message": "Розмиття, а не видалення"
@@ -156,7 +156,7 @@
   "message": "Додай серіал, фільм чи аніме. Виділи будь-який текст і натисни правою кнопкою «Приховувати як спойлер». Пауза на 10 хвилин або вимкнення на сайті."
  },
  "w_pin": {
-  "message": "Порада: закріпи Spoiler Shield на панелі, щоб бачити лічильник і додавати, що захищати, в один клік."
+  "message": "Порада: закріпи Spoiler Blocker на панелі, щоб бачити лічильник і додавати, що захищати, в один клік."
  },
  "w_private_t": {
   "message": "Приватність"
@@ -285,7 +285,7 @@
   "message": "Завантажено."
  },
  "backup_bad": {
-  "message": "Це не файл бекапу Spoiler Shield."
+  "message": "Це не файл бекапу Spoiler Blocker."
  },
  "more_sites_title": {
   "message": "Google, TikTok, Instagram"
@@ -312,7 +312,7 @@
   "message": "Поділитися з другом"
  },
  "share_text": {
-  "message": "Spoiler Shield ховає спойлери ігор, серіалів і аніме на YouTube, Reddit, X, TikTok та Instagram. Безкоштовно, нічого не виходить з браузера."
+  "message": "Spoiler Blocker ховає спойлери ігор, серіалів і аніме на YouTube, Reddit, X, TikTok та Instagram. Безкоштовно, нічого не виходить з браузера."
  },
  "share_copied": {
   "message": "Посилання скопійовано"
@@ -441,7 +441,7 @@
   "message": "Додати ці списки"
  },
  "code_bad": {
-  "message": "Це не код Spoiler Shield."
+  "message": "Це не код Spoiler Blocker."
  },
  "code_done": {
   "message": "Додано: {0}."

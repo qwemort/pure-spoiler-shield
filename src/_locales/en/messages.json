@@ -24,7 +24,7 @@
   "message": "Click again to show the comments. They may spoil the story."
  },
  "perm_title": {
-  "message": "Allow Spoiler Shield on YouTube, Reddit and X"
+  "message": "Allow Spoiler Blocker on YouTube, Reddit and X"
  },
  "perm_hint": {
   "message": "Your browser has not given access to these sites yet, so nothing is hidden there."
@@ -123,7 +123,7 @@
   "message": "You are protected."
  },
  "w_sub": {
-  "message": "Spoiler Shield now blurs GTA VI spoilers on YouTube, Reddit and X. Click a blurred block twice to see it. Any other game, show, film or anime can be added from the toolbar button."
+  "message": "Spoiler Blocker now blurs GTA VI spoilers on YouTube, Reddit and X. Click a blurred block twice to see it. Any other game, show, film or anime can be added from the toolbar button."
  },
  "w_s1_t": {
   "message": "Blur, not delete"
@@ -144,7 +144,7 @@
   "message": "Add a show, film or anime. Select any text and right-click “Hide as a spoiler”. Pause for 10 minutes or switch it off on a site."
  },
  "w_pin": {
-  "message": "Tip: pin Spoiler Shield to the toolbar to see the counter and add what to protect in one click."
+  "message": "Tip: pin Spoiler Blocker to the toolbar to see the counter and add what to protect in one click."
  },
  "w_private_t": {
   "message": "Private by design"
@@ -273,7 +273,7 @@
   "message": "Loaded."
  },
  "backup_bad": {
-  "message": "This file is not a Spoiler Shield backup."
+  "message": "This file is not a Spoiler Blocker backup."
  },
  "more_sites_title": {
   "message": "Google, TikTok, Instagram"
@@ -300,7 +300,7 @@
   "message": "Share with a friend"
  },
  "share_text": {
-  "message": "Spoiler Shield hides spoilers for games, shows and anime on YouTube, Reddit, X, TikTok and Instagram. Free, nothing leaves the browser."
+  "message": "Spoiler Blocker hides spoilers for games, shows and anime on YouTube, Reddit, X, TikTok and Instagram. Free, nothing leaves the browser."
  },
  "share_copied": {
   "message": "Link copied"
@@ -429,7 +429,7 @@
   "message": "Add these lists"
  },
  "code_bad": {
-  "message": "This is not a Spoiler Shield code."
+  "message": "This is not a Spoiler Blocker code."
  },
  "code_done": {
   "message": "Added: {0}."

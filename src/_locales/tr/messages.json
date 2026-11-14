@@ -24,7 +24,7 @@
   "message": "Yorumları göstermek için tekrar tıkla. Spoiler içerebilirler."
  },
  "perm_title": {
-  "message": "Spoiler Shield’a YouTube, Reddit ve X’te izin ver"
+  "message": "Spoiler Blocker’a YouTube, Reddit ve X’te izin ver"
  },
  "perm_hint": {
   "message": "Tarayıcın bu sitelere henüz erişim vermedi, bu yüzden orada hiçbir şey gizlenmiyor."
@@ -123,7 +123,7 @@
   "message": "Korunuyorsun."
  },
  "w_sub": {
-  "message": "Spoiler Shield artık YouTube, Reddit ve X’te GTA VI spoilerlarını bulanıklaştırıyor. Görmek için bulanık bloğa iki kez tıkla. Başka bir oyun, dizi, film ya da anime araç çubuğundaki düğmeden eklenir."
+  "message": "Spoiler Blocker artık YouTube, Reddit ve X’te GTA VI spoilerlarını bulanıklaştırıyor. Görmek için bulanık bloğa iki kez tıkla. Başka bir oyun, dizi, film ya da anime araç çubuğundaki düğmeden eklenir."
  },
  "w_s1_t": {
   "message": "Silmez, bulanıklaştırır"
@@ -144,7 +144,7 @@
   "message": "Bir dizi, film ya da anime ekle. Herhangi bir metni seç ve sağ tıkla “Spoiler olarak gizlensin”. 10 dakika duraklat ya da bir sitede kapat."
  },
  "w_pin": {
-  "message": "İpucu: sayacı görmek ve neyi koruyacağını tek tıkla eklemek için Spoiler Shield’ı araç çubuğuna sabitle."
+  "message": "İpucu: sayacı görmek ve neyi koruyacağını tek tıkla eklemek için Spoiler Blocker’ı araç çubuğuna sabitle."
  },
  "w_private_t": {
   "message": "Gizlilik öncelikli"
@@ -273,7 +273,7 @@
   "message": "Yüklendi."
  },
  "backup_bad": {
-  "message": "Bu dosya bir Spoiler Shield yedeği değil."
+  "message": "Bu dosya bir Spoiler Blocker yedeği değil."
  },
  "more_sites_title": {
   "message": "Google, TikTok, Instagram"
@@ -300,7 +300,7 @@
   "message": "Arkadaşınla paylaş"
  },
  "share_text": {
-  "message": "Spoiler Shield, YouTube, Reddit, X, TikTok ve Instagram’da oyun, dizi ve anime spoilerlarını gizler. Ücretsiz, hiçbir şey tarayıcıdan çıkmaz."
+  "message": "Spoiler Blocker, YouTube, Reddit, X, TikTok ve Instagram’da oyun, dizi ve anime spoilerlarını gizler. Ücretsiz, hiçbir şey tarayıcıdan çıkmaz."
  },
  "share_copied": {
   "message": "Bağlantı kopyalandı"
@@ -429,7 +429,7 @@
   "message": "Add these lists"
  },
  "code_bad": {
-  "message": "This is not a Spoiler Shield code."
+  "message": "This is not a Spoiler Blocker code."
  },
  "code_done": {
   "message": "Added: {0}."

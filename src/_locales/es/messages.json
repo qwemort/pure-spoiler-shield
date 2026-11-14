@@ -24,7 +24,7 @@
   "message": "Haz clic otra vez para ver los comentarios. Pueden tener spoilers."
  },
  "perm_title": {
-  "message": "Permite Spoiler Shield en YouTube, Reddit y X"
+  "message": "Permite Spoiler Blocker en YouTube, Reddit y X"
  },
  "perm_hint": {
   "message": "Tu navegador aún no ha dado acceso a estos sitios, así que ahí no se oculta nada."
@@ -123,7 +123,7 @@
   "message": "Estás protegido."
  },
  "w_sub": {
-  "message": "Spoiler Shield ya difumina los spoilers de GTA VI en YouTube, Reddit y X. Haz clic dos veces en un bloque difuminado para verlo. Cualquier otro juego, serie, película o anime se añade desde el botón de la barra."
+  "message": "Spoiler Blocker ya difumina los spoilers de GTA VI en YouTube, Reddit y X. Haz clic dos veces en un bloque difuminado para verlo. Cualquier otro juego, serie, película o anime se añade desde el botón de la barra."
  },
  "w_s1_t": {
   "message": "Difuminar, no borrar"
@@ -144,7 +144,7 @@
   "message": "Añade una serie, película o anime. Selecciona cualquier texto y usa clic derecho «Ocultar como spoiler». Pausa 10 minutos o apágalo en un sitio."
  },
  "w_pin": {
-  "message": "Consejo: fija Spoiler Shield en la barra para ver el contador y añadir qué proteger en un clic."
+  "message": "Consejo: fija Spoiler Blocker en la barra para ver el contador y añadir qué proteger en un clic."
  },
  "w_private_t": {
   "message": "Privado desde el diseño"
@@ -273,7 +273,7 @@
   "message": "Cargado."
  },
  "backup_bad": {
-  "message": "Este archivo no es una copia de Spoiler Shield."
+  "message": "Este archivo no es una copia de Spoiler Blocker."
  },
  "more_sites_title": {
   "message": "Google, TikTok, Instagram"
@@ -300,7 +300,7 @@
   "message": "Compartir con un amigo"
  },
  "share_text": {
-  "message": "Spoiler Shield oculta spoilers de juegos, series y anime en YouTube, Reddit, X, TikTok e Instagram. Gratis, nada sale del navegador."
+  "message": "Spoiler Blocker oculta spoilers de juegos, series y anime en YouTube, Reddit, X, TikTok e Instagram. Gratis, nada sale del navegador."
  },
  "share_copied": {
   "message": "Enlace copiado"
@@ -429,7 +429,7 @@
   "message": "Add these lists"
  },
  "code_bad": {
-  "message": "This is not a Spoiler Shield code."
+  "message": "This is not a Spoiler Blocker code."
  },
  "code_done": {
   "message": "Added: {0}."
